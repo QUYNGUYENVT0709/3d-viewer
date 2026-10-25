@@ -594,7 +594,7 @@
   <header class="top-header">
     <div class="brand-pill">
       <span class="brand-tag">LTF 3D</span>
-      <span class="project-name" id="displayProjectName">CẮT VANGO L1</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -763,25 +763,32 @@
 
       // Quản lý danh mục công trình projects.json
       async function loadProjectsRegistry() {
-        try {
-          const res = await fetch('projects/projects.json?t=' + Date.now());
-          if (res.ok) {
-            allProjectsRegistry = await res.json();
-            renderProjectsList();
+        const tryUrls = [
+          'projects/projects.json?t=' + Date.now(),
+          'https://raw.githubusercontent.com/QUYNGUYENVT0709/3d-viewer/main/projects/projects.json?t=' + Date.now()
+        ];
+        for (const url of tryUrls) {
+          try {
+            const res = await fetch(url);
+            if (res.ok) {
+              allProjectsRegistry = await res.json();
+              renderProjectsList();
 
-            if (targetProjectSlug) {
-              const matched = allProjectsRegistry.find(p => p.slug === targetProjectSlug);
-              if (matched && matched.name) {
-                document.getElementById('displayProjectName').textContent = matched.name;
+              if (targetProjectSlug) {
+                const matched = allProjectsRegistry.find(p => p.slug === targetProjectSlug);
+                if (matched && matched.name) {
+                  document.getElementById('displayProjectName').textContent = matched.name;
+                }
+              } else if (allProjectsRegistry.length > 0) {
+                // Tự động mở công trình mới nhất nếu không chỉ định ?p=
+                const latest = allProjectsRegistry[0];
+                switchProject(latest.slug, latest.name, false);
               }
-            } else if (allProjectsRegistry.length > 0) {
-              // Tự động mở công trình mới nhất nếu không chỉ định ?p=
-              const latest = allProjectsRegistry[0];
-              switchProject(latest.slug, latest.name, false);
+              break;
             }
+          } catch (e) {
+            console.warn("Không tải được projects.json từ:", url, e);
           }
-        } catch (e) {
-          console.warn("Không tải được projects.json:", e);
         }
       }
 
@@ -903,27 +910,34 @@
 
       // 3. TẢI DỮ LIỆU METADATA BOARDS
       async function loadBoardsData(jsonPath = 'boards_data.json') {
-        try {
-          const res = await fetch(jsonPath);
-          if (res.ok) {
-            const data = await res.json();
-            if (Array.isArray(data)) {
-              data.forEach(item => {
-                const idx = parseInt(item.board_index, 10);
-                if (!isNaN(idx)) boardsData[idx] = item;
-              });
-            } else if (typeof data === 'object') {
-              boardsData = data;
+        const tryPaths = [
+          jsonPath + (jsonPath.includes('?') ? '&' : '?') + 't=' + Date.now(),
+          jsonPath.startsWith('http') ? jsonPath : `https://raw.githubusercontent.com/QUYNGUYENVT0709/3d-viewer/main/${jsonPath}?t=${Date.now()}`
+        ];
+        for (const p of tryPaths) {
+          try {
+            const res = await fetch(p);
+            if (res.ok) {
+              const data = await res.json();
+              if (Array.isArray(data)) {
+                data.forEach(item => {
+                  const idx = parseInt(item.board_index, 10);
+                  if (!isNaN(idx)) boardsData[idx] = item;
+                });
+              } else if (typeof data === 'object') {
+                boardsData = data;
+              }
+              break;
             }
+          } catch (e) {
+            console.warn("Không tìm thấy boards_data.json từ:", p);
           }
-        } catch (e) {
-          console.warn("Không tìm thấy file boards_data.json trực tiếp, sẽ dùng metadata từ GLB.");
         }
       }
 
       // 4. TẢI FILE 3D GLB/GLTF
-      function loadGlbModel(source) {
-        setLoading(true, "Đang tải mô hình 3D...", "Vui lòng đợi giây lát");
+      function loadGlbModel(source, isFallback = false) {
+        setLoading(true, isFallback ? "Đang đồng bộ trực tiếp từ Git..." : "Đang tải mô hình 3D...", "Vui lòng đợi giây lát");
         const loader = new THREE.GLTFLoader();
 
         const loadSuccess = function(gltf) {
@@ -999,16 +1013,43 @@
 
         const loadError = function(error) {
           console.warn("Không tải được đường dẫn:", source, error);
+
+          // 1. Tự động fallback sang raw.githubusercontent.com ngay lập tức nếu GitHub Pages đang build dở
+          if (!isFallback && typeof source === 'string' && !source.startsWith('http')) {
+            const rawUrl = `https://raw.githubusercontent.com/QUYNGUYENVT0709/3d-viewer/main/${source}?t=${Date.now()}`;
+            console.log("GitHub Pages chưa hoàn tất build, tự động chuyển sang Git Raw:", rawUrl);
+            loadGlbModel(rawUrl, true);
+            return;
+          }
+
+          // 2. Nếu vẫn đang upload hoặc mạng lag, hiển thị thông báo đồng bộ kèm đếm ngược tự động thử lại
           setLoading(false);
           const emptyBox = document.getElementById('emptyState');
           if (emptyBox) {
             emptyBox.classList.add('active');
             const h3 = emptyBox.querySelector('h3');
-            if (h3) h3.textContent = targetProjectName ? `Chưa có mô hình: ${targetProjectName}` : "Chưa có mô hình 3D";
+            const projTitle = targetProjectName || targetProjectSlug;
+            if (h3) h3.textContent = projTitle ? `Đang đồng bộ: ${projTitle}` : "Chưa có mô hình 3D";
             const p = emptyBox.querySelector('p');
-            if (p) p.innerHTML = targetProjectName
-              ? `Mô hình của dự án <strong>${targetProjectName}</strong> chưa được xuất hoặc đang đồng bộ. Hãy kiểm tra lại thao tác 'Xuất 3D Web' trong SketchUp.`
-              : "Hãy chọn file mô hình <strong>.glb</strong> của dự án từ máy:";
+            if (p) {
+              p.innerHTML = `Mô hình 3D vừa xuất lên GitHub và máy chủ đang đồng bộ.<br>` +
+                            `Hệ thống sẽ <strong>tự động thử lại</strong> sau <span id="retryCountdown" style="color:#0284c7;font-weight:700;">5</span> giây...`;
+              let countdown = 5;
+              const timer = setInterval(() => {
+                countdown--;
+                const span = document.getElementById('retryCountdown');
+                if (span) span.textContent = countdown;
+                if (countdown <= 0) {
+                  clearInterval(timer);
+                  emptyBox.classList.remove('active');
+                  const cleanPath = (typeof source === 'string')
+                    ? source.replace(/^https:\/\/raw\.githubusercontent\.com\/QUYNGUYENVT0709\/3d-viewer\/main\//, '').split('?')[0]
+                    : `projects/${targetProjectSlug}/model.glb`;
+                  const retryUrl = `https://raw.githubusercontent.com/QUYNGUYENVT0709/3d-viewer/main/${cleanPath}?t=${Date.now()}`;
+                  loadGlbModel(retryUrl, true);
+                }
+              }, 1000);
+            }
           }
         };
 
