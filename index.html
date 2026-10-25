@@ -785,6 +785,194 @@
       font-weight: 700;
       cursor: pointer;
     }
+
+    /* ===== TOOLBAR TOGGLE (Thu gọn / Sổ ra) ===== */
+    .floating-tools .tool-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow: hidden;
+      max-height: 500px;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+      opacity: 1;
+    }
+    .floating-tools .tool-group.collapsed {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .toolbar-toggle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transition: all 0.25s ease;
+    }
+    .toolbar-toggle-btn:active {
+      transform: scale(0.92);
+    }
+    .toolbar-toggle-btn svg {
+      transition: transform 0.3s ease;
+    }
+    .toolbar-toggle-btn.collapsed svg {
+      transform: rotate(180deg);
+    }
+
+    /* ===== LAYER PANEL (Giống SketchUp Mobile Viewer) ===== */
+    .layer-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 280px;
+      max-width: 85vw;
+      height: 100%;
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border-left: 1px solid var(--panel-border);
+      box-shadow: -8px 0 30px rgba(0,0,0,0.25);
+      z-index: 180;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .layer-panel.open {
+      transform: translateX(0);
+    }
+    .layer-panel-header {
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--panel-border);
+      flex-shrink: 0;
+    }
+    .layer-panel-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .layer-panel-close {
+      background: var(--grid-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--text-sub);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .layer-panel-close:hover {
+      background: rgba(0,0,0,0.08);
+      color: var(--text-main);
+    }
+    .layer-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 0;
+    }
+    .layer-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .layer-item:hover {
+      background: var(--btn-hover);
+    }
+    .layer-eye-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--grid-bg);
+      border: 1px solid var(--panel-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+      color: var(--text-main);
+    }
+    .layer-eye-btn.hidden {
+      opacity: 0.4;
+      color: var(--text-sub);
+    }
+    .layer-eye-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+    .layer-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-main);
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .layer-count {
+      font-size: 11px;
+      color: var(--text-sub);
+      font-weight: 600;
+      background: var(--grid-bg);
+      padding: 2px 6px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .layer-color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .layer-panel-backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 179;
+      display: none;
+    }
+    .layer-panel-backdrop.open {
+      display: block;
+    }
+
+    /* SVG Icon sizing */
+    .icon-btn svg, .round-tool-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    .hud-btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .measure-btn-sub svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -799,10 +987,10 @@
 
   <!-- BANNER HƯỚNG DẪN & KẾT QUẢ THƯỚC ĐO 3D -->
   <div class="measure-hud" id="measureHud" style="display: none;">
-    <span class="measure-icon">📏</span>
+    <span class="measure-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg></span>
     <span class="measure-text" id="measureHudText">Chạm vào tấm ván để đo 3 chiều (Dài × Rộng × Dày), hoặc bấm "Đo 2 Điểm" để kéo thước!</span>
     <div class="measure-actions">
-      <button class="measure-btn-sub" id="btnMeasurePointMode">📍 Đo 2 Điểm</button>
+      <button class="measure-btn-sub" id="btnMeasurePointMode"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg> Đo 2 Điểm</button>
       <button class="measure-close-btn" id="btnCloseMeasureHud" title="Tắt thước đo">✕</button>
     </div>
   </div>
@@ -823,13 +1011,13 @@
 
     <div class="top-tools">
       <button class="icon-btn" id="btnShowProjects" title="Danh sách các công trình đang lưu trên Cloud">
-        📁 <span style="display:none; @media(min-width:600px){display:inline;}">Công Trình</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
       </button>
       <button class="icon-btn" id="btnToggleSearch" title="Tìm theo số tấm hoặc tên">
-        🔍 <span style="display:none; @media(min-width:600px){display:inline;}">Tìm</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       </button>
       <button class="icon-btn primary" id="btnStartQrScan" title="Bật camera quét mã QR trên con tem">
-        📷 Quét Tem
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Quét
       </button>
     </div>
   </header>
@@ -844,24 +1032,32 @@
 
   <!-- FLOATING SIDE TOOLS -->
   <div class="floating-tools">
-    <button class="round-tool-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
-      💡
+    <button class="toolbar-toggle-btn" id="btnToolbarToggle" title="Thu gọn / Sổ ra thanh công cụ">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
-    <button class="round-tool-btn active" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
-      👻
-    </button>
-    <button class="round-tool-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
-      🩻
-    </button>
-    <button class="round-tool-btn active-cyan" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều (Dài × Rộng × Dày)">
-      📏
-    </button>
-    <button class="round-tool-btn" id="btnUnhideAll" title="Hiện lại tất cả các tấm đã ẩn" style="display:none; position:relative;">
-      👁️<span class="unhide-count" id="unhideCount">0</span>
-    </button>
-    <button class="round-tool-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
-      🎯
-    </button>
+    <div class="tool-group" id="toolGroup">
+      <button class="round-tool-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="round-tool-btn active" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
+      </button>
+      <button class="round-tool-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18" opacity="0.5"/><path d="m8 8 8 8m0-8-8 8"/></svg>
+      </button>
+      <button class="round-tool-btn active-cyan" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều (Dài × Rộng × Dày)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg>
+      </button>
+      <button class="round-tool-btn" id="btnToggleLayers" title="Quản lý Layer (Hiện/Ẩn nhóm đối tượng)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </button>
+      <button class="round-tool-btn" id="btnUnhideAll" title="Hiện lại tất cả các tấm đã ẩn" style="display:none; position:relative;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span class="unhide-count" id="unhideCount">0</span>
+      </button>
+      <button class="round-tool-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+      </button>
+    </div>
   </div>
 
   <!-- BOTTOM HUD CARD (CHI TIẾT TẤM VÁN ĐANG CHỌN) -->
@@ -891,9 +1087,24 @@
     </div>
 
     <div class="hud-actions">
-      <button class="hud-btn hud-btn-outline" id="btnHudHide" title="Ẩn tấm ván này để nhìn rõ kết cấu bên trong">👁️ Ẩn tấm này</button>
-      <button class="hud-btn hud-btn-secondary" id="btnHudFocus">🎯 Phóng to</button>
-      <button class="hud-btn hud-btn-primary" id="btnHudNextScan">📷 Quét tiếp</button>
+      <button class="hud-btn hud-btn-outline" id="btnHudHide" title="Ẩn tấm ván này để nhìn rõ kết cấu bên trong"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg> Ẩn</button>
+      <button class="hud-btn hud-btn-secondary" id="btnHudFocus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg> Phóng to</button>
+      <button class="hud-btn hud-btn-primary" id="btnHudNextScan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Quét tiếp</button>
+    </div>
+  </div>
+
+  <!-- LAYER PANEL (Quản lý Layer giống SketchUp Mobile) -->
+  <div class="layer-panel-backdrop" id="layerPanelBackdrop"></div>
+  <div class="layer-panel" id="layerPanel">
+    <div class="layer-panel-header">
+      <div class="layer-panel-title">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        Quản Lý Layer
+      </div>
+      <button class="layer-panel-close" id="btnCloseLayerPanel">✕</button>
+    </div>
+    <div class="layer-list" id="layerList">
+      <div style="padding:20px; text-align:center; color:var(--text-sub); font-size:13px;">Chưa có dữ liệu Layer. Hãy xuất lại mô hình từ SketchUp.</div>
     </div>
   </div>
 
