@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>LTF 3D - Xem Vị Trí Lắp Đặt Tấm Ván</title>
+  
+  <!-- Thư viện 3D Three.js & OrbitControls & GLTFLoader (CDN siêu nhẹ, lưu cache di động) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  
+  <!-- Thư viện quét mã QR bằng camera trực tiếp trên trình duyệt (HTML5 QR Code) -->
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --panel-bg: rgba(15, 23, 42, 0.88);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --accent-color: #ff4500;
+      --accent-hover: #ff5722;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --btn-bg: #1e293b;
+      --btn-hover: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--bg-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+    }
+
+    /* 3D CANVAS VIEWPORT */
+    #viewport3D {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+    }
+    #viewport3D:active {
+      cursor: grabbing;
+    }
+
+    /* HEADER TOP BAR */
+    .top-header {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    .brand-pill {
+      pointer-events: auto;
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      border-radius: 30px;
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .brand-tag {
+      background: linear-gradient(135deg, #ff4500, #ff8c00);
+      color: #fff;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .project-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      max-width: 160px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .top-tools {
+      display: flex;
+      gap: 8px;
+      pointer-events: auto;
+    }
+
+    .icon-btn {
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      color: var(--text-main);
+      height: 38px;
+      padding: 0 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      transition: all 0.2s ease;
+    }
+    .icon-btn:hover {
+      background: var(--btn-hover);
+      border-color: rgba(255,255,255,0.25);
+    }
+    .icon-btn.primary {
+      background: linear-gradient(135deg, #ff4500, #ea580c);
+      border-color: #ff6b35;
+      color: #fff;
+    }
+    .icon-btn.primary:hover {
+      filter: brightness(1.1);
+    }
+
+    /* SEARCH / SELECTOR POPUP */
+    .search-wrapper {
+      position: absolute;
+      top: 60px;
+      left: 12px;
+      right: 12px;
+      max-width: 400px;
+      margin: 0 auto;
+      z-index: 95;
+      display: none;
+    }
+    .search-wrapper.active {
+      display: block;
+    }
+    .search-box {
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .search-input {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    .search-results {
+      max-height: 220px;
+      overflow-y: auto;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .search-item {
+      padding: 8px 10px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+    .search-item:hover, .search-item.selected {
+      background: rgba(255, 69, 0, 0.25);
+      border-left: 3px solid var(--accent-color);
+    }
+
+    /* FLOATING BOTTOM HUD CARD (THÔNG TIN TẤM ĐANG CHỌN) */
+    .hud-bottom-card {
+      position: absolute;
+      bottom: 16px;
+      left: 12px;
+      right: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--panel-bg);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--panel-border);
+      border-radius: 18px;
+      padding: 14px 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      z-index: 100;
+      transform: translateY(120%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hud-bottom-card.show {
+      transform: translateY(0);
+    }
+
+    .hud-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .hud-title-box {
+      flex: 1;
+      padding-right: 10px;
+    }
+    .hud-badge-id {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #fff;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+    }
+    .hud-part-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+    }
+    .hud-module-name {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+    .hud-close-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: var(--text-sub);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hud-close-btn:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    .hud-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      background: rgba(255,255,255,0.04);
+      padding: 10px;
+      border-radius: 10px;
+      margin: 8px 0 12px 0;
+    }
+    .hud-grid-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .hud-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-sub);
+    }
+    .hud-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 2px;
+    }
+
+    .hud-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .hud-btn {
+      flex: 1;
+      height: 38px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .hud-btn-primary {
+      background: linear-gradient(135deg, #ff4500, #ff8c00);
+      color: #fff;
+    }
+    .hud-btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    /* QR SCANNER MODAL FULLSCREEN */
+    .qr-modal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 200;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .qr-modal.active {
+      display: flex;
+    }
+    .qr-scanner-box {
+      width: 100%;
+      max-width: 360px;
+      background: #1e293b;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+    .qr-header {
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .qr-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    #reader {
+      width: 100%;
+      min-height: 280px;
+      background: #000;
+    }
+    .qr-footer {
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    /* LOADING SPINNER */
+    .loading-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 300;
+      transition: opacity 0.4s ease;
+    }
+    .loading-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid rgba(255,255,255,0.15);
+      border-top-color: var(--accent-color);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .loading-text {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .loading-sub {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 6px;
+    }
+
+    /* GHOST MODE TOGGLE BUTTON */
+    .floating-tools {
+      position: absolute;
+      right: 12px;
+      bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 90;
+    }
+    .round-tool-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
+    }
+    .round-tool-btn:active {
+      transform: scale(0.92);
+    }
+    .round-tool-btn.active {
+      background: var(--accent-color);
+      border-color: #ff8c00;
+    }
+
+    /* EMPTY STATE FILE PICKER */
+    .empty-state {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--panel-border);
+      padding: 30px;
+      border-radius: 24px;
+      max-width: 360px;
+      width: 90%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 150;
+    }
+    .empty-state.active {
+      display: block;
+    }
+    .empty-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+    .file-input-btn {
+      margin-top: 16px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #ff4500, #ea580c);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 3D VIEWPORT CANVAS -->
+  <div id="viewport3D"></div>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="brand-pill">
+      <span class="brand-tag">LTF 3D</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
+    </div>
+
+    <div class="top-tools">
+      <button class="icon-btn" id="btnToggleSearch" title="Tìm theo số tấm hoặc tên">
+        🔍 <span style="display:none; @media(min-width:600px){display:inline;}">Tìm</span>
+      </button>
+      <button class="icon-btn primary" id="btnStartQrScan" title="Bật camera quét mã QR trên con tem">
+        📷 Quét Tem
+      </button>
+    </div>
+  </header>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-wrapper" id="searchWrapper">
+    <div class="search-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="Nhập số ID tấm (VD: 15) hoặc tên chi tiết..." autofocus>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- FLOATING SIDE TOOLS -->
+  <div class="floating-tools">
+    <button class="round-tool-btn active" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh (X-Ray)">
+      👻
+    </button>
+    <button class="round-tool-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
+      🎯
+    </button>
+  </div>
+
+  <!-- BOTTOM HUD CARD (CHI TIẾT TẤM VÁN ĐANG CHỌN) -->
+  <div class="hud-bottom-card" id="hudCard">
+    <div class="hud-header">
+      <div class="hud-title-box">
+        <span class="hud-badge-id" id="hudBadgeId">TẤM #0</span>
+        <h3 class="hud-part-name" id="hudPartName">Tên chi tiết</h3>
+        <p class="hud-module-name" id="hudModuleName">Cụm tủ / Vị trí</p>
+      </div>
+      <button class="hud-close-btn" id="btnCloseHud">✕</button>
+    </div>
+
+    <div class="hud-grid">
+      <div class="hud-grid-item">
+        <span class="hud-label">Kích thước (D x R x Dày)</span>
+        <span class="hud-value" id="hudDimensions">-- × -- × -- mm</span>
+      </div>
+      <div class="hud-grid-item">
+        <span class="hud-label">Loại ván & Sheet</span>
+        <span class="hud-value" id="hudMaterial">--</span>
+      </div>
+      <div class="hud-grid-item">
+        <span class="hud-label">Chỉ dán nẹp</span>
+        <span class="hud-value" id="hudEdgeBanding">--</span>
+      </div>
+      <div class="hud-grid-item">
+        <span class="hud-label">Liên kết / Khoan</span>
+        <span class="hud-value" id="hudDrills">--</span>
+      </div>
+    </div>
+
+    <div class="hud-actions">
+      <button class="hud-btn hud-btn-secondary" id="btnHudFocus">🎯 Phóng to vị trí</button>
+      <button class="hud-btn hud-btn-primary" id="btnHudNextScan">📷 Quét tem tiếp theo</button>
+    </div>
+  </div>
+
+  <!-- QR SCANNER CAMERA MODAL -->
+  <div class="qr-modal" id="qrModal">
+    <div class="qr-scanner-box">
+      <div class="qr-header">
+        <span class="qr-title">📷 Soi Camera Vào Mã QR Trên Tem</span>
+        <button class="hud-close-btn" id="btnCloseQr">✕</button>
+      </div>
+      <div id="reader"></div>
+      <div class="qr-footer">Giữ tem ngay ngắn trong khung quét</div>
+    </div>
+  </div>
+
+  <!-- EMPTY STATE FILE PICKER (NẾU MỞ TRỰC TIẾP KHÔNG CÓ FILE) -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-icon">📦</div>
+    <h3>Chưa có mô hình 3D</h3>
+    <p style="font-size:13px; color:var(--text-sub); margin-top:6px;">
+      Hãy chọn file mô hình <strong>.glb</strong> của dự án bạn nhận từ Zalo hoặc xuất từ SketchUp:
+    </p>
+    <label class="file-input-btn">
+      📂 Chọn file .glb từ máy
+      <input type="file" id="localFileInput" accept=".glb,.gltf" style="display:none;">
+    </label>
+  </div>
+
+  <!-- LOADING OVERLAY -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+    <div class="loading-text" id="loadingText">Đang tải mô hình 3D...</div>
+    <div class="loading-sub" id="loadingSub">Vui lòng đợi giây lát</div>
+  </div>
+
+  <!-- MAIN SCRIPT 3D & SCANNER -->
+  <script>
+    (function() {
+      // 1. STATE & DATA
+      let scene, camera, renderer, controls;
+      let modelRoot = null;
+      let allMeshes = [];
+      let boardMeshMap = {}; // { board_index: [mesh1, mesh2, ...] }
+      let boardsData = {};   // { board_index: { part_name, dimensions, ... } }
+      let selectedBoardIndex = null;
+      let isGhostMode = true;
+      let html5QrCode = null;
+
+      // Vật liệu Highlight (Phát sáng Neon Cam-Đỏ)
+      const highlightMaterial = new THREE.MeshStandardMaterial({
+        color: 0xff3b00,
+        emissive: 0xff1100,
+        emissiveIntensity: 0.65,
+        roughness: 0.25,
+        metalness: 0.1
+      });
+
+      // Vật liệu Ghost Mode (Bán trong suốt nhìn xuyên kết cấu tủ)
+      const ghostMaterial = new THREE.MeshStandardMaterial({
+        color: 0x94a3b8,
+        roughness: 0.6,
+        metalness: 0.05,
+        transparent: true,
+        opacity: 0.22,
+        depthWrite: false
+      });
+
+      // Parse URL Params
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetParamId = urlParams.get('id') || urlParams.get('board') || urlParams.get('part');
+      const targetProjectName = urlParams.get('p') || urlParams.get('name') || '';
+      let targetModelFile = urlParams.get('m') || urlParams.get('model');
+      let targetJsonFile = 'boards_data.json';
+
+      if (targetProjectName) {
+        document.getElementById('displayProjectName').textContent = targetProjectName;
+        if (!targetModelFile) {
+          targetModelFile = `projects/${targetProjectName}/model.glb`;
+          targetJsonFile = `projects/${targetProjectName}/boards_data.json`;
+        }
+      }
+      if (!targetModelFile) targetModelFile = 'model.glb';
+
+      // 2. KHỞI TẠO THREE.JS ENGINE
+      function init3D() {
+        const container = document.getElementById('viewport3D');
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x0f172a);
+
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 10, 50000);
+        camera.position.set(2000, 2000, 2500);
+
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        container.appendChild(renderer.domElement);
+
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.08;
+        controls.rotateSpeed = 0.8;
+        controls.panSpeed = 0.8;
+        controls.maxDistance = 30000;
+        controls.minDistance = 50;
+
+        // Ánh sáng Studio chuyên dụng cho ngành gỗ CNC
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x334155, 0.9);
+        scene.add(hemiLight);
+
+        const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
+        dirLight1.position.set(3000, 5000, 4000);
+        scene.add(dirLight1);
+
+        const dirLight2 = new THREE.DirectionalLight(0xfff7ed, 0.4);
+        dirLight2.position.set(-3000, -2000, -3000);
+        scene.add(dirLight2);
+
+        // Grid nền nhẹ định hướng không gian
+        const grid = new THREE.GridHelper(5000, 50, 0x334155, 0x1e293b);
+        grid.position.y = -5;
+        scene.add(grid);
+
+        // Raycaster bắt chạm màn hình chọn tấm trực tiếp
+        setupRaycasting(container);
+
+        // Resize handler
+        window.addEventListener('resize', onWindowResize);
+
+        // Render loop
+        animate();
+      }
+
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+
+        // Hiệu ứng thở nhẹ (Pulse) cho tấm đang được highlight
+        if (selectedBoardIndex !== null) {
+          const pulse = (Math.sin(Date.now() * 0.005) + 1) * 0.5;
+          highlightMaterial.emissiveIntensity = 0.4 + pulse * 0.5;
+        }
+
+        renderer.render(scene, camera);
+      }
+
+      // 3. TẢI DỮ LIỆU METADATA BOARDS
+      async function loadBoardsData(jsonPath = 'boards_data.json') {
+        try {
+          const res = await fetch(jsonPath);
+          if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data)) {
+              data.forEach(item => {
+                const idx = parseInt(item.board_index, 10);
+                if (!isNaN(idx)) boardsData[idx] = item;
+              });
+            } else if (typeof data === 'object') {
+              boardsData = data;
+            }
+          }
+        } catch (e) {
+          console.warn("Không tìm thấy file boards_data.json trực tiếp, sẽ dùng metadata từ GLB.");
+        }
+      }
+
+      // 4. TẢI FILE 3D GLB/GLTF
+      function loadGlbModel(source) {
+        setLoading(true, "Đang tải mô hình 3D...", "Vui lòng đợi giây lát");
+        const loader = new THREE.GLTFLoader();
+
+        const loadSuccess = function(gltf) {
+          if (modelRoot) scene.remove(modelRoot);
+
+          modelRoot = gltf.scene;
+          scene.add(modelRoot);
+          allMeshes = [];
+          boardMeshMap = {};
+
+          // Duyệt toàn bộ các node mesh trong mô hình
+          modelRoot.traverse(child => {
+            if (child.isMesh) {
+              allMeshes.push(child);
+              // Lưu vật liệu gốc để phục hồi
+              child.userData.origMaterial = child.material;
+
+              // Tìm ID tấm từ tên đối tượng
+              const bIdx = extractBoardIndexFromName(child.name, child.parent);
+              if (bIdx !== null) {
+                child.userData.boardIndex = bIdx;
+                if (!boardMeshMap[bIdx]) boardMeshMap[bIdx] = [];
+                boardMeshMap[bIdx].push(child);
+              }
+            }
+          });
+
+          // Zoom căn chỉnh camera vừa vặn toàn bộ mô hình
+          zoomToFit(modelRoot);
+
+          setLoading(false);
+          document.getElementById('emptyState').classList.remove('active');
+
+          // Cập nhật danh sách tìm kiếm
+          buildSearchList();
+
+          // Nếu URL có sẵn tham số ?id=... thì tự động focus ngay lập tức!
+          if (targetParamId) {
+            const targetNum = parseInt(targetParamId, 10);
+            if (!isNaN(targetNum)) {
+              setTimeout(() => {
+                selectBoard(targetNum, true);
+              }, 300);
+            }
+          }
+        };
+
+        const loadProgress = function(xhr) {
+          if (xhr.lengthComputable) {
+            const percent = Math.round((xhr.loaded / xhr.total) * 100);
+            document.getElementById('loadingSub').textContent = `Đã tải ${percent}%`;
+          }
+        };
+
+        const loadError = function(error) {
+          console.warn("Không tải được đường dẫn:", source, error);
+          if (typeof source === 'string' && source !== 'model.glb') {
+            console.info("Thử tải fallback về ./model.glb...");
+            loader.load('model.glb', loadSuccess, loadProgress, (err2) => {
+              setLoading(false);
+              document.getElementById('emptyState').classList.add('active');
+            });
+          } else {
+            setLoading(false);
+            document.getElementById('emptyState').classList.add('active');
+          }
+        };
+
+        if (typeof source === 'string') {
+          loader.load(source, loadSuccess, loadProgress, loadError);
+        } else if (source instanceof ArrayBuffer) {
+          loader.parse(source, '', loadSuccess, loadError);
+        }
+      }
+
+      // Bóc tách số index của tấm từ tên node SketchUp
+      function extractBoardIndexFromName(name, parent) {
+        if (!name && parent) name = parent.name;
+        if (!name) return null;
+
+        // Ưu tiên chuẩn của plugin: ABF_PART_15 hoặc [ABF:15]
+        let m = name.match(/ABF_PART_(\d+)/i) || name.match(/\[ABF:(\d+)\]/i);
+        if (m) return parseInt(m[1], 10);
+
+        // Định dạng tiêu chuẩn ABF: "Hồi trái #15" hoặc "C_1: Tấm vách #3"
+        m = name.match(/#(\d+)\b/);
+        if (m) return parseInt(m[1], 10);
+
+        // Định dạng gán mã: ABF-15
+        m = name.match(/ABF-(\d+)/i);
+        if (m) return parseInt(m[1], 10);
+
+        return null;
+      }
+
+      // 5. CHỌN VÀ HIGHLIGHT TẤM VÁN (TÂM ĐIỂM CỦA TÍNH NĂNG TÌM TẤM)
+      function selectBoard(boardIndex, zoomCamera = true) {
+        selectedBoardIndex = boardIndex;
+        const targetMeshes = boardMeshMap[boardIndex] || [];
+
+        // 1. Cập nhật vật liệu toàn bộ Scene
+        allMeshes.forEach(mesh => {
+          if (mesh.userData.boardIndex === boardIndex) {
+            // Tấm được chọn: Áp dụng màu Đỏ Cam Neon rực rỡ
+            mesh.material = highlightMaterial;
+          } else {
+            // Các tấm khác: Nếu bật Ghost Mode thì làm mờ trong suốt, ngược lại trả về vật liệu gốc
+            mesh.material = isGhostMode ? ghostMaterial : mesh.userData.origMaterial;
+          }
+        });
+
+        // 2. Camera tự động lướt mượt mà phóng to tới tấm đó
+        if (zoomCamera && targetMeshes.length > 0) {
+          zoomToMeshes(targetMeshes);
+        }
+
+        // 3. Hiển thị bảng HUD chi tiết tấm dưới đáy màn hình
+        showHudInfo(boardIndex);
+      }
+
+      function clearSelection() {
+        selectedBoardIndex = null;
+        allMeshes.forEach(mesh => {
+          mesh.material = mesh.userData.origMaterial;
+        });
+        document.getElementById('hudCard').classList.remove('show');
+      }
+
+      // 6. CAMERA SMOOTH ZOOM VÀO TẤM VÁN ĐƯỢC CHỌN
+      function zoomToMeshes(meshes) {
+        const box = new THREE.Box3();
+        meshes.forEach(m => box.expandByObject(m));
+        if (box.isEmpty()) return;
+
+        const center = new THREE.Vector3();
+        box.getCenter(center);
+
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const targetDist = Math.max(maxDim * 2.2, 350);
+
+        // Vị trí camera góc phối cảnh đẹp (Iso View từ trên chếch xuống)
+        const targetPos = new THREE.Vector3(
+          center.x + targetDist * 0.8,
+          center.y + targetDist * 0.9,
+          center.z + targetDist * 1.1
+        );
+
+        // Animation mượt mà bằng lerp
+        animateCamera(targetPos, center);
+      }
+
+      function zoomToFit(root) {
+        const box = new THREE.Box3().setFromObject(root);
+        if (box.isEmpty()) return;
+        const center = new THREE.Vector3();
+        box.getCenter(center);
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const dist = maxDim * 1.6;
+
+        controls.target.copy(center);
+        camera.position.set(center.x + dist, center.y + dist * 0.8, center.z + dist);
+        controls.update();
+      }
+
+      function animateCamera(targetEye, targetLookAt) {
+        const startEye = camera.position.clone();
+        const startTarget = controls.target.clone();
+        const duration = 600; // ms
+        const startTime = performance.now();
+
+        function step(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease Out Cubic
+          const ease = 1 - Math.pow(1 - progress, 3);
+
+          camera.position.lerpVectors(startEye, targetEye, ease);
+          controls.target.lerpVectors(startTarget, targetLookAt, ease);
+          controls.update();
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      // 7. HIỂN THỊ THÔNG TIN TẤM LÊN BẢNG HUD
+      function showHudInfo(idx) {
+        const hud = document.getElementById('hudCard');
+        const info = boardsData[idx] || {};
+
+        document.getElementById('hudBadgeId').textContent = `TẤM #${idx}`;
+        document.getElementById('hudPartName').textContent = info.part_name || `Linh kiện #${idx}`;
+        document.getElementById('hudModuleName').textContent = info.module_name ? `Cụm tủ: ${info.module_name}` : "Mô hình tổng thể";
+
+        const dimStr = (info.length && info.width) 
+          ? `${info.length} × ${info.width} × ${info.thickness || 17} mm`
+          : "Xem trực quan trên 3D";
+        document.getElementById('hudDimensions').textContent = dimStr;
+
+        const sheetStr = info.sheet_type ? `${info.sheet_type} (Sheet ${info.sheet_id || 1})` : "Ván công nghiệp";
+        document.getElementById('hudMaterial').textContent = sheetStr;
+
+        let ebStr = "Không dán";
+        if (info.edge_banding) {
+          const eb = info.edge_banding;
+          const sides = [];
+          if (eb.top) sides.push("Trên");
+          if (eb.bottom) sides.push("Dưới");
+          if (eb.left) sides.push("Trái");
+          if (eb.right) sides.push("Phải");
+          ebStr = sides.length > 0 ? `Dán ${sides.join(', ')}` : "Không dán";
+        }
+        document.getElementById('hudEdgeBanding').textContent = ebStr;
+
+        const drillStr = info.drills_count > 0 ? `${info.drills_count} lỗ liên kết cam` : "Không có liên kết";
+        document.getElementById('hudDrills').textContent = drillStr;
+
+        hud.classList.add('show');
+      }
+
+      // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP
+      function openQrScanner() {
+        const modal = document.getElementById('qrModal');
+        modal.classList.add('active');
+
+        if (!html5QrCode) {
+          html5QrCode = new Html5Qrcode("reader");
+        }
+
+        const config = { fps: 15, qrbox: { width: 220, height: 220 } };
+
+        html5QrCode.start(
+          { facingMode: "environment" },
+          config,
+          (decodedText) => {
+            // Quét thành công QR!
+            handleScannedCode(decodedText);
+            closeQrScanner();
+          },
+          (errorMessage) => {
+            // Đang quét...
+          }
+        ).catch(err => {
+          alert("Không thể mở Camera: " + err);
+          closeQrScanner();
+        });
+      }
+
+      function closeQrScanner() {
+        if (html5QrCode && html5QrCode.isScanning) {
+          html5QrCode.stop().then(() => {
+            document.getElementById('qrModal').classList.remove('active');
+          }).catch(() => {
+            document.getElementById('qrModal').classList.remove('active');
+          });
+        } else {
+          document.getElementById('qrModal').classList.remove('active');
+        }
+      }
+
+      // Xử lý chuỗi mã quét được từ QR
+      function handleScannedCode(text) {
+        if (!text) return;
+
+        // 1. Nếu là URL đầy đủ: trích xuất tham số ?id=...
+        let m = text.match(/[?&]id=(\d+)/i) || text.match(/[?&]part=(\d+)/i) || text.match(/#(\d+)\b/);
+        if (m) {
+          const id = parseInt(m[1], 10);
+          selectBoard(id, true);
+          return;
+        }
+
+        // 2. Nếu là chuỗi text ABF: ABF-15 hoặc ABF_1_15
+        m = text.match(/ABF[_\-](\d+)/i) || text.match(/ABF_\d+_(\d+)/i);
+        if (m) {
+          const id = parseInt(m[1], 10);
+          selectBoard(id, true);
+          return;
+        }
+
+        // 3. Nếu là số thuần: 15
+        const num = parseInt(text.trim(), 10);
+        if (!isNaN(num) && boardMeshMap[num]) {
+          selectBoard(num, true);
+          return;
+        }
+
+        alert("Đã đọc được mã: " + text + " nhưng không khớp chi tiết nào trong mô hình!");
+      }
+
+      // 9. RAYCASTING CHẠM MÀN HÌNH CHỌN TRỰC TIẾP TẤM
+      function setupRaycasting(container) {
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        container.addEventListener('pointerdown', e => {
+          touchStartX = e.clientX;
+          touchStartY = e.clientY;
+        });
+
+        container.addEventListener('pointerup', e => {
+          // Bỏ qua nếu là thao tác xoay (kéo rê chuột/ngón tay)
+          const dist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
+          if (dist > 6) return;
+
+          mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+          mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+
+          raycaster.setFromCamera(mouse, camera);
+          const intersects = raycaster.intersectObjects(allMeshes);
+
+          if (intersects.length > 0) {
+            const hitMesh = intersects[0].object;
+            const bIdx = hitMesh.userData.boardIndex;
+            if (bIdx !== undefined && bIdx !== null) {
+              selectBoard(bIdx, false); // Chọn không đổi camera khi chạm trực tiếp
+            }
+          }
+        });
+      }
+
+      // 10. TÌM KIẾM DANH SÁCH CHI TIẾT
+      function buildSearchList() {
+        const resBox = document.getElementById('searchResults');
+        resBox.innerHTML = '';
+
+        const keys = Object.keys(boardMeshMap).map(k => parseInt(k, 10)).sort((a,b) => a - b);
+        keys.forEach(k => {
+          const info = boardsData[k] || {};
+          const item = document.createElement('div');
+          item.className = 'search-item';
+          item.innerHTML = `
+            <span><strong>#${k}</strong> ${info.part_name || 'Linh kiện'}</span>
+            <span style="color:var(--text-sub); font-size:11px;">${info.length || ''}x${info.width || ''}</span>
+          `;
+          item.onclick = () => {
+            selectBoard(k, true);
+            document.getElementById('searchWrapper').classList.remove('active');
+          };
+          resBox.appendChild(item);
+        });
+      }
+
+      // 11. GẮN SỰ KIỆN NÚT BẤM GIAO DIỆN
+      function setupEventListeners() {
+        document.getElementById('btnStartQrScan').onclick = openQrScanner;
+        document.getElementById('btnCloseQr').onclick = closeQrScanner;
+        document.getElementById('btnHudNextScan').onclick = openQrScanner;
+
+        document.getElementById('btnToggleGhost').onclick = function() {
+          isGhostMode = !isGhostMode;
+          this.classList.toggle('active', isGhostMode);
+          if (selectedBoardIndex !== null) {
+            selectBoard(selectedBoardIndex, false);
+          }
+        };
+
+        document.getElementById('btnResetView').onclick = function() {
+          if (modelRoot) zoomToFit(modelRoot);
+        };
+
+        document.getElementById('btnCloseHud').onclick = clearSelection;
+
+        document.getElementById('btnHudFocus').onclick = function() {
+          if (selectedBoardIndex !== null && boardMeshMap[selectedBoardIndex]) {
+            zoomToMeshes(boardMeshMap[selectedBoardIndex]);
+          }
+        };
+
+        document.getElementById('btnToggleSearch').onclick = function() {
+          const sw = document.getElementById('searchWrapper');
+          sw.classList.toggle('active');
+          if (sw.classList.contains('active')) {
+            document.getElementById('searchInput').focus();
+          }
+        };
+
+        document.getElementById('searchInput').oninput = function(e) {
+          const val = e.target.value.toLowerCase().trim();
+          const items = document.querySelectorAll('.search-item');
+          items.forEach(it => {
+            const txt = it.textContent.toLowerCase();
+            it.style.display = txt.includes(val) ? 'flex' : 'none';
+          });
+        };
+
+        // Chọn file .glb thủ công nếu mở offline
+        document.getElementById('localFileInput').onchange = function(e) {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+              loadGlbModel(evt.target.result);
+            };
+            reader.readAsArrayBuffer(file);
+          }
+        };
+      }
+
+      function setLoading(show, text, sub) {
+        const el = document.getElementById('loadingOverlay');
+        if (show) {
+          el.classList.remove('hidden');
+          if (text) document.getElementById('loadingText').textContent = text;
+          if (sub) document.getElementById('loadingSub').textContent = sub;
+        } else {
+          el.classList.add('hidden');
+        }
+      }
+
+      // 12. RUN APP
+      window.onload = function() {
+        init3D();
+        setupEventListeners();
+        loadBoardsData(targetJsonFile);
+        loadGlbModel(targetModelFile);
+      };
+
+    })();
+  </script>
+</body>
+</html>
