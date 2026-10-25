@@ -594,7 +594,7 @@
   <header class="top-header">
     <div class="brand-pill">
       <span class="brand-tag">LTF 3D</span>
-      <span class="project-name" id="displayProjectName">A39 CẮT 466 L1</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -651,11 +651,11 @@
         <span class="hud-label">Loại ván & Sheet</span>
         <span class="hud-value" id="hudMaterial">--</span>
       </div>
-      <div class="hud-grid-item">
+      <div class="hud-grid-item" id="hudItemEdgeBanding">
         <span class="hud-label">Chỉ dán nẹp</span>
         <span class="hud-value" id="hudEdgeBanding">--</span>
       </div>
-      <div class="hud-grid-item">
+      <div class="hud-grid-item" id="hudItemDrills">
         <span class="hud-label">Liên kết / Khoan</span>
         <span class="hud-value" id="hudDrills">--</span>
       </div>
@@ -729,20 +729,26 @@
       // Vật liệu Highlight (Phát sáng Neon Cam-Đỏ)
       const highlightMaterial = new THREE.MeshStandardMaterial({
         color: 0xff3b00,
-        emissive: 0xff1100,
-        emissiveIntensity: 0.65,
-        roughness: 0.25,
-        metalness: 0.1
+        emissive: 0xff2200,
+        emissiveIntensity: 0.5,
+        roughness: 1.0,
+        metalness: 0.0,
+        polygonOffset: true,
+        polygonOffsetFactor: 1.0,
+        polygonOffsetUnits: 1.0
       });
 
       // Vật liệu Ghost Mode (Bán trong suốt nhìn xuyên kết cấu tủ)
       const ghostMaterial = new THREE.MeshStandardMaterial({
         color: 0x94a3b8,
-        roughness: 0.6,
-        metalness: 0.05,
+        roughness: 1.0,
+        metalness: 0.0,
         transparent: true,
-        opacity: 0.22,
-        depthWrite: false
+        opacity: 0.18,
+        depthWrite: false,
+        polygonOffset: true,
+        polygonOffsetFactor: 1.0,
+        polygonOffsetUnits: 1.0
       });
 
       // Parse URL Params
@@ -853,29 +859,14 @@
         controls.minDistance = 0.02;
         controls.maxDistance = 500;
 
-        // Ánh sáng Studio 360 đa hướng - Khử sạch mặt tối/sẫm màu theo chuẩn xưởng mộc
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+        // Ánh sáng tự nhiên trung thực chuẩn SketchUp: Ánh sáng môi trường dịu nhẹ, trung thực màu gỗ/ván, không bóng lóa giả tạo
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.95);
         scene.add(ambientLight);
 
-        const hemiLight = new THREE.HemisphereLight(0xffffff, 0xe2e8f0, 0.45);
-        hemiLight.position.set(0, 50, 0);
-        scene.add(hemiLight);
-
-        const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.45);
-        dirLight1.position.set(20, 30, 20);
-        scene.add(dirLight1);
-
-        const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.35);
-        dirLight2.position.set(-20, 20, -20);
-        scene.add(dirLight2);
-
-        const dirLight3 = new THREE.DirectionalLight(0xffffff, 0.30);
-        dirLight3.position.set(-20, 15, 20);
-        scene.add(dirLight3);
-
-        const dirLight4 = new THREE.DirectionalLight(0xffffff, 0.25);
-        dirLight4.position.set(0, -20, 0);
-        scene.add(dirLight4);
+        // Đèn định hướng nhẹ tạo chiều sâu khối hộp 3D tự nhiên (không chói gắt)
+        const dirLight = new THREE.DirectionalLight(0xffffff, 0.20);
+        dirLight.position.set(15, 30, 20);
+        scene.add(dirLight);
 
         // Bỏ hoàn toàn GridHelper để không bị đường viền bao la làm nhỏ mô hình
 
@@ -952,24 +943,34 @@
           modelRoot.traverse(child => {
             if (child.isMesh) {
               allMeshes.push(child);
-              // Khử bóng gắt, khử sẫm màu bề mặt và cho phép nhìn cả 2 mặt tấm
+              // Khử hoàn toàn bóng lóa nhựa giả, đưa về chất liệu gỗ/ván mờ tự nhiên chuẩn SketchUp
               if (child.material) {
                 child.material.side = THREE.DoubleSide;
-                if (child.material.roughness !== undefined) child.material.roughness = 0.65;
-                if (child.material.metalness !== undefined) child.material.metalness = 0.02;
+                child.material.roughness = 1.0;
+                child.material.metalness = 0.0;
+                if (child.material.clearcoat !== undefined) child.material.clearcoat = 0;
+                if (child.material.iridescence !== undefined) child.material.iridescence = 0;
+                if (child.material.transmission !== undefined) child.material.transmission = 0;
+                if (child.material.sheen !== undefined) child.material.sheen = 0;
+
+                // Đẩy mặt phẳng lùi nhẹ (Polygon Offset) để đường nét kỹ thuật luôn nổi rõ ở mọi mối nối tiếp giáp
+                child.material.polygonOffset = true;
+                child.material.polygonOffsetFactor = 1.0;
+                child.material.polygonOffsetUnits = 1.0;
               }
               child.userData.origMaterial = child.material;
 
-              // Tạo đường nét viền kỹ thuật (EdgesGeometry) giống góc nhìn SketchUp
+              // Tạo đường nét viền kỹ thuật sắc nét chuẩn góc nhìn SketchUp
               if (child.geometry) {
-                const edgeGeo = new THREE.EdgesGeometry(child.geometry, 20);
+                const edgeGeo = new THREE.EdgesGeometry(child.geometry, 15);
                 const edgeMat = new THREE.LineBasicMaterial({
-                  color: isDarkMode ? 0x64748b : 0x1e293b,
+                  color: isDarkMode ? 0x94a3b8 : 0x000000,
                   linewidth: 1,
-                  transparent: true,
-                  opacity: 0.85
+                  depthTest: true,
+                  depthWrite: true
                 });
                 const edgeLines = new THREE.LineSegments(edgeGeo, edgeMat);
+                edgeLines.renderOrder = 1;
                 child.add(edgeLines);
                 child.userData.edgeLines = edgeLines;
               }
@@ -1084,7 +1085,7 @@
       function selectBoard(boardIndex, zoomCamera = true) {
         selectedBoardIndex = boardIndex;
         const targetMeshes = boardMeshMap[boardIndex] || [];
-        const defaultEdgeHex = isDarkMode ? 0x64748b : 0x1e293b;
+        const defaultEdgeHex = isDarkMode ? 0x94a3b8 : 0x000000;
 
         // 1. Cập nhật vật liệu toàn bộ Scene
         allMeshes.forEach(mesh => {
@@ -1103,7 +1104,7 @@
                 mesh.userData.edgeLines.material.opacity = 0.25;
               } else {
                 mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-                mesh.userData.edgeLines.material.opacity = 0.85;
+                mesh.userData.edgeLines.material.opacity = 1.0;
               }
             }
           }
@@ -1120,12 +1121,12 @@
 
       function clearSelection() {
         selectedBoardIndex = null;
-        const defaultEdgeHex = isDarkMode ? 0x64748b : 0x1e293b;
+        const defaultEdgeHex = isDarkMode ? 0x94a3b8 : 0x000000;
         allMeshes.forEach(mesh => {
           mesh.material = mesh.userData.origMaterial;
           if (mesh.userData.edgeLines) {
             mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-            mesh.userData.edgeLines.material.opacity = 0.85;
+            mesh.userData.edgeLines.material.opacity = 1.0;
           }
         });
         document.getElementById('hudCard').classList.remove('show');
@@ -1232,7 +1233,8 @@
         const sheetStr = info.sheet_type ? `${info.sheet_type} (Sheet ${info.sheet_id || 1})` : "Ván công nghiệp";
         document.getElementById('hudMaterial').textContent = sheetStr;
 
-        let ebStr = "Không dán";
+        // Chỉ dán nẹp: Loại bỏ hoàn toàn khi "Không dán" theo đúng yêu cầu
+        let ebStr = "";
         if (info.edge_banding) {
           const eb = info.edge_banding;
           const sides = [];
@@ -1240,12 +1242,31 @@
           if (eb.bottom) sides.push("Dưới");
           if (eb.left) sides.push("Trái");
           if (eb.right) sides.push("Phải");
-          ebStr = sides.length > 0 ? `Dán ${sides.join(', ')}` : "Không dán";
+          if (sides.length > 0) ebStr = `Dán ${sides.join(', ')}`;
         }
-        document.getElementById('hudEdgeBanding').textContent = ebStr;
+        const elEbItem = document.getElementById('hudItemEdgeBanding');
+        const elEbVal = document.getElementById('hudEdgeBanding');
+        if (elEbItem && elEbVal) {
+          if (ebStr && ebStr !== "Không dán") {
+            elEbVal.textContent = ebStr;
+            elEbItem.style.display = "flex";
+          } else {
+            elEbItem.style.display = "none";
+          }
+        }
 
-        const drillStr = info.drills_count > 0 ? `${info.drills_count} lỗ liên kết cam` : "Không có liên kết";
-        document.getElementById('hudDrills').textContent = drillStr;
+        // Liên kết / Khoan: Loại bỏ hoàn toàn khi "Không có liên kết" theo đúng yêu cầu
+        const elDrillItem = document.getElementById('hudItemDrills');
+        const elDrillVal = document.getElementById('hudDrills');
+        if (elDrillItem && elDrillVal) {
+          const dCount = parseInt(info.drills_count, 10);
+          if (!isNaN(dCount) && dCount > 0) {
+            elDrillVal.textContent = `${dCount} lỗ liên kết cam`;
+            elDrillItem.style.display = "flex";
+          } else {
+            elDrillItem.style.display = "none";
+          }
+        }
 
         hud.classList.add('show');
       }
@@ -1347,8 +1368,18 @@
             const hitMesh = intersects[0].object;
             const bIdx = hitMesh.userData.boardIndex;
             if (bIdx !== undefined && bIdx !== null) {
-              selectBoard(bIdx, false); // Chọn không đổi camera khi chạm trực tiếp
+              // Nếu đang chọn đúng tấm đó thì chạm lại để bỏ chọn, ngược lại chuyển sang chọn tấm mới
+              if (selectedBoardIndex === bIdx) {
+                clearSelection();
+              } else {
+                selectBoard(bIdx, false);
+              }
+            } else {
+              clearSelection();
             }
+          } else {
+            // Chạm ra vùng trống / không gian ngoài -> Bỏ chọn ngay lập tức
+            clearSelection();
           }
         });
       }
@@ -1443,7 +1474,7 @@
             const newBg = isDarkMode ? 0x0f172a : 0xf8fafc;
             if (scene) scene.background.setHex(newBg);
 
-            const defaultEdgeHex = isDarkMode ? 0x64748b : 0x1e293b;
+            const defaultEdgeHex = isDarkMode ? 0x94a3b8 : 0x000000;
             allMeshes.forEach(mesh => {
               if (mesh.userData.edgeLines && mesh.userData.boardIndex !== selectedBoardIndex) {
                 if (!isGhostMode || selectedBoardIndex === null) {
