@@ -567,23 +567,106 @@
       justify-content: center;
     }
 
-    /* THƯƠNG HIỆU CHẠY DỌC CẠNH ĐỨNG GÓC NHÌN 3D */
+    /* THƯƠNG HIỆU CHẠY DỌC CẠNH ĐỨNG GÓC NHÌN 3D - CĂN CHÍNH GIỮA TUYỆT ĐỐI */
     .brand-watermark-vertical {
       position: absolute;
       left: 14px;
-      top: 50%;
-      transform: translateY(-50%) rotate(-90deg);
-      transform-origin: left center;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       pointer-events: none;
       z-index: 80;
+    }
+    .brand-watermark-vertical span {
+      transform: rotate(-90deg);
       white-space: nowrap;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-sub);
-      opacity: 0.38;
+      opacity: 0.42;
       user-select: none;
+    }
+
+    /* KÍNH LÚP SOI BẮT ĐIỂM CHÍNH XÁC KHI ĐO (MAGNIFIER LOUPE) */
+    .measure-loupe {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #00e5ff;
+      box-shadow: 0 8px 30px rgba(0, 229, 255, 0.45), 0 4px 16px rgba(0,0,0,0.6);
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 120;
+      background: #0f172a;
+      transform: translate(-50%, -100%);
+      margin-top: -30px;
+      display: none;
+      animation: loupePop 0.15s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    @keyframes loupePop {
+      0% { transform: translate(-50%, -100%) scale(0.6); opacity: 0; }
+      100% { transform: translate(-50%, -100%) scale(1); opacity: 1; }
+    }
+    #loupeCanvas {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: block;
+    }
+    .loupe-crosshair {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .loupe-crosshair::before,
+    .loupe-crosshair::after {
+      content: "";
+      position: absolute;
+      background: #ef4444;
+      box-shadow: 0 0 5px #ef4444;
+    }
+    .loupe-crosshair::before {
+      top: 0;
+      bottom: 0;
+      left: 9px;
+      width: 2px;
+    }
+    .loupe-crosshair::after {
+      left: 0;
+      right: 0;
+      top: 9px;
+      height: 2px;
+    }
+    .loupe-badge {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid #00e5ff;
+      color: #00e5ff;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 8px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .loupe-badge.snapped {
+      background: rgba(16, 185, 129, 0.92);
+      border-color: #10b981;
+      color: #ffffff;
     }
 
     .hud-btn-outline {
@@ -724,11 +807,18 @@
     </div>
   </div>
 
+  <!-- KÍNH LÚP SOI BẮT ĐIỂM CHÍNH XÁC KHI ĐO 3D (SKETCHUP VIEWER STYLE) -->
+  <div id="measureLoupe" class="measure-loupe">
+    <canvas id="loupeCanvas" width="130" height="130"></canvas>
+    <div class="loupe-crosshair"></div>
+    <div class="loupe-badge" id="loupeBadge">🎯 BẮT ĐIỂM</div>
+  </div>
+
   <!-- TOP HEADER -->
   <header class="top-header">
     <div class="brand-pill">
       <span class="brand-tag">LTF 3D</span>
-      <span class="project-name" id="displayProjectName">CẮT 612</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -917,13 +1007,21 @@
       let isPointMeasureMode = false;
       let measureGroup = null;
       let pointMeasureGroup = null;
+      let liveMeasureLine = null;
       let measurePointA = null;
       let measureBoxHelper = null;
       let hiddenBoardIndices = new Set();
+      let activePointerDown = false;
+      let currentSnapResult = null;
+      let lastVibrated = false;
 
-      // Parse URL Params
+      // Parse URL Params & Hash (Hỗ trợ cả link ?p=...&i=... lẫn dạng rút gọn ?p=...#12)
       const urlParams = new URLSearchParams(window.location.search);
-      const targetParamId = urlParams.get('i') || urlParams.get('id') || urlParams.get('board') || urlParams.get('part');
+      let targetParamId = urlParams.get('i') || urlParams.get('id') || urlParams.get('board') || urlParams.get('part');
+      if (!targetParamId && window.location.hash) {
+        const hashVal = window.location.hash.replace(/^#/, '').trim();
+        if (hashVal) targetParamId = hashVal;
+      }
       let targetProjectSlug = urlParams.get('p') || urlParams.get('name') || '';
       let targetModelFile = urlParams.get('m') || urlParams.get('model');
       let targetJsonFile = null;
@@ -1015,7 +1113,7 @@
         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
         camera.position.set(2, 2, 2.5);
 
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance", preserveDrawingBuffer: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.outputEncoding = THREE.sRGBEncoding;
@@ -1425,7 +1523,168 @@
         }
       }
 
-      // Xử lý đo 2 điểm tự do trên bề mặt mô hình 3D
+      // ================= CÔNG CỤ BẮT ĐIỂM CHÍNH XÁC & KÍNH LÚP SOI KHI ĐO 3D =================
+      let snapMarkerMesh = null;
+      function getSnapMarker() {
+        if (!snapMarkerMesh && scene) {
+          const g = new THREE.SphereGeometry(0.009, 16, 16);
+          const m = new THREE.MeshBasicMaterial({ color: 0x00e5ff, depthTest: false });
+          snapMarkerMesh = new THREE.Mesh(g, m);
+          snapMarkerMesh.visible = false;
+          snapMarkerMesh.renderOrder = 1000;
+          scene.add(snapMarkerMesh);
+        }
+        return snapMarkerMesh;
+      }
+
+      function findSnapPoint(clientX, clientY) {
+        if (!allMeshes || allMeshes.length === 0 || !camera) return null;
+        const mouse = new THREE.Vector2();
+        mouse.x = (clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(clientY / window.innerHeight) * 2 + 1;
+
+        const raycaster = new THREE.Raycaster();
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(allMeshes);
+        if (intersects.length === 0) return null;
+
+        const hit = intersects[0];
+        const hitMesh = hit.object;
+        let bestPoint = hit.point.clone();
+        let isSnapped = false;
+        let minScreenDist = 36; // Bán kính hít góc 36px màn hình
+
+        // 1. Tính 8 góc thực tế của tấm ván trong không gian 3D
+        if (hitMesh.geometry) {
+          if (!hitMesh.geometry.boundingBox) hitMesh.geometry.computeBoundingBox();
+          const bb = hitMesh.geometry.boundingBox;
+          if (bb) {
+            const corners = [
+              new THREE.Vector3(bb.min.x, bb.min.y, bb.min.z),
+              new THREE.Vector3(bb.min.x, bb.min.y, bb.max.z),
+              new THREE.Vector3(bb.min.x, bb.max.y, bb.min.z),
+              new THREE.Vector3(bb.min.x, bb.max.y, bb.max.z),
+              new THREE.Vector3(bb.max.x, bb.min.y, bb.min.z),
+              new THREE.Vector3(bb.max.x, bb.min.y, bb.max.z),
+              new THREE.Vector3(bb.max.x, bb.max.y, bb.min.z),
+              new THREE.Vector3(bb.max.x, bb.max.y, bb.max.z),
+            ];
+
+            const projV = new THREE.Vector3();
+            corners.forEach(c => {
+              const wPos = c.clone().applyMatrix4(hitMesh.matrixWorld);
+              projV.copy(wPos).project(camera);
+              if (projV.z < 1) { // Nằm phía trước camera
+                const sx = (projV.x * 0.5 + 0.5) * window.innerWidth;
+                const sy = (-projV.y * 0.5 + 0.5) * window.innerHeight;
+                const d = Math.hypot(sx - clientX, sy - clientY);
+                if (d < minScreenDist) {
+                  minScreenDist = d;
+                  bestPoint.copy(wPos);
+                  isSnapped = true;
+                }
+              }
+            });
+          }
+        }
+
+        return { point: bestPoint, isSnapped, hitMesh };
+      }
+
+      function updateLoupe(clientX, clientY, snapRes) {
+        const loupe = document.getElementById('measureLoupe');
+        const loupeCanvas = document.getElementById('loupeCanvas');
+        const badge = document.getElementById('loupeBadge');
+        if (!loupe || !loupeCanvas || !badge) return;
+
+        let lx = clientX;
+        let ly = clientY - 85;
+        if (ly < 80) ly = clientY + 85; // Tự lật xuống dưới nếu ngón tay ở sát mép trên
+        loupe.style.left = `${lx}px`;
+        loupe.style.top = `${ly}px`;
+        loupe.style.display = 'block';
+
+        const marker = getSnapMarker();
+        if (snapRes && snapRes.isSnapped) {
+          badge.textContent = '🎯 HÍT GÓC VÁN';
+          badge.className = 'loupe-badge snapped';
+          if (!lastVibrated) {
+            if (navigator.vibrate) navigator.vibrate(25);
+            lastVibrated = true;
+          }
+          if (marker) {
+            marker.position.copy(snapRes.point);
+            marker.visible = true;
+          }
+        } else {
+          badge.textContent = '📍 MẶT VÁN';
+          badge.className = 'loupe-badge';
+          lastVibrated = false;
+          if (marker) marker.visible = false;
+        }
+
+        // Copy vùng ảnh phóng to 3.2x vào kính lúp
+        const ctx = loupeCanvas.getContext('2d');
+        if (ctx && renderer && renderer.domElement) {
+          const dpr = window.devicePixelRatio || 1;
+          const cropSize = 42 * dpr;
+          const sx = Math.max(0, (clientX * dpr) - cropSize / 2);
+          const sy = Math.max(0, (clientY * dpr) - cropSize / 2);
+          ctx.clearRect(0, 0, 130, 130);
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+          try {
+            ctx.drawImage(renderer.domElement, sx, sy, cropSize, cropSize, 0, 0, 130, 130);
+          } catch (e) {}
+        }
+      }
+
+      function hideLoupe() {
+        const loupe = document.getElementById('measureLoupe');
+        if (loupe) loupe.style.display = 'none';
+        const marker = getSnapMarker();
+        if (marker) marker.visible = false;
+        lastVibrated = false;
+      }
+
+      function updateLiveMeasureLine(targetPoint) {
+        if (!measurePointA || !pointMeasureGroup) return;
+        if (!liveMeasureLine) {
+          const g = new THREE.BufferGeometry().setFromPoints([measurePointA, targetPoint]);
+          const m = new THREE.LineBasicMaterial({ color: 0x00e5ff, linewidth: 2, depthTest: false });
+          liveMeasureLine = new THREE.Line(g, m);
+          liveMeasureLine.renderOrder = 998;
+          pointMeasureGroup.add(liveMeasureLine);
+        } else {
+          liveMeasureLine.geometry.setFromPoints([measurePointA, targetPoint]);
+        }
+
+        const distMm = Math.round(measurePointA.distanceTo(targetPoint) * 1000);
+        const deltaX = Math.abs(targetPoint.x - measurePointA.x);
+        const deltaY = Math.abs(targetPoint.y - measurePointA.y);
+        const deltaZ = Math.abs(targetPoint.z - measurePointA.z);
+
+        let axisHint = '';
+        if (deltaY < 0.015 && deltaZ < 0.015 && deltaX > 0.02) {
+          axisHint = ' (Trục Đỏ - Ngang X)';
+          liveMeasureLine.material.color.setHex(0xef4444);
+        } else if (deltaX < 0.015 && deltaZ < 0.015 && deltaY > 0.02) {
+          axisHint = ' (Trục Xanh Lá - Cao Y)';
+          liveMeasureLine.material.color.setHex(0x10b981);
+        } else if (deltaX < 0.015 && deltaY < 0.015 && deltaZ > 0.02) {
+          axisHint = ' (Trục Xanh Dương - Sâu Z)';
+          liveMeasureLine.material.color.setHex(0x38bdf8);
+        } else {
+          liveMeasureLine.material.color.setHex(0x00e5ff);
+        }
+
+        const hudText = document.getElementById('measureHudText');
+        if (hudText) {
+          hudText.innerHTML = `📏 Đang kéo thước: <strong>${distMm} mm</strong>${axisHint} | Thả tay để cố định điểm!`;
+        }
+      }
+
+      // Xử lý đo 2 điểm tự do trên bề mặt mô hình 3D (kèm Kính lúp soi bắt điểm góc chính xác)
       function handlePointMeasureClick(point) {
         if (!measurePointA) {
           clearPointMeasure();
@@ -1435,7 +1694,7 @@
 
           // Điểm 1: Chấm tròn Neon Cyan
           const pGeo = new THREE.SphereGeometry(0.012, 16, 16);
-          const pMat = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
+          const pMat = new THREE.MeshBasicMaterial({ color: 0x00e5ff, depthTest: false });
           const pMesh = new THREE.Mesh(pGeo, pMat);
           pMesh.position.copy(measurePointA);
           pMesh.renderOrder = 999;
@@ -1449,19 +1708,23 @@
           scene.add(pointMeasureGroup);
 
           const hudText = document.getElementById('measureHudText');
-          if (hudText) hudText.innerHTML = `📍 Đã chọn Điểm 1. Chạm vào <strong>Điểm thứ 2</strong> trên mô hình để kéo thước!`;
+          if (hudText) hudText.innerHTML = `📍 Đã chọn Điểm 1. Chạm/kéo đến <strong>Điểm thứ 2</strong> (kính lúp sẽ tự động hít góc ván)!`;
         } else {
           const measurePointB = point.clone();
 
           // Điểm 2: Chấm tròn Neon Xanh Lá
           const pGeo = new THREE.SphereGeometry(0.012, 16, 16);
-          const pMat = new THREE.MeshBasicMaterial({ color: 0x10b981 });
+          const pMat = new THREE.MeshBasicMaterial({ color: 0x10b981, depthTest: false });
           const pMesh = new THREE.Mesh(pGeo, pMat);
           pMesh.position.copy(measurePointB);
           pMesh.renderOrder = 999;
           pointMeasureGroup.add(pMesh);
 
           // Đường thước đo nối 2 điểm
+          if (liveMeasureLine) {
+            pointMeasureGroup.remove(liveMeasureLine);
+            liveMeasureLine = null;
+          }
           const lineGeo = new THREE.BufferGeometry().setFromPoints([measurePointA, measurePointB]);
           const lineMat = new THREE.LineBasicMaterial({ color: 0x00e5ff, linewidth: 2, depthTest: false });
           const line = new THREE.Line(lineGeo, lineMat);
@@ -1478,7 +1741,7 @@
           pointMeasureGroup.add(sDist);
 
           const hudText = document.getElementById('measureHudText');
-          if (hudText) hudText.innerHTML = `✅ <strong>Khoảng cách:</strong> ${distMm} mm (${(distMm / 10).toFixed(1)} cm) | Chạm điểm mới để đo tiếp!`;
+          if (hudText) hudText.innerHTML = `✅ <strong>Khoảng cách:</strong> ${distMm} mm (${(distMm / 10).toFixed(1)} cm) | Chạm điểm mới để đo đoạn khác!`;
 
           measurePointA = null; // Sẵn sàng cho lần đo tiếp
         }
@@ -1736,7 +1999,7 @@
         alert("Đã đọc được mã: " + text + " nhưng không khớp chi tiết nào trong mô hình!");
       }
 
-      // 9. RAYCASTING CHẠM MÀN HÌNH CHỌN TRỰC TIẾP TẤM
+      // 9. RAYCASTING CHẠM MÀN HÌNH CHỌN TRỰC TIẾP TẤM (KÈM KÍNH LÚP & HÍT GÓC KHI ĐO 3D)
       function setupRaycasting(container) {
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
@@ -1746,11 +2009,46 @@
         container.addEventListener('pointerdown', e => {
           touchStartX = e.clientX;
           touchStartY = e.clientY;
+          activePointerDown = true;
+
+          if (isPointMeasureMode) {
+            const snapRes = findSnapPoint(e.clientX, e.clientY);
+            if (snapRes) {
+              currentSnapResult = snapRes;
+              updateLoupe(e.clientX, e.clientY, snapRes);
+              if (measurePointA) updateLiveMeasureLine(snapRes.point);
+            }
+          }
+        });
+
+        container.addEventListener('pointermove', e => {
+          if (!activePointerDown) return;
+          if (isPointMeasureMode) {
+            const snapRes = findSnapPoint(e.clientX, e.clientY);
+            if (snapRes) {
+              currentSnapResult = snapRes;
+              updateLoupe(e.clientX, e.clientY, snapRes);
+              if (measurePointA) updateLiveMeasureLine(snapRes.point);
+            } else {
+              hideLoupe();
+            }
+          }
         });
 
         container.addEventListener('pointerup', e => {
-          // Bỏ qua nếu là thao tác xoay (kéo rê chuột/ngón tay)
+          activePointerDown = false;
+          hideLoupe();
           const dist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
+
+          if (isPointMeasureMode) {
+            if (currentSnapResult) {
+              handlePointMeasureClick(currentSnapResult.point);
+              currentSnapResult = null;
+            }
+            return;
+          }
+
+          // Bỏ qua nếu là thao tác xoay (kéo rê chuột/ngón tay)
           if (dist > 6) return;
 
           mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -1758,11 +2056,6 @@
 
           raycaster.setFromCamera(mouse, camera);
           const intersects = raycaster.intersectObjects(allMeshes);
-
-          if (isPointMeasureMode && intersects.length > 0) {
-            handlePointMeasureClick(intersects[0].point);
-            return;
-          }
 
           if (intersects.length > 0) {
             const hitMesh = intersects[0].object;
@@ -1781,6 +2074,11 @@
             // Chạm ra vùng trống / không gian ngoài -> Bỏ chọn ngay lập tức
             clearSelection();
           }
+        });
+
+        container.addEventListener('pointercancel', () => {
+          activePointerDown = false;
+          hideLoupe();
         });
       }
 
