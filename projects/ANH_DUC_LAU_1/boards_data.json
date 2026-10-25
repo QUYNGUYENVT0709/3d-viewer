@@ -1,9 +1,9 @@
 [
   {
-    "board_index": 277,
+    "board_index": 283,
     "part_name": "Tầng <Chập đôi, chỉ 43>",
     "module_name": "Tủ Tiêu Chuẩn",
-    "length": 2399.0,
+    "length": 949.0,
     "width": 249.0,
     "thickness": 17.5,
     "sheet_id": 1,
@@ -34,6 +34,90 @@
         "type": "Rộng 2"
       },
       "total_edges": 3,
+      "summary": "D1: 1mm | D2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 284,
+    "part_name": "Tầng <Chập đôi, chỉ 43>",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 949.0,
+    "width": 249.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 1mm | D2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 285,
+    "part_name": "Bàn phấn - Tấm cong",
+    "module_name": "Bàn phấn",
+    "length": 573.7,
+    "width": 85.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
       "summary": "D1: 1mm | D2: 1mm"
     },
     "drills_count": 0,
@@ -126,6 +210,48 @@
     "layer": "_XƯƠNG"
   },
   {
+    "board_index": 295,
+    "part_name": "Bàn phấn - Đáy",
+    "module_name": "Bàn phấn",
+    "length": 1110.0,
+    "width": 479.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 1mm | D2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
     "board_index": 296,
     "part_name": "Bàn phấn - Xương dưỡng",
     "module_name": "Bàn phấn",
@@ -210,11 +336,11 @@
     "layer": "_XƯƠNG"
   },
   {
-    "board_index": 328,
-    "part_name": "Kệ tivi - Nóc",
-    "module_name": "Kệ tivi",
-    "length": 2398.0,
-    "width": 298.0,
+    "board_index": 300,
+    "part_name": "Bàn phấn - Nóc",
+    "module_name": "Bàn phấn",
+    "length": 1348.0,
+    "width": 498.0,
     "thickness": 17.5,
     "sheet_id": 1,
     "sheet_type": "MF C - MS 503 MM",
@@ -243,7 +369,7 @@
         "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
         "type": "Rộng 2"
       },
-      "total_edges": 6,
+      "total_edges": 10,
       "summary": "Dán 4 cạnh (1mm)"
     },
     "drills_count": 0,
@@ -252,11 +378,53 @@
     "layer": "Layer0"
   },
   {
-    "board_index": 329,
-    "part_name": "Kệ tivi - Hậu",
-    "module_name": "Kệ tivi",
-    "length": 2160.0,
-    "width": 431.5,
+    "board_index": 307,
+    "part_name": "Bàn phấn - Cánh lật (Vát dài)",
+    "module_name": "Bàn phấn",
+    "length": 551.0,
+    "width": 431.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (1mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 308,
+    "part_name": "Bàn phấn - HK-T trước",
+    "module_name": "Bàn phấn",
+    "length": 481.0,
+    "width": 39.0,
     "thickness": 17.5,
     "sheet_id": 1,
     "sheet_type": "MF C - MS 503 MM",
@@ -291,11 +459,137 @@
     "drills_count": 0,
     "code_n1": "",
     "code_n2": "",
-    "layer": "_HẬU"
+    "layer": "_HỘC_KÉO"
   },
   {
-    "board_index": 351,
-    "part_name": "Kệ tivi - HK-T trái",
+    "board_index": 309,
+    "part_name": "Bàn phấn - HK-Đáy",
+    "module_name": "Bàn phấn",
+    "length": 481.0,
+    "width": 400.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 310,
+    "part_name": "Bàn phấn - Tấm cong",
+    "module_name": "Bàn phấn",
+    "length": 573.7,
+    "width": 85.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 1mm | D2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 316,
+    "part_name": "Kệ tivi - Xương dưỡng",
+    "module_name": "Kệ tivi",
+    "length": 432.5,
+    "width": 50.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_XƯƠNG"
+  },
+  {
+    "board_index": 322,
+    "part_name": "Kệ tivi - HK-T phải",
     "module_name": "Kệ tivi",
     "length": 250.0,
     "width": 142.8,
@@ -336,11 +630,11 @@
     "layer": "_HỘC_KÉO"
   },
   {
-    "board_index": 355,
-    "part_name": "Kệ tivi - HK-T trái",
+    "board_index": 325,
+    "part_name": "Kệ tivi - HK-Đáy",
     "module_name": "Kệ tivi",
-    "length": 250.0,
-    "width": 142.8,
+    "length": 657.7,
+    "width": 250.0,
     "thickness": 17.5,
     "sheet_id": 1,
     "sheet_type": "MF C - MS 503 MM",
@@ -358,9 +652,93 @@
         "type": "Dài 2"
       },
       "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 332,
+    "part_name": "Kệ tivi - Tấm cong hạ nền",
+    "module_name": "Kệ tivi",
+    "length": 432.5,
+    "width": 373.7,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
         "banded": true,
         "text": "1",
         "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 1mm | D2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 348,
+    "part_name": "Kệ tivi - HK-Vách",
+    "module_name": "Kệ tivi",
+    "length": 383.0,
+    "width": 258.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
         "type": "Rộng 1"
       },
       "r2": {
@@ -370,12 +748,12 @@
         "type": "Rộng 2"
       },
       "total_edges": 1,
-      "summary": "R1: 1mm"
+      "summary": "D1: 1mm"
     },
     "drills_count": 0,
     "code_n1": "",
     "code_n2": "",
-    "layer": "_HỘC_KÉO"
+    "layer": "Layer0"
   },
   {
     "board_index": 357,
@@ -420,48 +798,6 @@
     "layer": "_HỘC_KÉO"
   },
   {
-    "board_index": 366,
-    "part_name": "Kệ tivi - Mặt cánh",
-    "module_name": "Kệ tivi",
-    "length": 706.3,
-    "width": 189.5,
-    "thickness": 17.5,
-    "sheet_id": 1,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_CÁNH"
-  },
-  {
     "board_index": 368,
     "part_name": "Kệ tivi - Mặt cánh",
     "module_name": "Kệ tivi",
@@ -504,13 +840,97 @@
     "layer": "_CÁNH"
   },
   {
-    "board_index": 369,
-    "part_name": "Kệ tivi - Mặt cánh",
-    "module_name": "Kệ tivi",
-    "length": 706.3,
-    "width": 189.5,
+    "board_index": 286,
+    "part_name": "Bàn phấn - Hông trái",
+    "module_name": "Bàn phấn",
+    "length": 444.5,
+    "width": 75.5,
     "thickness": 17.5,
-    "sheet_id": 1,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 1mm | R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 287,
+    "part_name": "Bàn phấn - Vách",
+    "module_name": "Bàn phấn",
+    "length": 444.5,
+    "width": 75.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 1mm | R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 288,
+    "part_name": "Bàn phấn - Hậu",
+    "module_name": "Bàn phấn",
+    "length": 1110.0,
+    "width": 67.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
@@ -543,28 +963,532 @@
     "drills_count": 0,
     "code_n1": "",
     "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 289,
+    "part_name": "Bàn phấn - Hậu",
+    "module_name": "Bàn phấn",
+    "length": 520.0,
+    "width": 75.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 290,
+    "part_name": "Bàn phấn - Dưỡng",
+    "module_name": "Bàn phấn",
+    "length": 481.5,
+    "width": 101.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_XƯƠNG"
+  },
+  {
+    "board_index": 291,
+    "part_name": "Bàn phấn - Dưỡng",
+    "module_name": "Bàn phấn",
+    "length": 481.5,
+    "width": 101.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_XƯƠNG"
+  },
+  {
+    "board_index": 293,
+    "part_name": "Bàn phấn - Hông phải",
+    "module_name": "Bàn phấn",
+    "length": 444.5,
+    "width": 85.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "D1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 298,
+    "part_name": "Bàn phấn - Dưỡng",
+    "module_name": "Bàn phấn",
+    "length": 481.5,
+    "width": 101.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_XƯƠNG"
+  },
+  {
+    "board_index": 299,
+    "part_name": "Bàn phấn - Dưỡng",
+    "module_name": "Bàn phấn",
+    "length": 481.5,
+    "width": 101.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_XƯƠNG"
+  },
+  {
+    "board_index": 301,
+    "part_name": "Bàn phấn - Vách",
+    "module_name": "Bàn phấn",
+    "length": 444.5,
+    "width": 67.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "D1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 302,
+    "part_name": "Bàn phấn - Mặt trước",
+    "module_name": "Bàn phấn",
+    "length": 553.0,
+    "width": 83.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (1mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 303,
+    "part_name": "Bàn phấn - HK-T sau",
+    "module_name": "Bàn phấn",
+    "length": 481.0,
+    "width": 39.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 304,
+    "part_name": "Bàn phấn - HK-T phải",
+    "module_name": "Bàn phấn",
+    "length": 400.0,
+    "width": 56.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 305,
+    "part_name": "Bàn phấn - Mặt cánh (Vát 45)",
+    "module_name": "Bàn phấn",
+    "length": 551.0,
+    "width": 82.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (1mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
     "layer": "_CÁNH"
   },
   {
-    "board_index": 275,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 2399.0,
-    "width": 249.0,
+    "board_index": 306,
+    "part_name": "Bàn phấn - HK-T trái",
+    "module_name": "Bàn phấn",
+    "length": 400.0,
+    "width": 56.5,
     "thickness": 17.5,
     "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
+        "banded": false,
+        "text": "0",
+        "label": "",
         "type": "Dài 1"
       },
       "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
         "banded": true,
         "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 311,
+    "part_name": "Kệ tivi - Dưỡng",
+    "module_name": "Kệ tivi",
+    "length": 281.5,
+    "width": 101.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
         "type": "Dài 2"
       },
       "r1": {
@@ -579,34 +1503,34 @@
         "label": "",
         "type": "Rộng 2"
       },
-      "total_edges": 3,
-      "summary": "D1: 1mm | D2: 1mm"
+      "total_edges": 0,
+      "summary": ""
     },
     "drills_count": 0,
     "code_n1": "",
     "code_n2": "",
-    "layer": "Layer0"
+    "layer": "_XƯƠNG"
   },
   {
-    "board_index": 279,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 2399.0,
-    "width": 249.0,
+    "board_index": 313,
+    "part_name": "Kệ tivi - Xương dưỡng",
+    "module_name": "Kệ tivi",
+    "length": 432.5,
+    "width": 50.0,
     "thickness": 17.5,
     "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
+        "banded": false,
+        "text": "0",
+        "label": "",
         "type": "Dài 1"
       },
       "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
+        "banded": false,
+        "text": "0",
+        "label": "",
         "type": "Dài 2"
       },
       "r1": {
@@ -621,34 +1545,34 @@
         "label": "",
         "type": "Rộng 2"
       },
-      "total_edges": 3,
-      "summary": "D1: 1mm | D2: 1mm"
+      "total_edges": 0,
+      "summary": ""
     },
     "drills_count": 0,
     "code_n1": "",
     "code_n2": "",
-    "layer": "Layer0"
+    "layer": "_XƯƠNG"
   },
   {
-    "board_index": 281,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 2399.0,
-    "width": 249.0,
+    "board_index": 317,
+    "part_name": "Kệ tivi - Dưỡng",
+    "module_name": "Kệ tivi",
+    "length": 281.5,
+    "width": 101.5,
     "thickness": 17.5,
     "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
+        "banded": false,
+        "text": "0",
+        "label": "",
         "type": "Dài 1"
       },
       "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
+        "banded": false,
+        "text": "0",
+        "label": "",
         "type": "Dài 2"
       },
       "r1": {
@@ -663,146 +1587,146 @@
         "label": "",
         "type": "Rộng 2"
       },
-      "total_edges": 3,
-      "summary": "D1: 1mm | D2: 1mm"
+      "total_edges": 0,
+      "summary": ""
     },
     "drills_count": 0,
     "code_n1": "",
     "code_n2": "",
-    "layer": "Layer0"
+    "layer": "_XƯƠNG"
   },
   {
-    "board_index": 322,
+    "board_index": 318,
+    "part_name": "Kệ tivi - Dưỡng",
+    "module_name": "Kệ tivi",
+    "length": 281.5,
+    "width": 101.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_XƯƠNG"
+  },
+  {
+    "board_index": 323,
+    "part_name": "Kệ tivi - HK-Đáy",
+    "module_name": "Kệ tivi",
+    "length": 657.7,
+    "width": 250.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 326,
+    "part_name": "Kệ tivi - HK-T trước",
+    "module_name": "Kệ tivi",
+    "length": 657.7,
+    "width": 105.3,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 333,
     "part_name": "Kệ tivi - HK-T phải",
     "module_name": "Kệ tivi",
     "length": 250.0,
     "width": 142.8,
-    "thickness": 17.5,
-    "sheet_id": 2,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 324,
-    "part_name": "Kệ tivi - Len Chân",
-    "module_name": "Kệ tivi",
-    "length": 2125.0,
-    "width": 49.0,
-    "thickness": 17.5,
-    "sheet_id": 2,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_THÙNG"
-  },
-  {
-    "board_index": 330,
-    "part_name": "Kệ tivi - HK-T sau",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 125.3,
-    "thickness": 17.5,
-    "sheet_id": 2,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 331,
-    "part_name": "Kệ tivi - HK-T sau",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 125.3,
     "thickness": 17.5,
     "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
@@ -924,6 +1848,48 @@
     "layer": "_HỘC_KÉO"
   },
   {
+    "board_index": 341,
+    "part_name": "Kệ tivi - Hông trái",
+    "module_name": "Kệ tivi",
+    "length": 440.5,
+    "width": 280.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MF C - MS 503 MM",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 1mm | R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
     "board_index": 344,
     "part_name": "Kệ tivi - HK-T sau",
     "module_name": "Kệ tivi",
@@ -966,2659 +1932,13 @@
     "layer": "_HỘC_KÉO"
   },
   {
-    "board_index": 353,
-    "part_name": "Kệ tivi - Đáy",
-    "module_name": "Kệ tivi",
-    "length": 2143.0,
-    "width": 258.5,
-    "thickness": 17.5,
-    "sheet_id": 2,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "D1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_THÙNG"
-  },
-  {
-    "board_index": 276,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 1998.0,
-    "width": 249.0,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 5,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 282,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 1998.0,
-    "width": 249.0,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 5,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 295,
-    "part_name": "Bàn phấn - Đáy",
-    "module_name": "Bàn phấn",
-    "length": 1110.0,
-    "width": 479.0,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 303,
-    "part_name": "Bàn phấn - HK-T sau",
-    "module_name": "Bàn phấn",
-    "length": 481.0,
-    "width": 39.0,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 307,
-    "part_name": "Bàn phấn - Cánh lật (Vát dài)",
-    "module_name": "Bàn phấn",
-    "length": 551.0,
-    "width": 431.0,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 4,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_CÁNH"
-  },
-  {
-    "board_index": 309,
-    "part_name": "Bàn phấn - HK-Đáy",
-    "module_name": "Bàn phấn",
-    "length": 481.0,
-    "width": 400.0,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 327,
-    "part_name": "Kệ tivi - HK-Vách",
-    "module_name": "Kệ tivi",
-    "length": 383.0,
-    "width": 258.5,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "D1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 333,
-    "part_name": "Kệ tivi - HK-T phải",
-    "module_name": "Kệ tivi",
-    "length": 250.0,
-    "width": 142.8,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 336,
-    "part_name": "Kệ tivi - HK-T trái",
-    "module_name": "Kệ tivi",
-    "length": 250.0,
-    "width": 142.8,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 346,
-    "part_name": "Kệ tivi - HK-T phải",
-    "module_name": "Kệ tivi",
-    "length": 250.0,
-    "width": 142.8,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 348,
-    "part_name": "Kệ tivi - HK-Vách",
-    "module_name": "Kệ tivi",
-    "length": 383.0,
-    "width": 258.5,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 363,
-    "part_name": "Kệ tivi - Mặt cánh",
-    "module_name": "Kệ tivi",
-    "length": 706.3,
-    "width": 189.5,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_CÁNH"
-  },
-  {
-    "board_index": 365,
-    "part_name": "Kệ tivi - Mặt cánh",
-    "module_name": "Kệ tivi",
-    "length": 706.3,
-    "width": 189.5,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_CÁNH"
-  },
-  {
-    "board_index": 372,
-    "part_name": "Kệ tivi - Mặt cánh",
-    "module_name": "Kệ tivi",
-    "length": 706.3,
-    "width": 189.5,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_CÁNH"
-  },
-  {
-    "board_index": 278,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 949.0,
-    "width": 249.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 3,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 280,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 949.0,
-    "width": 249.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 3,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 283,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 949.0,
-    "width": 249.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 3,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 284,
-    "part_name": "Tầng <Chập đôi, chỉ 43>",
-    "module_name": "Tủ Tiêu Chuẩn",
-    "length": 949.0,
-    "width": 249.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 43mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 3,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 285,
-    "part_name": "Bàn phấn - Tấm cong",
-    "module_name": "Bàn phấn",
-    "length": 573.7,
-    "width": 85.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 298,
-    "part_name": "Bàn phấn - Dưỡng",
-    "module_name": "Bàn phấn",
-    "length": 481.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 299,
-    "part_name": "Bàn phấn - Dưỡng",
-    "module_name": "Bàn phấn",
-    "length": 481.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 300,
-    "part_name": "Bàn phấn - Nóc",
-    "module_name": "Bàn phấn",
-    "length": 1348.0,
-    "width": 498.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 10,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 310,
-    "part_name": "Bàn phấn - Tấm cong",
-    "module_name": "Bàn phấn",
-    "length": 573.7,
-    "width": 85.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 317,
-    "part_name": "Kệ tivi - Dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 281.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 318,
-    "part_name": "Kệ tivi - Dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 281.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 321,
-    "part_name": "Kệ tivi - HK-T phải",
-    "module_name": "Kệ tivi",
-    "length": 250.0,
-    "width": 142.8,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 340,
-    "part_name": "Kệ tivi - HK-Đáy",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 250.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 342,
-    "part_name": "Kệ tivi - HK-Đáy",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 250.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 347,
-    "part_name": "Kệ tivi - HK-T trái",
-    "module_name": "Kệ tivi",
-    "length": 250.0,
-    "width": 142.8,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 350,
-    "part_name": "Kệ tivi - HK-Đáy",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 250.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 354,
-    "part_name": "Kệ tivi - HK-T trái",
-    "module_name": "Kệ tivi",
-    "length": 250.0,
-    "width": 142.8,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 356,
-    "part_name": "Kệ tivi - Tấm cong hạ nền",
-    "module_name": "Kệ tivi",
-    "length": 432.5,
-    "width": 373.7,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 361,
-    "part_name": "Kệ tivi - Shaker",
-    "module_name": "Kệ tivi",
-    "length": 704.3,
-    "width": 187.5,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 12,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_SHAKER"
-  },
-  {
-    "board_index": 370,
-    "part_name": "Kệ tivi - Shaker",
-    "module_name": "Kệ tivi",
-    "length": 704.3,
-    "width": 187.5,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 12,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_SHAKER"
-  },
-  {
-    "board_index": 286,
-    "part_name": "Bàn phấn - Hông trái",
-    "module_name": "Bàn phấn",
-    "length": 444.5,
-    "width": 75.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 287,
-    "part_name": "Bàn phấn - Vách",
-    "module_name": "Bàn phấn",
-    "length": 444.5,
-    "width": 75.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 288,
-    "part_name": "Bàn phấn - Hậu",
-    "module_name": "Bàn phấn",
-    "length": 1110.0,
-    "width": 67.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 289,
-    "part_name": "Bàn phấn - Hậu",
-    "module_name": "Bàn phấn",
-    "length": 520.0,
-    "width": 75.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 290,
-    "part_name": "Bàn phấn - Dưỡng",
-    "module_name": "Bàn phấn",
-    "length": 481.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 291,
-    "part_name": "Bàn phấn - Dưỡng",
-    "module_name": "Bàn phấn",
-    "length": 481.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 293,
-    "part_name": "Bàn phấn - Hông phải",
-    "module_name": "Bàn phấn",
-    "length": 444.5,
-    "width": 85.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "D1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 301,
-    "part_name": "Bàn phấn - Vách",
-    "module_name": "Bàn phấn",
-    "length": 444.5,
-    "width": 67.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "D1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 302,
-    "part_name": "Bàn phấn - Mặt trước",
-    "module_name": "Bàn phấn",
-    "length": 553.0,
-    "width": 83.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 4,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 304,
-    "part_name": "Bàn phấn - HK-T phải",
-    "module_name": "Bàn phấn",
-    "length": 400.0,
-    "width": 56.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 305,
-    "part_name": "Bàn phấn - Mặt cánh (Vát 45)",
-    "module_name": "Bàn phấn",
-    "length": 551.0,
-    "width": 82.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 4,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_CÁNH"
-  },
-  {
-    "board_index": 306,
-    "part_name": "Bàn phấn - HK-T trái",
-    "module_name": "Bàn phấn",
-    "length": 400.0,
-    "width": 56.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 308,
-    "part_name": "Bàn phấn - HK-T trước",
-    "module_name": "Bàn phấn",
-    "length": 481.0,
-    "width": 39.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 311,
-    "part_name": "Kệ tivi - Dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 281.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 312,
-    "part_name": "Kệ tivi - Dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 281.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 313,
-    "part_name": "Kệ tivi - Xương dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 432.5,
-    "width": 50.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 314,
-    "part_name": "Kệ tivi - Dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 281.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 316,
-    "part_name": "Kệ tivi - Xương dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 432.5,
-    "width": 50.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 319,
-    "part_name": "Kệ tivi - Dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 281.5,
-    "width": 101.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 320,
-    "part_name": "Kệ tivi - Xương dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 432.5,
-    "width": 50.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_XƯƠNG"
-  },
-  {
-    "board_index": 323,
-    "part_name": "Kệ tivi - HK-Đáy",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 250.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 325,
-    "part_name": "Kệ tivi - HK-Đáy",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 250.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 326,
-    "part_name": "Kệ tivi - HK-T trước",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 105.3,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 332,
-    "part_name": "Kệ tivi - Tấm cong hạ nền",
-    "module_name": "Kệ tivi",
-    "length": 432.5,
-    "width": 373.7,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | D2: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 334,
-    "part_name": "Kệ tivi - HK-T sau",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 125.3,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 337,
-    "part_name": "Kệ tivi - Hông trái",
-    "module_name": "Kệ tivi",
-    "length": 440.5,
-    "width": 280.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_THÙNG"
-  },
-  {
-    "board_index": 339,
-    "part_name": "Kệ tivi - HK-Đáy",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 250.0,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 341,
-    "part_name": "Kệ tivi - Hông trái",
-    "module_name": "Kệ tivi",
-    "length": 440.5,
-    "width": 280.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 2,
-      "summary": "D1: 1mm | R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_THÙNG"
-  },
-  {
     "board_index": 349,
     "part_name": "Kệ tivi - HK-T trước",
     "module_name": "Kệ tivi",
     "length": 657.7,
     "width": 105.3,
     "thickness": 17.5,
-    "sheet_id": 5,
+    "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
@@ -3654,13 +1974,13 @@
     "layer": "_HỘC_KÉO"
   },
   {
-    "board_index": 352,
-    "part_name": "Kệ tivi - HK-T sau",
+    "board_index": 351,
+    "part_name": "Kệ tivi - HK-T trái",
     "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 125.3,
+    "length": 250.0,
+    "width": 142.8,
     "thickness": 17.5,
-    "sheet_id": 5,
+    "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
@@ -3702,7 +2022,7 @@
     "length": 657.7,
     "width": 125.3,
     "thickness": 17.5,
-    "sheet_id": 5,
+    "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
@@ -3738,55 +2058,13 @@
     "layer": "_HỘC_KÉO"
   },
   {
-    "board_index": 359,
-    "part_name": "Kệ tivi - HK-T trước",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 105.3,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 362,
+    "board_index": 361,
     "part_name": "Kệ tivi - Shaker",
     "module_name": "Kệ tivi",
     "length": 704.3,
     "width": 187.5,
     "thickness": 17.5,
-    "sheet_id": 5,
+    "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
@@ -3822,139 +2100,13 @@
     "layer": "_SHAKER"
   },
   {
-    "board_index": 364,
-    "part_name": "Kệ tivi - Shaker",
+    "board_index": 366,
+    "part_name": "Kệ tivi - Mặt cánh",
     "module_name": "Kệ tivi",
-    "length": 704.3,
-    "width": 187.5,
+    "length": 706.3,
+    "width": 189.5,
     "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 12,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_SHAKER"
-  },
-  {
-    "board_index": 367,
-    "part_name": "Kệ tivi - Shaker",
-    "module_name": "Kệ tivi",
-    "length": 704.3,
-    "width": 187.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 12,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_SHAKER"
-  },
-  {
-    "board_index": 371,
-    "part_name": "Kệ tivi - Shaker",
-    "module_name": "Kệ tivi",
-    "length": 704.3,
-    "width": 187.5,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 2"
-      },
-      "total_edges": 12,
-      "summary": "Dán 4 cạnh (1mm)"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_SHAKER"
-  },
-  {
-    "board_index": 315,
-    "part_name": "Kệ tivi - Xương dưỡng",
-    "module_name": "Kệ tivi",
-    "length": 432.5,
-    "width": 50.0,
-    "thickness": 17.5,
-    "sheet_id": 6,
+    "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
@@ -3987,28 +2139,28 @@
     "drills_count": 0,
     "code_n1": "",
     "code_n2": "",
-    "layer": "_XƯƠNG"
+    "layer": "_CÁNH"
   },
   {
-    "board_index": 343,
-    "part_name": "Kệ tivi - HK-T trước",
+    "board_index": 370,
+    "part_name": "Kệ tivi - Shaker",
     "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 105.3,
+    "length": 704.3,
+    "width": 187.5,
     "thickness": 17.5,
-    "sheet_id": 6,
+    "sheet_id": 2,
     "sheet_type": "MF C - MS 503 MM",
     "edge_banding": {
       "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
         "type": "Dài 1"
       },
       "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
         "type": "Dài 2"
       },
       "r1": {
@@ -4018,101 +2170,17 @@
         "type": "Rộng 1"
       },
       "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 345,
-    "part_name": "Kệ tivi - HK-T trước",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 105.3,
-    "thickness": 17.5,
-    "sheet_id": 6,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
         "banded": true,
         "text": "1",
         "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
         "type": "Rộng 2"
       },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
+      "total_edges": 12,
+      "summary": "Dán 4 cạnh (1mm)"
     },
     "drills_count": 0,
     "code_n1": "",
     "code_n2": "",
-    "layer": "_HỘC_KÉO"
-  },
-  {
-    "board_index": 360,
-    "part_name": "Kệ tivi - HK-T trước",
-    "module_name": "Kệ tivi",
-    "length": 657.7,
-    "width": 105.3,
-    "thickness": 17.5,
-    "sheet_id": 6,
-    "sheet_type": "MF C - MS 503 MM",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": true,
-        "text": "1",
-        "label": "Chỉ 21mm | MF C - MS 503 MM - 1mm",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 1,
-      "summary": "R1: 1mm"
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "_HỘC_KÉO"
+    "layer": "_SHAKER"
   }
 ]
