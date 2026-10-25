@@ -1209,7 +1209,7 @@
   <header class="top-header">
     <div class="brand-pill" title="Tên công trình">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color); flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <span class="project-name" id="displayProjectName">load</span>
+      <span class="project-name" id="displayProjectName">ANH ĐỨC LẦU 1</span>
     </div>
 
     <div class="top-tools">
@@ -1502,6 +1502,16 @@
       let hiddenLayers = new Set();
       let isToolbarCollapsed = false;
 
+      // Biến trạng thái các công cụ chuyên sâu SketchUp
+      let isSectionActive = false;
+      let sectionAxis = 'z';
+      let sectionPercent = 50;
+      let sectionInverted = false;
+      let sectionPlane = null;
+      let isExplodeActive = false;
+      let explodeFactor = 0;
+      let isIsolatedMode = false;
+
       // Parse URL Params & Hash (Hỗ trợ cả link ?p=...&i=... lẫn dạng rút gọn ?p=...#12)
       const urlParams = new URLSearchParams(window.location.search);
       let targetParamId = urlParams.get('i') || urlParams.get('id') || urlParams.get('board') || urlParams.get('part');
@@ -1604,6 +1614,7 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.localClippingEnabled = true;
         container.appendChild(renderer.domElement);
 
         controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -2494,6 +2505,14 @@
       }
 
       function clearSelection() {
+        if (isIsolatedMode) {
+          isIsolatedMode = false;
+          const btn = document.getElementById('btnHudIsolate');
+          if (btn) {
+            btn.classList.remove('active');
+            btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg> Cô lập tấm`;
+          }
+        }
         selectedBoardIndex = null;
         updateModelMaterials();
         updateMeasureHelper();
@@ -2729,52 +2748,121 @@
         const mouse = new THREE.Vector2();
         let touchStartX = 0;
         let touchStartY = 0;
+        let holdTimer = null;
+        let isHoldingForSnap = false;
+        const activePointers = new Map();
 
         container.addEventListener('pointerdown', e => {
           touchStartX = e.clientX;
           touchStartY = e.clientY;
           activePointerDown = true;
+          activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+          // Nếu có từ 2 ngón tay trở lên: Ưu tiên tuyệt đối cử chỉ OrbitControls (Pinch Zoom & 2-finger Pan)
+          if (activePointers.size >= 2) {
+            if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+            if (isHoldingForSnap) {
+              isHoldingForSnap = false;
+              hideLoupe();
+            }
+            if (controls) controls.enabled = true;
+            return;
+          }
 
           if (isPointMeasureMode) {
-            // Tạm thời vô hiệu hóa OrbitControls để người dùng rê ngón tay / kính lúp chính xác
-            if (controls) controls.enabled = false;
-            const snapRes = findSnapPoint(e.clientX, e.clientY);
-            currentSnapResult = snapRes;
-            if (snapRes) {
-              updateLoupe(e.clientX, e.clientY, snapRes);
-              if (measurePointA) updateLiveMeasureLine(snapRes.point);
-            }
+            // Giữ controls luôn bật để người dùng có thể vuốt xoay góc nhìn bằng 1 ngón tay
+            if (controls) controls.enabled = true;
+
+            // Bắt đầu đếm thời gian đè giữ (Press & Hold ~160ms) để mở Kính lúp & bắt điểm
+            if (holdTimer) clearTimeout(holdTimer);
+            holdTimer = setTimeout(() => {
+              if (activePointers.size === 1 && isPointMeasureMode) {
+                isHoldingForSnap = true;
+                if (controls) controls.enabled = false; // Khóa xoay camera để rê kính lúp mượt mà
+                const snapRes = findSnapPoint(touchStartX, touchStartY);
+                currentSnapResult = snapRes;
+                if (snapRes) {
+                  updateLoupe(touchStartX, touchStartY, snapRes);
+                  if (measurePointA) updateLiveMeasureLine(snapRes.point);
+                }
+              }
+            }, 160);
           }
         });
 
         container.addEventListener('pointermove', e => {
           if (!activePointerDown) return;
-          if (isPointMeasureMode) {
-            const snapRes = findSnapPoint(e.clientX, e.clientY);
-            currentSnapResult = snapRes;
-            if (snapRes) {
-              updateLoupe(e.clientX, e.clientY, snapRes);
-              if (measurePointA) updateLiveMeasureLine(snapRes.point);
-            } else {
+          if (activePointers.has(e.pointerId)) {
+            activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+          }
+
+          // Khi có từ 2 ngón tay: Hủy kính lúp, nhường quyền hoàn toàn cho OrbitControls zoom/pan
+          if (activePointers.size >= 2) {
+            if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+            if (isHoldingForSnap) {
+              isHoldingForSnap = false;
               hideLoupe();
+            }
+            if (controls) controls.enabled = true;
+            return;
+          }
+
+          if (isPointMeasureMode) {
+            if (!isHoldingForSnap) {
+              // Nếu rê ngón tay di chuyển > 8px trước khi đủ 160ms: Người dùng đang vuốt XOAY CAMERA!
+              const moveDist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
+              if (moveDist > 8) {
+                if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+                if (controls) controls.enabled = true;
+              }
+            } else {
+              // Đang trong trạng thái kích đè kính lúp: Kính lúp bám sát ngón tay & quét bắt điểm
+              const snapRes = findSnapPoint(e.clientX, e.clientY);
+              currentSnapResult = snapRes;
+              if (snapRes) {
+                updateLoupe(e.clientX, e.clientY, snapRes);
+                if (measurePointA) updateLiveMeasureLine(snapRes.point);
+              } else {
+                hideLoupe();
+              }
             }
           }
         });
 
         container.addEventListener('pointerup', e => {
           activePointerDown = false;
+          activePointers.delete(e.pointerId);
+          if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+
+          if (isPointMeasureMode) {
+            if (isHoldingForSnap) {
+              // Thao tác đè giữ và buông tay: Chốt điểm đã bắt!
+              isHoldingForSnap = false;
+              hideLoupe();
+              if (controls) controls.enabled = true; // Mở lại OrbitControls tự do ngay lập tức
+
+              const finalSnap = currentSnapResult || findSnapPoint(e.clientX, e.clientY);
+              if (finalSnap && finalSnap.point) {
+                handlePointMeasureClick(finalSnap.point);
+              }
+              currentSnapResult = null;
+              return;
+            } else {
+              // Nếu người dùng chỉ click/tap nhẹ mà không di chuyển (dist <= 8)
+              const moveDist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
+              if (moveDist <= 8) {
+                const snap = findSnapPoint(e.clientX, e.clientY);
+                if (snap && snap.point) {
+                  handlePointMeasureClick(snap.point);
+                }
+              }
+              if (controls) controls.enabled = true;
+              return;
+            }
+          }
+
           hideLoupe();
           if (controls) controls.enabled = true;
-
-          // Chế độ đo điểm: Thả tay (touchend/mouseup) tự động chốt điểm đã bắt (snap)
-          if (isPointMeasureMode) {
-            const finalSnap = currentSnapResult || findSnapPoint(e.clientX, e.clientY);
-            if (finalSnap && finalSnap.point) {
-              handlePointMeasureClick(finalSnap.point);
-            }
-            currentSnapResult = null;
-            return;
-          }
 
           const isTouch = (e.pointerType === 'touch');
           const maxTapDist = isTouch ? 14 : 6;
@@ -2838,8 +2926,11 @@
           }
         });
 
-        container.addEventListener('pointercancel', () => {
+        container.addEventListener('pointercancel', e => {
           activePointerDown = false;
+          activePointers.delete(e.pointerId);
+          if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+          isHoldingForSnap = false;
           currentSnapResult = null;
           hideLoupe();
           if (controls) controls.enabled = true;
@@ -2965,6 +3056,206 @@
         });
       }
 
+      // ================= CÁC TÍNH NĂNG CHUYÊN SÂU SKETCHUP (SECTION, EXPLODE, ISOLATE, STANDARD VIEWS) =================
+
+      // Đóng tất cả các panel công cụ đang mở
+      function closeAllToolPopups() {
+        ['sectionPanel', 'explodePanel', 'viewsPanel'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.classList.remove('active');
+        });
+        ['btnToggleSection', 'btnToggleExplode', 'btnToggleViews'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.classList.remove('active');
+        });
+      }
+
+      // 1. MẶT CẮT DI ĐỘNG 3 TRỤC (SECTION CUT)
+      function updateSectionCut() {
+        if (!isSectionActive || !modelRoot) {
+          if (renderer) renderer.clippingPlanes = [];
+          return;
+        }
+        const box = new THREE.Box3().setFromObject(modelRoot);
+        if (box.isEmpty()) return;
+
+        let minVal = 0, maxVal = 0;
+        const normal = new THREE.Vector3();
+        const dir = sectionInverted ? 1 : -1;
+
+        if (sectionAxis === 'x') {
+          minVal = box.min.x;
+          maxVal = box.max.x;
+          normal.set(dir, 0, 0);
+        } else if (sectionAxis === 'y') {
+          minVal = box.min.y;
+          maxVal = box.max.y;
+          normal.set(0, dir, 0);
+        } else { // 'z'
+          minVal = box.min.z;
+          maxVal = box.max.z;
+          normal.set(0, 0, dir);
+        }
+
+        const posVal = minVal + (maxVal - minVal) * (sectionPercent / 100);
+        const pt = new THREE.Vector3();
+        if (sectionAxis === 'x') pt.set(posVal, 0, 0);
+        else if (sectionAxis === 'y') pt.set(0, posVal, 0);
+        else pt.set(0, 0, posVal);
+
+        const constant = - normal.dot(pt);
+        sectionPlane = new THREE.Plane(normal, constant);
+        if (renderer) {
+          renderer.clippingPlanes = [sectionPlane];
+          renderer.localClippingEnabled = true;
+        }
+      }
+
+      function toggleSectionCut(state) {
+        isSectionActive = (state !== undefined) ? state : !isSectionActive;
+        const panel = document.getElementById('sectionPanel');
+        const btn = document.getElementById('btnToggleSection');
+        if (panel) panel.classList.toggle('active', isSectionActive);
+        if (btn) btn.classList.toggle('active', isSectionActive);
+
+        if (!isSectionActive) {
+          if (renderer) renderer.clippingPlanes = [];
+        } else {
+          updateSectionCut();
+        }
+      }
+
+      // 2. RÃ RỜI CỤM CHI TIẾT (EXPLODE VIEW)
+      function initMeshExplodeData() {
+        if (!modelRoot || allMeshes.length === 0) return;
+        const box = new THREE.Box3().setFromObject(modelRoot);
+        const modelCenter = new THREE.Vector3();
+        box.getCenter(modelCenter);
+
+        allMeshes.forEach(mesh => {
+          if (!mesh.userData.origPosition) {
+            mesh.userData.origPosition = mesh.position.clone();
+          }
+          const mBox = new THREE.Box3().setFromObject(mesh);
+          const mCenter = new THREE.Vector3();
+          mBox.getCenter(mCenter);
+
+          const dir = mCenter.clone().sub(modelCenter);
+          if (dir.length() < 0.0001) {
+            dir.set(0, 1, 0);
+          } else {
+            dir.normalize();
+          }
+          mesh.userData.explodeDir = dir;
+        });
+      }
+
+      function updateExplode(factorPercent) {
+        explodeFactor = factorPercent / 100;
+        if (!modelRoot || allMeshes.length === 0) return;
+
+        initMeshExplodeData();
+        const box = new THREE.Box3().setFromObject(modelRoot);
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        const maxDist = Math.max(size.x, size.y, size.z) * 0.85;
+
+        allMeshes.forEach(mesh => {
+          if (mesh.userData.origPosition && mesh.userData.explodeDir) {
+            mesh.position.copy(mesh.userData.origPosition).addScaledVector(mesh.userData.explodeDir, explodeFactor * maxDist);
+          }
+        });
+      }
+
+      function resetExplode() {
+        const slider = document.getElementById('explodeSlider');
+        const valSpan = document.getElementById('explodeValue');
+        if (slider) slider.value = 0;
+        if (valSpan) valSpan.textContent = '0%';
+        updateExplode(0);
+      }
+
+      function toggleExplodePanel(state) {
+        isExplodeActive = (state !== undefined) ? state : !isExplodeActive;
+        const panel = document.getElementById('explodePanel');
+        const btn = document.getElementById('btnToggleExplode');
+        if (panel) panel.classList.toggle('active', isExplodeActive);
+        if (btn) btn.classList.toggle('active', isExplodeActive);
+      }
+
+      // 3. CÔ LẬP TẤM VÁN ĐANG CHỌN (ISOLATE MODE)
+      function toggleIsolateBoard() {
+        if (selectedBoardIndex === null) return;
+        isIsolatedMode = !isIsolatedMode;
+        const btn = document.getElementById('btnHudIsolate');
+
+        allMeshes.forEach(mesh => {
+          const bIdx = mesh.userData.boardIndex;
+          if (isIsolatedMode) {
+            if (bIdx === selectedBoardIndex) {
+              mesh.visible = true;
+              if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = true;
+            } else {
+              mesh.visible = false;
+              if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = false;
+            }
+          } else {
+            const lyrName = mesh.userData.layerName;
+            const isHidden = hiddenLayers.has(lyrName) || hiddenBoardIndices.has(bIdx);
+            mesh.visible = !isHidden;
+            if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = !isHidden;
+          }
+        });
+
+        if (btn) {
+          btn.classList.toggle('active', isIsolatedMode);
+          btn.innerHTML = isIsolatedMode
+            ? `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Bỏ cô lập`
+            : `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg> Cô lập tấm`;
+        }
+      }
+
+      // 4. CÁC GÓC NHÌN CHUẨN SKETCHUP (STANDARD VIEWS)
+      function setStandardView(viewType) {
+        if (!modelRoot) return;
+        const box = new THREE.Box3().setFromObject(modelRoot);
+        if (box.isEmpty()) return;
+
+        const center = new THREE.Vector3();
+        box.getCenter(center);
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const fov = camera.fov * (Math.PI / 180);
+        let dist = (maxDim / 2) / Math.tan(fov / 2);
+        dist *= 1.35;
+
+        const targetPos = new THREE.Vector3();
+        if (viewType === 'iso') {
+          targetPos.set(center.x + dist * 0.7, center.y + dist * 0.6, center.z + dist * 0.7);
+        } else if (viewType === 'top') {
+          targetPos.set(center.x, center.y + dist * 1.25, center.z + 0.0001);
+        } else if (viewType === 'front') {
+          targetPos.set(center.x, center.y, center.z + dist * 1.25);
+        } else if (viewType === 'back') {
+          targetPos.set(center.x, center.y, center.z - dist * 1.25);
+        } else if (viewType === 'right') {
+          targetPos.set(center.x + dist * 1.25, center.y, center.z);
+        } else if (viewType === 'left') {
+          targetPos.set(center.x - dist * 1.25, center.y, center.z);
+        }
+
+        animateCamera(targetPos, center);
+      }
+
+      function toggleViewsPanel(state) {
+        const panel = document.getElementById('viewsPanel');
+        const btn = document.getElementById('btnToggleViews');
+        const isOpen = (state !== undefined) ? state : !panel.classList.contains('active');
+        if (panel) panel.classList.toggle('active', isOpen);
+        if (btn) btn.classList.toggle('active', isOpen);
+      }
+
       // 11. GẮN SỰ KIỆN NÚT BẤM GIAO DIỆN
       function setupEventListeners() {
         document.getElementById('btnStartQrScan').onclick = openQrScanner;
@@ -3061,6 +3352,97 @@
             zoomToMeshes(boardMeshMap[selectedBoardIndex]);
           }
         };
+
+        // Nút Cô lập tấm ván trên HUD Card
+        const btnHudIsolate = document.getElementById('btnHudIsolate');
+        if (btnHudIsolate) btnHudIsolate.onclick = toggleIsolateBoard;
+
+        // Nút Mặt cắt di động 3 trục (Section Cut)
+        const btnToggleSection = document.getElementById('btnToggleSection');
+        const secCloseBtn = document.getElementById('secCloseBtn');
+        const secSlider = document.getElementById('secSlider');
+        const secValue = document.getElementById('secValue');
+        const btnFlipSection = document.getElementById('btnFlipSection');
+        const secAxisButtons = [
+          document.getElementById('secAxisX'),
+          document.getElementById('secAxisY'),
+          document.getElementById('secAxisZ')
+        ];
+
+        if (btnToggleSection) {
+          btnToggleSection.onclick = () => {
+            const willOpen = !isSectionActive;
+            closeAllToolPopups();
+            toggleSectionCut(willOpen);
+          };
+        }
+        if (secCloseBtn) secCloseBtn.onclick = () => toggleSectionCut(false);
+        secAxisButtons.forEach(btn => {
+          if (!btn) return;
+          btn.onclick = () => {
+            secAxisButtons.forEach(b => { if (b) b.classList.remove('active'); });
+            btn.classList.add('active');
+            sectionAxis = btn.dataset.axis || 'z';
+            updateSectionCut();
+          };
+        });
+        if (secSlider) {
+          secSlider.oninput = function() {
+            sectionPercent = parseInt(this.value, 10);
+            if (secValue) secValue.textContent = `${this.value}%`;
+            updateSectionCut();
+          };
+        }
+        if (btnFlipSection) {
+          btnFlipSection.onclick = () => {
+            sectionInverted = !sectionInverted;
+            updateSectionCut();
+          };
+        }
+
+        // Nút Rã rời cụm chi tiết (Explode View)
+        const btnToggleExplode = document.getElementById('btnToggleExplode');
+        const explodeCloseBtn = document.getElementById('explodeCloseBtn');
+        const explodeSlider = document.getElementById('explodeSlider');
+        const explodeValue = document.getElementById('explodeValue');
+        const btnResetExplode = document.getElementById('btnResetExplode');
+
+        if (btnToggleExplode) {
+          btnToggleExplode.onclick = () => {
+            const willOpen = !isExplodeActive;
+            closeAllToolPopups();
+            toggleExplodePanel(willOpen);
+          };
+        }
+        if (explodeCloseBtn) explodeCloseBtn.onclick = () => toggleExplodePanel(false);
+        if (explodeSlider) {
+          explodeSlider.oninput = function() {
+            const val = parseInt(this.value, 10);
+            if (explodeValue) explodeValue.textContent = `${val}%`;
+            updateExplode(val);
+          };
+        }
+        if (btnResetExplode) btnResetExplode.onclick = resetExplode;
+
+        // Nút Góc nhìn chuẩn SketchUp (Standard Views)
+        const btnToggleViews = document.getElementById('btnToggleViews');
+        const viewsCloseBtn = document.getElementById('viewsCloseBtn');
+        if (btnToggleViews) {
+          btnToggleViews.onclick = () => {
+            const panel = document.getElementById('viewsPanel');
+            const willOpen = panel ? !panel.classList.contains('active') : true;
+            closeAllToolPopups();
+            toggleViewsPanel(willOpen);
+          };
+        }
+        if (viewsCloseBtn) viewsCloseBtn.onclick = () => toggleViewsPanel(false);
+        document.querySelectorAll('.view-item-btn').forEach(btn => {
+          btn.onclick = () => {
+            const viewType = btn.dataset.view;
+            setStandardView(viewType);
+            toggleViewsPanel(false);
+          };
+        });
 
         document.getElementById('btnToggleSearch').onclick = function() {
           const sw = document.getElementById('searchWrapper');
