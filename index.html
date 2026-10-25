@@ -367,6 +367,94 @@
       color: var(--text-sub);
     }
 
+    /* PROJECTS LIST MODAL */
+    .projects-modal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      z-index: 250;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .projects-modal.active {
+      display: flex;
+    }
+    .projects-box {
+      width: 100%;
+      max-width: 440px;
+      max-height: 80vh;
+      background: #1e293b;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .projects-header {
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .projects-title {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .projects-list {
+      padding: 12px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .project-card {
+      background: #0f172a;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .project-card:hover {
+      background: #334155;
+      border-color: var(--accent-color);
+      transform: translateX(3px);
+    }
+    .project-card.current {
+      border-color: var(--accent-color);
+      background: rgba(255, 69, 0, 0.12);
+    }
+    .project-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .project-card-sub {
+      font-size: 11px;
+      color: var(--text-sub);
+      margin-top: 3px;
+    }
+    .project-card-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-color);
+      background: rgba(255, 69, 0, 0.15);
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
     /* LOADING SPINNER */
     .loading-overlay {
       position: absolute;
@@ -490,10 +578,13 @@
   <header class="top-header">
     <div class="brand-pill">
       <span class="brand-tag">LTF 3D</span>
-      <span class="project-name" id="displayProjectName">PN PHƯỚC HẢI</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
+      <button class="icon-btn" id="btnShowProjects" title="Danh sách các công trình đang lưu trên Cloud">
+        📁 <span style="display:none; @media(min-width:600px){display:inline;}">Công Trình</span>
+      </button>
       <button class="icon-btn" id="btnToggleSearch" title="Tìm theo số tấm hoặc tên">
         🔍 <span style="display:none; @media(min-width:600px){display:inline;}">Tìm</span>
       </button>
@@ -569,6 +660,19 @@
     </div>
   </div>
 
+  <!-- PROJECTS LIST MODAL -->
+  <div class="projects-modal" id="projectsModal">
+    <div class="projects-box">
+      <div class="projects-header">
+        <span class="projects-title">📁 Danh Sách Công Trình Đã Lưu</span>
+        <button class="hud-close-btn" id="btnCloseProjects">✕</button>
+      </div>
+      <div class="projects-list" id="projectsList">
+        <div style="padding:20px; text-align:center; color:var(--text-sub);">Đang tải danh sách công trình...</div>
+      </div>
+    </div>
+  </div>
+
   <!-- EMPTY STATE FILE PICKER (NẾU MỞ TRỰC TIẾP KHÔNG CÓ FILE) -->
   <div class="empty-state" id="emptyState">
     <div class="empty-icon">📦</div>
@@ -624,18 +728,80 @@
       // Parse URL Params
       const urlParams = new URLSearchParams(window.location.search);
       const targetParamId = urlParams.get('id') || urlParams.get('board') || urlParams.get('part');
-      const targetProjectName = urlParams.get('p') || urlParams.get('name') || '';
+      let targetProjectSlug = urlParams.get('p') || urlParams.get('name') || '';
       let targetModelFile = urlParams.get('m') || urlParams.get('model');
-      let targetJsonFile = 'boards_data.json';
+      let targetJsonFile = null;
+      let allProjectsRegistry = [];
 
-      if (targetProjectName) {
-        document.getElementById('displayProjectName').textContent = targetProjectName;
+      if (targetProjectSlug) {
+        document.getElementById('displayProjectName').textContent = targetProjectSlug;
         if (!targetModelFile) {
-          targetModelFile = `projects/${targetProjectName}/model.glb`;
-          targetJsonFile = `projects/${targetProjectName}/boards_data.json`;
+          targetModelFile = `projects/${targetProjectSlug}/model.glb`;
+          targetJsonFile = `projects/${targetProjectSlug}/boards_data.json`;
         }
       }
-      if (!targetModelFile) targetModelFile = 'model.glb';
+
+      // Quản lý danh mục công trình projects.json
+      async function loadProjectsRegistry() {
+        try {
+          const res = await fetch('projects/projects.json?t=' + Date.now());
+          if (res.ok) {
+            allProjectsRegistry = await res.json();
+            renderProjectsList();
+
+            if (targetProjectSlug) {
+              const matched = allProjectsRegistry.find(p => p.slug === targetProjectSlug);
+              if (matched && matched.name) {
+                document.getElementById('displayProjectName').textContent = matched.name;
+              }
+            } else if (allProjectsRegistry.length > 0) {
+              // Tự động mở công trình mới nhất nếu không chỉ định ?p=
+              const latest = allProjectsRegistry[0];
+              switchProject(latest.slug, latest.name, false);
+            }
+          }
+        } catch (e) {
+          console.warn("Không tải được projects.json:", e);
+        }
+      }
+
+      function switchProject(slug, displayName, reload = true) {
+        if (reload) {
+          window.location.search = `?p=${encodeURIComponent(slug)}`;
+          return;
+        }
+        targetProjectSlug = slug;
+        document.getElementById('displayProjectName').textContent = displayName || slug;
+        loadBoardsData(`projects/${slug}/boards_data.json`);
+        loadGlbModel(`projects/${slug}/model.glb`);
+      }
+
+      function renderProjectsList() {
+        const box = document.getElementById('projectsList');
+        if (!box) return;
+        if (!allProjectsRegistry || allProjectsRegistry.length === 0) {
+          box.innerHTML = '<div style="padding:24px; text-align:center; color:var(--text-sub);">Chưa có công trình nào được lưu trên Cloud.</div>';
+          return;
+        }
+        box.innerHTML = '';
+        allProjectsRegistry.forEach(p => {
+          const isCurr = (p.slug === targetProjectSlug);
+          const item = document.createElement('div');
+          item.className = 'project-card' + (isCurr ? ' current' : '');
+          item.innerHTML = `
+            <div>
+              <div class="project-card-title">${p.name || p.slug}</div>
+              <div class="project-card-sub">${p.updated_at || ''} • ${p.total_boards || 0} tấm ván</div>
+            </div>
+            <div class="project-card-tag">${isCurr ? 'Đang xem' : 'Mở 3D →'}</div>
+          `;
+          item.onclick = () => {
+            document.getElementById('projectsModal').classList.remove('active');
+            switchProject(p.slug, p.name, true);
+          };
+          box.appendChild(item);
+        });
+      }
 
       // 2. KHỞI TẠO THREE.JS ENGINE
       function init3D() {
@@ -1142,6 +1308,21 @@
           });
         };
 
+        // Mở/Đóng danh sách công trình
+        const btnShowProjects = document.getElementById('btnShowProjects');
+        if (btnShowProjects) {
+          btnShowProjects.onclick = function() {
+            document.getElementById('projectsModal').classList.add('active');
+            renderProjectsList();
+          };
+        }
+        const btnCloseProjects = document.getElementById('btnCloseProjects');
+        if (btnCloseProjects) {
+          btnCloseProjects.onclick = function() {
+            document.getElementById('projectsModal').classList.remove('active');
+          };
+        }
+
         // Chọn file .glb thủ công nếu mở offline
         document.getElementById('localFileInput').onchange = function(e) {
           const file = e.target.files[0];
@@ -1170,8 +1351,15 @@
       window.onload = function() {
         init3D();
         setupEventListeners();
-        loadBoardsData(targetJsonFile);
-        loadGlbModel(targetModelFile);
+
+        if (targetProjectSlug) {
+          loadBoardsData(targetJsonFile || `projects/${targetProjectSlug}/boards_data.json`);
+          loadGlbModel(targetModelFile || `projects/${targetProjectSlug}/model.glb`);
+        } else if (targetModelFile) {
+          loadBoardsData('boards_data.json');
+          loadGlbModel(targetModelFile);
+        }
+        loadProjectsRegistry();
       };
 
     })();
