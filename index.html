@@ -63,6 +63,7 @@
       height: 100%;
       display: block;
       cursor: grab;
+      touch-action: none;
     }
     #viewport3D:active {
       cursor: grabbing;
@@ -250,8 +251,8 @@
     }
 
     .hud-circle-btn {
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: var(--grid-bg);
       border: 1px solid var(--panel-border);
@@ -416,14 +417,35 @@
       z-index: 110;
       min-width: 260px;
       max-width: 90vw;
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 8px;
+    }
+    .tool-popup-panel.active {
+      display: flex;
       animation: fadeInDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-8px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* NÚT ẨN TẤM CỐ ĐỊNH BÊN NGOÀI (FLOATING HIDE BUTTON) */
+    .floating-hide-btn {
+      background: var(--panel-bg) !important;
+      border: 1.5px solid #ef4444 !important;
+      color: #ef4444 !important;
+      box-shadow: 0 4px 20px rgba(239, 68, 68, 0.35) !important;
+      animation: popIn 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    .floating-hide-btn:hover {
+      background: #ef4444 !important;
+      color: #ffffff !important;
+      transform: scale(1.08);
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.6); }
+      100% { opacity: 1; transform: scale(1); }
     }
     .panel-header-mini {
       display: flex;
@@ -751,6 +773,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .floating-hide-btn {
+      border: 2px solid #ef4444 !important;
+      color: #ef4444 !important;
+      background: var(--panel-bg);
+      animation: popInHideBtn 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    .floating-hide-btn:hover {
+      background: #ef4444 !important;
+      color: #ffffff !important;
+    }
+    @keyframes popInHideBtn {
+      0% { transform: scale(0.4); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     /* THƯƠNG HIỆU CHẠY DỌC CẠNH ĐỨNG GÓC NHÌN 3D - CĂN CHÍNH GIỮA TUYỆT ĐỐI */
@@ -1237,47 +1273,61 @@
   </div>
 
   <!-- POPUP PANEL: MẶT CẮT DI ĐỘNG (SECTION CUT) -->
-  <div class="tool-popup-panel" id="sectionPanel" style="display:none;">
+  <div class="tool-popup-panel" id="sectionPanel">
     <div class="panel-header-mini">
-      <span>Mặt Cắt 3D (Section Cut)</span>
-      <button class="panel-close-mini" id="btnCloseSection">✕</button>
+      <div style="display:flex; align-items:center; gap:6px;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><line x1="2" y1="12" x2="22" y2="12" stroke="#ff4500" stroke-width="2.5"/><polygon points="12 7 15 11 9 11" fill="#ff4500"/></svg>
+        <span>Mặt Cắt 3D (Section Cut)</span>
+      </div>
+      <button class="panel-close-mini" id="btnCloseSection" title="Đóng mặt cắt">✕</button>
     </div>
     <div class="axis-buttons">
-      <button class="axis-btn" id="btnSecAxisX" data-axis="x">Trục X (Ngang)</button>
-      <button class="axis-btn active" id="btnSecAxisY" data-axis="y">Trục Y (Đứng)</button>
-      <button class="axis-btn" id="btnSecAxisZ" data-axis="z">Trục Z (Sâu)</button>
+      <button class="axis-btn" id="btnSecAxisX" data-axis="x" style="border-left: 3px solid #ef4444;">Trục X (Ngang)</button>
+      <button class="axis-btn active" id="btnSecAxisY" data-axis="y" style="border-left: 3px solid #10b981;">Trục Y (Đứng)</button>
+      <button class="axis-btn" id="btnSecAxisZ" data-axis="z" style="border-left: 3px solid #0284c7;">Trục Z (Sâu)</button>
       <button class="axis-btn" id="btnFlipSection" title="Đảo ngược hướng cắt">Đảo chiều 🔁</button>
     </div>
     <div class="slider-row">
+      <span style="font-size: 11.5px; color: var(--text-sub); white-space: nowrap;">Vị trí lát cắt:</span>
       <input type="range" id="sectionSlider" min="0" max="100" value="50" class="custom-range">
       <span id="sectionValue" class="slider-val">50%</span>
+    </div>
+    <div style="font-size: 10.5px; color: var(--text-sub); text-align: center; border-top: 1px solid var(--panel-border); padding-top: 4px;">
+      Kéo thanh trượt để di chuyển mặt cắt xuyên qua khối tủ
     </div>
   </div>
 
   <!-- POPUP PANEL: RÃ RỜI CHI TIẾT (EXPLODE 3D) -->
-  <div class="tool-popup-panel" id="explodePanel" style="display:none;">
+  <div class="tool-popup-panel" id="explodePanel">
     <div class="panel-header-mini">
-      <span>Rã Rời Lắp Đặt (Explode View)</span>
-      <button class="panel-close-mini" id="btnCloseExplode">✕</button>
+      <div style="display:flex; align-items:center; gap:6px;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="m4 4 3 3m10 10 3 3m0-16-3 3M4 20l3-3"/></svg>
+        <span>Rã Rời Lắp Đặt (Explode View)</span>
+      </div>
+      <button class="panel-close-mini" id="btnCloseExplode" title="Đóng rã rời">✕</button>
     </div>
     <div class="slider-row">
+      <span style="font-size: 11.5px; color: var(--text-sub); white-space: nowrap;">Độ giãn cách:</span>
       <input type="range" id="explodeSlider" min="0" max="100" value="0" class="custom-range">
       <span id="explodeValue" class="slider-val">0%</span>
     </div>
   </div>
 
   <!-- POPUP PANEL: GÓC NHÌN CHUẨN SKETCHUP (VIEWS) -->
-  <div class="tool-popup-panel views-panel" id="viewsPanel" style="display:none;">
+  <div class="tool-popup-panel views-panel" id="viewsPanel">
     <div class="panel-header-mini">
-      <span>Góc Nhìn Chuẩn SketchUp</span>
-      <button class="panel-close-mini" id="btnCloseViews">✕</button>
+      <div style="display:flex; align-items:center; gap:6px;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <span>Góc Nhìn Chuẩn SketchUp</span>
+      </div>
+      <button class="panel-close-mini" id="btnCloseViews" title="Đóng góc nhìn">✕</button>
     </div>
     <div class="views-grid">
-      <button class="view-item-btn" id="btnViewIso">Phối cảnh (Iso)</button>
-      <button class="view-item-btn" id="btnViewFront">Mặt trước (Front)</button>
-      <button class="view-item-btn" id="btnViewTop">Mặt bằng (Top)</button>
-      <button class="view-item-btn" id="btnViewRight">Mặt phải (Right)</button>
-      <button class="view-item-btn" id="btnViewLeft">Mặt trái (Left)</button>
+      <button class="view-item-btn" id="btnViewIso" data-view="iso">Phối cảnh (Iso)</button>
+      <button class="view-item-btn" id="btnViewFront" data-view="front">Mặt trước (Front)</button>
+      <button class="view-item-btn" id="btnViewTop" data-view="top">Mặt bằng (Top)</button>
+      <button class="view-item-btn" id="btnViewRight" data-view="right">Mặt phải (Right)</button>
+      <button class="view-item-btn" id="btnViewLeft" data-view="left">Mặt trái (Left)</button>
     </div>
   </div>
 
@@ -1312,6 +1362,12 @@
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
       </button>
     </div>
+
+    <!-- NÚT ẨN TẤM CỐ ĐỊNH BÊN NGOÀI: Tự động xuất hiện khi chọn tấm ván -->
+    <button class="round-tool-btn floating-hide-btn" id="btnFloatingHide" title="Ẩn tấm ván đang chọn" style="display:none;">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+    </button>
+
     <button class="toolbar-toggle-btn" id="btnToolbarToggle" title="Thu gọn / Sổ ra thanh công cụ">
       <svg id="toolbarToggleIcon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
@@ -1485,7 +1541,7 @@
 
       let isGlobalXray = false;
       let isMeasureEnabled = false;
-      let isPointMeasureMode = false;
+      let isPointMeasureMode = true;
       let measureGroup = null;
       let pointMeasureGroup = null;
       let liveMeasureLine = null;
@@ -1508,6 +1564,7 @@
       let sectionPercent = 50;
       let sectionInverted = false;
       let sectionPlane = null;
+      let sectionPlaneHelper = null;
       let isExplodeActive = false;
       let explodeFactor = 0;
       let isIsolatedMode = false;
@@ -1801,6 +1858,13 @@
 
           // Cập nhật danh sách tìm kiếm
           buildSearchList();
+
+          // MẶC ĐỊNH KHỞI ĐỘNG VÀO CHẾ ĐỘ ĐO 2 ĐIỂM (NHẤN GIỮ & RÊ NGÓN TAY VỚI KÍNH LÚP) THEO YÊU CẦU
+          setTimeout(() => {
+            if (typeof toggleMeasureTool === 'function') {
+              toggleMeasureTool(true);
+            }
+          }, 200);
 
           // Nếu URL có sẵn tham số ?id=... thì tự động focus ngay lập tức!
           if (targetParamId) {
@@ -2299,8 +2363,13 @@
             targetScreenX = (p.x * 0.5 + 0.5) * window.innerWidth;
             targetScreenY = (-p.y * 0.5 + 0.5) * window.innerHeight;
           }
-        } else {
+        } else if (snapRes && snapRes.point) {
           badge.innerHTML = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3" fill="currentColor"/></svg> MẶT VÁN`;
+          badge.className = 'loupe-badge';
+          lastVibrated = false;
+          if (marker) marker.visible = false;
+        } else {
+          badge.innerHTML = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4m0 4h.01"/></svg> RÊ VÀO VÁN ĐỂ BẮT ĐIỂM`;
           badge.className = 'loupe-badge';
           lastVibrated = false;
           if (marker) marker.visible = false;
@@ -2502,6 +2571,10 @@
 
         // 4. Hiển thị bảng HUD chi tiết tấm dưới đáy màn hình
         showHudInfo(boardIndex);
+
+        // 5. Hiển thị nút Ẩn cố định bên ngoài
+        const fHide = document.getElementById('btnFloatingHide');
+        if (fHide) fHide.style.display = 'flex';
       }
 
       function clearSelection() {
@@ -2516,6 +2589,8 @@
         selectedBoardIndex = null;
         updateModelMaterials();
         updateMeasureHelper();
+        const fHide = document.getElementById('btnFloatingHide');
+        if (fHide) fHide.style.display = 'none';
         document.getElementById('hudCard').classList.remove('show');
         document.body.classList.remove('hud-open');
       }
@@ -2750,6 +2825,7 @@
         let touchStartY = 0;
         let holdTimer = null;
         let isHoldingForSnap = false;
+        let isCandidateForSnap = false;
         const activePointers = new Map();
 
         container.addEventListener('pointerdown', e => {
@@ -2758,6 +2834,10 @@
           activePointerDown = true;
           activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
 
+          try {
+            container.setPointerCapture(e.pointerId);
+          } catch (err) {}
+
           // Nếu có từ 2 ngón tay trở lên: Ưu tiên tuyệt đối cử chỉ OrbitControls (Pinch Zoom & 2-finger Pan)
           if (activePointers.size >= 2) {
             if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
@@ -2765,28 +2845,42 @@
               isHoldingForSnap = false;
               hideLoupe();
             }
+            isCandidateForSnap = false;
             if (controls) controls.enabled = true;
             return;
           }
 
           if (isPointMeasureMode) {
-            // Giữ controls luôn bật để người dùng có thể vuốt xoay góc nhìn bằng 1 ngón tay
+            // Kiểm tra xem vị trí chạm ban đầu có nằm trên tấm ván / model không
+            const initialHit = findSnapPoint(e.clientX, e.clientY);
+
+            if (!initialHit) {
+              // CHẠM VÀO KHOẢNG TRỐNG NGOÀI MÔ HÌNH:
+              // Cho phép xoay / pan mô hình 100% tự do, tuyệt đối không khóa controls!
+              isCandidateForSnap = false;
+              isHoldingForSnap = false;
+              if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+              if (controls) controls.enabled = true;
+              return;
+            }
+
+            // CHẠM VÀO MÔ HÌNH:
+            // Vẫn giữ controls.enabled = true để nếu người dùng vuốt nhanh (swipe) thì xoay camera bình thường
+            isCandidateForSnap = true;
+            currentSnapResult = initialHit;
             if (controls) controls.enabled = true;
 
-            // Bắt đầu đếm thời gian đè giữ (Press & Hold ~160ms) để mở Kính lúp & bắt điểm
+            // Đếm thời gian đè giữ (Press & Hold ~220ms) để mở kính lúp
             if (holdTimer) clearTimeout(holdTimer);
             holdTimer = setTimeout(() => {
-              if (activePointers.size === 1 && isPointMeasureMode) {
+              if (activePointers.size === 1 && isPointMeasureMode && isCandidateForSnap) {
                 isHoldingForSnap = true;
-                if (controls) controls.enabled = false; // Khóa xoay camera để rê kính lúp mượt mà
-                const snapRes = findSnapPoint(touchStartX, touchStartY);
-                currentSnapResult = snapRes;
-                if (snapRes) {
-                  updateLoupe(touchStartX, touchStartY, snapRes);
-                  if (measurePointA) updateLiveMeasureLine(snapRes.point);
-                }
+                if (controls) controls.enabled = false; // Tạm ngưng xoay camera để ngón tay rê kính lúp
+                if (navigator.vibrate) navigator.vibrate(25);
+                updateLoupe(touchStartX, touchStartY, initialHit);
+                if (measurePointA && initialHit.point) updateLiveMeasureLine(initialHit.point);
               }
-            }, 160);
+            }, 220);
           }
         });
 
@@ -2803,27 +2897,29 @@
               isHoldingForSnap = false;
               hideLoupe();
             }
+            isCandidateForSnap = false;
             if (controls) controls.enabled = true;
             return;
           }
 
           if (isPointMeasureMode) {
             if (!isHoldingForSnap) {
-              // Nếu rê ngón tay di chuyển > 8px trước khi đủ 160ms: Người dùng đang vuốt XOAY CAMERA!
+              // Chưa đè đủ thời gian mở kính lúp:
+              // Nếu ngón tay di chuyển > 10px thì đây là thao tác VUỐT XOAY CAMERA!
               const moveDist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
-              if (moveDist > 8) {
+              if (moveDist > 10) {
                 if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+                isCandidateForSnap = false;
                 if (controls) controls.enabled = true;
               }
             } else {
-              // Đang trong trạng thái kích đè kính lúp: Kính lúp bám sát ngón tay & quét bắt điểm
+              // ĐÃ TRONG TRẠNG THÁI KÍNH LÚP:
+              // Kính lúp LUÔN LUÔN bám sát ngón tay dù rê đi bất cứ đâu, KHÔNG BAO GIỜ TỰ TẮT!
               const snapRes = findSnapPoint(e.clientX, e.clientY);
               currentSnapResult = snapRes;
-              if (snapRes) {
-                updateLoupe(e.clientX, e.clientY, snapRes);
-                if (measurePointA) updateLiveMeasureLine(snapRes.point);
-              } else {
-                hideLoupe();
+              updateLoupe(e.clientX, e.clientY, snapRes);
+              if (measurePointA && snapRes && snapRes.point) {
+                updateLiveMeasureLine(snapRes.point);
               }
             }
           }
@@ -2834,12 +2930,19 @@
           activePointers.delete(e.pointerId);
           if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
 
+          try {
+            if (container.hasPointerCapture(e.pointerId)) {
+              container.releasePointerCapture(e.pointerId);
+            }
+          } catch (err) {}
+
           if (isPointMeasureMode) {
             if (isHoldingForSnap) {
-              // Thao tác đè giữ và buông tay: Chốt điểm đã bắt!
+              // Người dùng đè giữ và buông tay:
               isHoldingForSnap = false;
+              isCandidateForSnap = false;
               hideLoupe();
-              if (controls) controls.enabled = true; // Mở lại OrbitControls tự do ngay lập tức
+              if (controls) controls.enabled = true; // Mở lại xoay camera ngay lập tức!
 
               const finalSnap = currentSnapResult || findSnapPoint(e.clientX, e.clientY);
               if (finalSnap && finalSnap.point) {
@@ -2847,18 +2950,20 @@
               }
               currentSnapResult = null;
               return;
-            } else {
-              // Nếu người dùng chỉ click/tap nhẹ mà không di chuyển (dist <= 8)
-              const moveDist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
-              if (moveDist <= 8) {
-                const snap = findSnapPoint(e.clientX, e.clientY);
-                if (snap && snap.point) {
-                  handlePointMeasureClick(snap.point);
-                }
-              }
+            } else if (isCandidateForSnap) {
+              // Thao tác click / chạm nhanh vào mô hình (Tap ngắn < 220ms, di chuyển < 10px):
+              isCandidateForSnap = false;
               if (controls) controls.enabled = true;
+
+              const snap = findSnapPoint(e.clientX, e.clientY) || currentSnapResult;
+              if (snap && snap.point) {
+                handlePointMeasureClick(snap.point);
+              }
+              currentSnapResult = null;
               return;
             }
+            if (controls) controls.enabled = true;
+            return;
           }
 
           hideLoupe();
@@ -2930,7 +3035,13 @@
           activePointerDown = false;
           activePointers.delete(e.pointerId);
           if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+          try {
+            if (container.hasPointerCapture(e.pointerId)) {
+              container.releasePointerCapture(e.pointerId);
+            }
+          } catch (err) {}
           isHoldingForSnap = false;
+          isCandidateForSnap = false;
           currentSnapResult = null;
           hideLoupe();
           if (controls) controls.enabled = true;
@@ -3074,6 +3185,12 @@
       function updateSectionCut() {
         if (!isSectionActive || !modelRoot) {
           if (renderer) renderer.clippingPlanes = [];
+          if (sectionPlaneHelper) {
+            scene.remove(sectionPlaneHelper);
+            if (sectionPlaneHelper.geometry) sectionPlaneHelper.geometry.dispose();
+            if (sectionPlaneHelper.material) sectionPlaneHelper.material.dispose();
+            sectionPlaneHelper = null;
+          }
           return;
         }
         const box = new THREE.Box3().setFromObject(modelRoot);
@@ -3109,6 +3226,20 @@
           renderer.clippingPlanes = [sectionPlane];
           renderer.localClippingEnabled = true;
         }
+
+        // Tạo khung trực quan hóa mặt cắt 3D (SketchUp Section Plane Helper màu cam neon)
+        if (sectionPlaneHelper) {
+          scene.remove(sectionPlaneHelper);
+          if (sectionPlaneHelper.geometry) sectionPlaneHelper.geometry.dispose();
+          if (sectionPlaneHelper.material) sectionPlaneHelper.material.dispose();
+          sectionPlaneHelper = null;
+        }
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        const helperSize = Math.max(size.x, size.y, size.z) * 1.5;
+        sectionPlaneHelper = new THREE.PlaneHelper(sectionPlane, helperSize, 0xff4500);
+        sectionPlaneHelper.renderOrder = 999;
+        scene.add(sectionPlaneHelper);
       }
 
       function toggleSectionCut(state) {
@@ -3120,6 +3251,12 @@
 
         if (!isSectionActive) {
           if (renderer) renderer.clippingPlanes = [];
+          if (sectionPlaneHelper) {
+            scene.remove(sectionPlaneHelper);
+            if (sectionPlaneHelper.geometry) sectionPlaneHelper.geometry.dispose();
+            if (sectionPlaneHelper.material) sectionPlaneHelper.material.dispose();
+            sectionPlaneHelper = null;
+          }
         } else {
           updateSectionCut();
         }
@@ -3256,6 +3393,54 @@
         if (btn) btn.classList.toggle('active', isOpen);
       }
 
+      // 10. ĐIỀU KHIỂN BẬT TẮT THƯỚC ĐO 3D & ĐẢO CHẾ ĐỘ (MẶC ĐỊNH ĐO 2 ĐIỂM)
+      function updateMeasureHudUI() {
+        const hudText = document.getElementById('measureHudText');
+        const btnMeasurePointMode = document.getElementById('btnMeasurePointMode');
+        if (isPointMeasureMode) {
+          if (btnMeasurePointMode) {
+            btnMeasurePointMode.classList.add('active');
+            btnMeasurePointMode.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1 3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg> Đo Tấm`;
+            btnMeasurePointMode.title = "Chuyển sang chế độ đo kích thước tấm (Dài × Rộng × Dày)";
+          }
+          if (hudText) {
+            hudText.innerHTML = `<strong>Chế độ đo 2 điểm:</strong> Nhấn giữ & rê ngón tay để bắt điểm ván, thả tay để chốt điểm!`;
+          }
+        } else {
+          if (btnMeasurePointMode) {
+            btnMeasurePointMode.classList.remove('active');
+            btnMeasurePointMode.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg> Đo 2 Điểm`;
+            btnMeasurePointMode.title = "Chuyển sang chế độ đo 2 điểm tự do (nhấn giữ & rê kính lúp)";
+          }
+          if (hudText) {
+            hudText.innerHTML = `<strong>Chế độ đo tấm:</strong> Chạm vào tấm ván để đo 3 chiều (Dài × Rộng × Dày)!`;
+          }
+        }
+      }
+
+      function toggleMeasureTool(state) {
+        isMeasureEnabled = (state !== undefined) ? state : !isMeasureEnabled;
+        const btnToggleMeasure = document.getElementById('btnToggleMeasure');
+        const measureHud = document.getElementById('measureHud');
+        if (btnToggleMeasure) btnToggleMeasure.classList.toggle('active-cyan', isMeasureEnabled);
+        if (measureHud) measureHud.style.display = isMeasureEnabled ? 'flex' : 'none';
+
+        if (!isMeasureEnabled) {
+          clearMeasureHelpers();
+          clearPointMeasure();
+        } else {
+          // Mặc định luôn là Đo 2 Điểm khi bật thước đo theo yêu cầu
+          if (state === true) {
+            isPointMeasureMode = true;
+          }
+          clearPointMeasure();
+          updateMeasureHudUI();
+          if (!isPointMeasureMode) {
+            updateMeasureHelper();
+          }
+        }
+      }
+
       // 11. GẮN SỰ KIỆN NÚT BẤM GIAO DIỆN
       function setupEventListeners() {
         document.getElementById('btnStartQrScan').onclick = openQrScanner;
@@ -3278,33 +3463,10 @@
           };
         }
 
-        // Nút Thước đo 3 chiều (Dài × Rộng × Dày)
+        // Nút Thước đo 3 chiều & Đo 2 điểm
         const btnToggleMeasure = document.getElementById('btnToggleMeasure');
-        const measureHud = document.getElementById('measureHud');
         const btnMeasurePointMode = document.getElementById('btnMeasurePointMode');
         const btnCloseMeasureHud = document.getElementById('btnCloseMeasureHud');
-
-        function toggleMeasureTool(state) {
-          isMeasureEnabled = (state !== undefined) ? state : !isMeasureEnabled;
-          if (btnToggleMeasure) btnToggleMeasure.classList.toggle('active-cyan', isMeasureEnabled);
-          if (measureHud) measureHud.style.display = isMeasureEnabled ? 'flex' : 'none';
-
-          if (!isMeasureEnabled) {
-            isPointMeasureMode = false;
-            if (btnMeasurePointMode) btnMeasurePointMode.classList.remove('active');
-            clearMeasureHelpers();
-            clearPointMeasure();
-          } else {
-            isPointMeasureMode = true;
-            if (btnMeasurePointMode) btnMeasurePointMode.classList.add('active');
-            clearPointMeasure();
-            const hudText = document.getElementById('measureHudText');
-            if (hudText) {
-              hudText.innerHTML = `<strong>Chế độ đo điểm:</strong> Nhấn giữ & rê ngón tay để bắt đỉnh/trung điểm, thả tay để chốt Điểm 1!`;
-            }
-            updateMeasureHelper();
-          }
-        }
 
         if (btnToggleMeasure) {
           btnToggleMeasure.onclick = () => toggleMeasureTool();
@@ -3317,22 +3479,23 @@
         if (btnMeasurePointMode) {
           btnMeasurePointMode.onclick = () => {
             isPointMeasureMode = !isPointMeasureMode;
-            btnMeasurePointMode.classList.toggle('active', isPointMeasureMode);
-            const hudText = document.getElementById('measureHudText');
-            if (isPointMeasureMode) {
-              clearPointMeasure();
-              if (hudText) hudText.innerHTML = `<strong>Chế độ đo điểm:</strong> Nhấn giữ & rê ngón tay để bắt đỉnh/trung điểm, thả tay để chốt Điểm 1!`;
-            } else {
-              clearPointMeasure();
-              if (hudText) hudText.innerHTML = `Chạm vào tấm ván để đo 3 chiều (Dài × Rộng × Dày), hoặc bấm "Đo 2 Điểm" để kéo thước!`;
+            clearPointMeasure();
+            clearMeasureHelpers();
+            updateMeasureHudUI();
+            if (!isPointMeasureMode && selectedBoardIndex !== null) {
+              updateMeasureHelper();
             }
           };
         }
 
-        // Nút Ẩn tấm đang chọn
+        // Nút Ẩn tấm đang chọn (Cả nút tròn HUD lẫn nút cố định nổi bên phải)
         const btnHudHide = document.getElementById('btnHudHide');
         if (btnHudHide) {
           btnHudHide.onclick = hideSelectedBoard;
+        }
+        const btnFloatingHide = document.getElementById('btnFloatingHide');
+        if (btnFloatingHide) {
+          btnFloatingHide.onclick = hideSelectedBoard;
         }
 
         // Nút Hiện lại tất cả tấm đã ẩn
@@ -3359,14 +3522,14 @@
 
         // Nút Mặt cắt di động 3 trục (Section Cut)
         const btnToggleSection = document.getElementById('btnToggleSection');
-        const secCloseBtn = document.getElementById('secCloseBtn');
-        const secSlider = document.getElementById('secSlider');
-        const secValue = document.getElementById('secValue');
+        const secCloseBtn = document.getElementById('btnCloseSection');
+        const secSlider = document.getElementById('sectionSlider');
+        const secValue = document.getElementById('sectionValue');
         const btnFlipSection = document.getElementById('btnFlipSection');
         const secAxisButtons = [
-          document.getElementById('secAxisX'),
-          document.getElementById('secAxisY'),
-          document.getElementById('secAxisZ')
+          document.getElementById('btnSecAxisX'),
+          document.getElementById('btnSecAxisY'),
+          document.getElementById('btnSecAxisZ')
         ];
 
         if (btnToggleSection) {
@@ -3402,7 +3565,7 @@
 
         // Nút Rã rời cụm chi tiết (Explode View)
         const btnToggleExplode = document.getElementById('btnToggleExplode');
-        const explodeCloseBtn = document.getElementById('explodeCloseBtn');
+        const explodeCloseBtn = document.getElementById('btnCloseExplode');
         const explodeSlider = document.getElementById('explodeSlider');
         const explodeValue = document.getElementById('explodeValue');
         const btnResetExplode = document.getElementById('btnResetExplode');
@@ -3426,7 +3589,7 @@
 
         // Nút Góc nhìn chuẩn SketchUp (Standard Views)
         const btnToggleViews = document.getElementById('btnToggleViews');
-        const viewsCloseBtn = document.getElementById('viewsCloseBtn');
+        const viewsCloseBtn = document.getElementById('btnCloseViews');
         if (btnToggleViews) {
           btnToggleViews.onclick = () => {
             const panel = document.getElementById('viewsPanel');
