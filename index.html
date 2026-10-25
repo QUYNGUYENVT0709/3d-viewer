@@ -15,15 +15,29 @@
 
   <style>
     :root {
-      --bg-dark: #0f172a;
-      --panel-bg: rgba(15, 23, 42, 0.88);
-      --panel-border: rgba(255, 255, 255, 0.12);
+      --bg-dark: #f8fafc;
+      --panel-bg: rgba(255, 255, 255, 0.94);
+      --panel-border: rgba(0, 0, 0, 0.08);
       --accent-color: #ff4500;
-      --accent-hover: #ff5722;
+      --accent-hover: #ea580c;
+      --text-main: #0f172a;
+      --text-sub: #64748b;
+      --btn-bg: #ffffff;
+      --btn-hover: #f1f5f9;
+      --search-input-bg: #f1f5f9;
+      --grid-bg: rgba(0, 0, 0, 0.03);
+    }
+
+    body.dark-mode {
+      --bg-dark: #0f172a;
+      --panel-bg: rgba(15, 23, 42, 0.92);
+      --panel-border: rgba(255, 255, 255, 0.12);
       --text-main: #f8fafc;
       --text-sub: #94a3b8;
       --btn-bg: #1e293b;
       --btn-hover: #334155;
+      --search-input-bg: rgba(255, 255, 255, 0.07);
+      --grid-bg: rgba(255, 255, 255, 0.04);
     }
 
     * {
@@ -93,7 +107,7 @@
     .project-name {
       font-size: 13px;
       font-weight: 600;
-      color: #fff;
+      color: var(--text-main);
       max-width: 160px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -121,7 +135,7 @@
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
       transition: all 0.2s ease;
     }
     .icon-btn:hover {
@@ -157,15 +171,15 @@
       border: 1px solid var(--panel-border);
       border-radius: 14px;
       padding: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
     .search-input {
       width: 100%;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: var(--search-input-bg);
+      border: 1px solid var(--panel-border);
       border-radius: 8px;
       padding: 8px 12px;
-      color: #fff;
+      color: var(--text-main);
       font-size: 14px;
       outline: none;
     }
@@ -237,7 +251,7 @@
     .hud-part-name {
       font-size: 16px;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-main);
       line-height: 1.25;
     }
     .hud-module-name {
@@ -246,8 +260,8 @@
       margin-top: 2px;
     }
     .hud-close-btn {
-      background: rgba(255,255,255,0.1);
-      border: none;
+      background: var(--grid-bg);
+      border: 1px solid var(--panel-border);
       color: var(--text-sub);
       width: 28px;
       height: 28px;
@@ -259,15 +273,15 @@
       justify-content: center;
     }
     .hud-close-btn:hover {
-      background: rgba(255,255,255,0.2);
-      color: #fff;
+      background: rgba(0,0,0,0.08);
+      color: var(--text-main);
     }
 
     .hud-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
-      background: rgba(255,255,255,0.04);
+      background: var(--grid-bg);
       padding: 10px;
       border-radius: 10px;
       margin: 8px 0 12px 0;
@@ -285,7 +299,7 @@
     .hud-value {
       font-size: 13px;
       font-weight: 600;
-      color: #fff;
+      color: var(--text-main);
       margin-top: 2px;
     }
 
@@ -311,8 +325,9 @@
       color: #fff;
     }
     .hud-btn-secondary {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
+      background: var(--btn-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--text-main);
     }
 
     /* QR SCANNER MODAL FULLSCREEN */
@@ -514,13 +529,13 @@
       background: var(--panel-bg);
       backdrop-filter: blur(12px);
       border: 1px solid var(--panel-border);
-      color: #fff;
+      color: var(--text-main);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
       transition: all 0.2s ease;
     }
     .round-tool-btn:active {
@@ -529,6 +544,7 @@
     .round-tool-btn.active {
       background: var(--accent-color);
       border-color: #ff8c00;
+      color: #fff;
     }
 
     /* EMPTY STATE FILE PICKER */
@@ -578,7 +594,7 @@
   <header class="top-header">
     <div class="brand-pill">
       <span class="brand-tag">LTF 3D</span>
-      <span class="project-name" id="displayProjectName">SX - CHỊ THIÊN XUYÊN MỘC</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -604,6 +620,9 @@
 
   <!-- FLOATING SIDE TOOLS -->
   <div class="floating-tools">
+    <button class="round-tool-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
+      💡
+    </button>
     <button class="round-tool-btn active" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh (X-Ray)">
       👻
     </button>
@@ -704,6 +723,7 @@
       let boardsData = {};   // { board_index: { part_name, dimensions, ... } }
       let selectedBoardIndex = null;
       let isGhostMode = true;
+      let isDarkMode = false;
       let html5QrCode = null;
 
       // Vật liệu Highlight (Phát sáng Neon Cam-Đỏ)
@@ -807,7 +827,7 @@
       function init3D() {
         const container = document.getElementById('viewport3D');
         scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x0f172a);
+        scene.background = new THREE.Color(0xf8fafc);
 
         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
         camera.position.set(2, 2, 2.5);
@@ -826,17 +846,29 @@
         controls.minDistance = 0.02;
         controls.maxDistance = 500;
 
-        // Ánh sáng Studio chuyên dụng cho ngành gỗ CNC
-        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x1e293b, 1.0);
+        // Ánh sáng Studio 360 đa hướng - Khử sạch mặt tối/sẫm màu theo chuẩn xưởng mộc
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+        scene.add(ambientLight);
+
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0xe2e8f0, 0.45);
+        hemiLight.position.set(0, 50, 0);
         scene.add(hemiLight);
 
-        const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.85);
-        dirLight1.position.set(10, 20, 15);
+        const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.45);
+        dirLight1.position.set(20, 30, 20);
         scene.add(dirLight1);
 
-        const dirLight2 = new THREE.DirectionalLight(0xfff7ed, 0.45);
-        dirLight2.position.set(-10, -5, -10);
+        const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.35);
+        dirLight2.position.set(-20, 20, -20);
         scene.add(dirLight2);
+
+        const dirLight3 = new THREE.DirectionalLight(0xffffff, 0.30);
+        dirLight3.position.set(-20, 15, 20);
+        scene.add(dirLight3);
+
+        const dirLight4 = new THREE.DirectionalLight(0xffffff, 0.25);
+        dirLight4.position.set(0, -20, 0);
+        scene.add(dirLight4);
 
         // Bỏ hoàn toàn GridHelper để không bị đường viền bao la làm nhỏ mô hình
 
@@ -906,8 +938,27 @@
           modelRoot.traverse(child => {
             if (child.isMesh) {
               allMeshes.push(child);
-              // Lưu vật liệu gốc để phục hồi
+              // Khử bóng gắt, khử sẫm màu bề mặt và cho phép nhìn cả 2 mặt tấm
+              if (child.material) {
+                child.material.side = THREE.DoubleSide;
+                if (child.material.roughness !== undefined) child.material.roughness = 0.65;
+                if (child.material.metalness !== undefined) child.material.metalness = 0.02;
+              }
               child.userData.origMaterial = child.material;
+
+              // Tạo đường nét viền kỹ thuật (EdgesGeometry) giống góc nhìn SketchUp
+              if (child.geometry) {
+                const edgeGeo = new THREE.EdgesGeometry(child.geometry, 20);
+                const edgeMat = new THREE.LineBasicMaterial({
+                  color: isDarkMode ? 0x64748b : 0x1e293b,
+                  linewidth: 1,
+                  transparent: true,
+                  opacity: 0.85
+                });
+                const edgeLines = new THREE.LineSegments(edgeGeo, edgeMat);
+                child.add(edgeLines);
+                child.userData.edgeLines = edgeLines;
+              }
 
               // Tìm ID tấm từ tên đối tượng
               const bIdx = extractBoardIndexFromName(child.name, child.parent);
@@ -992,15 +1043,28 @@
       function selectBoard(boardIndex, zoomCamera = true) {
         selectedBoardIndex = boardIndex;
         const targetMeshes = boardMeshMap[boardIndex] || [];
+        const defaultEdgeHex = isDarkMode ? 0x64748b : 0x1e293b;
 
         // 1. Cập nhật vật liệu toàn bộ Scene
         allMeshes.forEach(mesh => {
-          if (mesh.userData.boardIndex === boardIndex) {
-            // Tấm được chọn: Áp dụng màu Đỏ Cam Neon rực rỡ
+          const isTarget = (mesh.userData.boardIndex === boardIndex);
+          if (isTarget) {
             mesh.material = highlightMaterial;
+            if (mesh.userData.edgeLines) {
+              mesh.userData.edgeLines.material.color.setHex(0xffffff);
+              mesh.userData.edgeLines.material.opacity = 1.0;
+            }
           } else {
-            // Các tấm khác: Nếu bật Ghost Mode thì làm mờ trong suốt, ngược lại trả về vật liệu gốc
             mesh.material = isGhostMode ? ghostMaterial : mesh.userData.origMaterial;
+            if (mesh.userData.edgeLines) {
+              if (isGhostMode) {
+                mesh.userData.edgeLines.material.color.setHex(0x94a3b8);
+                mesh.userData.edgeLines.material.opacity = 0.25;
+              } else {
+                mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+                mesh.userData.edgeLines.material.opacity = 0.85;
+              }
+            }
           }
         });
 
@@ -1015,8 +1079,13 @@
 
       function clearSelection() {
         selectedBoardIndex = null;
+        const defaultEdgeHex = isDarkMode ? 0x64748b : 0x1e293b;
         allMeshes.forEach(mesh => {
           mesh.material = mesh.userData.origMaterial;
+          if (mesh.userData.edgeLines) {
+            mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+            mesh.userData.edgeLines.material.opacity = 0.85;
+          }
         });
         document.getElementById('hudCard').classList.remove('show');
       }
@@ -1320,6 +1389,27 @@
         if (btnCloseProjects) {
           btnCloseProjects.onclick = function() {
             document.getElementById('projectsModal').classList.remove('active');
+          };
+        }
+
+        // Nút chuyển chế độ Nền Sáng Studio / Tối
+        const btnToggleTheme = document.getElementById('btnToggleTheme');
+        if (btnToggleTheme) {
+          btnToggleTheme.onclick = function() {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            btnToggleTheme.textContent = isDarkMode ? '🌙' : '💡';
+            const newBg = isDarkMode ? 0x0f172a : 0xf8fafc;
+            if (scene) scene.background.setHex(newBg);
+
+            const defaultEdgeHex = isDarkMode ? 0x64748b : 0x1e293b;
+            allMeshes.forEach(mesh => {
+              if (mesh.userData.edgeLines && mesh.userData.boardIndex !== selectedBoardIndex) {
+                if (!isGhostMode || selectedBoardIndex === null) {
+                  mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+                }
+              }
+            });
           };
         }
 
