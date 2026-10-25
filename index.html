@@ -666,11 +666,17 @@
       white-space: nowrap;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-    }
     .loupe-badge.snapped {
-      background: rgba(16, 185, 129, 0.92);
+      background: rgba(0, 229, 255, 0.95);
+      border-color: #00e5ff;
+      color: #04101e;
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+    }
+    .loupe-badge.snapped-midpoint {
+      background: rgba(16, 185, 129, 0.95);
       border-color: #10b981;
       color: #ffffff;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
     }
 
     .hud-btn-outline {
@@ -1012,7 +1018,7 @@
   <header class="top-header">
     <div class="brand-pill">
       <span class="brand-tag">LTF 3D</span>
-      <span class="project-name" id="displayProjectName">CẮT VANGO L1</span>
+      <span class="project-name" id="displayProjectName">NGÂN HÀNG</span>
     </div>
 
     <div class="top-tools">
@@ -1843,6 +1849,14 @@
         raycaster.setFromCamera(mouse, camera);
         const visibleCandidates = allMeshes.filter(m => {
           if (!m.visible) return false;
+          let bIdx = m.userData.boardIndex;
+          if (bIdx === undefined || bIdx === null) {
+            bIdx = getMeshBoardIndex(m);
+            if (bIdx !== null) m.userData.boardIndex = bIdx;
+          }
+          if (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx)) return false;
+          const lyrName = m.userData.layerName;
+          if (lyrName && hiddenLayers.has(lyrName)) return false;
           let p = m.parent;
           while (p && p !== scene) {
             if (!p.visible) return false;
@@ -1858,15 +1872,16 @@
         const hitMesh = hit.object;
         let bestPoint = hit.point.clone();
         let isSnapped = false;
-        let minScreenDist = 36; // Bán kính hít góc 36px màn hình
+        let snapType = 'face'; // 'endpoint' | 'midpoint' | 'face'
         let snapScreenX = clientX;
         let snapScreenY = clientY;
 
-        // 1. Tính 8 góc thực tế của tấm ván trong không gian 3D
+        // Bắt điểm thông minh (Snapping chuẩn SketchUp): Đỉnh nhọn (Endpoints) & Trung điểm cạnh (Midpoints)
         if (hitMesh.geometry) {
           if (!hitMesh.geometry.boundingBox) hitMesh.geometry.computeBoundingBox();
           const bb = hitMesh.geometry.boundingBox;
           if (bb) {
+            // 8 Đỉnh nhọn góc của tấm ván
             const corners = [
               new THREE.Vector3(bb.min.x, bb.min.y, bb.min.z),
               new THREE.Vector3(bb.min.x, bb.min.y, bb.max.z),
@@ -1878,27 +1893,73 @@
               new THREE.Vector3(bb.max.x, bb.max.y, bb.max.z),
             ];
 
+            // 12 Trung điểm các cạnh của tấm ván
+            const mx = (bb.min.x + bb.max.x) * 0.5;
+            const my = (bb.min.y + bb.max.y) * 0.5;
+            const mz = (bb.min.z + bb.max.z) * 0.5;
+            const midpoints = [
+              // 4 cạnh song song trục X
+              new THREE.Vector3(mx, bb.min.y, bb.min.z),
+              new THREE.Vector3(mx, bb.min.y, bb.max.z),
+              new THREE.Vector3(mx, bb.max.y, bb.min.z),
+              new THREE.Vector3(mx, bb.max.y, bb.max.z),
+              // 4 cạnh song song trục Y
+              new THREE.Vector3(bb.min.x, my, bb.min.z),
+              new THREE.Vector3(bb.min.x, my, bb.max.z),
+              new THREE.Vector3(bb.max.x, my, bb.min.z),
+              new THREE.Vector3(bb.max.x, my, bb.max.z),
+              // 4 cạnh song song trục Z
+              new THREE.Vector3(bb.min.x, bb.min.y, mz),
+              new THREE.Vector3(bb.min.x, bb.max.y, mz),
+              new THREE.Vector3(bb.max.x, bb.min.y, mz),
+              new THREE.Vector3(bb.max.x, bb.max.y, mz)
+            ];
+
             const projV = new THREE.Vector3();
+            let minEndpointDist = 36; // Bán kính ưu tiên hút đỉnh 36px
             corners.forEach(c => {
               const wPos = c.clone().applyMatrix4(hitMesh.matrixWorld);
               projV.copy(wPos).project(camera);
-              if (projV.z < 1) { // Nằm phía trước camera
+              if (projV.z < 1) { // Phía trước camera
                 const sx = (projV.x * 0.5 + 0.5) * window.innerWidth;
                 const sy = (-projV.y * 0.5 + 0.5) * window.innerHeight;
                 const d = Math.hypot(sx - clientX, sy - clientY);
-                if (d < minScreenDist) {
-                  minScreenDist = d;
+                if (d < minEndpointDist) {
+                  minEndpointDist = d;
                   bestPoint.copy(wPos);
                   isSnapped = true;
+                  snapType = 'endpoint';
                   snapScreenX = sx;
                   snapScreenY = sy;
                 }
               }
             });
+
+            // Nếu không gần đỉnh, kiểm tra trung điểm cạnh (bán kính 30px)
+            if (!isSnapped) {
+              let minMidDist = 30;
+              midpoints.forEach(m => {
+                const wPos = m.clone().applyMatrix4(hitMesh.matrixWorld);
+                projV.copy(wPos).project(camera);
+                if (projV.z < 1) {
+                  const sx = (projV.x * 0.5 + 0.5) * window.innerWidth;
+                  const sy = (-projV.y * 0.5 + 0.5) * window.innerHeight;
+                  const d = Math.hypot(sx - clientX, sy - clientY);
+                  if (d < minMidDist) {
+                    minMidDist = d;
+                    bestPoint.copy(wPos);
+                    isSnapped = true;
+                    snapType = 'midpoint';
+                    snapScreenX = sx;
+                    snapScreenY = sy;
+                  }
+                }
+              });
+            }
           }
         }
 
-        return { point: bestPoint, isSnapped, hitMesh, screenX: snapScreenX, screenY: snapScreenY };
+        return { point: bestPoint, isSnapped, snapType, hitMesh, screenX: snapScreenX, screenY: snapScreenY };
       }
 
       function updateLoupe(clientX, clientY, snapRes) {
@@ -1922,15 +1983,26 @@
         let targetScreenY = clientY;
 
         if (snapRes && snapRes.isSnapped && snapRes.point) {
-          badge.innerHTML = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg> HÍT GÓC VÁN`;
-          badge.className = 'loupe-badge snapped';
+          if (snapRes.snapType === 'endpoint') {
+            badge.innerHTML = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg> ĐỈNH GÓC (ENDPOINT)`;
+            badge.className = 'loupe-badge snapped';
+            if (marker) {
+              marker.material.color.setHex(0x00e5ff); // Cyan neon cho đỉnh
+              marker.position.copy(snapRes.point);
+              marker.visible = true;
+            }
+          } else if (snapRes.snapType === 'midpoint') {
+            badge.innerHTML = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg> TRUNG ĐIỂM (MIDPOINT)`;
+            badge.className = 'loupe-badge snapped-midpoint';
+            if (marker) {
+              marker.material.color.setHex(0x10b981); // Emerald green cho trung điểm
+              marker.position.copy(snapRes.point);
+              marker.visible = true;
+            }
+          }
           if (!lastVibrated) {
             if (navigator.vibrate) navigator.vibrate(25);
             lastVibrated = true;
-          }
-          if (marker) {
-            marker.position.copy(snapRes.point);
-            marker.visible = true;
           }
           if (snapRes.screenX !== undefined) {
             targetScreenX = snapRes.screenX;
@@ -1946,6 +2018,9 @@
           lastVibrated = false;
           if (marker) marker.visible = false;
         }
+
+        // Đảm bảo WebGL có frame mới nhất trước khi copy vào loupe
+        if (renderer && scene && camera) renderer.render(scene, camera);
 
         // Copy vùng ảnh phóng to 3.2x vào kính lúp trùng khớp chính xác 100% tọa độ
         const ctx = loupeCanvas.getContext('2d');
@@ -2336,11 +2411,11 @@
           activePointerDown = true;
 
           if (isPointMeasureMode) {
-            // Tạm thời vô hiệu hóa OrbitControls để mô hình không bị lắc xoay khi rê ngón tay định vị
+            // Tạm thời vô hiệu hóa OrbitControls để người dùng rê ngón tay / kính lúp chính xác
             if (controls) controls.enabled = false;
             const snapRes = findSnapPoint(e.clientX, e.clientY);
+            currentSnapResult = snapRes;
             if (snapRes) {
-              currentSnapResult = snapRes;
               updateLoupe(e.clientX, e.clientY, snapRes);
               if (measurePointA) updateLiveMeasureLine(snapRes.point);
             }
@@ -2351,8 +2426,8 @@
           if (!activePointerDown) return;
           if (isPointMeasureMode) {
             const snapRes = findSnapPoint(e.clientX, e.clientY);
+            currentSnapResult = snapRes;
             if (snapRes) {
-              currentSnapResult = snapRes;
               updateLoupe(e.clientX, e.clientY, snapRes);
               if (measurePointA) updateLiveMeasureLine(snapRes.point);
             } else {
@@ -2366,20 +2441,19 @@
           hideLoupe();
           if (controls) controls.enabled = true;
 
+          // Chế độ đo điểm: Thả tay (touchend/mouseup) tự động chốt điểm đã bắt (snap)
+          if (isPointMeasureMode) {
+            const finalSnap = currentSnapResult || findSnapPoint(e.clientX, e.clientY);
+            if (finalSnap && finalSnap.point) {
+              handlePointMeasureClick(finalSnap.point);
+            }
+            currentSnapResult = null;
+            return;
+          }
+
           const isTouch = (e.pointerType === 'touch');
           const maxTapDist = isTouch ? 14 : 6;
           const dist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
-
-          if (isPointMeasureMode) {
-            if (currentSnapResult) {
-              handlePointMeasureClick(currentSnapResult.point);
-              currentSnapResult = null;
-            } else if (dist <= maxTapDist) {
-              const snapRes = findSnapPoint(e.clientX, e.clientY);
-              if (snapRes) handlePointMeasureClick(snapRes.point);
-            }
-            return;
-          }
 
           // Bỏ qua nếu là thao tác xoay (kéo rê chuột/ngón tay)
           if (dist > maxTapDist) return;
@@ -2389,9 +2463,23 @@
 
           raycaster.setFromCamera(mouse, camera);
 
-          // Chỉ kiểm tra va chạm với các mesh đang thực sự hiển thị
+          // Chỉ kiểm tra va chạm với các mesh đang thực sự hiển thị (loại bỏ hoàn toàn tấm đã ẩn để click xuyên qua)
           const visibleCandidates = allMeshes.filter(m => {
             if (!m.visible) return false;
+            let bIdx = m.userData.boardIndex;
+            if (bIdx === undefined || bIdx === null) {
+              bIdx = getMeshBoardIndex(m);
+              if (bIdx !== null) m.userData.boardIndex = bIdx;
+            }
+            if (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx)) {
+              m.visible = false;
+              return false;
+            }
+            const lyrName = m.userData.layerName;
+            if (lyrName && hiddenLayers.has(lyrName)) {
+              m.visible = false;
+              return false;
+            }
             let p = m.parent;
             while (p && p !== scene) {
               if (!p.visible) return false;
@@ -2427,6 +2515,7 @@
 
         container.addEventListener('pointercancel', () => {
           activePointerDown = false;
+          currentSnapResult = null;
           hideLoupe();
           if (controls) controls.enabled = true;
         });
@@ -2590,9 +2679,12 @@
             clearMeasureHelpers();
             clearPointMeasure();
           } else {
+            isPointMeasureMode = true;
+            if (btnMeasurePointMode) btnMeasurePointMode.classList.add('active');
+            clearPointMeasure();
             const hudText = document.getElementById('measureHudText');
-            if (hudText && selectedBoardIndex === null) {
-              hudText.innerHTML = `Chạm vào tấm ván để đo 3 chiều (Dài × Rộng × Dày), hoặc bấm <strong>"Đo 2 Điểm"</strong> để kéo thước!`;
+            if (hudText) {
+              hudText.innerHTML = `<strong>Chế độ đo điểm:</strong> Nhấn giữ & rê ngón tay để bắt đỉnh/trung điểm, thả tay để chốt Điểm 1!`;
             }
             updateMeasureHelper();
           }
@@ -2613,7 +2705,7 @@
             const hudText = document.getElementById('measureHudText');
             if (isPointMeasureMode) {
               clearPointMeasure();
-              if (hudText) hudText.innerHTML = `<strong>Chế độ đo 2 điểm:</strong> Chạm vào điểm thứ nhất trên mô hình!`;
+              if (hudText) hudText.innerHTML = `<strong>Chế độ đo điểm:</strong> Nhấn giữ & rê ngón tay để bắt đỉnh/trung điểm, thả tay để chốt Điểm 1!`;
             } else {
               clearPointMeasure();
               if (hudText) hudText.innerHTML = `Chạm vào tấm ván để đo 3 chiều (Dài × Rộng × Dày), hoặc bấm "Đo 2 Điểm" để kéo thước!`;
@@ -2720,7 +2812,7 @@
             const newBg = isDarkMode ? 0x0f172a : 0xf8fafc;
             if (scene) scene.background.setHex(newBg);
 
-            const defaultEdgeHex = isDarkMode ? 0x94a3b8 : 0x000000;
+            const defaultEdgeHex = 0x000000; // Cố định viền model luôn là MÀU ĐEN chuẩn kỹ thuật kể cả nền tối
             allMeshes.forEach(mesh => {
               if (mesh.userData.edgeLines && mesh.userData.boardIndex !== selectedBoardIndex) {
                 if (!isGhostMode || selectedBoardIndex === null) {
