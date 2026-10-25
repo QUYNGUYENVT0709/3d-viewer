@@ -490,7 +490,7 @@
   <header class="top-header">
     <div class="brand-pill">
       <span class="brand-tag">LTF 3D</span>
-      <span class="project-name" id="displayProjectName">ANH ĐỨC LẦU 1 TEST</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -643,8 +643,8 @@
         scene = new THREE.Scene();
         scene.background = new THREE.Color(0x0f172a);
 
-        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 10, 50000);
-        camera.position.set(2000, 2000, 2500);
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
+        camera.position.set(2, 2, 2.5);
 
         renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -657,25 +657,22 @@
         controls.dampingFactor = 0.08;
         controls.rotateSpeed = 0.8;
         controls.panSpeed = 0.8;
-        controls.maxDistance = 30000;
-        controls.minDistance = 50;
+        controls.minDistance = 0.02;
+        controls.maxDistance = 500;
 
         // Ánh sáng Studio chuyên dụng cho ngành gỗ CNC
-        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x334155, 0.9);
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x1e293b, 1.0);
         scene.add(hemiLight);
 
-        const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
-        dirLight1.position.set(3000, 5000, 4000);
+        const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.85);
+        dirLight1.position.set(10, 20, 15);
         scene.add(dirLight1);
 
-        const dirLight2 = new THREE.DirectionalLight(0xfff7ed, 0.4);
-        dirLight2.position.set(-3000, -2000, -3000);
+        const dirLight2 = new THREE.DirectionalLight(0xfff7ed, 0.45);
+        dirLight2.position.set(-10, -5, -10);
         scene.add(dirLight2);
 
-        // Grid nền nhẹ định hướng không gian
-        const grid = new THREE.GridHelper(5000, 50, 0x334155, 0x1e293b);
-        grid.position.y = -5;
-        scene.add(grid);
+        // Bỏ hoàn toàn GridHelper để không bị đường viền bao la làm nhỏ mô hình
 
         // Raycaster bắt chạm màn hình chọn tấm trực tiếp
         setupRaycasting(container);
@@ -785,15 +782,16 @@
 
         const loadError = function(error) {
           console.warn("Không tải được đường dẫn:", source, error);
-          if (typeof source === 'string' && source !== 'model.glb') {
-            console.info("Thử tải fallback về ./model.glb...");
-            loader.load('model.glb', loadSuccess, loadProgress, (err2) => {
-              setLoading(false);
-              document.getElementById('emptyState').classList.add('active');
-            });
-          } else {
-            setLoading(false);
-            document.getElementById('emptyState').classList.add('active');
+          setLoading(false);
+          const emptyBox = document.getElementById('emptyState');
+          if (emptyBox) {
+            emptyBox.classList.add('active');
+            const h3 = emptyBox.querySelector('h3');
+            if (h3) h3.textContent = targetProjectName ? `Chưa có mô hình: ${targetProjectName}` : "Chưa có mô hình 3D";
+            const p = emptyBox.querySelector('p');
+            if (p) p.innerHTML = targetProjectName
+              ? `Mô hình của dự án <strong>${targetProjectName}</strong> chưa được xuất hoặc đang đồng bộ. Hãy kiểm tra lại thao tác 'Xuất 3D Web' trong SketchUp.`
+              : "Hãy chọn file mô hình <strong>.glb</strong> của dự án từ máy:";
           }
         };
 
@@ -857,7 +855,7 @@
         document.getElementById('hudCard').classList.remove('show');
       }
 
-      // 6. CAMERA SMOOTH ZOOM VÀO TẤM VÁN ĐƯỢC CHỌN
+      // 6. CAMERA SMOOTH ZOOM VÀO TẤM VÁN ĐƯỢC CHỌN (CẬN CẢNH CHI TIẾT)
       function zoomToMeshes(meshes) {
         const box = new THREE.Box3();
         meshes.forEach(m => box.expandByObject(m));
@@ -869,13 +867,17 @@
         const size = new THREE.Vector3();
         box.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
-        const targetDist = Math.max(maxDim * 2.2, 350);
+
+        // Khoảng cách zoom cận cảnh vào tấm được chọn
+        const fov = camera.fov * (Math.PI / 180);
+        let targetDist = (maxDim / 2) / Math.tan(fov / 2);
+        targetDist = Math.max(targetDist * 1.35, 0.3);
 
         // Vị trí camera góc phối cảnh đẹp (Iso View từ trên chếch xuống)
         const targetPos = new THREE.Vector3(
-          center.x + targetDist * 0.8,
-          center.y + targetDist * 0.9,
-          center.z + targetDist * 1.1
+          center.x + targetDist * 0.65,
+          center.y + targetDist * 0.55,
+          center.z + targetDist * 0.75
         );
 
         // Animation mượt mà bằng lerp
@@ -890,10 +892,27 @@
         const size = new THREE.Vector3();
         box.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
-        const dist = maxDim * 1.6;
+        if (maxDim <= 0) return;
+
+        // Tự động tính khoảng cách để mô hình chiếm trọn 75-80% màn hình
+        const fov = camera.fov * (Math.PI / 180);
+        let cameraDist = (maxDim / 2) / Math.tan(fov / 2);
+        cameraDist *= 1.25;
+
+        // Thích ứng min/max khoảng cách zoom theo kích thước thực của mô hình
+        controls.minDistance = Math.max(maxDim * 0.01, 0.02);
+        controls.maxDistance = maxDim * 25;
+        camera.near = Math.max(maxDim * 0.002, 0.005);
+        camera.far = Math.max(maxDim * 50, 100);
+        camera.updateProjectionMatrix();
 
         controls.target.copy(center);
-        camera.position.set(center.x + dist, center.y + dist * 0.8, center.z + dist);
+        camera.position.set(
+          center.x + cameraDist * 0.7,
+          center.y + cameraDist * 0.5,
+          center.z + cameraDist * 0.8
+        );
+        camera.lookAt(center);
         controls.update();
       }
 
