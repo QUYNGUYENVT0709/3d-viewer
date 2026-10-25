@@ -279,7 +279,7 @@
 
     .hud-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
       background: var(--grid-bg);
       padding: 10px;
@@ -717,10 +717,6 @@
         <span class="hud-label">Chỉ dán nẹp</span>
         <span class="hud-value" id="hudEdgeBanding">--</span>
       </div>
-      <div class="hud-grid-item" id="hudItemDrills">
-        <span class="hud-label">Liên kết / Khoan</span>
-        <span class="hud-value" id="hudDrills">--</span>
-      </div>
     </div>
 
     <div class="hud-actions">
@@ -778,6 +774,14 @@
   <!-- MAIN SCRIPT 3D & SCANNER -->
   <script>
     (function() {
+      // Khóa chuột phải và phím tắt DevTools để bảo vệ bản quyền mã nguồn
+      document.addEventListener('contextmenu', e => e.preventDefault());
+      document.addEventListener('keydown', e => {
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) || (e.ctrlKey && e.key.toLowerCase() === 'u')) {
+          e.preventDefault();
+        }
+      });
+
       // 1. STATE & DATA
       let scene, camera, renderer, controls;
       let modelRoot = null;
@@ -1173,8 +1177,20 @@
           }
           mesh.visible = true;
 
+          // Kiểm tra xem mesh có phải là tem nhãn ABF_Label không
+          const isLabel = (mesh.name && mesh.name.toLowerCase().includes('label')) ||
+                          (mesh.parent && mesh.parent.name && mesh.parent.name.toLowerCase().includes('label'));
+
           const isTarget = (selectedBoardIndex !== null && bIdx === selectedBoardIndex);
-          if (isTarget) {
+
+          if (isLabel) {
+            // Giữ nguyên tem nhãn ABF_Label sắc nét, trung thực bản vẽ
+            mesh.material = mesh.userData.origMaterial;
+            if (mesh.userData.edgeLines) {
+              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+              mesh.userData.edgeLines.material.opacity = isTarget ? 1.0 : (isGhostMode ? 0.3 : 0.85);
+            }
+          } else if (isTarget) {
             mesh.material = highlightMaterial;
             if (mesh.userData.edgeLines) {
               mesh.userData.edgeLines.material.color.setHex(0xffffff);
@@ -1400,19 +1416,6 @@
             elEbItem.style.display = "flex";
           } else {
             elEbItem.style.display = "none";
-          }
-        }
-
-        // Liên kết / Khoan: Loại bỏ hoàn toàn khi "Không có liên kết" theo đúng yêu cầu
-        const elDrillItem = document.getElementById('hudItemDrills');
-        const elDrillVal = document.getElementById('hudDrills');
-        if (elDrillItem && elDrillVal) {
-          const dCount = parseInt(info.drills_count, 10);
-          if (!isNaN(dCount) && dCount > 0) {
-            elDrillVal.textContent = `${dCount} lỗ liên kết cam`;
-            elDrillItem.style.display = "flex";
-          } else {
-            elDrillItem.style.display = "none";
           }
         }
 
