@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>LTF 3D - Xem Vị Trí Lắp Đặt Tấm Ván</title>
+  <title>LTF 3D VIEWER</title>
   
   <!-- Thư viện 3D Three.js & OrbitControls & GLTFLoader (CDN siêu nhẹ, lưu cache di động) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -1045,13 +1045,13 @@
       <button class="round-tool-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
-      <button class="round-tool-btn active" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
+      <button class="round-tool-btn" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
       </button>
       <button class="round-tool-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18" opacity="0.5"/><path d="m8 8 8 8m0-8-8 8"/></svg>
       </button>
-      <button class="round-tool-btn active-cyan" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều (Dài × Rộng × Dày)">
+      <button class="round-tool-btn" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều (Dài × Rộng × Dày)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg>
       </button>
       <button class="round-tool-btn" id="btnToggleLayers" title="Quản lý Layer (Hiện/Ẩn nhóm đối tượng)">
@@ -1185,16 +1185,16 @@
       let boardMeshMap = {}; // { board_index: [mesh1, mesh2, ...] }
       let boardsData = {};   // { board_index: { part_name, dimensions, ... } }
       let selectedBoardIndex = null;
-      let isGhostMode = true;
+      let isGhostMode = false;
       let isDarkMode = false;
       let html5QrCode = null;
 
-      // Vật liệu Highlight (Phát sáng Neon Cam-Đỏ)
+      // Vật liệu Highlight chuẩn phong cách SketchUp Selection (Mặt tấm sáng nhẹ dịu mắt)
       const highlightMaterial = new THREE.MeshStandardMaterial({
-        color: 0xff3b00,
-        emissive: 0xff2200,
-        emissiveIntensity: 0.5,
-        roughness: 1.0,
+        color: 0x38bdf8,
+        emissive: 0x0284c7,
+        emissiveIntensity: 0.25,
+        roughness: 0.9,
         metalness: 0.0,
         polygonOffset: true,
         polygonOffsetFactor: 1.0,
@@ -1475,7 +1475,7 @@
               if (child.geometry) {
                 const edgeGeo = new THREE.EdgesGeometry(child.geometry, 15);
                 const edgeMat = new THREE.LineBasicMaterial({
-                  color: isDarkMode ? 0x94a3b8 : 0x000000,
+                  color: 0x000000,
                   linewidth: 1,
                   depthTest: true,
                   depthWrite: true
@@ -1641,7 +1641,7 @@
 
       // Cập nhật vật liệu toàn bộ Scene
       function updateModelMaterials() {
-        const defaultEdgeHex = isDarkMode ? 0x94a3b8 : 0x000000;
+        const defaultEdgeHex = 0x000000; // Viền model luôn giữ cố định MÀU ĐEN chuẩn kỹ thuật
         allMeshes.forEach(mesh => {
           const bIdx = mesh.userData.boardIndex;
           const lyrName = mesh.userData.layerName;
@@ -1669,9 +1669,10 @@
               mesh.userData.edgeLines.material.opacity = isTarget ? 1.0 : (isGhostMode ? 0.3 : 0.85);
             }
           } else if (isTarget) {
+            // Phong cách SketchUp Selection: Mặt tấm sáng nhẹ, viền XANH DẠ QUANG (Neon Cyan) nổi bật tuyệt đối
             mesh.material = highlightMaterial;
             if (mesh.userData.edgeLines) {
-              mesh.userData.edgeLines.material.color.setHex(0xffffff);
+              mesh.userData.edgeLines.material.color.setHex(0x00e5ff);
               mesh.userData.edgeLines.material.opacity = 1.0;
             }
           } else if (isGlobalXray) {
@@ -1683,7 +1684,7 @@
           } else if (isGhostMode && selectedBoardIndex !== null) {
             mesh.material = ghostMaterial;
             if (mesh.userData.edgeLines) {
-              mesh.userData.edgeLines.material.color.setHex(0x94a3b8);
+              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
               mesh.userData.edgeLines.material.opacity = 0.25;
             }
           } else {
