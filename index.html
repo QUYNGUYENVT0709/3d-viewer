@@ -546,6 +546,54 @@
       border-color: #ff8c00;
       color: #fff;
     }
+    .round-tool-btn.active-cyan {
+      background: #0284c7;
+      border-color: #38bdf8;
+      color: #fff;
+    }
+    .unhide-count {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      background: #ef4444;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* THƯƠNG HIỆU CHẠY DỌC CẠNH ĐỨNG GÓC NHÌN 3D */
+    .brand-watermark-vertical {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      transform-origin: left center;
+      pointer-events: none;
+      z-index: 80;
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-sub);
+      opacity: 0.38;
+      user-select: none;
+    }
+
+    .hud-btn-outline {
+      background: var(--grid-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--text-main);
+    }
+    .hud-btn-outline:hover {
+      background: var(--btn-hover);
+    }
 
     /* EMPTY STATE FILE PICKER */
     .empty-state {
@@ -590,11 +638,16 @@
   <!-- 3D VIEWPORT CANVAS -->
   <div id="viewport3D"></div>
 
+  <!-- THƯƠNG HIỆU ĐỘC QUYỀN CHẠY DỌC CẠNH ĐỨNG VIEW 3D -->
+  <div class="brand-watermark-vertical">
+    <span>QUÝ NGUYỄN • HOTLINE: 09xx.xxx.xxx • © 3D VIEWER PRO</span>
+  </div>
+
   <!-- TOP HEADER -->
   <header class="top-header">
     <div class="brand-pill">
       <span class="brand-tag">LTF 3D</span>
-      <span class="project-name" id="displayProjectName">PN PHƯỚC HẢI</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -623,8 +676,17 @@
     <button class="round-tool-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
       💡
     </button>
-    <button class="round-tool-btn active" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh (X-Ray)">
+    <button class="round-tool-btn active" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
       👻
+    </button>
+    <button class="round-tool-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
+      🩻
+    </button>
+    <button class="round-tool-btn active-cyan" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều (Dài × Rộng × Dày)">
+      📏
+    </button>
+    <button class="round-tool-btn" id="btnUnhideAll" title="Hiện lại tất cả các tấm đã ẩn" style="display:none; position:relative;">
+      👁️<span class="unhide-count" id="unhideCount">0</span>
     </button>
     <button class="round-tool-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
       🎯
@@ -662,8 +724,9 @@
     </div>
 
     <div class="hud-actions">
-      <button class="hud-btn hud-btn-secondary" id="btnHudFocus">🎯 Phóng to vị trí</button>
-      <button class="hud-btn hud-btn-primary" id="btnHudNextScan">📷 Quét tem tiếp theo</button>
+      <button class="hud-btn hud-btn-outline" id="btnHudHide" title="Ẩn tấm ván này để nhìn rõ kết cấu bên trong">👁️ Ẩn tấm này</button>
+      <button class="hud-btn hud-btn-secondary" id="btnHudFocus">🎯 Phóng to</button>
+      <button class="hud-btn hud-btn-primary" id="btnHudNextScan">📷 Quét tiếp</button>
     </div>
   </div>
 
@@ -751,9 +814,27 @@
         polygonOffsetUnits: 1.0
       });
 
+      // Vật liệu X-Ray Mode toàn mô hình chuẩn SketchUp (Mờ nhẹ nhưng giữ trọn nét viền kỹ thuật)
+      const xrayMaterial = new THREE.MeshStandardMaterial({
+        color: 0x94a3b8,
+        roughness: 1.0,
+        metalness: 0.0,
+        transparent: true,
+        opacity: 0.32,
+        depthWrite: false,
+        polygonOffset: true,
+        polygonOffsetFactor: 1.0,
+        polygonOffsetUnits: 1.0
+      });
+
+      let isGlobalXray = false;
+      let isMeasureEnabled = true;
+      let measureBoxHelper = null;
+      let hiddenBoardIndices = new Set();
+
       // Parse URL Params
       const urlParams = new URLSearchParams(window.location.search);
-      const targetParamId = urlParams.get('id') || urlParams.get('board') || urlParams.get('part');
+      const targetParamId = urlParams.get('i') || urlParams.get('id') || urlParams.get('board') || urlParams.get('part');
       let targetProjectSlug = urlParams.get('p') || urlParams.get('name') || '';
       let targetModelFile = urlParams.get('m') || urlParams.get('model');
       let targetJsonFile = null;
@@ -1081,54 +1162,121 @@
         return null;
       }
 
-      // 5. CHỌN VÀ HIGHLIGHT TẤM VÁN (TÂM ĐIỂM CỦA TÍNH NĂNG TÌM TẤM)
-      function selectBoard(boardIndex, zoomCamera = true) {
-        selectedBoardIndex = boardIndex;
-        const targetMeshes = boardMeshMap[boardIndex] || [];
+      // Cập nhật vật liệu toàn bộ Scene
+      function updateModelMaterials() {
         const defaultEdgeHex = isDarkMode ? 0x94a3b8 : 0x000000;
-
-        // 1. Cập nhật vật liệu toàn bộ Scene
         allMeshes.forEach(mesh => {
-          const isTarget = (mesh.userData.boardIndex === boardIndex);
+          const bIdx = mesh.userData.boardIndex;
+          if (hiddenBoardIndices.has(bIdx)) {
+            mesh.visible = false;
+            return;
+          }
+          mesh.visible = true;
+
+          const isTarget = (selectedBoardIndex !== null && bIdx === selectedBoardIndex);
           if (isTarget) {
             mesh.material = highlightMaterial;
             if (mesh.userData.edgeLines) {
               mesh.userData.edgeLines.material.color.setHex(0xffffff);
               mesh.userData.edgeLines.material.opacity = 1.0;
             }
-          } else {
-            mesh.material = isGhostMode ? ghostMaterial : mesh.userData.origMaterial;
+          } else if (isGlobalXray) {
+            mesh.material = xrayMaterial;
             if (mesh.userData.edgeLines) {
-              if (isGhostMode) {
-                mesh.userData.edgeLines.material.color.setHex(0x94a3b8);
-                mesh.userData.edgeLines.material.opacity = 0.25;
-              } else {
-                mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-                mesh.userData.edgeLines.material.opacity = 1.0;
-              }
+              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+              mesh.userData.edgeLines.material.opacity = 0.85;
+            }
+          } else if (isGhostMode && selectedBoardIndex !== null) {
+            mesh.material = ghostMaterial;
+            if (mesh.userData.edgeLines) {
+              mesh.userData.edgeLines.material.color.setHex(0x94a3b8);
+              mesh.userData.edgeLines.material.opacity = 0.25;
+            }
+          } else {
+            mesh.material = mesh.userData.origMaterial;
+            if (mesh.userData.edgeLines) {
+              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+              mesh.userData.edgeLines.material.opacity = 1.0;
             }
           }
         });
+      }
 
-        // 2. Camera tự động lướt mượt mà phóng to tới tấm đó
+      // Thước đo 3D (Bounding Box Helper)
+      function updateMeasureHelper() {
+        if (measureBoxHelper) {
+          scene.remove(measureBoxHelper);
+          measureBoxHelper = null;
+        }
+        if (!isMeasureEnabled || selectedBoardIndex === null) return;
+
+        const targetMeshes = boardMeshMap[selectedBoardIndex];
+        if (!targetMeshes || targetMeshes.length === 0) return;
+
+        const box = new THREE.Box3();
+        targetMeshes.forEach(m => {
+          if (m.visible) box.expandByObject(m);
+        });
+        if (box.isEmpty()) return;
+
+        measureBoxHelper = new THREE.Box3Helper(box, 0x00e5ff);
+        measureBoxHelper.renderOrder = 3;
+        scene.add(measureBoxHelper);
+      }
+
+      // Ẩn tấm chi tiết đang chọn
+      function hideSelectedBoard() {
+        if (selectedBoardIndex === null) return;
+        hiddenBoardIndices.add(selectedBoardIndex);
+        clearSelection();
+        updateUnhideButton();
+      }
+
+      // Hiện lại tất cả các tấm đã ẩn
+      function unhideAllBoards() {
+        hiddenBoardIndices.clear();
+        updateModelMaterials();
+        updateUnhideButton();
+      }
+
+      function updateUnhideButton() {
+        const btn = document.getElementById('btnUnhideAll');
+        const badge = document.getElementById('unhideCount');
+        if (btn && badge) {
+          const count = hiddenBoardIndices.size;
+          badge.textContent = count;
+          btn.style.display = count > 0 ? 'flex' : 'none';
+        }
+      }
+
+      // 5. CHỌN VÀ HIGHLIGHT TẤM VÁN (TÂM ĐIỂM CỦA TÍNH NĂNG TÌM TẤM)
+      function selectBoard(boardIndex, zoomCamera = true) {
+        if (hiddenBoardIndices.has(boardIndex)) {
+          hiddenBoardIndices.delete(boardIndex);
+          updateUnhideButton();
+        }
+        selectedBoardIndex = boardIndex;
+        const targetMeshes = boardMeshMap[boardIndex] || [];
+
+        // 1. Cập nhật vật liệu toàn bộ Scene
+        updateModelMaterials();
+
+        // 2. Cập nhật thước đo 3D
+        updateMeasureHelper();
+
+        // 3. Camera tự động lướt mượt mà phóng to tới tấm đó
         if (zoomCamera && targetMeshes.length > 0) {
           zoomToMeshes(targetMeshes);
         }
 
-        // 3. Hiển thị bảng HUD chi tiết tấm dưới đáy màn hình
+        // 4. Hiển thị bảng HUD chi tiết tấm dưới đáy màn hình
         showHudInfo(boardIndex);
       }
 
       function clearSelection() {
         selectedBoardIndex = null;
-        const defaultEdgeHex = isDarkMode ? 0x94a3b8 : 0x000000;
-        allMeshes.forEach(mesh => {
-          mesh.material = mesh.userData.origMaterial;
-          if (mesh.userData.edgeLines) {
-            mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-            mesh.userData.edgeLines.material.opacity = 1.0;
-          }
-        });
+        updateModelMaterials();
+        updateMeasureHelper();
         document.getElementById('hudCard').classList.remove('show');
       }
 
@@ -1315,8 +1463,8 @@
       function handleScannedCode(text) {
         if (!text) return;
 
-        // 1. Nếu là URL đầy đủ: trích xuất tham số ?id=...
-        let m = text.match(/[?&]id=(\d+)/i) || text.match(/[?&]part=(\d+)/i) || text.match(/#(\d+)\b/);
+        // 1. Nếu là URL đầy đủ: trích xuất tham số ?i=... hoặc ?id=...
+        let m = text.match(/[?&]i=(\d+)/i) || text.match(/[?&]id=(\d+)/i) || text.match(/[?&]part=(\d+)/i) || text.match(/#(\d+)\b/);
         if (m) {
           const id = parseInt(m[1], 10);
           selectBoard(id, true);
@@ -1415,10 +1563,40 @@
         document.getElementById('btnToggleGhost').onclick = function() {
           isGhostMode = !isGhostMode;
           this.classList.toggle('active', isGhostMode);
-          if (selectedBoardIndex !== null) {
-            selectBoard(selectedBoardIndex, false);
-          }
+          updateModelMaterials();
         };
+
+        // Nút nhìn xuyên thấu X-Ray toàn bộ mô hình (SketchUp X-Ray)
+        const btnGlobalXray = document.getElementById('btnGlobalXray');
+        if (btnGlobalXray) {
+          btnGlobalXray.onclick = function() {
+            isGlobalXray = !isGlobalXray;
+            btnGlobalXray.classList.toggle('active', isGlobalXray);
+            updateModelMaterials();
+          };
+        }
+
+        // Nút Thước đo 3 chiều (Dài × Rộng × Dày)
+        const btnToggleMeasure = document.getElementById('btnToggleMeasure');
+        if (btnToggleMeasure) {
+          btnToggleMeasure.onclick = function() {
+            isMeasureEnabled = !isMeasureEnabled;
+            btnToggleMeasure.classList.toggle('active-cyan', isMeasureEnabled);
+            updateMeasureHelper();
+          };
+        }
+
+        // Nút Ẩn tấm đang chọn
+        const btnHudHide = document.getElementById('btnHudHide');
+        if (btnHudHide) {
+          btnHudHide.onclick = hideSelectedBoard;
+        }
+
+        // Nút Hiện lại tất cả tấm đã ẩn
+        const btnUnhideAll = document.getElementById('btnUnhideAll');
+        if (btnUnhideAll) {
+          btnUnhideAll.onclick = unhideAllBoards;
+        }
 
         document.getElementById('btnResetView').onclick = function() {
           if (modelRoot) zoomToFit(modelRoot);
