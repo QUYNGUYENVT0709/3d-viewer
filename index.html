@@ -209,149 +209,186 @@
     /* FLOATING BOTTOM HUD CARD (THÔNG TIN TẤM ĐANG CHỌN) */
     .hud-bottom-card {
       position: absolute;
-      bottom: 16px;
-      left: 12px;
-      right: 12px;
-      max-width: 480px;
+      bottom: 12px;
+      left: 10px;
+      right: 10px;
+      max-width: 520px;
       margin: 0 auto;
       background: var(--panel-bg);
       backdrop-filter: blur(18px);
       border: 1px solid var(--panel-border);
-      border-radius: 18px;
-      padding: 14px 16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      border-radius: 16px;
+      padding: 9px 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
       z-index: 100;
       transform: translateY(120%);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .hud-bottom-card.show {
       transform: translateY(0);
     }
 
-    .hud-header {
+    .hud-compact-main {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
+      gap: 10px;
     }
-    .hud-title-box {
+
+    .hud-info-col {
       flex: 1;
-      padding-right: 10px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
+
+    .hud-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+    }
+
     .hud-badge-id {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       background: var(--accent-color);
       color: #fff;
       font-weight: 800;
-      font-size: 12px;
-      padding: 2px 8px;
+      font-size: 11px;
+      padding: 2px 7px;
       border-radius: 6px;
-      margin-bottom: 4px;
+      flex-shrink: 0;
+      letter-spacing: 0.3px;
     }
+
+    .hud-badge-layer {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 6px;
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .hud-badge-layer svg {
+      width: 11px;
+      height: 11px;
+      flex-shrink: 0;
+    }
+
     .hud-part-name {
-      font-size: 16px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--text-main);
-      line-height: 1.25;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin: 0;
     }
-    .hud-module-name {
-      font-size: 12px;
+
+    .hud-specs-strip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+      padding-top: 1px;
+    }
+    .hud-specs-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hud-spec-pill {
+      font-size: 11px;
+      font-weight: 600;
       color: var(--text-sub);
-      margin-top: 2px;
-    }
-    .hud-close-btn {
       background: var(--grid-bg);
       border: 1px solid var(--panel-border);
+      padding: 2px 7px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+
+    .hud-spec-pill.dim {
+      color: #00e5ff;
+      background: rgba(0, 229, 255, 0.12);
+      border-color: rgba(0, 229, 255, 0.3);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .hud-spec-pill.mat {
+      color: var(--text-main);
+    }
+
+    .hud-spec-pill.eb {
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .hud-spec-pill.mod {
       color: var(--text-sub);
+    }
+
+    .hud-actions-col {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .hud-circle-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--grid-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .hud-circle-btn:hover {
+      background: var(--btn-hover);
+      transform: scale(1.06);
+    }
+
+    .hud-circle-btn.primary {
+      background: linear-gradient(135deg, #ff4500, #ea580c);
+      border-color: #ff6b35;
+      color: #fff;
+      box-shadow: 0 3px 12px rgba(255, 69, 0, 0.35);
+    }
+
+    .hud-circle-btn.close {
+      color: var(--text-sub);
+      font-size: 14px;
       width: 28px;
       height: 28px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .hud-close-btn:hover {
-      background: rgba(0,0,0,0.08);
+    .hud-circle-btn.close:hover {
       color: var(--text-main);
-    }
-
-    .hud-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      background: var(--grid-bg);
-      padding: 10px;
-      border-radius: 10px;
-      margin: 8px 0 12px 0;
-    }
-    .hud-grid-item {
-      display: flex;
-      flex-direction: column;
-    }
-    .hud-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--text-sub);
-    }
-    .hud-value {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-top: 2px;
-    }
-
-    .hud-actions {
-      display: flex;
-      gap: 8px;
-    }
-    .hud-btn {
-      flex: 1;
-      height: 38px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.2s ease;
-    }
-    .hud-btn svg {
-      width: 16px !important;
-      height: 16px !important;
-      max-width: 16px !important;
-      max-height: 16px !important;
-      flex-shrink: 0 !important;
-      display: inline-block !important;
-      vertical-align: middle !important;
-    }
-    .hud-btn-primary {
-      background: linear-gradient(135deg, #ff4500, #ff8c00);
-      color: #fff;
-    }
-    .hud-btn-primary:hover {
-      box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
-    }
-    .hud-btn-secondary {
-      background: var(--btn-bg);
-      border: 1px solid var(--panel-border);
-      color: var(--text-main);
-    }
-    .hud-btn-secondary:hover {
-      background: var(--btn-hover);
-    }
-    .hud-btn-outline {
-      background: var(--grid-bg);
-      border: 1px solid var(--panel-border);
-      color: var(--text-main);
-    }
-    .hud-btn-outline:hover {
-      background: var(--btn-hover);
+      background: rgba(0,0,0,0.1);
     }
 
     /* QR SCANNER MODAL FULLSCREEN */
@@ -1056,6 +1093,9 @@
     </div>
 
     <div class="top-tools">
+      <button class="icon-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
       <button class="icon-btn" id="btnShowProjects" title="Danh sách các công trình đang lưu trên Cloud">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
       </button>
@@ -1079,9 +1119,6 @@
   <!-- FLOATING SIDE TOOLS (ĐẶT NÚT MŨI TÊN Ở DƯỚI CÙNG) -->
   <div class="floating-tools" id="floatingTools">
     <div class="tool-group" id="toolGroup">
-      <button class="round-tool-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      </button>
       <button class="round-tool-btn" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
       </button>
@@ -1106,45 +1143,37 @@
     </button>
   </div>
 
-  <!-- BOTTOM HUD CARD (CHI TIẾT TẤM VÁN ĐANG CHỌN) -->
+  <!-- BOTTOM HUD CARD (CHI TIẾT TẤM VÁN ĐANG CHỌN - THIẾT KẾ GỌN GÀNG DOCK CHO MOBILE) -->
   <div class="hud-bottom-card" id="hudCard">
-    <div class="hud-header">
-      <div class="hud-title-box">
-        <span class="hud-badge-id" id="hudBadgeId">TẤM #0</span>
-        <h3 class="hud-part-name" id="hudPartName">Tên chi tiết</h3>
-        <p class="hud-module-name" id="hudModuleName">Cụm tủ / Vị trí</p>
+    <div class="hud-compact-main">
+      <div class="hud-info-col">
+        <div class="hud-badge-row">
+          <span class="hud-badge-id" id="hudBadgeId">TẤM #0</span>
+          <span class="hud-badge-layer" id="hudBadgeLayer" title="Layer / Tag linh kiện">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span id="hudLayerText">Layer0</span>
+          </span>
+          <h3 class="hud-part-name" id="hudPartName">Tên chi tiết</h3>
+        </div>
+        <div class="hud-specs-strip">
+          <span class="hud-spec-pill dim" id="hudDimensions">-- × -- × -- mm</span>
+          <span class="hud-spec-pill mat" id="hudMaterial">--</span>
+          <span class="hud-spec-pill eb" id="hudEdgeBanding" style="display:none;">--</span>
+          <span class="hud-spec-pill mod" id="hudModuleName" style="display:none;">--</span>
+        </div>
       </div>
-      <button class="hud-close-btn" id="btnCloseHud">✕</button>
-    </div>
-
-    <div class="hud-grid">
-      <div class="hud-grid-item">
-        <span class="hud-label">Kích thước (D x R x Dày)</span>
-        <span class="hud-value" id="hudDimensions">-- × -- × -- mm</span>
+      <div class="hud-actions-col">
+        <button class="hud-circle-btn" id="btnHudFocus" title="Phóng to tấm ván">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        </button>
+        <button class="hud-circle-btn" id="btnHudHide" title="Ẩn tấm ván này để nhìn rõ kết cấu bên trong">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+        </button>
+        <button class="hud-circle-btn primary" id="btnHudNextScan" title="Bật camera quét tiếp tem khác">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </button>
+        <button class="hud-circle-btn close" id="btnCloseHud" title="Đóng bảng">✕</button>
       </div>
-      <div class="hud-grid-item">
-        <span class="hud-label">Loại ván & Sheet</span>
-        <span class="hud-value" id="hudMaterial">--</span>
-      </div>
-      <div class="hud-grid-item" id="hudItemEdgeBanding">
-        <span class="hud-label">Chỉ dán nẹp</span>
-        <span class="hud-value" id="hudEdgeBanding">--</span>
-      </div>
-    </div>
-
-    <div class="hud-actions">
-      <button class="hud-btn hud-btn-outline" id="btnHudHide" title="Ẩn tấm ván này để nhìn rõ kết cấu bên trong">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-        <span>Ẩn</span>
-      </button>
-      <button class="hud-btn hud-btn-secondary" id="btnHudFocus">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
-        <span>Phóng to</span>
-      </button>
-      <button class="hud-btn hud-btn-primary" id="btnHudNextScan">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <span>Quét tiếp</span>
-      </button>
     </div>
   </div>
 
@@ -2005,6 +2034,32 @@
         return { point: bestPoint, isSnapped, snapType, hitMesh, screenX: snapScreenX, screenY: snapScreenY };
       }
 
+      let loupeRenderer = null;
+      let loupeCamera = null;
+
+      function getLoupeRenderer() {
+        if (!loupeRenderer) {
+          const loupeCanvas = document.getElementById('loupeCanvas');
+          if (loupeCanvas) {
+            try {
+              loupeRenderer = new THREE.WebGLRenderer({
+                canvas: loupeCanvas,
+                antialias: true,
+                alpha: false,
+                powerPreference: "high-performance"
+              });
+              loupeRenderer.setSize(130, 130, false);
+              loupeRenderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+              loupeRenderer.outputEncoding = THREE.sRGBEncoding;
+              if (camera) loupeCamera = camera.clone();
+            } catch (err) {
+              console.warn("Could not create WebGLRenderer for loupe:", err);
+            }
+          }
+        }
+        return loupeRenderer;
+      }
+
       function updateLoupe(clientX, clientY, snapRes) {
         const loupe = document.getElementById('measureLoupe');
         const loupeCanvas = document.getElementById('loupeCanvas');
@@ -2062,22 +2117,44 @@
           if (marker) marker.visible = false;
         }
 
-        // Đảm bảo WebGL có frame mới nhất trước khi copy vào loupe
-        if (renderer && scene && camera) renderer.render(scene, camera);
-
-        // Copy vùng ảnh phóng to 3.2x vào kính lúp trùng khớp chính xác 100% tọa độ
-        const ctx = loupeCanvas.getContext('2d');
-        if (ctx && renderer && renderer.domElement) {
-          const pr = renderer.getPixelRatio();
-          const cropSize = 44 * pr;
-          const sx = Math.max(0, Math.min(renderer.domElement.width - cropSize, (targetScreenX * pr) - cropSize / 2));
-          const sy = Math.max(0, Math.min(renderer.domElement.height - cropSize, (targetScreenY * pr) - cropSize / 2));
-          ctx.clearRect(0, 0, 130, 130);
-          ctx.imageSmoothingEnabled = true;
-          ctx.imageSmoothingQuality = 'high';
+        // Render 3D quang học thật sâu vào điểm bắt điểm với độ phân giải siêu nét (True 3D Vector Loupe)
+        let rendered3d = false;
+        const lRenderer = getLoupeRenderer();
+        if (lRenderer && camera && scene) {
           try {
-            ctx.drawImage(renderer.domElement, sx, sy, cropSize, cropSize, 0, 0, 130, 130);
-          } catch (e) {}
+            if (!loupeCamera) loupeCamera = camera.clone();
+            loupeCamera.copy(camera);
+            // Kính lúp đường kính 130px phóng đại 3.5x: vùng nhìn thấy tương đương 130 / 3.5 = 37.1px trên màn hình
+            const zoom = 3.5;
+            const subW = 130 / zoom;
+            const subH = 130 / zoom;
+            const subX = targetScreenX - subW / 2;
+            const subY = targetScreenY - subH / 2;
+            loupeCamera.setViewOffset(window.innerWidth, window.innerHeight, subX, subY, subW, subH);
+            loupeCamera.updateProjectionMatrix();
+            lRenderer.render(scene, loupeCamera);
+            rendered3d = true;
+          } catch (e) {
+            rendered3d = false;
+          }
+        }
+
+        // Fallback dự phòng nếu WebGL không khả dụng
+        if (!rendered3d) {
+          if (renderer && scene && camera) renderer.render(scene, camera);
+          const ctx = loupeCanvas.getContext('2d');
+          if (ctx && renderer && renderer.domElement) {
+            const pr = renderer.getPixelRatio();
+            const cropSize = 44 * pr;
+            const sx = Math.max(0, Math.min(renderer.domElement.width - cropSize, (targetScreenX * pr) - cropSize / 2));
+            const sy = Math.max(0, Math.min(renderer.domElement.height - cropSize, (targetScreenY * pr) - cropSize / 2));
+            ctx.clearRect(0, 0, 130, 130);
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            try {
+              ctx.drawImage(renderer.domElement, sx, sy, cropSize, cropSize, 0, 0, 130, 130);
+            } catch (e) {}
+          }
         }
       }
 
@@ -2337,15 +2414,41 @@
 
         document.getElementById('hudBadgeId').textContent = `TẤM #${idx}`;
         document.getElementById('hudPartName').textContent = info.part_name || `Linh kiện #${idx}`;
-        document.getElementById('hudModuleName').textContent = info.module_name ? `Cụm tủ: ${info.module_name}` : "Mô hình tổng thể";
+
+        // Trích xuất và hiển thị Layer / Tag
+        let layerName = info.layer;
+        if (!layerName) {
+          const mesh = boardMeshMap[idx];
+          if (mesh && mesh.userData && mesh.userData.layerName) {
+            layerName = mesh.userData.layerName;
+          }
+        }
+        if (!layerName) layerName = "Layer0";
+        const elLayerText = document.getElementById('hudLayerText');
+        if (elLayerText) elLayerText.textContent = layerName;
+        const elBadgeLayer = document.getElementById('hudBadgeLayer');
+        if (elBadgeLayer) elBadgeLayer.title = `Layer: ${layerName}`;
 
         const dimStr = (info.length && info.width) 
           ? `${info.length} × ${info.width} × ${info.thickness || 17} mm`
           : "Xem trực quan trên 3D";
-        document.getElementById('hudDimensions').textContent = dimStr;
+        const elDim = document.getElementById('hudDimensions');
+        if (elDim) elDim.textContent = dimStr;
 
-        const sheetStr = info.sheet_type ? `${info.sheet_type} (Sheet ${info.sheet_id || 1})` : "Ván công nghiệp";
-        document.getElementById('hudMaterial').textContent = sheetStr;
+        const sheetStr = info.sheet_type ? `${info.sheet_type} (S${info.sheet_id || 1})` : "Ván CN";
+        const elMat = document.getElementById('hudMaterial');
+        if (elMat) elMat.textContent = sheetStr;
+
+        // Cụm tủ
+        const elMod = document.getElementById('hudModuleName');
+        if (elMod) {
+          if (info.module_name && info.module_name.trim()) {
+            elMod.textContent = `Cụm: ${info.module_name.trim()}`;
+            elMod.style.display = "inline-flex";
+          } else {
+            elMod.style.display = "none";
+          }
+        }
 
         // Chỉ dán nẹp: Loại bỏ hoàn toàn khi "Không dán" theo đúng yêu cầu
         let ebStr = "";
@@ -2356,16 +2459,15 @@
           if (eb.bottom) sides.push("Dưới");
           if (eb.left) sides.push("Trái");
           if (eb.right) sides.push("Phải");
-          if (sides.length > 0) ebStr = `Dán ${sides.join(', ')}`;
+          if (sides.length > 0) ebStr = `Nẹp: ${sides.join(', ')}`;
         }
-        const elEbItem = document.getElementById('hudItemEdgeBanding');
         const elEbVal = document.getElementById('hudEdgeBanding');
-        if (elEbItem && elEbVal) {
+        if (elEbVal) {
           if (ebStr && ebStr !== "Không dán") {
             elEbVal.textContent = ebStr;
-            elEbItem.style.display = "flex";
+            elEbVal.style.display = "inline-flex";
           } else {
-            elEbItem.style.display = "none";
+            elEbVal.style.display = "none";
           }
         }
 
@@ -2847,8 +2949,8 @@
 
         // Nút chuyển chế độ Nền Sáng Studio / Tối (SVG Icon chuẩn)
         const btnToggleTheme = document.getElementById('btnToggleTheme');
-        const SVG_SUN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
-        const SVG_MOON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+        const SVG_SUN = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
+        const SVG_MOON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
         if (btnToggleTheme) {
           btnToggleTheme.onclick = function() {
             isDarkMode = !isDarkMode;
