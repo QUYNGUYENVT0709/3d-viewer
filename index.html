@@ -52,6 +52,8 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+      overscroll-behavior: none;
+      -webkit-overflow-scrolling: touch;
       background-color: var(--bg-dark);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
@@ -200,23 +202,42 @@
     /* FLOATING BOTTOM HUD CARD (THÔNG TIN TẤM ĐANG CHỌN) - TĂNG KÍCH THƯỚC & RÕ RÀNG */
     .hud-bottom-card {
       position: absolute;
-      bottom: 14px;
+      bottom: max(12px, env(safe-area-inset-bottom, 12px));
       left: 10px;
       right: 10px;
       max-width: 620px;
       margin: 0 auto;
       background: var(--panel-bg);
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--panel-border);
       border-radius: 20px;
-      padding: 16px 18px;
+      padding: 10px 16px calc(14px + env(safe-area-inset-bottom, 0px)) 16px;
       box-shadow: 0 12px 35px rgba(0,0,0,0.38);
       z-index: 100;
       transform: translateY(120%);
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      touch-action: pan-y;
     }
     .hud-bottom-card.show {
       transform: translateY(0);
+    }
+
+    /* VẠCH KÉO CỬ CHỈ CHO MOBILE (BOTTOM SHEET DRAG HANDLE) */
+    .hud-drag-handle-bar {
+      width: 42px;
+      height: 5px;
+      border-radius: 3px;
+      background: var(--text-sub);
+      opacity: 0.35;
+      margin: 0 auto 10px auto;
+      cursor: grab;
+      touch-action: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .hud-drag-handle-bar:active {
+      opacity: 0.6;
+      transform: scaleX(1.1);
     }
 
     /* HÀNG 1: CÁC NÚT ACTION (KHUNG ĐỎ) CHIA ĐỀU NHAU + NÚT ĐÓNG */
@@ -471,22 +492,32 @@
     .hud-mini-scan-btn {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
       background: linear-gradient(135deg, #ff4500, #ea580c);
       color: #fff;
-      border: 1px solid #ff6b35;
-      border-radius: 14px;
-      padding: 3px 9px;
-      font-size: 11.5px;
-      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 16px;
+      padding: 6px 14px;
+      height: 34px;
+      font-size: 12.5px;
+      font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(255, 69, 0, 0.35);
+      box-shadow: 0 4px 14px rgba(255, 69, 0, 0.4);
       flex-shrink: 0;
       transition: all 0.2s ease;
+      letter-spacing: 0.3px;
+    }
+    .hud-mini-scan-btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
     }
     .hud-mini-scan-btn:hover {
       filter: brightness(1.1);
-      transform: scale(1.04);
+      transform: translateY(-1px);
+    }
+    .hud-mini-scan-btn:active {
+      transform: scale(0.95);
     }
 
     /* TOOL POPUP PANELS (SECTION CUT, EXPLODE, VIEWS) */
@@ -1461,6 +1492,9 @@
 
   <!-- BOTTOM HUD CARD (CHI TIẾT TẤM VÁN ĐANG CHỌN - TĂNG KÍCH THƯỚC & RÕ RÀNG) -->
   <div class="hud-bottom-card" id="hudCard">
+    <!-- VẠCH KÉO CỬ CHỈ CHO MOBILE (DRAG HANDLE VUỐT XUỐNG ĐÓNG BẢNG) -->
+    <div class="hud-drag-handle-bar" id="hudDragHandle" title="Vuốt xuống để đóng bảng"></div>
+
     <!-- HÀNG 1: 3 NÚT HÀNH ĐỘNG CHIA ĐỀU NHAU + NÚT ĐÓNG (KHUNG ĐỎ) -->
     <div class="hud-top-row">
       <div class="hud-top-actions">
@@ -2649,6 +2683,78 @@
         }
       }
 
+      // RUNG PHẢN HỒI XÚC GIÁC CHO MOBILE (HAPTIC FEEDBACK)
+      function triggerHaptic(type = 'light') {
+        if (!navigator.vibrate) return;
+        try {
+          if (type === 'light') navigator.vibrate(14);
+          else if (type === 'medium') navigator.vibrate(25);
+          else if (type === 'heavy') navigator.vibrate(35);
+          else if (type === 'success') navigator.vibrate([15, 35, 20]);
+        } catch (e) {}
+      }
+
+      // CỬ CHỈ VUỐT KÉO XUỐNG ĐỂ ĐÓNG BẢNG THÔNG TIN (SWIPE DOWN TO DISMISS)
+      function setupHudSwipeGesture() {
+        const hud = document.getElementById('hudCard');
+        const handle = document.getElementById('hudDragHandle');
+        if (!hud || !handle) return;
+
+        let startY = 0;
+        let currentTranslateY = 0;
+        let isDragging = false;
+
+        const onTouchStart = (e) => {
+          if (!hud.classList.contains('show')) return;
+          startY = e.touches[0].clientY;
+          isDragging = true;
+          currentTranslateY = 0;
+          hud.style.transition = 'none';
+        };
+
+        const onTouchMove = (e) => {
+          if (!isDragging) return;
+          const deltaY = e.touches[0].clientY - startY;
+          if (deltaY > 0) {
+            // Chỉ trượt xuống theo ngón tay
+            currentTranslateY = deltaY;
+            hud.style.transform = `translateY(${deltaY}px)`;
+          }
+        };
+
+        const onTouchEnd = () => {
+          if (!isDragging) return;
+          isDragging = false;
+          hud.style.transition = 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
+          if (currentTranslateY > 45) {
+            // Vuốt xuống > 45px -> Đóng bảng mượt mà kèm rung nhẹ
+            triggerHaptic('light');
+            clearSelection();
+          } else {
+            // Kéo chưa đủ -> Bật nảy về vị trí hiển thị ban đầu
+            hud.style.transform = 'translateY(0)';
+          }
+          currentTranslateY = 0;
+        };
+
+        handle.addEventListener('touchstart', onTouchStart, { passive: true });
+        handle.addEventListener('touchmove', onTouchMove, { passive: true });
+        handle.addEventListener('touchend', onTouchEnd);
+
+        const topRow = hud.querySelector('.hud-top-row');
+        if (topRow) {
+          topRow.addEventListener('touchstart', (e) => {
+            if (e.target.closest('button')) return;
+            onTouchStart(e);
+          }, { passive: true });
+          topRow.addEventListener('touchmove', (e) => {
+            if (e.target.closest('button')) return;
+            onTouchMove(e);
+          }, { passive: true });
+          topRow.addEventListener('touchend', onTouchEnd);
+        }
+      }
+
       // 5. CHỌN VÀ HIGHLIGHT TẤM VÁN (TÂM ĐIỂM CỦA TÍNH NĂNG TÌM TẤM)
       function selectBoard(boardIndex, zoomCamera = true) {
         if (hiddenBoardIndices.has(boardIndex)) {
@@ -2656,6 +2762,7 @@
           updateUnhideButton();
         }
         selectedBoardIndex = boardIndex;
+        triggerHaptic('light');
         const targetMeshes = boardMeshMap[boardIndex] || [];
 
         // 1. Cập nhật vật liệu toàn bộ Scene
@@ -2691,7 +2798,11 @@
         updateMeasureHelper();
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'none';
-        document.getElementById('hudCard').classList.remove('show');
+        const hud = document.getElementById('hudCard');
+        if (hud) {
+          hud.style.transform = '';
+          hud.classList.remove('show');
+        }
         document.body.classList.remove('hud-open');
       }
 
@@ -2852,6 +2963,7 @@
           }
         }
 
+        hud.style.transform = '';
         hud.classList.add('show');
         document.body.classList.add('hud-open');
 
@@ -3642,9 +3754,13 @@
           if (modelRoot) zoomToFit(modelRoot);
         };
 
-        document.getElementById('btnCloseHud').onclick = clearSelection;
+        document.getElementById('btnCloseHud').onclick = function() {
+          triggerHaptic('light');
+          clearSelection();
+        };
 
         document.getElementById('btnHudFocus').onclick = function() {
+          triggerHaptic('medium');
           if (selectedBoardIndex !== null && boardMeshMap[selectedBoardIndex]) {
             zoomToMeshes(boardMeshMap[selectedBoardIndex]);
           }
@@ -3652,7 +3768,15 @@
 
         // Nút Cô lập tấm ván trên HUD Card
         const btnHudIsolate = document.getElementById('btnHudIsolate');
-        if (btnHudIsolate) btnHudIsolate.onclick = toggleIsolateBoard;
+        if (btnHudIsolate) {
+          btnHudIsolate.onclick = function() {
+            triggerHaptic('medium');
+            toggleIsolateBoard();
+          };
+        }
+
+        // Cài đặt cử chỉ vuốt xuống đóng bảng HUD
+        setupHudSwipeGesture();
 
         // Nút Mặt cắt di động 3 trục (Section Cut)
         const btnToggleSection = document.getElementById('btnToggleSection');
