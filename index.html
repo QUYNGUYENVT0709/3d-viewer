@@ -765,6 +765,29 @@
       color: var(--text-sub);
       font-weight: 500;
     }
+    .qr-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .qr-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 11px;
+      border-radius: 16px;
+      background: rgba(0, 122, 255, 0.12);
+      border: none;
+      color: var(--accent-color);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .qr-action-btn:active {
+      transform: scale(0.92);
+      background: rgba(0, 122, 255, 0.22);
+    }
     .qr-close-x {
       width: 32px;
       height: 32px;
@@ -793,8 +816,8 @@
     .qr-viewport-container {
       position: relative;
       width: 100%;
-      height: 290px;
-      background: #000000;
+      height: 300px;
+      background: #0f172a;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -803,14 +826,75 @@
     #reader {
       width: 100% !important;
       height: 100% !important;
-      background: #000000;
+      min-height: 300px !important;
+      background: #0f172a !important;
       border: none !important;
+      position: relative !important;
+    }
+    #reader__scan_region {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 300px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: #0f172a !important;
+      position: relative !important;
+      overflow: hidden !important;
     }
     #reader video {
       width: 100% !important;
       height: 100% !important;
+      min-height: 300px !important;
+      max-height: 300px !important;
       object-fit: cover !important;
-      border-radius: 0;
+      border-radius: 0 !important;
+      display: block !important;
+      position: relative !important;
+      z-index: 1 !important;
+      background: transparent !important;
+    }
+    /* Triệt tiêu toàn bộ shaded region và bảng phụ rác của html5-qrcode */
+    #qr-shaded-region,
+    #reader__dashboard_section,
+    #reader__header_message {
+      display: none !important;
+    }
+
+    /* TRẠNG THÁI LOADING CAMERA */
+    .qr-camera-loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 13px;
+      font-weight: 500;
+      z-index: 2;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .qr-camera-loading.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .qr-loading-spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(255,255,255,0.18);
+      border-top-color: var(--accent-color);
+      border-radius: 50%;
+      animation: qrSpinAnim 0.8s linear infinite;
+    }
+    @keyframes qrSpinAnim {
+      to { transform: rotate(360deg); }
     }
 
     /* 4 GÓC ĐỊNH VỊ (APPLE CAMERA RETICLE CORNERS) */
@@ -1810,12 +1894,29 @@
           <span class="qr-title">Quét Mã Tem Linh Kiện</span>
           <span class="qr-subtitle">Hướng camera vào mã QR trên con tem ván</span>
         </div>
-        <button class="qr-close-x" id="btnCloseQr" title="Đóng camera">✕</button>
+        <div class="qr-header-actions">
+          <button class="qr-action-btn" id="btnSwitchCamera" title="Chuyển ống kính camera" style="display:none;">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0-4.4-3.6-8-8-8s-8 3.6-8 8v1"/>
+              <path d="M4 14c0 4.4 3.6 8 8 8s8-3.6 8-8v-1"/>
+              <polyline points="1 11 4 14 7 11"/>
+              <polyline points="23 13 20 10 17 13"/>
+            </svg>
+            <span>Đổi cam</span>
+          </button>
+          <button class="qr-close-x" id="btnCloseQr" title="Đóng camera">✕</button>
+        </div>
       </div>
 
       <!-- KHUNG CAMERA CHÍNH KÈM RETICLE GÓC VÀ HIỆU ỨNG TÓM MÃ -->
       <div class="qr-viewport-container" id="qrViewportContainer">
         <div id="reader"></div>
+
+        <!-- MÀN HÌNH LOADING TRẠNG THÁI CAMERA -->
+        <div class="qr-camera-loading" id="qrCameraLoading">
+          <div class="qr-loading-spinner"></div>
+          <span>Đang mở ống kính camera...</span>
+        </div>
 
         <!-- 4 GÓC ĐỊNH VỊ CHUẨN APPLE CAMERA -->
         <div class="qr-reticle-overlay" id="qrReticleOverlay">
@@ -3264,76 +3365,148 @@
 
       // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP (CHUẨN APPLE CODE SCANNER)
       let isQrProcessing = false;
+      let qrCamerasList = [];
+      let currentQrCamIndex = 0;
+
+      async function startCameraScanner(cameraIdOrConfig) {
+        const loadingEl = document.getElementById('qrCameraLoading');
+        if (loadingEl) loadingEl.classList.remove('hidden');
+
+        try {
+          if (html5QrCode) {
+            try { await html5QrCode.stop(); } catch(e) {}
+            try { html5QrCode.clear(); } catch(e) {}
+            html5QrCode = null;
+          }
+          const readerEl = document.getElementById('reader');
+          if (readerEl) readerEl.innerHTML = '';
+
+          html5QrCode = new Html5Qrcode("reader");
+
+          // Không ép aspectRatio để không làm vỡ WebRTC stream trên điện thoại
+          // Không ép qrbox để camera nhận toàn bộ diện tích cảm biến và quét cực nhạy
+          const config = {
+            fps: 20,
+            disableFlip: false
+          };
+
+          const onScanSuccess = (decodedText) => {
+            if (isQrProcessing) return;
+            isQrProcessing = true;
+
+            const reticle = document.getElementById('qrReticleOverlay');
+            if (reticle) reticle.classList.add('locked');
+            triggerHaptic('success');
+
+            setTimeout(() => {
+              closeQrScanner();
+              handleScannedCode(decodedText);
+              isQrProcessing = false;
+            }, 450);
+          };
+
+          await html5QrCode.start(
+            cameraIdOrConfig,
+            config,
+            onScanSuccess,
+            () => {}
+          );
+
+          // Kích hoạt video phát mượt và ẩn loading sau khi stream đã nạp
+          setTimeout(() => {
+            const videoEl = document.querySelector('#reader video');
+            if (videoEl) {
+              videoEl.setAttribute('playsinline', 'true');
+              videoEl.setAttribute('webkit-playsinline', 'true');
+              videoEl.muted = true;
+              videoEl.setAttribute('muted', 'true');
+              videoEl.play().catch(() => {});
+            }
+            if (loadingEl) loadingEl.classList.add('hidden');
+          }, 200);
+
+        } catch (err) {
+          console.warn("Lỗi khi mở camera với cấu hình:", cameraIdOrConfig, err);
+          throw err;
+        }
+      }
 
       async function openQrScanner() {
         const modal = document.getElementById('qrModal');
         const reticle = document.getElementById('qrReticleOverlay');
+        const btnSwitch = document.getElementById('btnSwitchCamera');
+        const loadingEl = document.getElementById('qrCameraLoading');
         if (reticle) reticle.classList.remove('locked');
+        if (loadingEl) loadingEl.classList.remove('hidden');
         isQrProcessing = false;
         triggerHaptic('light');
 
         modal.classList.add('active');
 
-        // Đợi DOM render ổn định kích thước
+        // Đợi modal hiển thị ổn định trong DOM
         setTimeout(async () => {
           try {
-            if (html5QrCode) {
-              try { await html5QrCode.stop(); } catch(e) {}
-              try { html5QrCode.clear(); } catch(e) {}
-              html5QrCode = null;
+            // Lấy danh sách camera vật lý của thiết bị
+            let cameras = [];
+            try {
+              cameras = await Html5Qrcode.getCameras();
+            } catch(e) {
+              console.warn("Không liệt kê được danh sách camera:", e);
             }
-            const readerEl = document.getElementById('reader');
-            if (readerEl) readerEl.innerHTML = '';
 
-            html5QrCode = new Html5Qrcode("reader");
-
-            const config = {
-              fps: 15,
-              qrbox: (viewfinderWidth, viewfinderHeight) => {
-                const minEdge = Math.min(viewfinderWidth, viewfinderHeight);
-                const size = Math.floor(minEdge * 0.72);
-                return { width: size, height: size };
-              },
-              aspectRatio: 1.0
-            };
-
-            const onScanSuccess = (decodedText) => {
-              if (isQrProcessing) return;
-              isQrProcessing = true;
-
-              // Hiệu ứng bắt dính mã: Bật Reticle xanh lá & huy hiệu thành công
-              if (reticle) reticle.classList.add('locked');
-              triggerHaptic('success');
-
-              // Dừng quét tạm thời và đóng camera sau 450ms để người dùng cảm nhận hiệu ứng
-              setTimeout(() => {
-                closeQrScanner();
-                handleScannedCode(decodedText);
-                isQrProcessing = false;
-              }, 450);
-            };
-
-            // Thử mở camera sau (environment), nếu không được thì fallback mở camera bất kỳ
-            html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess, () => {})
-              .catch(err => {
-                console.warn("Không mở được camera environment, thử camera mặc định:", err);
-                html5QrCode.start({ facingMode: "user" }, config, onScanSuccess, () => {})
-                  .catch(err2 => {
-                    alert("Không thể truy cập camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(" + err2 + ")");
-                    closeQrScanner();
-                  });
+            if (cameras && cameras.length > 0) {
+              qrCamerasList = cameras;
+              if (btnSwitch) {
+                btnSwitch.style.display = cameras.length > 1 ? 'inline-flex' : 'none';
+              }
+              // Tìm camera sau (back/rear/environment/sau)
+              let backIdx = cameras.findIndex(c => {
+                const label = (c.label || '').toLowerCase();
+                return label.includes('back') || label.includes('rear') || label.includes('sau') || label.includes('environment');
               });
-          } catch (err) {
-            alert("Lỗi khởi tạo máy quét: " + err);
+              if (backIdx === -1) {
+                backIdx = cameras.length - 1;
+              }
+              currentQrCamIndex = backIdx;
+
+              try {
+                await startCameraScanner(cameras[currentQrCamIndex].id);
+              } catch (camErr) {
+                console.warn("Thử fallback sang facingMode environment:", camErr);
+                await startCameraScanner({ facingMode: "environment" });
+              }
+            } else {
+              if (btnSwitch) btnSwitch.style.display = 'none';
+              try {
+                await startCameraScanner({ facingMode: "environment" });
+              } catch(e1) {
+                await startCameraScanner({ facingMode: "user" });
+              }
+            }
+          } catch (finalErr) {
+            alert("Không thể truy cập Camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(" + finalErr + ")");
             closeQrScanner();
           }
-        }, 80);
+        }, 120);
+      }
+
+      async function switchCamera() {
+        if (!qrCamerasList || qrCamerasList.length <= 1) return;
+        triggerHaptic('medium');
+        currentQrCamIndex = (currentQrCamIndex + 1) % qrCamerasList.length;
+        try {
+          await startCameraScanner(qrCamerasList[currentQrCamIndex].id);
+        } catch (e) {
+          console.warn("Lỗi đổi camera:", e);
+        }
       }
 
       function closeQrScanner() {
         const modal = document.getElementById('qrModal');
         const reticle = document.getElementById('qrReticleOverlay');
+        const loadingEl = document.getElementById('qrCameraLoading');
         if (reticle) reticle.classList.remove('locked');
+        if (loadingEl) loadingEl.classList.remove('hidden');
         modal.classList.remove('active');
 
         if (html5QrCode) {
@@ -4002,6 +4175,8 @@
         document.getElementById('btnStartQrScan').onclick = openQrScanner;
         document.getElementById('btnCloseQr').onclick = closeQrScanner;
         document.getElementById('btnHudNextScan').onclick = openQrScanner;
+        const btnSwitchCam = document.getElementById('btnSwitchCamera');
+        if (btnSwitchCam) btnSwitchCam.onclick = switchCamera;
 
         document.getElementById('btnToggleGhost').onclick = function() {
           isGhostMode = !isGhostMode;
