@@ -674,56 +674,267 @@
       border-color: var(--accent-color);
     }
 
-    /* QR SCANNER MODAL FULLSCREEN */
+    /* HIỆU ỨNG ĐÀN HỒI NẢY CHUẨN APPLE IOS SPRING CHO TOÀN BỘ NÚT */
+    .hud-action-btn,
+    .round-tool-btn,
+    .icon-btn,
+    .hud-mini-scan-btn,
+    .hud-close-x,
+    .qr-close-x,
+    .toolbar-toggle-btn {
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  background 0.2s ease,
+                  box-shadow 0.2s ease,
+                  color 0.2s ease !important;
+    }
+    .hud-action-btn:active,
+    .icon-btn:active,
+    .hud-mini-scan-btn:active {
+      transform: scale(0.92) !important;
+    }
+    .round-tool-btn:active,
+    .toolbar-toggle-btn:active {
+      transform: scale(0.88) !important;
+    }
+
+    /* QR SCANNER MODAL FULLSCREEN - CHUẨN APPLE IOS CODE SCANNER TRẮNG SÁCH SẼ */
     .qr-modal {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.85);
-      z-index: 200;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      z-index: 250;
       display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 16px;
+      animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .qr-modal.active {
       display: flex;
     }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
     .qr-scanner-box {
       width: 100%;
       max-width: 360px;
-      background: #1e293b;
-      border-radius: 20px;
+      background: #ffffff;
+      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 0.5px solid rgba(0, 0, 0, 0.08);
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
+    body.dark-mode .qr-scanner-box {
+      background: #1c1c1e;
+      border-color: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
     .qr-header {
-      padding: 14px 16px;
+      padding: 16px 18px 12px 18px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      background: #0f172a;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      align-items: flex-start;
+      background: transparent;
+      border-bottom: 0.5px solid var(--panel-border);
+    }
+    .qr-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
     .qr-title {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
     }
-    #reader {
-      width: 100%;
-      min-height: 280px;
-      background: #000;
-    }
-    .qr-footer {
-      padding: 10px;
-      text-align: center;
+    .qr-subtitle {
       font-size: 12px;
       color: var(--text-sub);
+      font-weight: 500;
+    }
+    .qr-close-x {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(120, 120, 128, 0.16);
+      border: none;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+    .qr-close-x:active {
+      transform: scale(0.9);
+    }
+    .qr-close-x:hover {
+      background: rgba(120, 120, 128, 0.25);
+      color: var(--text-main);
+    }
+
+    /* CONTAINER KHUNG CAMERA VIEWPORT */
+    .qr-viewport-container {
+      position: relative;
+      width: 100%;
+      height: 290px;
+      background: #000000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #reader {
+      width: 100% !important;
+      height: 100% !important;
+      background: #000000;
+      border: none !important;
+    }
+    #reader video {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      border-radius: 0;
+    }
+
+    /* 4 GÓC ĐỊNH VỊ (APPLE CAMERA RETICLE CORNERS) */
+    .qr-reticle-overlay {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    .reticle-corner {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-color: #ffffff;
+      border-style: solid;
+      border-width: 0;
+      filter: drop-shadow(0 0 5px rgba(0,0,0,0.6));
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .reticle-corner.top-left {
+      top: 0;
+      left: 0;
+      border-top-width: 3.5px;
+      border-left-width: 3.5px;
+      border-top-left-radius: 12px;
+    }
+    .reticle-corner.top-right {
+      top: 0;
+      right: 0;
+      border-top-width: 3.5px;
+      border-right-width: 3.5px;
+      border-top-right-radius: 12px;
+    }
+    .reticle-corner.bottom-left {
+      bottom: 0;
+      left: 0;
+      border-bottom-width: 3.5px;
+      border-left-width: 3.5px;
+      border-bottom-left-radius: 12px;
+    }
+    .reticle-corner.bottom-right {
+      bottom: 0;
+      right: 0;
+      border-bottom-width: 3.5px;
+      border-right-width: 3.5px;
+      border-bottom-right-radius: 12px;
+    }
+
+    /* TIA LASER QUÉT CHUYỂN ĐỘNG */
+    .qr-laser-line {
+      position: absolute;
+      left: 6px;
+      right: 6px;
+      height: 2.5px;
+      background: linear-gradient(90deg, transparent, #007aff, #32ade6, transparent);
+      box-shadow: 0 0 12px #007aff;
+      border-radius: 2px;
+      top: 10px;
+      animation: appleLaserScan 2s ease-in-out infinite alternate;
+    }
+    @keyframes appleLaserScan {
+      0% { top: 12px; opacity: 0.85; }
+      100% { top: 195px; opacity: 0.85; }
+    }
+
+    /* HIỆU ỨNG TÓM MÃ THÀNH CÔNG (TARGET LOCK EFFECT - 'ĐÃ TÓM ĐƯỢC MÀY RỒI') */
+    .qr-reticle-overlay.locked {
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+    .qr-reticle-overlay.locked .reticle-corner {
+      border-color: #34c759 !important;
+      filter: drop-shadow(0 0 10px #34c759);
+    }
+    .qr-reticle-overlay.locked .qr-laser-line {
+      display: none;
+    }
+
+    .qr-lock-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      background: rgba(52, 199, 89, 0.94);
+      backdrop-filter: blur(12px);
+      padding: 10px 18px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 8px 30px rgba(52, 199, 89, 0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    .qr-reticle-overlay.locked .qr-lock-badge {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .qr-lock-badge span {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .qr-footer {
+      padding: 12px 16px;
+      text-align: center;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+    }
+    .qr-tip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text-sub);
+      font-weight: 500;
     }
 
     /* PROJECTS LIST MODAL */
@@ -1590,18 +1801,44 @@
     </div>
   </div>
 
-  <!-- QR SCANNER CAMERA MODAL -->
+  <!-- QR SCANNER CAMERA MODAL (CHUẨN APPLE IOS CODE SCANNER) -->
   <div class="qr-modal" id="qrModal">
     <div class="qr-scanner-box">
+      <!-- HEADER TRẮNG SẠCH SẼ CHUẨN IOS MODAL -->
       <div class="qr-header">
-        <span class="qr-title">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          Soi Camera Vào Mã QR Trên Tem
-        </span>
-        <button class="hud-close-btn" id="btnCloseQr">✕</button>
+        <div class="qr-title-group">
+          <span class="qr-title">Quét Mã Tem Linh Kiện</span>
+          <span class="qr-subtitle">Hướng camera vào mã QR trên con tem ván</span>
+        </div>
+        <button class="qr-close-x" id="btnCloseQr" title="Đóng camera">✕</button>
       </div>
-      <div id="reader"></div>
-      <div class="qr-footer">Giữ tem ngay ngắn trong khung quét</div>
+
+      <!-- KHUNG CAMERA CHÍNH KÈM RETICLE GÓC VÀ HIỆU ỨNG TÓM MÃ -->
+      <div class="qr-viewport-container" id="qrViewportContainer">
+        <div id="reader"></div>
+
+        <!-- 4 GÓC ĐỊNH VỊ CHUẨN APPLE CAMERA -->
+        <div class="qr-reticle-overlay" id="qrReticleOverlay">
+          <div class="reticle-corner top-left"></div>
+          <div class="reticle-corner top-right"></div>
+          <div class="reticle-corner bottom-left"></div>
+          <div class="reticle-corner bottom-right"></div>
+          <!-- TIA LASER QUÉT -->
+          <div class="qr-laser-line"></div>
+          <!-- HIỆU ỨNG TÓM MÃ THÀNH CÔNG (POP-IN BADGE) -->
+          <div class="qr-lock-badge" id="qrLockBadge">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>ĐÃ NHẬN DIỆN!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="qr-footer">
+        <span class="qr-tip-badge">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Tự động nhận diện & phóng tới tấm ván tức thì
+        </span>
+      </div>
     </div>
   </div>
 
@@ -3025,43 +3262,88 @@
         }
       }
 
-      // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP
-      function openQrScanner() {
+      // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP (CHUẨN APPLE CODE SCANNER)
+      let isQrProcessing = false;
+
+      async function openQrScanner() {
         const modal = document.getElementById('qrModal');
+        const reticle = document.getElementById('qrReticleOverlay');
+        if (reticle) reticle.classList.remove('locked');
+        isQrProcessing = false;
+        triggerHaptic('light');
+
         modal.classList.add('active');
 
-        if (!html5QrCode) {
-          html5QrCode = new Html5Qrcode("reader");
-        }
+        // Đợi DOM render ổn định kích thước
+        setTimeout(async () => {
+          try {
+            if (html5QrCode) {
+              try { await html5QrCode.stop(); } catch(e) {}
+              try { html5QrCode.clear(); } catch(e) {}
+              html5QrCode = null;
+            }
+            const readerEl = document.getElementById('reader');
+            if (readerEl) readerEl.innerHTML = '';
 
-        const config = { fps: 15, qrbox: { width: 220, height: 220 } };
+            html5QrCode = new Html5Qrcode("reader");
 
-        html5QrCode.start(
-          { facingMode: "environment" },
-          config,
-          (decodedText) => {
-            // Quét thành công QR!
-            handleScannedCode(decodedText);
+            const config = {
+              fps: 15,
+              qrbox: (viewfinderWidth, viewfinderHeight) => {
+                const minEdge = Math.min(viewfinderWidth, viewfinderHeight);
+                const size = Math.floor(minEdge * 0.72);
+                return { width: size, height: size };
+              },
+              aspectRatio: 1.0
+            };
+
+            const onScanSuccess = (decodedText) => {
+              if (isQrProcessing) return;
+              isQrProcessing = true;
+
+              // Hiệu ứng bắt dính mã: Bật Reticle xanh lá & huy hiệu thành công
+              if (reticle) reticle.classList.add('locked');
+              triggerHaptic('success');
+
+              // Dừng quét tạm thời và đóng camera sau 450ms để người dùng cảm nhận hiệu ứng
+              setTimeout(() => {
+                closeQrScanner();
+                handleScannedCode(decodedText);
+                isQrProcessing = false;
+              }, 450);
+            };
+
+            // Thử mở camera sau (environment), nếu không được thì fallback mở camera bất kỳ
+            html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess, () => {})
+              .catch(err => {
+                console.warn("Không mở được camera environment, thử camera mặc định:", err);
+                html5QrCode.start({ facingMode: "user" }, config, onScanSuccess, () => {})
+                  .catch(err2 => {
+                    alert("Không thể truy cập camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(" + err2 + ")");
+                    closeQrScanner();
+                  });
+              });
+          } catch (err) {
+            alert("Lỗi khởi tạo máy quét: " + err);
             closeQrScanner();
-          },
-          (errorMessage) => {
-            // Đang quét...
           }
-        ).catch(err => {
-          alert("Không thể mở Camera: " + err);
-          closeQrScanner();
-        });
+        }, 80);
       }
 
       function closeQrScanner() {
-        if (html5QrCode && html5QrCode.isScanning) {
+        const modal = document.getElementById('qrModal');
+        const reticle = document.getElementById('qrReticleOverlay');
+        if (reticle) reticle.classList.remove('locked');
+        modal.classList.remove('active');
+
+        if (html5QrCode) {
           html5QrCode.stop().then(() => {
-            document.getElementById('qrModal').classList.remove('active');
+            try { html5QrCode.clear(); } catch(e){}
+            html5QrCode = null;
           }).catch(() => {
-            document.getElementById('qrModal').classList.remove('active');
+            try { html5QrCode.clear(); } catch(e){}
+            html5QrCode = null;
           });
-        } else {
-          document.getElementById('qrModal').classList.remove('active');
         }
       }
 
