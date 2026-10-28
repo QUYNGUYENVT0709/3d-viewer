@@ -1789,6 +1789,110 @@
       height: 14px;
       flex-shrink: 0;
     }
+
+    /* ========================================================
+       TỐI ƯU GIAO DIỆN MÀN HÌNH NGANG (LANDSCAPE MODE - KHÔNG NUỐT MÀN HÌNH)
+       ======================================================== */
+    @media (orientation: landscape) and (max-height: 550px) {
+      /* THẺ HUD CHUYỂN THÀNH SIDE DOCK PANEL GỌN GÀNG Ở GÓC TRÁI DƯỚI */
+      .hud-bottom-card {
+        left: 10px !important;
+        right: auto !important;
+        bottom: 10px !important;
+        width: 320px !important;
+        max-width: calc(100vw - 160px) !important;
+        max-height: calc(100vh - 20px) !important;
+        border-radius: 20px !important;
+        padding: 10px 14px 12px 14px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22) !important;
+        transform: translateX(-120%) !important;
+      }
+      .hud-bottom-card.show {
+        transform: translateX(0) !important;
+      }
+
+      /* ẨN VẠCH KÉO DRAG HANDLE KHI Ở MÀN HÌNH NGANG */
+      .hud-drag-handle-bar {
+        display: none !important;
+      }
+
+      /* TỐI ƯU HÀNG NÚT TÍNH NĂNG TRONG HUD */
+      .hud-top-row {
+        margin-bottom: 6px !important;
+      }
+      .hud-action-btn {
+        height: 32px !important;
+        font-size: 10.5px !important;
+        gap: 3px !important;
+        padding: 0 3px !important;
+        border-radius: 9px !important;
+      }
+      .hud-action-btn svg {
+        width: 13px !important;
+        height: 13px !important;
+      }
+
+      .hud-name-row {
+        margin-bottom: 4px !important;
+      }
+      .hud-part-name {
+        font-size: 13.5px !important;
+      }
+
+      .hud-specs-strip {
+        gap: 4px !important;
+        row-gap: 4px !important;
+      }
+      .hud-badge-id, .hud-badge-layer, .hud-spec-pill {
+        padding: 3px 7px !important;
+        font-size: 10px !important;
+        border-radius: 7px !important;
+      }
+
+      /* HÀNG NÚT NỔI Ở MÀN HÌNH NGANG: NẰM GỌN GÓC PHẢI DƯỚI, KHÔNG BỊ ĐẨY LÊN ĐỈNH */
+      .floating-tools {
+        right: 12px !important;
+        bottom: 12px !important;
+        top: auto !important;
+      }
+      body.hud-open .floating-tools {
+        bottom: 12px !important;
+      }
+      .round-tool-btn, .toolbar-toggle-btn {
+        width: 38px !important;
+        height: 38px !important;
+      }
+      .round-tool-btn svg, .toolbar-toggle-btn svg {
+        width: 17px !important;
+        height: 17px !important;
+      }
+      .floating-actions-bar {
+        gap: 7px !important;
+      }
+
+      /* TOP BAR GỌN GÀNG KHI XOAY NGANG */
+      .top-header {
+        top: 4px !important;
+        left: 8px !important;
+        right: 8px !important;
+      }
+      .brand-pill {
+        padding: 5px 12px !important;
+        max-width: 45vw !important;
+      }
+      .project-name {
+        font-size: 12px !important;
+      }
+      .icon-btn {
+        height: 32px !important;
+        padding: 0 8px !important;
+      }
+      .btn-scan-qr {
+        height: 32px !important;
+        padding: 0 10px !important;
+        font-size: 12px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1830,6 +1934,11 @@
     <div class="top-tools">
       <button class="icon-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="icon-btn" id="btnToggleFullscreen" title="Bật/Tắt Toàn Màn Hình">
+        <svg id="iconFullscreen" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+        </svg>
       </button>
       <button class="icon-btn" id="btnShowProjects" title="Danh sách các công trình đang lưu trên Cloud">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -2394,6 +2503,11 @@
         controls.panSpeed = 0.8;
         controls.minDistance = 0.02;
         controls.maxDistance = 500;
+
+        // Tự động neo tâm xoay vào đối tượng ở giữa khung nhìn mỗi khi kết thúc zoom hoặc pan 2 ngón tay
+        controls.addEventListener('end', () => {
+          updateAdaptiveOrbitPivot(null, null);
+        });
 
         // Ánh sáng tự nhiên trung thực chuẩn SketchUp: Ánh sáng môi trường dịu nhẹ, trung thực màu gỗ/ván, không bóng lóa giả tạo
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.95);
@@ -4050,6 +4164,32 @@
         alert("Đã đọc được mã: " + text + " nhưng không khớp chi tiết nào trong mô hình!");
       }
 
+      // CƠ CHẾ TÂM XOAY THÍCH ỨNG THEO ĐỘ ZOOM (DYNAMIC RAYCAST PIVOT CHUẨN SKETCHUP)
+      function updateAdaptiveOrbitPivot(screenX = null, screenY = null) {
+        if (!controls || !camera || !allMeshes || allMeshes.length === 0) return;
+
+        const ray = new THREE.Raycaster();
+        const pt = new THREE.Vector2();
+
+        if (screenX !== null && screenY !== null) {
+          pt.x = (screenX / window.innerWidth) * 2 - 1;
+          pt.y = -(screenY / window.innerHeight) * 2 + 1;
+        } else {
+          // Lấy chính xác tâm khung nhìn (Center of Viewport)
+          pt.set(0, 0);
+        }
+
+        ray.setFromCamera(pt, camera);
+        const visibleMeshes = allMeshes.filter(m => m.visible);
+        const hits = ray.intersectObjects(visibleMeshes, false);
+
+        if (hits && hits.length > 0) {
+          const hitPoint = hits[0].point;
+          // Cập nhật tâm xoay mới ngay tại bề mặt vật thể đang nhìn
+          controls.target.copy(hitPoint);
+        }
+      }
+
       // 9. RAYCASTING CHẠM MÀN HÌNH CHỌN TRỰC TIẾP TẤM (KÈM KÍNH LÚP & HÍT GÓC KHI ĐO 3D)
       function setupRaycasting(container) {
         const raycaster = new THREE.Raycaster();
@@ -4064,6 +4204,11 @@
         container.addEventListener('pointerdown', e => {
           if (window.setToolbarCollapsed && !isToolbarCollapsed) {
             window.setToolbarCollapsed(true);
+          }
+
+          // Tự động neo tâm xoay vào vật thể được ngón tay chạm tới trước khi xoay (Dynamic Pivot)
+          if (!isPointMeasureMode && activePointers.size === 0) {
+            updateAdaptiveOrbitPivot(e.clientX, e.clientY);
           }
 
           touchStartX = e.clientX;
@@ -5098,6 +5243,46 @@
             });
           };
         }
+
+        // Bật/Tắt chế độ Toàn Màn Hình (Fullscreen Mode chuẩn quốc tế)
+        const btnFullscreen = document.getElementById('btnToggleFullscreen');
+        const iconFs = document.getElementById('iconFullscreen');
+        const SVG_FS_ENTER = `<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>`;
+        const SVG_FS_EXIT = `<path d="M4 14h6m0 0v6m0-6-7 7m17-11h-6m0 0V4m0 6 7-7m-7 17h6m0 0v-6m0 6-7-7M10 4H4m0 0v6m0-6 7 7"/>`;
+
+        function toggleFullscreen() {
+          const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+          if (!isFs) {
+            const docEl = document.documentElement;
+            if (docEl.requestFullscreen) {
+              docEl.requestFullscreen().catch(() => {});
+            } else if (docEl.webkitRequestFullscreen) {
+              docEl.webkitRequestFullscreen();
+            }
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen().catch(() => {});
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            }
+          }
+        }
+
+        if (btnFullscreen) {
+          btnFullscreen.onclick = function() {
+            triggerHaptic('light');
+            toggleFullscreen();
+          };
+        }
+
+        function updateFsIcon() {
+          const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+          if (iconFs) iconFs.innerHTML = isFs ? SVG_FS_EXIT : SVG_FS_ENTER;
+          if (btnFullscreen) btnFullscreen.classList.toggle('active', !!isFs);
+        }
+
+        document.addEventListener('fullscreenchange', updateFsIcon);
+        document.addEventListener('webkitfullscreenchange', updateFsIcon);
 
         // Chọn file .glb thủ công nếu mở offline
         document.getElementById('localFileInput').onchange = function(e) {
