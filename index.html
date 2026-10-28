@@ -269,35 +269,36 @@
     .hud-top-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 5px;
       flex: 1;
       min-width: 0;
     }
 
-    /* 3 NÚT HÀNH ĐỘNG HUD: DẠNG IOS SEGMENTED CONTROL / ACTION PILLS */
+    /* 4 NÚT HÀNH ĐỘNG HUD: DẠNG IOS SEGMENTED CONTROL / ACTION PILLS */
     .hud-action-btn {
       flex: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 6px;
-      height: 40px;
-      padding: 0 6px;
-      border-radius: 14px;
+      gap: 4px;
+      height: 38px;
+      padding: 0 4px;
+      border-radius: 12px;
       background: var(--grid-bg);
       border: 0.5px solid var(--panel-border);
       color: var(--text-main);
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 600;
       letter-spacing: -0.2px;
       cursor: pointer;
       transition: all 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
       white-space: nowrap;
+      min-width: 0;
     }
     .hud-action-btn svg {
-      width: 17px;
-      height: 17px;
+      width: 15px;
+      height: 15px;
       flex-shrink: 0;
       stroke-width: 2.2;
     }
@@ -325,6 +326,17 @@
       background: rgba(255, 59, 48, 0.12);
       border-color: rgba(255, 59, 48, 0.3);
       color: #ff3b30;
+    }
+    .hud-action-btn.multiselect-btn:hover {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: #10b981;
+    }
+    .hud-action-btn.multiselect-btn.active {
+      background: #10b981;
+      border-color: #10b981;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
     }
 
     /* NÚT ĐÓNG DẠNG NÚT TRÒN MỜ CHUẨN IOS MODAL */
@@ -1185,21 +1197,26 @@
     /* GHOST MODE & FLOATING CONTROL TOOLS (IOS CONTROL CENTER CIRCULAR GLASS STYLE) */
     .floating-tools {
       position: absolute;
-      right: 12px;
-      bottom: max(20px, env(safe-area-inset-bottom, 20px));
+      right: 14px;
+      bottom: max(16px, env(safe-area-inset-bottom, 16px));
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-end;
       gap: 10px;
-      z-index: 90;
+      z-index: 105;
       transition: bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     body.hud-open .floating-tools {
-      bottom: 180px;
+      bottom: 185px;
+    }
+    .floating-actions-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .round-tool-btn {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: var(--panel-bg);
       backdrop-filter: blur(28px) saturate(190%);
@@ -1211,7 +1228,7 @@
       justify-content: center;
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
       transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.2s, box-shadow 0.2s;
     }
     .round-tool-btn:active {
@@ -1228,6 +1245,18 @@
       border-color: #007aff;
       color: #fff;
       box-shadow: 0 4px 18px rgba(0, 122, 255, 0.4);
+    }
+    .floating-hide-btn {
+      background: #ef4444 !important;
+      border-color: #ef4444 !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4) !important;
+    }
+    .unhide-btn {
+      background: #f59e0b !important;
+      border-color: #f59e0b !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4) !important;
     }
     .unhide-count {
       position: absolute;
@@ -1481,57 +1510,163 @@
       cursor: pointer;
     }
 
-    /* ===== TOOLBAR TOGGLE (Mũi tên ở dưới cùng, phóng lên / thu nhỏ hoàn chỉnh) ===== */
+    /* ===== BẢNG ĐIỀU KHIỂN CÔNG CỤ 3D (CONTROL CENTER GLASS CARD) ===== */
     .floating-tools .tool-group {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 10px;
-      overflow: hidden;
-      max-height: 480px;
+      width: 270px;
+      max-width: calc(100vw - 28px);
+      background: var(--panel-bg);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid var(--panel-border);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22), 0 2px 8px rgba(0, 0, 0, 0.08);
       opacity: 1;
-      transform: scaleY(1);
-      transform-origin: bottom center;
-      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  opacity 0.25s ease,
-                  transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(1) translateY(0);
+      transform-origin: bottom right;
+      transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0.25s;
+      visibility: visible;
+      pointer-events: auto;
     }
     .floating-tools .tool-group.collapsed {
-      max-height: 0;
       opacity: 0;
-      transform: scaleY(0);
+      transform: scale(0.85) translateY(15px);
       pointer-events: none;
+      visibility: hidden;
       margin-bottom: -10px;
     }
+    .tool-group-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    .tool-group-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tool-group-close {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(120, 120, 128, 0.16);
+      color: var(--text-sub);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .tool-card-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 6px;
+      border-radius: 12px;
+      background: rgba(120, 120, 128, 0.08);
+      border: 1px solid transparent;
+      color: var(--text-main);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.18s ease;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .tool-card-btn span {
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .tool-card-btn:active {
+      transform: scale(0.94);
+      background: rgba(120, 120, 128, 0.16);
+    }
+    .tool-card-btn.active {
+      background: #007aff !important;
+      color: #ffffff !important;
+      border-color: #007aff !important;
+      box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4) !important;
+    }
+    .tool-card-btn.active svg {
+      stroke: #ffffff !important;
+    }
+    .tool-card-btn.active-cyan {
+      background: #0284c7 !important;
+      color: #ffffff !important;
+      border-color: #0284c7 !important;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4) !important;
+    }
+    .tool-card-btn.active-cyan svg {
+      stroke: #ffffff !important;
+    }
     .toolbar-toggle-btn {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: var(--panel-bg);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
       border: 1px solid var(--panel-border);
       color: var(--text-main);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       flex-shrink: 0;
+      position: relative;
     }
     .toolbar-toggle-btn:active {
-      transform: scale(0.92);
+      transform: scale(0.90);
+    }
+    .toolbar-toggle-btn.active {
+      background: #007aff;
+      border-color: #007aff;
+      color: #ffffff;
+      box-shadow: 0 6px 22px rgba(0, 122, 255, 0.45);
+    }
+    .toolbar-toggle-btn.has-active-tool::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10b981;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
     }
     .toolbar-toggle-btn svg {
-      width: 20px !important;
-      height: 20px !important;
-      max-width: 20px !important;
-      max-height: 20px !important;
+      width: 22px !important;
+      height: 22px !important;
+      max-width: 22px !important;
+      max-height: 22px !important;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      transform: rotate(0deg);
     }
-    .toolbar-toggle-btn.collapsed svg {
-      transform: rotate(180deg);
+    .toolbar-toggle-btn.active svg {
+      transform: rotate(90deg);
     }
 
     /* ===== LAYER PANEL (Giống SketchUp Mobile Viewer) ===== */
@@ -1802,46 +1937,74 @@
     </div>
   </div>
 
-  <!-- FLOATING SIDE TOOLS (ĐẶT NÚT MŨI TÊN Ở DƯỚI CÙNG) -->
+  <!-- BẢNG ĐIỀU KHIỂN CÔNG CỤ 3D & FLOATING ACTIONS (GỌN GÀNG, KHÔNG CHIẾM DIỆN TÍCH) -->
   <div class="floating-tools" id="floatingTools">
-    <div class="tool-group" id="toolGroup">
-      <button class="round-tool-btn" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
-      </button>
-      <button class="round-tool-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18" opacity="0.5"/><path d="m8 8 8 8m0-8-8 8"/></svg>
-      </button>
-      <button class="round-tool-btn" id="btnToggleSection" title="Mặt cắt 3D di động (Section Cut - Cắt theo 3 trục X/Y/Z)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><line x1="2" y1="12" x2="22" y2="12" stroke="#ff4500" stroke-width="2.5"/><polygon points="12 7 15 11 9 11" fill="#ff4500"/></svg>
-      </button>
-      <button class="round-tool-btn" id="btnToggleExplode" title="Rã rời cụm chi tiết 3D (Explode View 0 - 100%)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="m4 4 3 3m10 10 3 3m0-16-3 3M4 20l3-3"/></svg>
-      </button>
-      <button class="round-tool-btn" id="btnToggleViews" title="Các góc nhìn kỹ thuật chuẩn SketchUp (Iso, Front, Top, Side)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      </button>
-      <button class="round-tool-btn" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều (Dài × Rộng × Dày)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg>
-      </button>
-      <button class="round-tool-btn" id="btnToggleLayers" title="Quản lý Layer (Hiện/Ẩn nhóm đối tượng)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-      </button>
-      <button class="round-tool-btn" id="btnUnhideAll" title="Hiện lại tất cả các tấm đã ẩn" style="display:none; position:relative;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span class="unhide-count" id="unhideCount">0</span>
-      </button>
-      <button class="round-tool-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
-      </button>
+    <!-- POPUP CARD TIỆN ÍCH KÍNH MỜ (2 CỘT CHUẨN IOS CONTROL CENTER) -->
+    <div class="tool-group collapsed" id="toolGroup">
+      <div class="tool-group-header">
+        <span class="tool-group-title">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Bộ Công Cụ 3D
+        </span>
+        <button class="tool-group-close" id="btnCloseToolGroup" title="Đóng bảng công cụ">✕</button>
+      </div>
+      <div class="tool-grid">
+        <button class="tool-card-btn" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều & bắt điểm">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg>
+          <span>Thước đo 3D</span>
+        </button>
+        <button class="tool-card-btn" id="btnToggleSection" title="Mặt cắt 3D di động (Section Cut - Cắt theo 3 trục X/Y/Z)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><line x1="2" y1="12" x2="22" y2="12" stroke="#ff4500" stroke-width="2.5"/><polygon points="12 7 15 11 9 11" fill="#ff4500"/></svg>
+          <span>Mặt cắt 3D</span>
+        </button>
+        <button class="tool-card-btn" id="btnToggleExplode" title="Rã rời cụm chi tiết 3D (Explode View 0 - 100%)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="m4 4 3 3m10 10 3 3m0-16-3 3M4 20l3-3"/></svg>
+          <span>Rã rời chi tiết</span>
+        </button>
+        <button class="tool-card-btn" id="btnToggleLayers" title="Quản lý Layer (Hiện/Ẩn nhóm đối tượng)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span>Quản lý Layer</span>
+        </button>
+        <button class="tool-card-btn" id="btnToggleViews" title="Các góc nhìn kỹ thuật chuẩn SketchUp (Iso, Front, Top, Side)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <span>Góc nhìn chuẩn</span>
+        </button>
+        <button class="tool-card-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+          <span>Đặt lại góc</span>
+        </button>
+        <button class="tool-card-btn" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
+          <span>Làm mờ (Ghost)</span>
+        </button>
+        <button class="tool-card-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18" opacity="0.5"/><path d="m8 8 8 8m0-8-8 8"/></svg>
+          <span>X-Ray xuyên</span>
+        </button>
+      </div>
     </div>
 
-    <!-- NÚT ẨN TẤM CỐ ĐỊNH BÊN NGOÀI: Tự động xuất hiện khi chọn tấm ván -->
-    <button class="round-tool-btn floating-hide-btn" id="btnFloatingHide" title="Ẩn tấm ván đang chọn" style="display:none;">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-    </button>
+    <!-- HÀNG NÚT THAO TÁC Ở GÓC DƯỚI (CHỈ HIỆN KHI CẦN, SIÊU TIẾT KIỆM KHÔNG GIAN) -->
+    <div class="floating-actions-bar">
+      <!-- Nút ẩn tấm đang chọn (tự động hiện khi chọn tấm ván) -->
+      <button class="round-tool-btn floating-hide-btn" id="btnFloatingHide" title="Ẩn tấm ván đang chọn" style="display:none;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      </button>
 
-    <button class="toolbar-toggle-btn" id="btnToolbarToggle" title="Thu gọn / Sổ ra thanh công cụ">
-      <svg id="toolbarToggleIcon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
+      <!-- Nút hiện lại tất cả tấm đã ẩn (tự động hiện khi có tấm bị ẩn) -->
+      <button class="round-tool-btn unhide-btn" id="btnUnhideAll" title="Hiện lại tất cả các tấm đã ẩn" style="display:none; position:relative;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span class="unhide-count" id="unhideCount">0</span>
+      </button>
+
+      <!-- Nút FAB Chính: Mở/Đóng bảng công cụ 3D -->
+      <button class="toolbar-toggle-btn fab-main-btn" id="btnToolbarToggle" title="Bộ Công Cụ 3D">
+        <svg id="toolbarToggleIcon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- BOTTOM HUD CARD (CHI TIẾT TẤM VÁN ĐANG CHỌN - TĂNG KÍCH THƯỚC & RÕ RÀNG) -->
@@ -1849,20 +2012,29 @@
     <!-- VẠCH KÉO CỬ CHỈ CHO MOBILE (DRAG HANDLE VUỐT XUỐNG ĐÓNG BẢNG) -->
     <div class="hud-drag-handle-bar" id="hudDragHandle" title="Vuốt xuống để đóng bảng"></div>
 
-    <!-- HÀNG 1: 3 NÚT HÀNH ĐỘNG CHIA ĐỀU NHAU + NÚT ĐÓNG (KHUNG ĐỎ) -->
+    <!-- HÀNG 1: 4 NÚT HÀNH ĐỘNG CHIA ĐỀU NHAU + NÚT ĐÓNG -->
     <div class="hud-top-row">
       <div class="hud-top-actions">
         <button class="hud-action-btn focus-btn" id="btnHudFocus" title="Thu phóng camera thẳng vào tấm ván đang chọn">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-          Thu phóng
+          <span id="btnHudFocusText">Thu phóng</span>
         </button>
-        <button class="hud-action-btn isolate-btn" id="btnHudIsolate" title="Cô lập – Chỉ hiển thị duy nhất tấm ván này, ẩn tất cả tấm khác">
+        <button class="hud-action-btn isolate-btn" id="btnHudIsolate" title="Cô lập – Chỉ hiển thị duy nhất tấm ván này (hoặc các tấm đang chọn)">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
-          Cô lập
+          <span id="btnHudIsolateText">Cô lập</span>
         </button>
-        <button class="hud-action-btn hide-btn" id="btnHudHide" title="Ẩn tấm ván này khỏi mô hình 3D">
+        <button class="hud-action-btn hide-btn" id="btnHudHide" title="Ẩn tấm ván này (hoặc các tấm đang chọn) khỏi mô hình 3D">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-          Ẩn tấm
+          <span id="btnHudHideText">Ẩn tấm</span>
+        </button>
+        <button class="hud-action-btn multiselect-btn" id="btnHudMultiSelect" title="Bật/Tắt chế độ chọn nhiều tấm cùng lúc để ẩn hoặc cô lập hàng loạt">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="13" height="13" rx="2"/>
+            <path d="M16 4H8a2 2 0 0 0-2 2v1"/>
+            <path d="M20 7v9a2 2 0 0 1-2 2h-1"/>
+            <path d="m6 13 2.5 2.5 4.5-4.5"/>
+          </svg>
+          <span id="btnHudMultiSelectText">Chọn nhiều</span>
         </button>
       </div>
       <button class="hud-close-x" id="btnCloseHud" title="Đóng bảng thông tin">✕</button>
@@ -2089,7 +2261,9 @@
       let layersData = [];
       let layerMeshMap = {};
       let hiddenLayers = new Set();
-      let isToolbarCollapsed = false;
+      let isToolbarCollapsed = true;
+      let isMultiSelectMode = false;
+      let selectedBoardIndices = new Set();
 
       // Biến trạng thái các công cụ chuyên sâu SketchUp
       let isSectionActive = false;
@@ -2521,7 +2695,7 @@
           const isLabel = (mesh.name && mesh.name.toLowerCase().includes('label')) ||
                           (mesh.parent && mesh.parent.name && mesh.parent.name.toLowerCase().includes('label'));
 
-          const isTarget = (selectedBoardIndex !== null && bIdx === selectedBoardIndex);
+          const isTarget = (selectedBoardIndices.size > 0 && selectedBoardIndices.has(bIdx)) || (selectedBoardIndex !== null && bIdx === selectedBoardIndex);
 
           if (isLabel) {
             // Giữ nguyên tem nhãn ABF_Label sắc nét, trung thực bản vẽ
@@ -2543,7 +2717,7 @@
               mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
               mesh.userData.edgeLines.material.opacity = 0.85;
             }
-          } else if (isGhostMode && selectedBoardIndex !== null) {
+          } else if (isGhostMode && (selectedBoardIndex !== null || selectedBoardIndices.size > 0)) {
             mesh.material = ghostMaterial;
             if (mesh.userData.edgeLines) {
               mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
@@ -3055,10 +3229,13 @@
         }
       }
 
-      // Ẩn tấm chi tiết đang chọn
+      // Ẩn tấm chi tiết đang chọn (hỗ trợ cả chọn đơn lẫn chọn nhiều tấm)
       function hideSelectedBoard() {
-        if (selectedBoardIndex === null) return;
-        hiddenBoardIndices.add(selectedBoardIndex);
+        const targets = (selectedBoardIndices && selectedBoardIndices.size > 0)
+          ? Array.from(selectedBoardIndices)
+          : (selectedBoardIndex !== null ? [selectedBoardIndex] : []);
+        if (targets.length === 0) return;
+        targets.forEach(idx => hiddenBoardIndices.add(idx));
         clearSelection();
         updateUnhideButton();
       }
@@ -3152,15 +3329,32 @@
         }
       }
 
-      // 5. CHỌN VÀ HIGHLIGHT TẤM VÁN (TÂM ĐIỂM CỦA TÍNH NĂNG TÌM TẤM)
+      // 5. CHỌN VÀ HIGHLIGHT TẤM VÁN (HỖ TRỢ CẢ CHỌN ĐƠN LẪN CHỌN NHIỀU TẤM)
       function selectBoard(boardIndex, zoomCamera = true) {
         if (hiddenBoardIndices.has(boardIndex)) {
           hiddenBoardIndices.delete(boardIndex);
           updateUnhideButton();
         }
-        selectedBoardIndex = boardIndex;
+
+        if (!isMultiSelectMode) {
+          selectedBoardIndices.clear();
+          selectedBoardIndices.add(boardIndex);
+          selectedBoardIndex = boardIndex;
+        } else {
+          if (selectedBoardIndices.has(boardIndex)) {
+            selectedBoardIndices.delete(boardIndex);
+            if (selectedBoardIndices.size === 0) {
+              clearSelection();
+              return;
+            }
+            selectedBoardIndex = Array.from(selectedBoardIndices)[selectedBoardIndices.size - 1];
+          } else {
+            selectedBoardIndices.add(boardIndex);
+            selectedBoardIndex = boardIndex;
+          }
+        }
+
         triggerHaptic('light');
-        const targetMeshes = boardMeshMap[boardIndex] || [];
 
         // 1. Cập nhật vật liệu toàn bộ Scene
         updateModelMaterials();
@@ -3168,13 +3362,26 @@
         // 2. Cập nhật thước đo 3D
         updateMeasureHelper();
 
-        // 3. Camera tự động lướt mượt mà phóng to tới tấm đó
-        if (zoomCamera && targetMeshes.length > 0) {
-          zoomToMeshes(targetMeshes);
+        // 3. Camera tự động phóng to tới cụm tấm được chọn
+        if (zoomCamera) {
+          const targetMeshes = [];
+          selectedBoardIndices.forEach(idx => {
+            if (boardMeshMap[idx]) {
+              const mList = Array.isArray(boardMeshMap[idx]) ? boardMeshMap[idx] : [boardMeshMap[idx]];
+              targetMeshes.push(...mList);
+            }
+          });
+          if (targetMeshes.length > 0) {
+            zoomToMeshes(targetMeshes);
+          }
         }
 
         // 4. Hiển thị bảng HUD chi tiết tấm dưới đáy màn hình
-        showHudInfo(boardIndex);
+        if (selectedBoardIndices.size > 1) {
+          updateMultiSelectHud();
+        } else {
+          showHudInfo(selectedBoardIndex);
+        }
 
         // 5. Hiển thị nút Ẩn cố định bên ngoài
         const fHide = document.getElementById('btnFloatingHide');
@@ -3187,10 +3394,17 @@
           const btn = document.getElementById('btnHudIsolate');
           if (btn) {
             btn.classList.remove('active');
-            btn.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg> Cô lập`;
+            btn.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg> <span id="btnHudIsolateText">Cô lập</span>`;
           }
         }
         selectedBoardIndex = null;
+        selectedBoardIndices.clear();
+        isMultiSelectMode = false;
+        const btnMulti = document.getElementById('btnHudMultiSelect');
+        if (btnMulti) btnMulti.classList.remove('active');
+        const txtMulti = document.getElementById('btnHudMultiSelectText');
+        if (txtMulti) txtMulti.textContent = 'Chọn nhiều';
+
         updateModelMaterials();
         updateMeasureHelper();
         const fHide = document.getElementById('btnFloatingHide');
@@ -3201,6 +3415,80 @@
           hud.classList.remove('show');
         }
         document.body.classList.remove('hud-open');
+      }
+
+      // Cập nhật thông tin HUD khi chọn nhiều tấm ván cùng lúc
+      function updateMultiSelectHud() {
+        const count = selectedBoardIndices.size;
+        if (count === 0) {
+          clearSelection();
+          return;
+        }
+        if (count === 1) {
+          const singleIdx = Array.from(selectedBoardIndices)[0];
+          showHudInfo(singleIdx);
+          return;
+        }
+
+        const hud = document.getElementById('hudCard');
+        if (hud) hud.classList.add('show');
+        document.body.classList.add('hud-open');
+
+        const badgeId = document.getElementById('hudBadgeId');
+        if (badgeId) badgeId.textContent = `${count} TẤM`;
+
+        const partName = document.getElementById('hudPartName');
+        const sortedIds = Array.from(selectedBoardIndices).sort((a,b) => a - b);
+        if (partName) partName.textContent = `Đã chọn ${count} tấm ván`;
+
+        const elLayerText = document.getElementById('hudLayerText');
+        if (elLayerText) elLayerText.textContent = `Mã: ${sortedIds.map(i => '#' + i).join(', ')}`;
+
+        const elDim = document.getElementById('hudDimensions');
+        if (elDim) elDim.textContent = `Tổng cộng: ${count} chi tiết`;
+
+        const elMat = document.getElementById('hudMaterial');
+        if (elMat) elMat.textContent = "Chạm tấm khác để chọn thêm";
+
+        const elMod = document.getElementById('hudModuleName');
+        if (elMod) elMod.style.display = 'none';
+
+        const elEbVal = document.getElementById('hudEdgeBanding');
+        if (elEbVal) elEbVal.style.display = 'none';
+
+        const elDrills = document.getElementById('hudDrills');
+        if (elDrills) elDrills.style.display = 'none';
+
+        const elCodeN1 = document.getElementById('hudCodeN1');
+        if (elCodeN1) elCodeN1.style.display = 'none';
+
+        const elCodeN2 = document.getElementById('hudCodeN2');
+        if (elCodeN2) elCodeN2.style.display = 'none';
+
+        const btnHide = document.getElementById('btnHudHide');
+        if (btnHide) {
+          btnHide.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg> <span id="btnHudHideText">Ẩn (${count})</span>`;
+        }
+
+        const btnIsolate = document.getElementById('btnHudIsolate');
+        if (btnIsolate) {
+          btnIsolate.innerHTML = isIsolatedMode
+            ? `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> <span id="btnHudIsolateText">Bỏ cô lập</span>`
+            : `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg> <span id="btnHudIsolateText">Cô lập (${count})</span>`;
+        }
+
+        const btnFocus = document.getElementById('btnHudFocus');
+        if (btnFocus) {
+          btnFocus.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> <span id="btnHudFocusText">Thu phóng (${count})</span>`;
+        }
+
+        const btnMulti = document.getElementById('btnHudMultiSelect');
+        if (btnMulti) btnMulti.classList.add('active');
+        const txtMulti = document.getElementById('btnHudMultiSelectText');
+        if (txtMulti) txtMulti.textContent = `Đang chọn (${count})`;
+
+        const fHide = document.getElementById('btnFloatingHide');
+        if (fHide) fHide.style.display = 'flex';
       }
 
       // 6. CAMERA SMOOTH ZOOM VÀO TẤM VÁN ĐƯỢC CHỌN (THU PHÓNG THẲNG THEO GÓC NHÌN HIỆN TẠI)
@@ -3392,6 +3680,26 @@
             elCodeN2.style.display = 'none';
           }
         }
+
+        // Cập nhật trạng thái các nút thao tác trên HUD khi chọn 1 tấm
+        const btnHide = document.getElementById('btnHudHide');
+        if (btnHide) {
+          btnHide.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg> <span id="btnHudHideText">Ẩn tấm</span>`;
+        }
+        const btnIsolate = document.getElementById('btnHudIsolate');
+        if (btnIsolate) {
+          btnIsolate.innerHTML = isIsolatedMode
+            ? `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> <span id="btnHudIsolateText">Bỏ cô lập</span>`
+            : `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg> <span id="btnHudIsolateText">Cô lập</span>`;
+        }
+        const btnFocus = document.getElementById('btnHudFocus');
+        if (btnFocus) {
+          btnFocus.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> <span id="btnHudFocusText">Thu phóng</span>`;
+        }
+        const btnMulti = document.getElementById('btnHudMultiSelect');
+        if (btnMulti) btnMulti.classList.toggle('active', isMultiSelectMode);
+        const txtMulti = document.getElementById('btnHudMultiSelectText');
+        if (txtMulti) txtMulti.textContent = isMultiSelectMode ? 'Đang chọn' : 'Chọn nhiều';
       }
 
       // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP (CHUẨN APPLE CODE SCANNER)
@@ -3816,17 +4124,25 @@
             }
 
             if (bIdx !== undefined && bIdx !== null) {
-              if (selectedBoardIndex === bIdx) {
-                clearSelection();
-              } else {
+              if (isMultiSelectMode) {
                 selectBoard(bIdx, false);
+              } else {
+                if (selectedBoardIndex === bIdx) {
+                  clearSelection();
+                } else {
+                  selectBoard(bIdx, false);
+                }
               }
             } else {
-              clearSelection();
+              if (!isMultiSelectMode) {
+                clearSelection();
+              }
             }
           } else {
-            // Chạm ra vùng trống -> Bỏ chọn
-            clearSelection();
+            // Chạm ra vùng trống -> Bỏ chọn (chỉ khi không ở chế độ chọn nhiều)
+            if (!isMultiSelectMode) {
+              clearSelection();
+            }
           }
         });
 
@@ -4047,6 +4363,8 @@
         const btn = document.getElementById('btnToggleSection');
         if (panel) panel.classList.toggle('active', isSectionActive);
         if (btn) btn.classList.toggle('active', isSectionActive);
+        if (isSectionActive && window.setToolbarCollapsed) window.setToolbarCollapsed(true);
+        if (window.updateFabIndicator) window.updateFabIndicator();
 
         if (!isSectionActive) {
           if (renderer) renderer.clippingPlanes = [];
@@ -4117,18 +4435,24 @@
         const btn = document.getElementById('btnToggleExplode');
         if (panel) panel.classList.toggle('active', isExplodeActive);
         if (btn) btn.classList.toggle('active', isExplodeActive);
+        if (isExplodeActive && window.setToolbarCollapsed) window.setToolbarCollapsed(true);
+        if (window.updateFabIndicator) window.updateFabIndicator();
       }
 
-      // 3. CÔ LẬP TẤM VÁN ĐANG CHỌN (ISOLATE MODE)
+      // 3. CÔ LẬP TẤM VÁN ĐANG CHỌN (HỖ TRỢ CẢ CHỌN ĐƠN LẪN NHIỀU TẤM)
       function toggleIsolateBoard() {
-        if (selectedBoardIndex === null) return;
+        const activeSet = (selectedBoardIndices && selectedBoardIndices.size > 0)
+          ? selectedBoardIndices
+          : (selectedBoardIndex !== null ? new Set([selectedBoardIndex]) : new Set());
+        if (activeSet.size === 0) return;
+
         isIsolatedMode = !isIsolatedMode;
         const btn = document.getElementById('btnHudIsolate');
 
         allMeshes.forEach(mesh => {
           const bIdx = mesh.userData.boardIndex;
           if (isIsolatedMode) {
-            if (bIdx === selectedBoardIndex) {
+            if (activeSet.has(bIdx)) {
               mesh.visible = true;
               if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = true;
             } else {
@@ -4137,7 +4461,7 @@
             }
           } else {
             const lyrName = mesh.userData.layerName;
-            const isHidden = hiddenLayers.has(lyrName) || hiddenBoardIndices.has(bIdx);
+            const isHidden = hiddenLayers.has(lyrName) || (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx));
             mesh.visible = !isHidden;
             if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = !isHidden;
           }
@@ -4145,9 +4469,10 @@
 
         if (btn) {
           btn.classList.toggle('active', isIsolatedMode);
+          const countStr = activeSet.size > 1 ? ` (${activeSet.size})` : '';
           btn.innerHTML = isIsolatedMode
-            ? `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Bỏ cô lập`
-            : `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg> Cô lập`;
+            ? `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> <span id="btnHudIsolateText">Bỏ cô lập</span>`
+            : `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg> <span id="btnHudIsolateText">Cô lập${countStr}</span>`;
         }
       }
 
@@ -4190,6 +4515,7 @@
         const isOpen = (state !== undefined) ? state : !panel.classList.contains('active');
         if (panel) panel.classList.toggle('active', isOpen);
         if (btn) btn.classList.toggle('active', isOpen);
+        if (isOpen && window.setToolbarCollapsed) window.setToolbarCollapsed(true);
       }
 
       // 10. ĐIỀU KHIỂN BẬT TẮT THƯỚC ĐO 3D & ĐẢO CHẾ ĐỘ (MẶC ĐỊNH ĐO 2 ĐIỂM)
@@ -4223,6 +4549,8 @@
         const measureHud = document.getElementById('measureHud');
         if (btnToggleMeasure) btnToggleMeasure.classList.toggle('active-cyan', isMeasureEnabled);
         if (measureHud) measureHud.style.display = isMeasureEnabled ? 'flex' : 'none';
+        if (isMeasureEnabled && window.setToolbarCollapsed) window.setToolbarCollapsed(true);
+        if (window.updateFabIndicator) window.updateFabIndicator();
 
         if (!isMeasureEnabled) {
           clearMeasureHelpers();
@@ -4248,6 +4576,7 @@
           isGhostMode = !isGhostMode;
           this.classList.toggle('active', isGhostMode);
           updateModelMaterials();
+          if (window.updateFabIndicator) window.updateFabIndicator();
         };
 
         // Nút nhìn xuyên thấu X-Ray toàn bộ mô hình (SketchUp X-Ray)
@@ -4257,6 +4586,7 @@
             isGlobalXray = !isGlobalXray;
             btnGlobalXray.classList.toggle('active', isGlobalXray);
             updateModelMaterials();
+            if (window.updateFabIndicator) window.updateFabIndicator();
           };
         }
 
@@ -4312,8 +4642,18 @@
 
         document.getElementById('btnHudFocus').onclick = function() {
           triggerHaptic('medium');
-          if (selectedBoardIndex !== null && boardMeshMap[selectedBoardIndex]) {
-            zoomToMeshes(boardMeshMap[selectedBoardIndex]);
+          const activeSet = (selectedBoardIndices && selectedBoardIndices.size > 0)
+            ? selectedBoardIndices
+            : (selectedBoardIndex !== null ? new Set([selectedBoardIndex]) : new Set());
+          const targetMeshes = [];
+          activeSet.forEach(idx => {
+            if (boardMeshMap[idx]) {
+              const mList = Array.isArray(boardMeshMap[idx]) ? boardMeshMap[idx] : [boardMeshMap[idx]];
+              targetMeshes.push(...mList);
+            }
+          });
+          if (targetMeshes.length > 0) {
+            zoomToMeshes(targetMeshes);
           }
         };
 
@@ -4323,6 +4663,26 @@
           btnHudIsolate.onclick = function() {
             triggerHaptic('medium');
             toggleIsolateBoard();
+          };
+        }
+
+        // Nút Bật/Tắt chế độ Chọn nhiều tấm trên HUD Card
+        const btnHudMultiSelect = document.getElementById('btnHudMultiSelect');
+        if (btnHudMultiSelect) {
+          btnHudMultiSelect.onclick = function() {
+            triggerHaptic('medium');
+            isMultiSelectMode = !isMultiSelectMode;
+            if (isMultiSelectMode && selectedBoardIndex !== null) {
+              selectedBoardIndices.add(selectedBoardIndex);
+            }
+            btnHudMultiSelect.classList.toggle('active', isMultiSelectMode);
+            const txt = document.getElementById('btnHudMultiSelectText');
+            if (txt) {
+              txt.textContent = isMultiSelectMode ? 'Đang chọn' : (selectedBoardIndices.size > 1 ? `Chọn nhiều (${selectedBoardIndices.size})` : 'Chọn nhiều');
+            }
+            if (selectedBoardIndices.size > 1) {
+              updateMultiSelectHud();
+            }
           };
         }
 
@@ -4448,16 +4808,51 @@
           };
         }
 
-        // Nút Thu gọn / Sổ ra thanh công cụ (Toolbar Toggle)
+        // Nút Thu gọn / Sổ ra bảng công cụ 3D (Control Center Toggle)
         const btnToolbarToggle = document.getElementById('btnToolbarToggle');
         const toolGroup = document.getElementById('toolGroup');
-        if (btnToolbarToggle && toolGroup) {
-          btnToolbarToggle.onclick = function() {
-            isToolbarCollapsed = !isToolbarCollapsed;
-            toolGroup.classList.toggle('collapsed', isToolbarCollapsed);
+        const btnCloseToolGroup = document.getElementById('btnCloseToolGroup');
+
+        window.setToolbarCollapsed = function(collapsed) {
+          isToolbarCollapsed = collapsed;
+          if (toolGroup) toolGroup.classList.toggle('collapsed', isToolbarCollapsed);
+          if (btnToolbarToggle) {
             btnToolbarToggle.classList.toggle('collapsed', isToolbarCollapsed);
+            btnToolbarToggle.classList.toggle('active', !isToolbarCollapsed);
+          }
+        };
+
+        window.updateFabIndicator = function() {
+          const fab = document.getElementById('btnToolbarToggle');
+          if (!fab) return;
+          const hasActive = (typeof isSectionActive !== 'undefined' && isSectionActive) ||
+                            (typeof isExplodeActive !== 'undefined' && isExplodeActive) ||
+                            (typeof isMeasureEnabled !== 'undefined' && isMeasureEnabled) ||
+                            (typeof isGlobalXray !== 'undefined' && isGlobalXray) ||
+                            (typeof isGhostMode !== 'undefined' && isGhostMode);
+          fab.classList.toggle('has-active-tool', hasActive);
+        };
+
+        if (btnToolbarToggle && toolGroup) {
+          btnToolbarToggle.onclick = function(e) {
+            e.stopPropagation();
+            setToolbarCollapsed(!isToolbarCollapsed);
           };
         }
+
+        if (btnCloseToolGroup) {
+          btnCloseToolGroup.onclick = function(e) {
+            e.stopPropagation();
+            setToolbarCollapsed(true);
+          };
+        }
+
+        // Tự động đóng bảng công cụ khi chạm ra ngoài canvas 3D
+        document.addEventListener('pointerdown', function(e) {
+          if (!isToolbarCollapsed && toolGroup && !toolGroup.contains(e.target) && btnToolbarToggle && !btnToolbarToggle.contains(e.target)) {
+            setToolbarCollapsed(true);
+          }
+        });
 
         // Mở/Đóng Bảng Quản Lý Layer
         const btnToggleLayers = document.getElementById('btnToggleLayers');
@@ -4466,6 +4861,7 @@
         const btnCloseLayerPanel = document.getElementById('btnCloseLayerPanel');
 
         function openLayerPanel() {
+          setToolbarCollapsed(true);
           buildLayersList();
           if (layerPanel) layerPanel.classList.add('open');
           if (layerPanelBackdrop) layerPanelBackdrop.classList.add('open');
