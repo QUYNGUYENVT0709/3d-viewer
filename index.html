@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22LTF%203D%20VIEWER%22%2C%22short_name%22%3A%223D%20Viewer%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22any%22%7D">
   <title>LTF 3D VIEWER</title>
   
   <!-- Thư viện 3D Three.js & OrbitControls & GLTFLoader (CDN siêu nhẹ, lưu cache di động) -->
@@ -1899,6 +1903,20 @@
         padding: 0 10px !important;
         font-size: 12px !important;
       }
+      /* HIỆN NÚT TOÀN MÀN HÌNH KHI XOAY NGANG */
+      #btnToggleFullscreen {
+        display: inline-flex !important;
+      }
+    }
+
+    /* MẶC ĐỊNH Ở MÀN HÌNH DỌC: Ẩn nút toàn màn hình để không chật thanh công cụ & không nuốt nút Quét */
+    #btnToggleFullscreen {
+      display: none;
+    }
+    @media (orientation: landscape) {
+      #btnToggleFullscreen {
+        display: inline-flex !important;
+      }
     }
   </style>
 </head>
@@ -1941,6 +1959,11 @@
     <div class="top-tools">
       <button class="icon-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="icon-btn" id="btnToggleFullscreen" title="Bật/Tắt Toàn Màn Hình">
+        <svg id="iconFullscreen" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+        </svg>
       </button>
       <button class="icon-btn" id="btnShowProjects" title="Danh sách các công trình đang lưu trên Cloud">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -5235,6 +5258,46 @@
             });
           };
         }
+
+        // Bật/Tắt chế độ Toàn Màn Hình (Fullscreen Mode)
+        const btnFullscreen = document.getElementById('btnToggleFullscreen');
+        const iconFs = document.getElementById('iconFullscreen');
+        const SVG_FS_ENTER = `<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>`;
+        const SVG_FS_EXIT = `<path d="M4 14h6m0 0v6m0-6-7 7m17-11h-6m0 0V4m0 6 7-7m-7 17h6m0 0v-6m0 6-7-7M10 4H4m0 0v6m0-6 7 7"/>`;
+
+        function toggleFullscreen() {
+          const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+          if (!isFs) {
+            const docEl = document.documentElement;
+            const req = docEl.requestFullscreen || docEl.webkitRequestFullscreen;
+            if (req) {
+              const promise = req.call(docEl, { navigationUI: 'hide' });
+              if (promise && promise.catch) promise.catch(() => {});
+            }
+          } else {
+            const exit = document.exitFullscreen || document.webkitExitFullscreen;
+            if (exit) {
+              const promise = exit.call(document);
+              if (promise && promise.catch) promise.catch(() => {});
+            }
+          }
+        }
+
+        if (btnFullscreen) {
+          btnFullscreen.onclick = function() {
+            triggerHaptic('light');
+            toggleFullscreen();
+          };
+        }
+
+        function updateFsIcon() {
+          const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+          if (iconFs) iconFs.innerHTML = isFs ? SVG_FS_EXIT : SVG_FS_ENTER;
+          if (btnFullscreen) btnFullscreen.classList.toggle('active', !!isFs);
+        }
+
+        document.addEventListener('fullscreenchange', updateFsIcon);
+        document.addEventListener('webkitfullscreenchange', updateFsIcon);
 
         // Chọn file .glb thủ công nếu mở offline
         document.getElementById('localFileInput').onchange = function(e) {
