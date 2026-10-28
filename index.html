@@ -1716,7 +1716,7 @@
   <header class="top-header">
     <div class="brand-pill" title="Tên công trình">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color); flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <span class="project-name" id="displayProjectName">ANH ĐỨC LẦU 1</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -3483,6 +3483,10 @@
             Html5Qrcode.getCameras().then(cams => {
               if (cams && cams.length > 1) {
                 qrCamerasList = cams;
+                const backIdx = cams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
+                if (backIdx !== -1) {
+                  currentQrCamIndex = backIdx;
+                }
                 const btnSwitch = document.getElementById('btnSwitchCamera');
                 if (btnSwitch) btnSwitch.style.display = 'inline-flex';
               }
@@ -3512,14 +3516,28 @@
 
         modal.classList.add('active');
 
-        // Mở thẳng camera sau bằng facingMode environment
-        // Trình duyệt đã nhớ quyền trước đó sẽ mở camera NGAY LẬP TỨC mà KHÔNG HỎI LẠI
+        // Mặc định luôn ưu tiên mở camera sau (facingMode: "environment")
         setTimeout(async () => {
           try {
-            await startCameraScanner({ facingMode: { ideal: "environment" } });
+            await startCameraScanner({ facingMode: "environment" });
           } catch (e1) {
-            console.warn("Thử fallback camera user:", e1);
+            console.warn("Không mở được facingMode environment trực tiếp, thử danh sách camera:", e1);
             try {
+              const cams = await Html5Qrcode.getCameras();
+              if (cams && cams.length > 0) {
+                qrCamerasList = cams;
+                let backIndex = cams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
+                if (backIndex === -1 && cams.length > 1) {
+                  backIndex = cams.length - 1; // Thường camera sau ở cuối danh sách trên điện thoại
+                }
+                if (backIndex === -1) backIndex = 0;
+                currentQrCamIndex = backIndex;
+                await startCameraScanner(cams[backIndex].id);
+                const btnSwitch = document.getElementById('btnSwitchCamera');
+                if (btnSwitch && cams.length > 1) btnSwitch.style.display = 'inline-flex';
+                return;
+              }
+              // Fallback cuối cùng nếu thiết bị chỉ có camera trước (webcam laptop/PC)
               await startCameraScanner({ facingMode: "user" });
             } catch (finalErr) {
               alert("Không thể truy cập Camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(" + finalErr + ")");
