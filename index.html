@@ -258,18 +258,19 @@
       transform: scaleX(1.15);
     }
 
-    /* HÀNG 1: CÁC NÚT ACTION CHIA ĐỀU NHAU + NÚT ĐÓNG */
+    /* HÀNG 1: 4 NÚT HÀNH ĐỘNG CHIA ĐỀU NHAU 100% DIỆN TÍCH CÂN XỨNG */
     .hud-top-row {
       display: flex;
       align-items: center;
-      gap: 8px;
+      width: 100%;
       margin-bottom: 8px;
     }
 
     .hud-top-actions {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
+      width: 100%;
       flex: 1;
       min-width: 0;
     }
@@ -584,14 +585,15 @@
     }
 
     /* NÚT ẨN TẤM CỐ ĐỊNH BÊN NGOÀI (ĐỒNG DẠNG VỚI CÁC NÚT TRÒN TIỆN ÍCH KHÁC) */
-    .floating-hide-btn {
+    .floating-hide-btn, .floating-deselect-btn {
       background: var(--panel-bg) !important;
       border: 0.5px solid var(--panel-border) !important;
       color: var(--text-main) !important;
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
       animation: popIn 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
-    .floating-hide-btn:hover, .floating-hide-btn:active {
+    .floating-hide-btn:hover, .floating-hide-btn:active,
+    .floating-deselect-btn:hover, .floating-deselect-btn:active {
       background: rgba(239, 68, 68, 0.12) !important;
       color: #ef4444 !important;
       border-color: rgba(239, 68, 68, 0.4) !important;
@@ -1957,6 +1959,14 @@
 
     <!-- HÀNG NÚT THAO TÁC Ở GÓC DƯỚI (SIÊU TIẾT KIỆM KHÔNG GIAN, TỰ CĂN TRÊN THẺ HUD) -->
     <div class="floating-actions-bar">
+      <!-- Nút Bỏ chọn nhiều tấm (chỉ xuất hiện khi chọn từ 2 tấm trở lên để hủy thao tác chọn) -->
+      <button class="round-tool-btn floating-deselect-btn" id="btnFloatingDeselect" title="Hủy chọn nhiều linh kiện" style="display:none;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
       <!-- NÚT BẬT/TẮT LÀM MỜ XUNG QUANH (GHOST MODE) - ĐƯỢC ĐƯA RA NGOÀI VÀ MẶC ĐỊNH BẬT -->
       <button class="round-tool-btn active" id="btnFloatingGhost" title="Làm mờ xung quanh khi chọn tấm (Ghost Mode)">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
@@ -1993,7 +2003,7 @@
     <!-- VẠCH KÉO CỬ CHỈ CHO MOBILE (DRAG HANDLE VUỐT XUỐNG ĐÓNG BẢNG) -->
     <div class="hud-drag-handle-bar" id="hudDragHandle" title="Vuốt xuống để đóng bảng"></div>
 
-    <!-- HÀNG 1: 4 NÚT HÀNH ĐỘNG CHIA ĐỀU NHAU + NÚT ĐÓNG -->
+    <!-- HÀNG 1: 4 NÚT HÀNH ĐỘNG CHIA ĐỀU NHAU 100% CÂN XỨNG -->
     <div class="hud-top-row">
       <div class="hud-top-actions">
         <button class="hud-action-btn focus-btn" id="btnHudFocus" title="Thu phóng camera thẳng vào tấm ván đang chọn">
@@ -2018,7 +2028,6 @@
           <span id="btnHudMultiSelectText">Chọn nhiều</span>
         </button>
       </div>
-      <button class="hud-close-x" id="btnCloseHud" title="Đóng bảng thông tin">✕</button>
     </div>
 
     <!-- HÀNG 2: TÊN CHI TIẾT RIÊNG 1 HÀNG (KHUNG XANH LÁ) -->
@@ -3385,9 +3394,18 @@
           showHudInfo(selectedBoardIndex);
         }
 
-        // 5. Hiển thị nút Ẩn cố định bên ngoài
+        // 5. Hiển thị nút Ẩn cố định bên ngoài & cập nhật nút Bỏ chọn nhiều tấm
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'flex';
+        updateDeselectFloatingButton();
+      }
+
+      // Cập nhật trạng thái hiển thị của nút tròn Bỏ chọn nhiều tấm
+      function updateDeselectFloatingButton() {
+        const btnDeselect = document.getElementById('btnFloatingDeselect');
+        if (btnDeselect) {
+          btnDeselect.style.display = (selectedBoardIndices && selectedBoardIndices.size > 1) ? 'flex' : 'none';
+        }
       }
 
       function clearSelection() {
@@ -3411,6 +3429,8 @@
         updateMeasureHelper();
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'none';
+        const fDeselect = document.getElementById('btnFloatingDeselect');
+        if (fDeselect) fDeselect.style.display = 'none';
         const hud = document.getElementById('hudCard');
         if (hud) {
           hud.style.transform = '';
@@ -3506,6 +3526,7 @@
 
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'flex';
+        updateDeselectFloatingButton();
       }
 
       // 6. CAMERA SMOOTH ZOOM VÀO TẤM VÁN ĐƯỢC CHỌN (HỖ TRỢ CINEMATIC FLY-TO VÒNG CUNG ĐIỆN ẢNH)
@@ -4745,15 +4766,27 @@
           btnUnhideAll.onclick = unhideAllBoards;
         }
 
+        // Nút Hủy chọn nhiều tấm nổi bên ngoài (Floating Deselect Button)
+        const btnFloatingDeselect = document.getElementById('btnFloatingDeselect');
+        if (btnFloatingDeselect) {
+          btnFloatingDeselect.onclick = function() {
+            triggerHaptic('medium');
+            clearSelection();
+          };
+        }
+
         document.getElementById('btnResetView').onclick = function() {
           if (modelRoot) zoomToFit(modelRoot);
           if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
         };
 
-        document.getElementById('btnCloseHud').onclick = function() {
-          triggerHaptic('light');
-          clearSelection();
-        };
+        const btnCloseHud = document.getElementById('btnCloseHud');
+        if (btnCloseHud) {
+          btnCloseHud.onclick = function() {
+            triggerHaptic('light');
+            clearSelection();
+          };
+        }
 
         document.getElementById('btnHudFocus').onclick = function() {
           triggerHaptic('medium');
