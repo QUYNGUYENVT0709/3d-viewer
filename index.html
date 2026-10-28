@@ -1856,7 +1856,7 @@
   <header class="top-header">
     <div class="brand-pill" title="Tên công trình">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color); flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <span class="project-name" id="displayProjectName">PN PHƯỚC HẢI</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -3906,10 +3906,6 @@
           console.warn("Lỗi đổi camera:", e);
         }
       }
-        } catch (e) {
-          console.warn("Lỗi đổi camera:", e);
-        }
-      }
 
       function closeQrScanner() {
         const modal = document.getElementById('qrModal');
@@ -3943,16 +3939,28 @@
       function handleScannedCode(text) {
         if (!text) return;
 
-        // 1. Nếu là URL đầy đủ: trích xuất tham số ?i=... hoặc ?id=...
-        let m = text.match(/[?&]i=(\d+)/i) || text.match(/[?&]id=(\d+)/i) || text.match(/[?&]part=(\d+)/i) || text.match(/#(\d+)\b/);
-        if (m) {
-          const id = parseInt(m[1], 10);
+        // 1. Nếu là URL đầy đủ: trích xuất tham số ?p=... và ?i=...
+        const pMatch = text.match(/[?&]p=([^&#]+)/i);
+        const iMatch = text.match(/[?&]i=(\d+)/i) || text.match(/[?&]id=(\d+)/i) || text.match(/[?&]part=(\d+)/i) || text.match(/#(\d+)\b/);
+
+        if (pMatch) {
+          const targetSlug = decodeURIComponent(pMatch[1]).trim();
+          const targetId = iMatch ? parseInt(iMatch[1], 10) : null;
+          // Nếu mã tem thuộc dự án khác với dự án đang mở -> chuyển dự án chuẩn xác
+          if (targetSlug && targetSlug !== targetProjectSlug) {
+            window.location.href = targetId ? `?p=${encodeURIComponent(targetSlug)}&i=${targetId}` : `?p=${encodeURIComponent(targetSlug)}`;
+            return;
+          }
+        }
+
+        if (iMatch) {
+          const id = parseInt(iMatch[1], 10);
           selectBoard(id, true);
           return;
         }
 
         // 2. Nếu là chuỗi text ABF: ABF-15 hoặc ABF_1_15
-        m = text.match(/ABF[_\-](\d+)/i) || text.match(/ABF_\d+_(\d+)/i);
+        let m = text.match(/ABF[_\-](\d+)/i) || text.match(/ABF_\d+_(\d+)/i);
         if (m) {
           const id = parseInt(m[1], 10);
           selectBoard(id, true);
