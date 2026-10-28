@@ -1790,34 +1790,31 @@
       flex-shrink: 0;
     }
 
-    /* Mặc định ở màn hình dọc: Ẩn nút Fullscreen trên Top Bar để bảo vệ 100% không gian cho nút Máy ảnh Quét */
-    #btnToggleFullscreen {
-      display: none;
-    }
-
     /* ========================================================
-       TỐI ƯU GIAO DIỆN MÀN HÌNH NGANG (LANDSCAPE MODE - KHÔNG NUỐT MÀN HÌNH)
+       TỐI ƯU GIAO DIỆN MÀN HÌNH NGANG (LANDSCAPE MODE - KHÔNG VƯỚNG TAY)
        ======================================================== */
     @media (orientation: landscape) and (max-height: 550px) {
-      /* Hiện nút Fullscreen trên Top Bar khi xoay ngang */
-      #btnToggleFullscreen {
-        display: flex !important;
-      }
-      /* THẺ HUD CHUYỂN THÀNH SIDE DOCK PANEL GỌN GÀNG Ở GÓC TRÁI DƯỚI */
+      /* THẺ HUD CHUYỂN THÀNH SIDE DOCK PANEL NEO Ở GÓC TRÊN BÊN TRÁI (TUYỆT ĐỐI KHÔNG VƯỚNG TAY CẦM PHÍA DƯỚI) */
       .hud-bottom-card {
         left: 10px !important;
         right: auto !important;
-        bottom: 10px !important;
-        width: 320px !important;
+        top: 46px !important;
+        bottom: auto !important;
+        width: 310px !important;
         max-width: calc(100vw - 160px) !important;
-        max-height: calc(100vh - 20px) !important;
-        border-radius: 20px !important;
-        padding: 10px 14px 12px 14px !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22) !important;
-        transform: translateX(-120%) !important;
+        max-height: calc(100vh - 58px) !important;
+        border-radius: 18px !important;
+        padding: 8px 12px 10px 12px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20) !important;
+        transform: translateX(-125%) !important;
       }
       .hud-bottom-card.show {
         transform: translateX(0) !important;
+      }
+
+      /* Ẩn nút Quét trùng lặp trong thẻ HUD khi ở màn hình ngang để tiết kiệm diện tích tối đa */
+      .hud-bottom-card .hud-mini-scan-btn {
+        display: none !important;
       }
 
       /* ẨN VẠCH KÉO DRAG HANDLE KHI Ở MÀN HÌNH NGANG */
@@ -1830,11 +1827,11 @@
         margin-bottom: 6px !important;
       }
       .hud-action-btn {
-        height: 32px !important;
-        font-size: 10.5px !important;
+        height: 30px !important;
+        font-size: 10px !important;
         gap: 3px !important;
         padding: 0 3px !important;
-        border-radius: 9px !important;
+        border-radius: 8px !important;
       }
       .hud-action-btn svg {
         width: 13px !important;
@@ -1842,10 +1839,11 @@
       }
 
       .hud-name-row {
-        margin-bottom: 4px !important;
+        margin-bottom: 3px !important;
       }
       .hud-part-name {
-        font-size: 13.5px !important;
+        font-size: 13px !important;
+        line-height: 1.25 !important;
       }
 
       .hud-specs-strip {
@@ -1853,9 +1851,9 @@
         row-gap: 4px !important;
       }
       .hud-badge-id, .hud-badge-layer, .hud-spec-pill {
-        padding: 3px 7px !important;
-        font-size: 10px !important;
-        border-radius: 7px !important;
+        padding: 2.5px 6.5px !important;
+        font-size: 9.5px !important;
+        border-radius: 6px !important;
       }
 
       /* HÀNG NÚT NỔI Ở MÀN HÌNH NGANG: NẰM GỌN GÓC PHẢI DƯỚI, KHÔNG BỊ ĐẨY LÊN ĐỈNH */
@@ -1943,11 +1941,6 @@
     <div class="top-tools">
       <button class="icon-btn" id="btnToggleTheme" title="Chuyển chế độ Nền Sáng Studio / Tối">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      </button>
-      <button class="icon-btn" id="btnToggleFullscreen" title="Bật/Tắt Toàn Màn Hình">
-        <svg id="iconFullscreen" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-        </svg>
       </button>
       <button class="icon-btn" id="btnShowProjects" title="Danh sách các công trình đang lưu trên Cloud">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -2071,12 +2064,6 @@
         <button class="tool-card-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18" opacity="0.5"/><path d="m8 8 8 8m0-8-8 8"/></svg>
           <span>X-Ray xuyên</span>
-        </button>
-        <button class="tool-card-btn" id="btnMenuFullscreen" title="Bật/Tắt Toàn Màn Hình">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-          </svg>
-          <span>Toàn màn hình</span>
         </button>
       </div>
     </div>
@@ -5248,56 +5235,6 @@
             });
           };
         }
-
-        // Bật/Tắt chế độ Toàn Màn Hình (Fullscreen Mode chuẩn quốc tế)
-        const btnFullscreen = document.getElementById('btnToggleFullscreen');
-        const iconFs = document.getElementById('iconFullscreen');
-        const SVG_FS_ENTER = `<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>`;
-        const SVG_FS_EXIT = `<path d="M4 14h6m0 0v6m0-6-7 7m17-11h-6m0 0V4m0 6 7-7m-7 17h6m0 0v-6m0 6-7-7M10 4H4m0 0v6m0-6 7 7"/>`;
-
-        function toggleFullscreen() {
-          const isFs = document.fullscreenElement || document.webkitFullscreenElement;
-          if (!isFs) {
-            const docEl = document.documentElement;
-            if (docEl.requestFullscreen) {
-              docEl.requestFullscreen().catch(() => {});
-            } else if (docEl.webkitRequestFullscreen) {
-              docEl.webkitRequestFullscreen();
-            }
-          } else {
-            if (document.exitFullscreen) {
-              document.exitFullscreen().catch(() => {});
-            } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-            }
-          }
-        }
-
-        if (btnFullscreen) {
-          btnFullscreen.onclick = function() {
-            triggerHaptic('light');
-            toggleFullscreen();
-          };
-        }
-
-        const btnMenuFullscreen = document.getElementById('btnMenuFullscreen');
-        if (btnMenuFullscreen) {
-          btnMenuFullscreen.onclick = function() {
-            triggerHaptic('light');
-            toggleFullscreen();
-            if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
-          };
-        }
-
-        function updateFsIcon() {
-          const isFs = document.fullscreenElement || document.webkitFullscreenElement;
-          if (iconFs) iconFs.innerHTML = isFs ? SVG_FS_EXIT : SVG_FS_ENTER;
-          if (btnFullscreen) btnFullscreen.classList.toggle('active', !!isFs);
-          if (btnMenuFullscreen) btnMenuFullscreen.classList.toggle('active', !!isFs);
-        }
-
-        document.addEventListener('fullscreenchange', updateFsIcon);
-        document.addEventListener('webkitfullscreenchange', updateFsIcon);
 
         // Chọn file .glb thủ công nếu mở offline
         document.getElementById('localFileInput').onchange = function(e) {
