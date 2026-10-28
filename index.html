@@ -709,168 +709,197 @@
       transform: scale(0.88) !important;
     }
 
-    /* QR SCANNER MODAL FULLSCREEN - CHUẨN APPLE IOS CODE SCANNER TRẮNG SÁCH SẼ */
+    /* ========================================================
+       GIAO DIỆN QUÉT MÃ QR FULL-SCREEN CHUẨN ZALO & TELEGRAM
+       ======================================================== */
     .qr-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000000;
+      z-index: 500;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      animation: qrFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .qr-modal.active {
+      display: flex;
+    }
+    @keyframes qrFadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Video Camera phủ tràn toàn màn hình */
+    .qr-full-viewport {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(24px) saturate(190%);
-      -webkit-backdrop-filter: blur(24px) saturate(190%);
-      z-index: 250;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .qr-modal.active {
-      display: flex;
-    }
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: scale(0.96); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .qr-scanner-box {
-      width: 100%;
-      max-width: 360px;
-      background: #ffffff;
-      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.08);
-      border: 0.5px solid rgba(0, 0, 0, 0.08);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-    body.dark-mode .qr-scanner-box {
-      background: #1c1c1e;
-      border-color: rgba(255, 255, 255, 0.14);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-    }
-
-    .qr-header {
-      padding: 16px 18px 12px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      background: transparent;
-      border-bottom: 0.5px solid var(--panel-border);
-    }
-    .qr-title-group {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .qr-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-main);
-      letter-spacing: -0.3px;
-    }
-    .qr-subtitle {
-      font-size: 12px;
-      color: var(--text-sub);
-      font-weight: 500;
-    }
-    .qr-header-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .qr-action-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 6px 11px;
-      border-radius: 16px;
-      background: rgba(0, 122, 255, 0.12);
-      border: none;
-      color: var(--accent-color);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .qr-action-btn:active {
-      transform: scale(0.92);
-      background: rgba(0, 122, 255, 0.22);
-    }
-    .qr-close-x {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(120, 120, 128, 0.16);
-      border: none;
-      color: var(--text-sub);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 700;
-      transition: all 0.15s ease;
-      flex-shrink: 0;
-    }
-    .qr-close-x:active {
-      transform: scale(0.9);
-    }
-    .qr-close-x:hover {
-      background: rgba(120, 120, 128, 0.25);
-      color: var(--text-main);
-    }
-
-    /* CONTAINER KHUNG CAMERA VIEWPORT (APPLE VISION PRO STYLE) */
-    .qr-viewport-container {
-      position: relative;
-      width: 100%;
-      height: 330px;
-      background: #090d16;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      z-index: 1;
+      background: #000;
     }
     #reader {
       width: 100% !important;
       height: 100% !important;
-      min-height: 330px !important;
-      background: #090d16 !important;
+      min-height: 100% !important;
+      background: #000 !important;
       border: none !important;
-      position: relative !important;
+      position: absolute !important;
+      top: 0;
+      left: 0;
     }
     #reader__scan_region {
       width: 100% !important;
       height: 100% !important;
-      min-height: 330px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      background: #090d16 !important;
-      position: relative !important;
-      overflow: hidden !important;
+      min-height: 100% !important;
+      background: #000 !important;
     }
     #reader video {
       width: 100% !important;
       height: 100% !important;
-      min-height: 330px !important;
-      max-height: 330px !important;
+      min-height: 100% !important;
       object-fit: cover !important;
-      border-radius: 0 !important;
       display: block !important;
-      position: relative !important;
-      z-index: 1 !important;
-      background: transparent !important;
     }
-    /* Triệt tiêu toàn bộ shaded region và bảng phụ rác của html5-qrcode */
     #qr-shaded-region,
     #reader__dashboard_section,
     #reader__header_message {
       display: none !important;
+    }
+
+    /* LỚP MẶT NẠ LÀM TỐI XUNG QUANH CHUẨN ZALO / TELEGRAM */
+    .qr-overlay-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* KHUNG NGẮM TRUNG TÂM (VIEWFINDER RETICLE KHOÉT RỖNG CHUẨN ĐIỆN ẢNH) */
+    .qr-reticle-box {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      max-width: 75vw;
+      max-height: 75vw;
+      border-radius: 24px;
+      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.62);
+      transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    .qr-reticle-box.locked {
+      transform: scale(0.96);
+      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.75);
+    }
+
+    /* 4 GÓC BO TRÒN PHÁT SÁNG NEON CHUẨN ZALO */
+    .reticle-corner {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-color: #00e5ff;
+      border-style: solid;
+      border-width: 0;
+      filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.85));
+      transition: border-color 0.25s ease, filter 0.25s ease;
+    }
+    .reticle-corner.top-left {
+      top: -2px;
+      left: -2px;
+      border-top-width: 4px;
+      border-left-width: 4px;
+      border-top-left-radius: 20px;
+    }
+    .reticle-corner.top-right {
+      top: -2px;
+      right: -2px;
+      border-top-width: 4px;
+      border-right-width: 4px;
+      border-top-right-radius: 20px;
+    }
+    .reticle-corner.bottom-left {
+      bottom: -2px;
+      left: -2px;
+      border-bottom-width: 4px;
+      border-left-width: 4px;
+      border-bottom-left-radius: 20px;
+    }
+    .reticle-corner.bottom-right {
+      bottom: -2px;
+      right: -2px;
+      border-bottom-width: 4px;
+      border-right-width: 4px;
+      border-bottom-right-radius: 20px;
+    }
+    .qr-reticle-box.locked .reticle-corner {
+      border-color: #00e676 !important;
+      filter: drop-shadow(0 0 16px #00e676) !important;
+    }
+
+    /* TIA LASER QUÉT CHUYỂN ĐỘNG CHUẨN ZALO / TELEGRAM RADAR */
+    .qr-laser-line {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.4) 20%, #00e5ff 50%, rgba(0, 229, 255, 0.4) 80%, transparent 100%);
+      box-shadow: 0 0 18px #00e5ff, 0 0 35px rgba(0, 229, 255, 0.6);
+      border-radius: 3px;
+      top: 10px;
+      animation: scanLaserAnim 2s ease-in-out infinite alternate;
+    }
+    @keyframes scanLaserAnim {
+      0% { top: 12px; opacity: 0.6; transform: scaleX(0.95); }
+      50% { opacity: 1; transform: scaleX(1); }
+      100% { top: calc(100% - 15px); opacity: 0.6; transform: scaleX(0.95); }
+    }
+    .qr-reticle-box.locked .qr-laser-line {
+      display: none;
+    }
+
+    /* HUY HIỆU TÓM MÃ THÀNH CÔNG */
+    .qr-lock-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.4);
+      background: rgba(0, 200, 83, 0.95);
+      backdrop-filter: blur(16px);
+      padding: 12px 22px;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 12px 40px rgba(0, 230, 118, 0.7);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.28s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      z-index: 10;
+    }
+    .qr-reticle-box.locked .qr-lock-badge {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .qr-lock-badge span {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.6px;
     }
 
     /* TRẠNG THÁI LOADING CAMERA */
@@ -885,11 +914,11 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      background: #090d16;
+      background: #000;
       color: #94a3b8;
       font-size: 13px;
       font-weight: 500;
-      z-index: 2;
+      z-index: 3;
       transition: opacity 0.25s ease;
       pointer-events: none;
     }
@@ -898,8 +927,8 @@
       visibility: hidden;
     }
     .qr-loading-spinner {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border: 3px solid rgba(255,255,255,0.15);
       border-top-color: #00e5ff;
       border-radius: 50%;
@@ -909,155 +938,106 @@
       to { transform: rotate(360deg); }
     }
 
-    /* 4 GÓC ĐỊNH VỊ (APPLE CAMERA RETICLE CORNERS VỚI GLOW NEON) */
-    .qr-reticle-overlay {
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      transition: all 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    /* THANH ĐIỀU KHIỂN TRÊN ĐỈNH (TOP BAR KÍNH MỜ TRONG SUỐT) */
+    .qr-top-bar {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding: max(16px, env(safe-area-inset-top, 16px)) 18px 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 100%);
     }
-    .reticle-corner {
-      position: absolute;
-      width: 32px;
-      height: 32px;
-      border-color: #ffffff;
-      border-style: solid;
-      border-width: 0;
-      filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.75));
-      transition: border-color 0.2s ease, transform 0.2s ease, filter 0.2s ease;
-    }
-    .reticle-corner.top-left {
-      top: 0;
-      left: 0;
-      border-top-width: 4px;
-      border-left-width: 4px;
-      border-top-left-radius: 14px;
-    }
-    .reticle-corner.top-right {
-      top: 0;
-      right: 0;
-      border-top-width: 4px;
-      border-right-width: 4px;
-      border-top-right-radius: 14px;
-    }
-    .reticle-corner.bottom-left {
-      bottom: 0;
-      left: 0;
-      border-bottom-width: 4px;
-      border-left-width: 4px;
-      border-bottom-left-radius: 14px;
-    }
-    .reticle-corner.bottom-right {
-      bottom: 0;
-      right: 0;
-      border-bottom-width: 4px;
-      border-right-width: 4px;
-      border-bottom-right-radius: 14px;
-    }
-
-    /* TIA LASER QUÉT CHUYỂN ĐỘNG QUANG HỌC */
-    .qr-laser-line {
-      position: absolute;
-      left: 6px;
-      right: 6px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent 0%, #00e5ff 30%, #38bdf8 50%, #00e5ff 70%, transparent 100%);
-      box-shadow: 0 0 16px #00e5ff, 0 0 30px rgba(0, 229, 255, 0.6);
-      border-radius: 2px;
-      top: 10px;
-      animation: appleLaserScan 1.8s ease-in-out infinite alternate;
-    }
-    @keyframes appleLaserScan {
-      0% { top: 10px; opacity: 0.65; transform: scaleX(0.94); }
-      50% { opacity: 1; transform: scaleX(1); }
-      100% { top: 205px; opacity: 0.65; transform: scaleX(0.94); }
-    }
-
-    /* HIỆU ỨNG TÓM MÃ THÀNH CÔNG (TARGET LOCK EFFECT CHUẨN QUỐC TẾ) */
-    .qr-reticle-overlay.locked {
-      transform: translate(-50%, -50%) scale(0.96);
-    }
-    .qr-reticle-overlay.locked .reticle-corner {
-      border-color: #00e676 !important;
-      filter: drop-shadow(0 0 16px #00e676);
-    }
-    .qr-reticle-overlay.locked .qr-laser-line {
-      display: none;
-    }
-
-    .qr-lock-badge {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.4);
-      background: rgba(0, 200, 83, 0.95);
+    .qr-top-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
       backdrop-filter: blur(16px);
-      padding: 10px 20px;
-      border-radius: 24px;
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      transition: all 0.18s ease;
+    }
+    .qr-top-btn:active {
+      transform: scale(0.90);
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .qr-top-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .qr-top-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 14px;
+      height: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .qr-top-switch-btn:active {
+      transform: scale(0.92);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* THANH HƯỚNG DẪN DƯỚI ĐÁY (BOTTOM HINT BAR) */
+    .qr-bottom-bar {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding: 16px 20px max(24px, env(safe-area-inset-bottom, 24px)) 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      box-shadow: 0 10px 35px rgba(0, 230, 118, 0.65);
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.28s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      gap: 12px;
+      background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 100%);
     }
-    .qr-reticle-overlay.locked .qr-lock-badge {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-    .qr-lock-badge span {
-      font-size: 12.5px;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.6px;
-    }
-
-    .qr-footer {
-      padding: 12px 16px;
-      text-align: center;
-      background: transparent;
-      display: flex;
-      justify-content: center;
-    }
-    .qr-tip-badge {
+    .qr-hint-pill {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      padding: 6px 14px;
-      background: rgba(0, 0, 0, 0.04);
-      border-radius: 20px;
-      font-size: 12px;
-      color: var(--text-sub);
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f1f5f9;
+      font-size: 13px;
       font-weight: 500;
-      letter-spacing: -0.1px;
-      transition: all 0.25s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
     }
-    body.dark-mode .qr-tip-badge {
-      background: rgba(255, 255, 255, 0.06);
-    }
-    .qr-tip-badge.locked {
-      background: rgba(52, 199, 89, 0.15);
-      color: #34c759;
-      font-weight: 600;
-    }
-    .qr-status-dot {
-      width: 7px;
-      height: 7px;
+    .qr-hint-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #007aff;
-      box-shadow: 0 0 6px #007aff;
+      background: #00e5ff;
+      box-shadow: 0 0 8px #00e5ff;
       animation: qrDotPulse 1.4s ease-in-out infinite;
       flex-shrink: 0;
     }
-    .qr-tip-badge.locked .qr-status-dot {
-      background: #34c759;
-      box-shadow: 0 0 8px #34c759;
+    .qr-hint-pill.locked .qr-hint-dot {
+      background: #00e676;
+      box-shadow: 0 0 10px #00e676;
       animation: none;
     }
     @keyframes qrDotPulse {
@@ -2100,60 +2080,58 @@
     </div>
   </div>
 
-  <!-- QR SCANNER CAMERA MODAL (CHUẨN APPLE IOS CODE SCANNER) -->
+  <!-- QR SCANNER CAMERA FULL-SCREEN (CHUẨN ZALO & TELEGRAM TOÀN MÀN HÌNH) -->
   <div class="qr-modal" id="qrModal">
-    <div class="qr-scanner-box">
-      <!-- HEADER TRẮNG SẠCH SẼ CHUẨN IOS MODAL -->
-      <div class="qr-header">
-        <div class="qr-title-group">
-          <span class="qr-title">Quét Mã Tem Linh Kiện</span>
-          <span class="qr-subtitle">Hướng camera vào mã QR trên con tem ván</span>
-        </div>
-        <div class="qr-header-actions">
-          <button class="qr-action-btn" id="btnSwitchCamera" title="Chuyển ống kính camera" style="display:none;">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 10c0-4.4-3.6-8-8-8s-8 3.6-8 8v1"/>
-              <path d="M4 14c0 4.4 3.6 8 8 8s8-3.6 8-8v-1"/>
-              <polyline points="1 11 4 14 7 11"/>
-              <polyline points="23 13 20 10 17 13"/>
-            </svg>
-            <span>Đổi cam</span>
-          </button>
-          <button class="qr-close-x" id="btnCloseQr" title="Đóng camera">✕</button>
+    <!-- VIDEO CAMERA PHỦ TRÀN TOÀN MÀN HÌNH -->
+    <div class="qr-full-viewport" id="qrViewportContainer">
+      <div id="reader"></div>
+      
+      <!-- MÀN HÌNH LOADING TRẠNG THÁI CAMERA -->
+      <div class="qr-camera-loading" id="qrCameraLoading">
+        <div class="qr-loading-spinner"></div>
+        <span>Đang khởi động camera...</span>
+      </div>
+    </div>
+
+    <!-- THANH ĐIỀU KHIỂN TRÊN ĐỈNH (TOP BAR KÍNH MỜ TRONG SUỐT) -->
+    <div class="qr-top-bar">
+      <button class="qr-top-btn" id="btnCloseQr" title="Đóng camera">✕</button>
+      <span class="qr-top-title">Quét Mã QR Tem Ván</span>
+      <button class="qr-top-switch-btn" id="btnSwitchCamera" title="Chuyển ống kính camera" style="display:none;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10c0-4.4-3.6-8-8-8s-8 3.6-8 8v1"/>
+          <path d="M4 14c0 4.4 3.6 8 8 8s8-3.6 8-8v-1"/>
+          <polyline points="1 11 4 14 7 11"/>
+          <polyline points="23 13 20 10 17 13"/>
+        </svg>
+        <span>Đổi cam</span>
+      </button>
+    </div>
+
+    <!-- LỚP MẶT NẠ LÀM TỐI XUNG QUANH + KHUNG NGẮM TRUNG TÂM (ZALO / TELEGRAM STYLE) -->
+    <div class="qr-overlay-mask">
+      <div class="qr-reticle-box" id="qrReticleOverlay">
+        <div class="reticle-corner top-left"></div>
+        <div class="reticle-corner top-right"></div>
+        <div class="reticle-corner bottom-left"></div>
+        <div class="reticle-corner bottom-right"></div>
+        
+        <!-- TIA LASER RADAR QUÉT CHUYỂN ĐỘNG -->
+        <div class="qr-laser-line"></div>
+        
+        <!-- HIỆU ỨNG TÓM MÃ THÀNH CÔNG (POP-IN BADGE) -->
+        <div class="qr-lock-badge" id="qrLockBadge">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>ĐÃ BẮT ĐƯỢC TEM!</span>
         </div>
       </div>
+    </div>
 
-      <!-- KHUNG CAMERA CHÍNH KÈM RETICLE GÓC VÀ HIỆU ỨNG TÓM MÃ -->
-      <div class="qr-viewport-container" id="qrViewportContainer">
-        <div id="reader"></div>
-
-        <!-- MÀN HÌNH LOADING TRẠNG THÁI CAMERA -->
-        <div class="qr-camera-loading" id="qrCameraLoading">
-          <div class="qr-loading-spinner"></div>
-          <span>Đang mở ống kính camera...</span>
-        </div>
-
-        <!-- 4 GÓC ĐỊNH VỊ CHUẨN APPLE CAMERA -->
-        <div class="qr-reticle-overlay" id="qrReticleOverlay">
-          <div class="reticle-corner top-left"></div>
-          <div class="reticle-corner top-right"></div>
-          <div class="reticle-corner bottom-left"></div>
-          <div class="reticle-corner bottom-right"></div>
-          <!-- TIA LASER QUÉT -->
-          <div class="qr-laser-line"></div>
-          <!-- HIỆU ỨNG TÓM MÃ THÀNH CÔNG (POP-IN BADGE) -->
-          <div class="qr-lock-badge" id="qrLockBadge">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>ĐÃ NHẬN DIỆN!</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="qr-footer">
-        <span class="qr-tip-badge" id="qrTipStatus">
-          <span class="qr-status-dot"></span>
-          <span id="qrTipText">Căn tem vào tâm ngắm • Bắt chuẩn 100%</span>
-        </span>
+    <!-- THANH HƯỚNG DẪN DƯỚI ĐÁY -->
+    <div class="qr-bottom-bar">
+      <div class="qr-hint-pill" id="qrTipStatus">
+        <span class="qr-hint-dot"></span>
+        <span id="qrTipText">Căn khung ngắm vào mã QR trên con tem</span>
       </div>
     </div>
   </div>
