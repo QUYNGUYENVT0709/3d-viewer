@@ -1205,6 +1205,7 @@
       gap: 10px;
       z-index: 105;
       transition: bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none; /* Tuyệt đối không cản trở cử chỉ chạm xoay/zoom của Three.js */
     }
     body.hud-open .floating-tools {
       bottom: 185px;
@@ -1213,6 +1214,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      pointer-events: auto; /* Kích hoạt nhận chạm riêng cho các nút bấm */
     }
     .round-tool-btn {
       width: 44px;
@@ -1534,9 +1536,10 @@
       pointer-events: auto;
     }
     .floating-tools .tool-group.collapsed {
+      display: none !important;
       opacity: 0;
       transform: scale(0.85) translateY(15px);
-      pointer-events: none;
+      pointer-events: none !important;
       visibility: hidden;
       margin-bottom: -10px;
     }
@@ -1851,7 +1854,7 @@
   <header class="top-header">
     <div class="brand-pill" title="Tên công trình">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color); flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
+      <span class="project-name" id="displayProjectName">CẮT VANGO L2</span>
     </div>
 
     <div class="top-tools">
@@ -4847,8 +4850,8 @@
           };
         }
 
-        // Tự động đóng bảng công cụ khi chạm ra ngoài canvas 3D
-        document.addEventListener('pointerdown', function(e) {
+        // Tự động đóng bảng công cụ khi click ra ngoài canvas 3D (sử dụng click để tuyệt đối không can thiệp cử chỉ xoay / pinch zoom)
+        document.addEventListener('click', function(e) {
           if (!isToolbarCollapsed && toolGroup && !toolGroup.contains(e.target) && btnToolbarToggle && !btnToolbarToggle.contains(e.target)) {
             setToolbarCollapsed(true);
           }
