@@ -2889,30 +2889,47 @@
         });
       }
 
-      // Tạo nhãn chữ nổi 3D (3D Canvas Text Sprite)
-      function makeTextSprite(text, bgColor = '#0284c7', textColor = '#ffffff') {
+      // Tạo nhãn chữ nổi 3D sắc nét cao (Hi-Res 3D Text Sprite)
+      function makeTextSprite(text, bgColor = '#0284c7', textColor = '#ffffff', options = {}) {
         const canvas = document.createElement('canvas');
-        canvas.width = 340;
-        canvas.height = 84;
+        canvas.width = options.width || 480;
+        canvas.height = options.height || 120;
         const ctx = canvas.getContext('2d');
 
+        const padX = 6;
+        const padY = 6;
+        const w = canvas.width - padX * 2;
+        const h = canvas.height - padY * 2;
+        const radius = options.radius || 24;
+
+        // Đổ bóng nổi bật cho thẻ số đo
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.45)';
+        ctx.shadowBlur = 12;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 4;
+
+        // Nền bo góc
         ctx.fillStyle = bgColor;
-        if (ctx.roundRect) ctx.roundRect(4, 4, 332, 76, 16);
-        else ctx.rect(4, 4, 332, 76);
+        if (ctx.roundRect) ctx.roundRect(padX, padY, w, h, radius);
+        else ctx.rect(padX, padY, w, h);
         ctx.fill();
 
-        ctx.lineWidth = 5;
-        ctx.strokeStyle = '#ffffff';
+        // Viền trắng dày sắc nét
+        ctx.shadowColor = 'transparent';
+        ctx.lineWidth = options.lineWidth || 8;
+        ctx.strokeStyle = options.borderColor || '#ffffff';
         ctx.stroke();
 
+        // Chữ to đậm rõ ràng (Font lớn dễ nhìn)
         ctx.fillStyle = textColor;
-        ctx.font = 'bold 32px sans-serif';
+        ctx.font = options.font || 'bold 54px system-ui, -apple-system, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(text, 170, 42);
+        ctx.fillText(text, canvas.width / 2, canvas.height / 2);
 
         const tex = new THREE.CanvasTexture(canvas);
         tex.minFilter = THREE.LinearFilter;
+        tex.generateMipmaps = false;
         const mat = new THREE.SpriteMaterial({ map: tex, depthTest: false, depthWrite: false });
         const sprite = new THREE.Sprite(mat);
         sprite.renderOrder = 999;
@@ -2939,6 +2956,9 @@
 
       function clearPointMeasure() {
         measurePointA = null;
+        if (liveMeasureLine) {
+          liveMeasureLine = null;
+        }
         if (pointMeasureGroup) {
           scene.remove(pointMeasureGroup);
           pointMeasureGroup.traverse(child => {
@@ -2949,6 +2969,10 @@
             if (child.geometry) child.geometry.dispose();
           });
           pointMeasureGroup = null;
+        }
+        const hudText = document.getElementById('measureHudText');
+        if (hudText && isMeasureEnabled && isPointMeasureMode) {
+          hudText.innerHTML = `Chạm hoặc rê kính lúp để chọn <strong>Điểm 1</strong>!`;
         }
       }
 
@@ -3015,7 +3039,7 @@
       let snapMarkerMesh = null;
       function getSnapMarker() {
         if (!snapMarkerMesh && scene) {
-          const g = new THREE.SphereGeometry(0.009, 16, 16);
+          const g = new THREE.SphereGeometry(0.0025, 16, 16);
           const m = new THREE.MeshBasicMaterial({ color: 0x00e5ff, depthTest: false });
           snapMarkerMesh = new THREE.Mesh(g, m);
           snapMarkerMesh.visible = false;
@@ -3318,7 +3342,7 @@
 
         const hudText = document.getElementById('measureHudText');
         if (hudText) {
-          hudText.innerHTML = `Đang kéo thước: <strong>${distMm} mm</strong>${axisHint} | Thả tay để cố định điểm!`;
+          hudText.innerHTML = `Đã chọn Điểm 1. Đang kéo đến <strong>Điểm 2: ${distMm} mm</strong>${axisHint} | Thả tay để chốt!`;
         }
       }
 
@@ -3330,28 +3354,25 @@
 
           pointMeasureGroup = new THREE.Group();
 
-          // Điểm 1: Chấm tròn Neon Cyan
-          const pGeo = new THREE.SphereGeometry(0.012, 16, 16);
+          // Điểm 1: Chấm tròn Neon Cyan nhỏ gọn tinh tế (2.5mm) để không che lấp góc khi soi kính lúp
+          const pGeo = new THREE.SphereGeometry(0.0025, 16, 16);
           const pMat = new THREE.MeshBasicMaterial({ color: 0x00e5ff, depthTest: false });
           const pMesh = new THREE.Mesh(pGeo, pMat);
           pMesh.position.copy(measurePointA);
           pMesh.renderOrder = 999;
           pointMeasureGroup.add(pMesh);
 
-          const sA = makeTextSprite('Điểm 1', '#0284c7');
-          sA.scale.set(0.18, 0.045, 1);
-          sA.position.set(measurePointA.x, measurePointA.y + 0.035, measurePointA.z);
-          pointMeasureGroup.add(sA);
+          // Bảng màu xanh "Điểm 1" đã bị loại bỏ hoàn toàn theo yêu cầu để kính lúp không bị che
 
           scene.add(pointMeasureGroup);
 
           const hudText = document.getElementById('measureHudText');
-          if (hudText) hudText.innerHTML = `Đã chọn Điểm 1. Chạm/kéo đến <strong>Điểm thứ 2</strong> (kính lúp sẽ tự động hít góc ván)!`;
+          if (hudText) hudText.innerHTML = `Đã chọn Điểm 1. Chạm hoặc rê kính lúp đến <strong>Điểm 2</strong> để đo khoảng cách!`;
         } else {
           const measurePointB = point.clone();
 
-          // Điểm 2: Chấm tròn Neon Xanh Lá
-          const pGeo = new THREE.SphereGeometry(0.012, 16, 16);
+          // Điểm 2: Chấm tròn Neon Xanh Lá nhỏ gọn đồng dạng (2.5mm)
+          const pGeo = new THREE.SphereGeometry(0.0025, 16, 16);
           const pMat = new THREE.MeshBasicMaterial({ color: 0x10b981, depthTest: false });
           const pMesh = new THREE.Mesh(pGeo, pMat);
           pMesh.position.copy(measurePointB);
@@ -3373,9 +3394,13 @@
           const distMm = Math.round(measurePointA.distanceTo(measurePointB) * 1000);
           const midPoint = new THREE.Vector3().addVectors(measurePointA, measurePointB).multiplyScalar(0.5);
 
-          const sDist = makeTextSprite(`${distMm} mm`, '#ea580c');
-          sDist.scale.set(0.24, 0.06, 1);
-          sDist.position.set(midPoint.x, midPoint.y + 0.045, midPoint.z);
+          // Thẻ số kích thước to rõ, sắc nét, dễ nhìn (chữ to đậm, viền trắng dày nổi bật)
+          const sDist = makeTextSprite(`${distMm} mm`, '#ea580c', '#ffffff', {
+            font: 'bold 56px system-ui, -apple-system, sans-serif',
+            lineWidth: 8
+          });
+          sDist.scale.set(0.40, 0.10, 1);
+          sDist.position.set(midPoint.x, midPoint.y + 0.055, midPoint.z);
           pointMeasureGroup.add(sDist);
 
           const hudText = document.getElementById('measureHudText');
@@ -4819,7 +4844,7 @@
             btnMeasurePointMode.title = "Chuyển sang chế độ đo kích thước tấm (Dài × Rộng × Dày)";
           }
           if (hudText) {
-            hudText.innerHTML = `<strong>Chế độ đo 2 điểm:</strong> Nhấn giữ & rê ngón tay để bắt điểm ván, thả tay để chốt điểm!`;
+            hudText.innerHTML = `Chạm hoặc rê kính lúp để chọn <strong>Điểm 1</strong>!`;
           }
         } else {
           if (btnMeasurePointMode) {
