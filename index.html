@@ -1512,33 +1512,33 @@
       cursor: pointer;
     }
 
-    /* ===== BẢNG ĐIỀU KHIỂN CÔNG CỤ 3D (CONTROL CENTER GLASS CARD) ===== */
+    /* ===== BẢNG ĐIỀU KHIỂN CÔNG CỤ 3D (CONTROL CENTER GLASS CARD SIÊU GỌN) ===== */
     .floating-tools .tool-group {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      width: 270px;
+      gap: 8px;
+      width: 236px;
       max-width: calc(100vw - 28px);
       background: var(--panel-bg);
       backdrop-filter: blur(28px) saturate(190%);
       -webkit-backdrop-filter: blur(28px) saturate(190%);
       border: 1px solid var(--panel-border);
-      border-radius: 18px;
-      padding: 12px;
+      border-radius: 16px;
+      padding: 10px;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22), 0 2px 8px rgba(0, 0, 0, 0.08);
       opacity: 1;
       transform: scale(1) translateY(0);
       transform-origin: bottom right;
-      transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                  visibility 0.25s;
+      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0.22s;
       visibility: visible;
       pointer-events: auto;
     }
     .floating-tools .tool-group.collapsed {
       display: none !important;
       opacity: 0;
-      transform: scale(0.85) translateY(15px);
+      transform: scale(0.85) translateY(12px);
       pointer-events: none !important;
       visibility: hidden;
       margin-bottom: -10px;
@@ -1551,16 +1551,16 @@
       border-bottom: 1px solid var(--panel-border);
     }
     .tool-group-title {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--text-main);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
     .tool-group-close {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       border: none;
       background: rgba(120, 120, 128, 0.16);
@@ -1575,27 +1575,27 @@
     .tool-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
+      gap: 6px;
     }
     .tool-card-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      padding: 10px 6px;
-      border-radius: 12px;
+      gap: 4px;
+      padding: 8px 4px;
+      border-radius: 10px;
       background: rgba(120, 120, 128, 0.08);
       border: 1px solid transparent;
       color: var(--text-main);
       cursor: pointer;
       text-align: center;
-      transition: all 0.18s ease;
+      transition: all 0.15s ease;
       user-select: none;
       -webkit-user-select: none;
     }
     .tool-card-btn span {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
       line-height: 1.2;
       white-space: nowrap;
@@ -1854,7 +1854,7 @@
   <header class="top-header">
     <div class="brand-pill" title="Tên công trình">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color); flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <span class="project-name" id="displayProjectName">CẮT VANGO L2</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -3334,6 +3334,10 @@
 
       // 5. CHỌN VÀ HIGHLIGHT TẤM VÁN (HỖ TRỢ CẢ CHỌN ĐƠN LẪN CHỌN NHIỀU TẤM)
       function selectBoard(boardIndex, zoomCamera = true) {
+        if (window.setToolbarCollapsed && !isToolbarCollapsed) {
+          window.setToolbarCollapsed(true);
+        }
+
         if (hiddenBoardIndices.has(boardIndex)) {
           hiddenBoardIndices.delete(boardIndex);
           updateUnhideButton();
@@ -3939,6 +3943,10 @@
         const activePointers = new Map();
 
         container.addEventListener('pointerdown', e => {
+          if (window.setToolbarCollapsed && !isToolbarCollapsed) {
+            window.setToolbarCollapsed(true);
+          }
+
           touchStartX = e.clientX;
           touchStartY = e.clientY;
           activePointerDown = true;
@@ -4580,6 +4588,7 @@
           this.classList.toggle('active', isGhostMode);
           updateModelMaterials();
           if (window.updateFabIndicator) window.updateFabIndicator();
+          if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
         };
 
         // Nút nhìn xuyên thấu X-Ray toàn bộ mô hình (SketchUp X-Ray)
@@ -4590,6 +4599,7 @@
             btnGlobalXray.classList.toggle('active', isGlobalXray);
             updateModelMaterials();
             if (window.updateFabIndicator) window.updateFabIndicator();
+            if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
           };
         }
 
@@ -4636,6 +4646,7 @@
 
         document.getElementById('btnResetView').onclick = function() {
           if (modelRoot) zoomToFit(modelRoot);
+          if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
         };
 
         document.getElementById('btnCloseHud').onclick = function() {
@@ -4850,7 +4861,14 @@
           };
         }
 
-        // Tự động đóng bảng công cụ khi click ra ngoài canvas 3D (sử dụng click để tuyệt đối không can thiệp cử chỉ xoay / pinch zoom)
+        // Tự động đóng bảng công cụ khi chạm/click ra ngoài canvas 3D
+        // (Lắng nghe pointerdown dạng passive để ngay khi ngón tay vừa đặt xuống màn hình, bảng lập tức đóng lại, trả 100% diện tích view 3D cho OrbitControls)
+        document.addEventListener('pointerdown', function(e) {
+          if (!isToolbarCollapsed && toolGroup && !toolGroup.contains(e.target) && btnToolbarToggle && !btnToolbarToggle.contains(e.target)) {
+            setToolbarCollapsed(true);
+          }
+        }, { passive: true });
+
         document.addEventListener('click', function(e) {
           if (!isToolbarCollapsed && toolGroup && !toolGroup.contains(e.target) && btnToolbarToggle && !btnToolbarToggle.contains(e.target)) {
             setToolbarCollapsed(true);
