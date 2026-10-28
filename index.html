@@ -824,12 +824,12 @@
       color: var(--text-main);
     }
 
-    /* CONTAINER KHUNG CAMERA VIEWPORT */
+    /* CONTAINER KHUNG CAMERA VIEWPORT (APPLE VISION PRO STYLE) */
     .qr-viewport-container {
       position: relative;
       width: 100%;
-      height: 300px;
-      background: #0f172a;
+      height: 330px;
+      background: #090d16;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -838,27 +838,27 @@
     #reader {
       width: 100% !important;
       height: 100% !important;
-      min-height: 300px !important;
-      background: #0f172a !important;
+      min-height: 330px !important;
+      background: #090d16 !important;
       border: none !important;
       position: relative !important;
     }
     #reader__scan_region {
       width: 100% !important;
       height: 100% !important;
-      min-height: 300px !important;
+      min-height: 330px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      background: #0f172a !important;
+      background: #090d16 !important;
       position: relative !important;
       overflow: hidden !important;
     }
     #reader video {
       width: 100% !important;
       height: 100% !important;
-      min-height: 300px !important;
-      max-height: 300px !important;
+      min-height: 330px !important;
+      max-height: 330px !important;
       object-fit: cover !important;
       border-radius: 0 !important;
       display: block !important;
@@ -885,12 +885,12 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      background: #0f172a;
+      background: #090d16;
       color: #94a3b8;
       font-size: 13px;
       font-weight: 500;
       z-index: 2;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.25s ease;
       pointer-events: none;
     }
     .qr-camera-loading.hidden {
@@ -898,91 +898,92 @@
       visibility: hidden;
     }
     .qr-loading-spinner {
-      width: 32px;
-      height: 32px;
-      border: 3px solid rgba(255,255,255,0.18);
-      border-top-color: var(--accent-color);
+      width: 34px;
+      height: 34px;
+      border: 3px solid rgba(255,255,255,0.15);
+      border-top-color: #00e5ff;
       border-radius: 50%;
-      animation: qrSpinAnim 0.8s linear infinite;
+      animation: qrSpinAnim 0.75s linear infinite;
     }
     @keyframes qrSpinAnim {
       to { transform: rotate(360deg); }
     }
 
-    /* 4 GÓC ĐỊNH VỊ (APPLE CAMERA RETICLE CORNERS) */
+    /* 4 GÓC ĐỊNH VỊ (APPLE CAMERA RETICLE CORNERS VỚI GLOW NEON) */
     .qr-reticle-overlay {
       position: absolute;
-      width: 210px;
-      height: 210px;
+      width: 220px;
+      height: 220px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
-      transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      transition: all 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
     .reticle-corner {
       position: absolute;
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       border-color: #ffffff;
       border-style: solid;
       border-width: 0;
-      filter: drop-shadow(0 0 5px rgba(0,0,0,0.6));
-      transition: border-color 0.2s ease, transform 0.2s ease;
+      filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.75));
+      transition: border-color 0.2s ease, transform 0.2s ease, filter 0.2s ease;
     }
     .reticle-corner.top-left {
       top: 0;
       left: 0;
-      border-top-width: 3.5px;
-      border-left-width: 3.5px;
-      border-top-left-radius: 12px;
+      border-top-width: 4px;
+      border-left-width: 4px;
+      border-top-left-radius: 14px;
     }
     .reticle-corner.top-right {
       top: 0;
       right: 0;
-      border-top-width: 3.5px;
-      border-right-width: 3.5px;
-      border-top-right-radius: 12px;
+      border-top-width: 4px;
+      border-right-width: 4px;
+      border-top-right-radius: 14px;
     }
     .reticle-corner.bottom-left {
       bottom: 0;
       left: 0;
-      border-bottom-width: 3.5px;
-      border-left-width: 3.5px;
-      border-bottom-left-radius: 12px;
+      border-bottom-width: 4px;
+      border-left-width: 4px;
+      border-bottom-left-radius: 14px;
     }
     .reticle-corner.bottom-right {
       bottom: 0;
       right: 0;
-      border-bottom-width: 3.5px;
-      border-right-width: 3.5px;
-      border-bottom-right-radius: 12px;
+      border-bottom-width: 4px;
+      border-right-width: 4px;
+      border-bottom-right-radius: 14px;
     }
 
-    /* TIA LASER QUÉT CHUYỂN ĐỘNG */
+    /* TIA LASER QUÉT CHUYỂN ĐỘNG QUANG HỌC */
     .qr-laser-line {
       position: absolute;
       left: 6px;
       right: 6px;
-      height: 2.5px;
-      background: linear-gradient(90deg, transparent, #007aff, #32ade6, transparent);
-      box-shadow: 0 0 12px #007aff;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, #00e5ff 30%, #38bdf8 50%, #00e5ff 70%, transparent 100%);
+      box-shadow: 0 0 16px #00e5ff, 0 0 30px rgba(0, 229, 255, 0.6);
       border-radius: 2px;
       top: 10px;
-      animation: appleLaserScan 2s ease-in-out infinite alternate;
+      animation: appleLaserScan 1.8s ease-in-out infinite alternate;
     }
     @keyframes appleLaserScan {
-      0% { top: 12px; opacity: 0.85; }
-      100% { top: 195px; opacity: 0.85; }
+      0% { top: 10px; opacity: 0.65; transform: scaleX(0.94); }
+      50% { opacity: 1; transform: scaleX(1); }
+      100% { top: 205px; opacity: 0.65; transform: scaleX(0.94); }
     }
 
-    /* HIỆU ỨNG TÓM MÃ THÀNH CÔNG (TARGET LOCK EFFECT - 'ĐÃ TÓM ĐƯỢC MÀY RỒI') */
+    /* HIỆU ỨNG TÓM MÃ THÀNH CÔNG (TARGET LOCK EFFECT CHUẨN QUỐC TẾ) */
     .qr-reticle-overlay.locked {
-      transform: translate(-50%, -50%) scale(1.06);
+      transform: translate(-50%, -50%) scale(0.96);
     }
     .qr-reticle-overlay.locked .reticle-corner {
-      border-color: #34c759 !important;
-      filter: drop-shadow(0 0 10px #34c759);
+      border-color: #00e676 !important;
+      filter: drop-shadow(0 0 16px #00e676);
     }
     .qr-reticle-overlay.locked .qr-laser-line {
       display: none;
@@ -992,19 +993,19 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.5);
-      background: rgba(52, 199, 89, 0.94);
-      backdrop-filter: blur(12px);
-      padding: 10px 18px;
-      border-radius: 20px;
+      transform: translate(-50%, -50%) scale(0.4);
+      background: rgba(0, 200, 83, 0.95);
+      backdrop-filter: blur(16px);
+      padding: 10px 20px;
+      border-radius: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 8px 30px rgba(52, 199, 89, 0.6);
+      box-shadow: 0 10px 35px rgba(0, 230, 118, 0.65);
       opacity: 0;
       pointer-events: none;
-      transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      transition: all 0.28s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
     .qr-reticle-overlay.locked .qr-lock-badge {
       opacity: 1;
@@ -1014,7 +1015,7 @@
       font-size: 12.5px;
       font-weight: 800;
       color: #ffffff;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
     }
 
     .qr-footer {
@@ -1208,7 +1209,8 @@
       pointer-events: none; /* Tuyệt đối không cản trở cử chỉ chạm xoay/zoom của Three.js */
     }
     body.hud-open .floating-tools {
-      bottom: 185px;
+      /* Căn chuẩn tuyệt đối nằm trên mép thẻ HUD, không bao giờ bị đè */
+      bottom: calc(var(--hud-height, 275px) + 14px);
     }
     .floating-actions-bar {
       display: flex;
@@ -1987,8 +1989,13 @@
       </div>
     </div>
 
-    <!-- HÀNG NÚT THAO TÁC Ở GÓC DƯỚI (CHỈ HIỆN KHI CẦN, SIÊU TIẾT KIỆM KHÔNG GIAN) -->
+    <!-- HÀNG NÚT THAO TÁC Ở GÓC DƯỚI (SIÊU TIẾT KIỆM KHÔNG GIAN, TỰ CĂN TRÊN THẺ HUD) -->
     <div class="floating-actions-bar">
+      <!-- NÚT BẬT/TẮT LÀM MỜ XUNG QUANH (GHOST MODE) - ĐƯỢC ĐƯA RA NGOÀI VÀ MẶC ĐỊNH BẬT -->
+      <button class="round-tool-btn active" id="btnFloatingGhost" title="Làm mờ xung quanh khi chọn tấm (Ghost Mode)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
+      </button>
+
       <!-- Nút ẩn tấm đang chọn (tự động hiện khi chọn tấm ván) -->
       <button class="round-tool-btn floating-hide-btn" id="btnFloatingHide" title="Ẩn tấm ván đang chọn" style="display:none;">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
@@ -2000,11 +2007,13 @@
         <span class="unhide-count" id="unhideCount">0</span>
       </button>
 
-      <!-- Nút FAB Chính: Mở/Đóng bảng công cụ 3D -->
+      <!-- Nút FAB Chính: Mở/Đóng Bộ Công Cụ Tiện Ích 3D (Biểu tượng 4 ô Widget thông minh chuẩn quốc tế) -->
       <button class="toolbar-toggle-btn fab-main-btn" id="btnToolbarToggle" title="Bộ Công Cụ 3D">
         <svg id="toolbarToggleIcon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          <rect x="3" y="3" width="7" height="7" rx="2.2"/>
+          <rect x="14" y="3" width="7" height="7" rx="2.2"/>
+          <rect x="14" y="14" width="7" height="7" rx="2.2"/>
+          <rect x="3" y="14" width="7" height="7" rx="2.2"/>
         </svg>
       </button>
     </div>
@@ -2205,7 +2214,7 @@
       let boardMeshMap = {}; // { board_index: [mesh1, mesh2, ...] }
       let boardsData = {};   // { board_index: { part_name, dimensions, ... } }
       let selectedBoardIndex = null;
-      let isGhostMode = false;
+      let isGhostMode = true; // Mặc định khởi động lần đầu là BẬT theo yêu cầu
       let isDarkMode = false;
       let html5QrCode = null;
 
@@ -3422,6 +3431,20 @@
           hud.classList.remove('show');
         }
         document.body.classList.remove('hud-open');
+        document.documentElement.style.removeProperty('--hud-height');
+      }
+
+      // Tự động đo chiều cao thực tế thẻ HUD để đẩy cụm nút nổi lên cao chuẩn 100%, không bị đè
+      function updateFloatingToolsPosition() {
+        requestAnimationFrame(() => {
+          const hud = document.getElementById('hudCard');
+          if (hud && hud.classList.contains('show')) {
+            const h = hud.offsetHeight || 260;
+            document.documentElement.style.setProperty('--hud-height', `${h}px`);
+          } else {
+            document.documentElement.style.removeProperty('--hud-height');
+          }
+        });
       }
 
       // Cập nhật thông tin HUD khi chọn nhiều tấm ván cùng lúc
@@ -3440,6 +3463,7 @@
         const hud = document.getElementById('hudCard');
         if (hud) hud.classList.add('show');
         document.body.classList.add('hud-open');
+        updateFloatingToolsPosition();
 
         const badgeId = document.getElementById('hudBadgeId');
         if (badgeId) badgeId.textContent = `${count} TẤM`;
@@ -3658,6 +3682,7 @@
         hud.style.transform = '';
         hud.classList.add('show');
         document.body.classList.add('hud-open');
+        updateFloatingToolsPosition();
 
         // Thông tin bổ sung Hàng 3: Khoan, Code 1, Code 2
         const elDrills = document.getElementById('hudDrills');
@@ -3709,7 +3734,7 @@
         if (txtMulti) txtMulti.textContent = isMultiSelectMode ? 'Đang chọn' : 'Chọn nhiều';
       }
 
-      // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP (CHUẨN APPLE CODE SCANNER)
+      // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP (CHUẨN APPLE VISION CODE SCANNER SIÊU TỐC)
       let isQrProcessing = false;
       let qrCamerasList = [];
       let currentQrCamIndex = 0;
@@ -3747,11 +3772,13 @@
 
           html5QrCode = new Html5Qrcode("reader");
 
-          // Không ép aspectRatio để không làm vỡ WebRTC stream trên điện thoại
-          // Không ép qrbox để camera nhận toàn bộ diện tích cảm biến và quét cực nhạy
+          // Tận dụng BarcodeDetector phần cứng 60fps của Chrome/Android để quét cực nhạy và tức thì
           const config = {
-            fps: 20,
-            disableFlip: false
+            fps: 25,
+            disableFlip: false,
+            experimentalFeatures: {
+              useBarCodeDetectorIfSupported: true
+            }
           };
 
           const onScanSuccess = (decodedText) => {
@@ -3770,7 +3797,7 @@
               closeQrScanner();
               handleScannedCode(decodedText);
               isQrProcessing = false;
-            }, 450);
+            }, 320);
           };
 
           await html5QrCode.start(
@@ -3779,6 +3806,11 @@
             onScanSuccess,
             () => {}
           );
+
+          // Ghi nhớ camera đang dùng vào localStorage để lần sau khởi động không hỏi lại và lên hình tức thì
+          if (typeof cameraIdOrConfig === 'string') {
+            try { localStorage.setItem('ltf_preferred_cam_id', cameraIdOrConfig); } catch(e){}
+          }
 
           // Kích hoạt video phát mượt và ẩn loading sau khi stream đã nạp
           setTimeout(() => {
@@ -3791,17 +3823,13 @@
               videoEl.play().catch(() => {});
             }
             if (loadingEl) loadingEl.classList.add('hidden');
-          }, 200);
+          }, 120);
 
-          // Sau khi camera đã chạy (đã có quyền): Đọc danh sách camera để bật nút "Đổi cam" nếu máy có nhiều camera
+          // Đọc danh sách camera trong nền để bật nút "Đổi cam" nếu thiết bị có nhiều ống kính
           if (qrCamerasList.length === 0) {
             Html5Qrcode.getCameras().then(cams => {
               if (cams && cams.length > 1) {
                 qrCamerasList = cams;
-                const backIdx = cams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
-                if (backIdx !== -1) {
-                  currentQrCamIndex = backIdx;
-                }
                 const btnSwitch = document.getElementById('btnSwitchCamera');
                 if (btnSwitch) btnSwitch.style.display = 'inline-flex';
               }
@@ -3831,35 +3859,39 @@
 
         modal.classList.add('active');
 
-        // Mặc định luôn ưu tiên mở camera sau (facingMode: "environment")
-        setTimeout(async () => {
-          try {
-            await startCameraScanner({ facingMode: "environment" });
-          } catch (e1) {
-            console.warn("Không mở được facingMode environment trực tiếp, thử danh sách camera:", e1);
-            try {
-              const cams = await Html5Qrcode.getCameras();
-              if (cams && cams.length > 0) {
-                qrCamerasList = cams;
-                let backIndex = cams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
-                if (backIndex === -1 && cams.length > 1) {
-                  backIndex = cams.length - 1; // Thường camera sau ở cuối danh sách trên điện thoại
-                }
-                if (backIndex === -1) backIndex = 0;
-                currentQrCamIndex = backIndex;
-                await startCameraScanner(cams[backIndex].id);
-                const btnSwitch = document.getElementById('btnSwitchCamera');
-                if (btnSwitch && cams.length > 1) btnSwitch.style.display = 'inline-flex';
-                return;
-              }
-              // Fallback cuối cùng nếu thiết bị chỉ có camera trước (webcam laptop/PC)
-              await startCameraScanner({ facingMode: "user" });
-            } catch (finalErr) {
-              alert("Không thể truy cập Camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(" + finalErr + ")");
-              closeQrScanner();
-            }
+        // Khởi động tức thì (Zero-Lag): ưu tiên dùng camera ID đã ghi nhớ từ lần quét trước
+        let preferredCamId = null;
+        try { preferredCamId = localStorage.getItem('ltf_preferred_cam_id'); } catch(e){}
+
+        try {
+          if (preferredCamId) {
+            await startCameraScanner(preferredCamId);
+            return;
           }
-        }, 80);
+          // Nếu lần đầu chưa lưu: mở trực tiếp camera sau
+          await startCameraScanner({ facingMode: "environment" });
+        } catch (e1) {
+          console.warn("Thử fallback sang danh sách camera phần cứng:", e1);
+          try {
+            const cams = await Html5Qrcode.getCameras();
+            if (cams && cams.length > 0) {
+              qrCamerasList = cams;
+              let backIndex = cams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
+              if (backIndex === -1 && cams.length > 1) {
+                backIndex = cams.length - 1;
+              }
+              if (backIndex === -1) backIndex = 0;
+              currentQrCamIndex = backIndex;
+              await startCameraScanner(cams[backIndex].id);
+              if (btnSwitch && cams.length > 1) btnSwitch.style.display = 'inline-flex';
+              return;
+            }
+            await startCameraScanner({ facingMode: "user" });
+          } catch (finalErr) {
+            alert("Không thể truy cập Camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(" + finalErr + ")");
+            closeQrScanner();
+          }
+        }
       }
 
       async function switchCamera() {
@@ -3867,7 +3899,13 @@
         triggerHaptic('medium');
         currentQrCamIndex = (currentQrCamIndex + 1) % qrCamerasList.length;
         try {
-          await startCameraScanner(qrCamerasList[currentQrCamIndex].id);
+          const nextCamId = qrCamerasList[currentQrCamIndex].id;
+          try { localStorage.setItem('ltf_preferred_cam_id', nextCamId); } catch(e){}
+          await startCameraScanner(nextCamId);
+        } catch (e) {
+          console.warn("Lỗi đổi camera:", e);
+        }
+      }
         } catch (e) {
           console.warn("Lỗi đổi camera:", e);
         }
@@ -4583,13 +4621,34 @@
         const btnSwitchCam = document.getElementById('btnSwitchCamera');
         if (btnSwitchCam) btnSwitchCam.onclick = switchCamera;
 
-        document.getElementById('btnToggleGhost').onclick = function() {
+        const btnFloatingGhost = document.getElementById('btnFloatingGhost');
+        const btnToggleGhost = document.getElementById('btnToggleGhost');
+
+        // Mặc định BẬT Ghost Mode cho cả 2 nút
+        if (btnFloatingGhost) btnFloatingGhost.classList.toggle('active', isGhostMode);
+        if (btnToggleGhost) btnToggleGhost.classList.toggle('active', isGhostMode);
+
+        function toggleGhostMode() {
           isGhostMode = !isGhostMode;
-          this.classList.toggle('active', isGhostMode);
+          if (btnFloatingGhost) btnFloatingGhost.classList.toggle('active', isGhostMode);
+          if (btnToggleGhost) btnToggleGhost.classList.toggle('active', isGhostMode);
           updateModelMaterials();
           if (window.updateFabIndicator) window.updateFabIndicator();
-          if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
-        };
+        }
+
+        if (btnFloatingGhost) {
+          btnFloatingGhost.onclick = function() {
+            triggerHaptic('light');
+            toggleGhostMode();
+          };
+        }
+
+        if (btnToggleGhost) {
+          btnToggleGhost.onclick = function() {
+            toggleGhostMode();
+            if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
+          };
+        }
 
         // Nút nhìn xuyên thấu X-Ray toàn bộ mô hình (SketchUp X-Ray)
         const btnGlobalXray = document.getElementById('btnGlobalXray');
