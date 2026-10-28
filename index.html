@@ -1790,10 +1790,19 @@
       flex-shrink: 0;
     }
 
+    /* Mặc định ở màn hình dọc: Ẩn nút Fullscreen trên Top Bar để bảo vệ 100% không gian cho nút Máy ảnh Quét */
+    #btnToggleFullscreen {
+      display: none;
+    }
+
     /* ========================================================
        TỐI ƯU GIAO DIỆN MÀN HÌNH NGANG (LANDSCAPE MODE - KHÔNG NUỐT MÀN HÌNH)
        ======================================================== */
     @media (orientation: landscape) and (max-height: 550px) {
+      /* Hiện nút Fullscreen trên Top Bar khi xoay ngang */
+      #btnToggleFullscreen {
+        display: flex !important;
+      }
       /* THẺ HUD CHUYỂN THÀNH SIDE DOCK PANEL GỌN GÀNG Ở GÓC TRÁI DƯỚI */
       .hud-bottom-card {
         left: 10px !important;
@@ -2062,6 +2071,12 @@
         <button class="tool-card-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18" opacity="0.5"/><path d="m8 8 8 8m0-8-8 8"/></svg>
           <span>X-Ray xuyên</span>
+        </button>
+        <button class="tool-card-btn" id="btnMenuFullscreen" title="Bật/Tắt Toàn Màn Hình">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+          </svg>
+          <span>Toàn màn hình</span>
         </button>
       </div>
     </div>
@@ -2503,11 +2518,6 @@
         controls.panSpeed = 0.8;
         controls.minDistance = 0.02;
         controls.maxDistance = 500;
-
-        // Tự động neo tâm xoay vào đối tượng ở giữa khung nhìn mỗi khi kết thúc zoom hoặc pan 2 ngón tay
-        controls.addEventListener('end', () => {
-          updateAdaptiveOrbitPivot(null, null);
-        });
 
         // Ánh sáng tự nhiên trung thực chuẩn SketchUp: Ánh sáng môi trường dịu nhẹ, trung thực màu gỗ/ván, không bóng lóa giả tạo
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.95);
@@ -4206,11 +4216,6 @@
             window.setToolbarCollapsed(true);
           }
 
-          // Tự động neo tâm xoay vào vật thể được ngón tay chạm tới trước khi xoay (Dynamic Pivot)
-          if (!isPointMeasureMode && activePointers.size === 0) {
-            updateAdaptiveOrbitPivot(e.clientX, e.clientY);
-          }
-
           touchStartX = e.clientX;
           touchStartY = e.clientY;
           activePointerDown = true;
@@ -5275,10 +5280,20 @@
           };
         }
 
+        const btnMenuFullscreen = document.getElementById('btnMenuFullscreen');
+        if (btnMenuFullscreen) {
+          btnMenuFullscreen.onclick = function() {
+            triggerHaptic('light');
+            toggleFullscreen();
+            if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
+          };
+        }
+
         function updateFsIcon() {
           const isFs = document.fullscreenElement || document.webkitFullscreenElement;
           if (iconFs) iconFs.innerHTML = isFs ? SVG_FS_EXIT : SVG_FS_ENTER;
           if (btnFullscreen) btnFullscreen.classList.toggle('active', !!isFs);
+          if (btnMenuFullscreen) btnMenuFullscreen.classList.toggle('active', !!isFs);
         }
 
         document.addEventListener('fullscreenchange', updateFsIcon);
