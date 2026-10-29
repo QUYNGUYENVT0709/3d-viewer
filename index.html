@@ -222,44 +222,56 @@
       border-left: 3px solid var(--accent-color);
     }
 
-    /* FLOATING BOTTOM HUD CARD (THÔNG TIN TẤM ĐANG CHỌN - CHUẨN IOS BOTTOM SHEET) */
-    .hud-bottom-card {
+    /* TOP INFORMATION CARD (VỊ TRÍ GÓC TRÊN BÊN TRÁI ĐÚNG VỊ TRÍ VẼ) */
+    .hud-top-card {
       position: absolute;
-      bottom: max(12px, env(safe-area-inset-bottom, 12px));
+      top: calc(max(4px, env(safe-area-inset-top, 4px)) + 46px);
       left: 10px;
-      right: 10px;
-      max-width: 620px;
-      margin: 0 auto;
+      width: min(340px, calc(100vw - 20px));
       background: var(--panel-bg);
       backdrop-filter: blur(35px) saturate(200%);
       -webkit-backdrop-filter: blur(35px) saturate(200%);
       border: 0.5px solid var(--panel-border);
-      border-radius: 30px;
-      padding: 8px 18px calc(14px + env(safe-area-inset-bottom, 0px)) 18px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.04);
+      border-radius: 20px;
+      padding: 12px 14px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.05);
       z-index: 100;
-      transform: translateY(120%);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      touch-action: pan-y;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: popIn 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
-    .hud-bottom-card.show {
-      transform: translateY(0);
+    .hud-top-card.show {
+      display: flex !important;
     }
-
-    /* VẠCH KÉO CỬ CHỈ CHO MOBILE (IOS BOTTOM SHEET DRAG HANDLE) */
-    .hud-drag-handle-bar {
-      width: 36px;
-      height: 5px;
-      border-radius: 2.5px;
-      background: rgba(120, 120, 128, 0.3);
-      margin: 0 auto 12px auto;
-      cursor: grab;
-      touch-action: none;
-      transition: opacity 0.2s ease, transform 0.2s ease;
+    .hud-top-header-wrap {
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 0.5px solid var(--panel-border);
     }
-    .hud-drag-handle-bar:active {
-      opacity: 0.6;
-      transform: scaleX(1.15);
+    .hud-collapse-hint {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-color);
+      white-space: nowrap;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      background: rgba(0, 122, 255, 0.1);
+      flex-shrink: 0;
+    }
+    .hud-middle-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .hud-actions-row {
+      margin-top: 2px;
+      padding-top: 8px;
+      border-top: 0.5px solid var(--panel-border);
     }
 
     /* HÀNG 1: 4 NÚT HÀNH ĐỘNG CHIA ĐỀU NHAU 100% DIỆN TÍCH CÂN XỨNG */
@@ -1280,32 +1292,34 @@
       margin-top: 6px;
     }
 
-    /* GHOST MODE & FLOATING CONTROL TOOLS (IOS CONTROL CENTER CIRCULAR GLASS STYLE) */
+    /* FLOATING CONTROL TOOLS (HÀNG CÔNG CỤ CỐ ĐỊNH Ở ĐÁY MÀN HÌNH) */
     .floating-tools {
       position: absolute;
-      right: 14px;
-      bottom: max(16px, env(safe-area-inset-bottom, 16px));
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
+      right: 10px;
+      bottom: max(14px, env(safe-area-inset-bottom, 14px));
       z-index: 105;
-      transition: bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      pointer-events: none; /* Tuyệt đối không cản trở cử chỉ chạm xoay/zoom của Three.js */
-    }
-    body.hud-open .floating-tools {
-      /* Căn chuẩn tuyệt đối nằm trên mép thẻ HUD, không bao giờ bị đè */
-      bottom: calc(var(--hud-height, 275px) + 14px);
+      pointer-events: none;
+      max-width: calc(100vw - 20px);
     }
     .floating-actions-bar {
       display: flex;
       align-items: center;
-      gap: 9px;
-      pointer-events: auto; /* Kích hoạt nhận chạm riêng cho các nút bấm */
+      gap: 6px;
+      pointer-events: auto;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 2px;
+      max-width: 100%;
     }
-    .round-tool-btn, .toolbar-toggle-btn {
-      width: 44px;
-      height: 44px;
+    .floating-actions-bar::-webkit-scrollbar {
+      display: none;
+    }
+    .round-tool-btn {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: var(--panel-bg);
       backdrop-filter: blur(28px) saturate(190%);
@@ -1896,32 +1910,16 @@
        TỐI ƯU GIAO DIỆN MÀN HÌNH NGANG (LANDSCAPE MODE - KHÔNG VƯỚNG TAY)
        ======================================================== */
     @media (orientation: landscape) and (max-height: 550px) {
-      /* THẺ HUD CHUYỂN THÀNH SIDE DOCK PANEL NEO Ở GÓC TRÊN BÊN TRÁI (TUYỆT ĐỐI KHÔNG VƯỚNG TAY CẦM PHÍA DƯỚI) */
-      .hud-bottom-card {
-        left: 10px !important;
-        right: auto !important;
-        top: 46px !important;
-        bottom: auto !important;
+      .hud-top-card {
+        top: 40px !important;
+        left: 8px !important;
         width: 310px !important;
         max-width: calc(100vw - 160px) !important;
-        max-height: calc(100vh - 58px) !important;
-        border-radius: 18px !important;
+        max-height: calc(100vh - 50px) !important;
+        overflow-y: auto !important;
+        border-radius: 16px !important;
         padding: 8px 12px 10px 12px !important;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20) !important;
-        transform: translateX(-125%) !important;
-      }
-      .hud-bottom-card.show {
-        transform: translateX(0) !important;
-      }
-
-      /* Ẩn nút Quét trùng lặp trong thẻ HUD khi ở màn hình ngang để tiết kiệm diện tích tối đa */
-      .hud-bottom-card .hud-mini-scan-btn {
-        display: none !important;
-      }
-
-      /* ẨN VẠCH KÉO DRAG HANDLE KHI Ở MÀN HÌNH NGANG */
-      .hud-drag-handle-bar {
-        display: none !important;
       }
 
       /* TỐI ƯU HÀNG NÚT TÍNH NĂNG TRONG HUD */
@@ -2104,6 +2102,60 @@
     <span class="pill-action-hint">Chạm xem</span>
   </div>
 
+  <!-- BẢNG THÔNG TIN CHI TIẾT TẤM VÁN (GÓC TRÊN TRÁI ĐÚNG VỊ TRÍ VẼ) -->
+  <div class="hud-top-card" id="hudCard" style="display:none;">
+    <!-- DÒNG 1: TÊN CHI TIẾT NẰM TRÊN CÙNG -->
+    <div class="hud-top-header-wrap" id="hudCardHeader" title="Chạm để thu gọn">
+      <h3 class="hud-part-name" id="hudPartName" title="Tên chi tiết đầy đủ">Tên chi tiết</h3>
+      <span class="hud-collapse-hint">Thu gọn ▲</span>
+    </div>
+
+    <!-- DÒNG 2: TOÀN BỘ HUY HIỆU & THÔNG SỐ VÁN (TẤM, LAYER, KÍCH THƯỚC, VẬT LIỆU, CỤM...) -->
+    <div class="hud-middle-row">
+      <div class="hud-specs-strip">
+        <span class="hud-badge-id" id="hudBadgeId">TẤM #0</span>
+        <span class="hud-badge-layer" id="hudBadgeLayer" title="Layer / Tag linh kiện">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span id="hudLayerText">Layer0</span>
+        </span>
+        <span class="hud-spec-pill dim" id="hudDimensions">-- × -- × -- mm</span>
+        <span class="hud-spec-pill mat" id="hudMaterial">--</span>
+        <span class="hud-spec-pill mod" id="hudModuleName" style="display:none;">--</span>
+        <span class="hud-spec-pill eb" id="hudEdgeBanding" style="display:none;">--</span>
+        <span class="hud-spec-pill" id="hudDrills" style="display:none;">🔩 Khoan: --</span>
+        <span class="hud-spec-pill" id="hudCodeN1" style="display:none;">Code 1: --</span>
+        <span class="hud-spec-pill" id="hudCodeN2" style="display:none;">Code 2: --</span>
+      </div>
+    </div>
+
+    <!-- DÒNG 3: HÀNG 4 NÚT HÀNH ĐỘNG ĐẢO XUỐNG DƯỚI CÙNG -->
+    <div class="hud-actions-row">
+      <div class="hud-top-actions">
+        <button class="hud-action-btn focus-btn" id="btnHudFocus" title="Thu phóng camera thẳng vào tấm ván đang chọn">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          <span id="btnHudFocusText">Thu phóng</span>
+        </button>
+        <button class="hud-action-btn isolate-btn" id="btnHudIsolate" title="Cô lập – Chỉ hiển thị duy nhất tấm ván này">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+          <span id="btnHudIsolateText">Cô lập</span>
+        </button>
+        <button class="hud-action-btn hide-btn" id="btnHudHide" title="Ẩn tấm ván này">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          <span id="btnHudHideText">Ẩn tấm</span>
+        </button>
+        <button class="hud-action-btn multiselect-btn" id="btnHudMultiSelect" title="Chọn nhiều tấm">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="13" height="13" rx="2"/>
+            <path d="M16 4H8a2 2 0 0 0-2 2v1"/>
+            <path d="M20 7v9a2 2 0 0 1-2 2h-1"/>
+            <path d="m6 13 2.5 2.5 4.5-4.5"/>
+          </svg>
+          <span id="btnHudMultiSelectText">Chọn nhiều</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- SEARCH OVERLAY -->
   <div class="search-wrapper" id="searchWrapper">
     <div class="search-box">
@@ -2171,190 +2223,77 @@
     </div>
   </div>
 
-  <!-- BẢNG ĐIỀU KHIỂN CÔNG CỤ 3D & FLOATING ACTIONS (GỌN GÀNG, KHÔNG CHIẾM DIỆN TÍCH) -->
+  <!-- BẢNG ĐIỀU KHIỂN CÔNG CỤ 3D CỐ ĐỊNH Ở ĐÁY MÀN HÌNH (TOÀN BỘ CÔNG CỤ ĐƯỢC LẤY RA NGOÀI) -->
   <div class="floating-tools" id="floatingTools">
-    <!-- POPUP CARD TIỆN ÍCH KÍNH MỜ (2 CỘT CHUẨN IOS CONTROL CENTER) -->
-    <div class="tool-group collapsed" id="toolGroup">
-      <div class="tool-group-header">
-        <span class="tool-group-title">
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          Bộ Công Cụ 3D
-        </span>
-        <button class="tool-group-close" id="btnCloseToolGroup" title="Đóng bảng công cụ">✕</button>
-      </div>
-      <div class="tool-grid">
-        <button class="tool-card-btn" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều & bắt điểm">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg>
-          <span>Thước đo 3D</span>
-        </button>
-        <button class="tool-card-btn" id="btnToggleSection" title="Mặt cắt 3D di động (Section Cut - Cắt theo 3 trục X/Y/Z)">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><line x1="2" y1="12" x2="22" y2="12" stroke="#ff4500" stroke-width="2.5"/><polygon points="12 7 15 11 9 11" fill="#ff4500"/></svg>
-          <span>Mặt cắt 3D</span>
-        </button>
-        <button class="tool-card-btn" id="btnToggleExplode" title="Rã rời cụm chi tiết 3D (Explode View 0 - 100%)">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="m4 4 3 3m10 10 3 3m0-16-3 3M4 20l3-3"/></svg>
-          <span>Rã rời chi tiết</span>
-        </button>
-        <button class="tool-card-btn" id="btnToggleLayers" title="Quản lý Layer (Hiện/Ẩn nhóm đối tượng)">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          <span>Quản lý Layer</span>
-        </button>
-        <button class="tool-card-btn" id="btnToggleViews" title="Các góc nhìn kỹ thuật chuẩn SketchUp (Iso, Front, Top, Side)">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          <span>Góc nhìn chuẩn</span>
-        </button>
-        <button class="tool-card-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
-          <span>Đặt lại góc</span>
-        </button>
-        <button class="tool-card-btn" id="btnToggleGhost" title="Bật/Tắt chế độ làm mờ xung quanh khi chọn tấm">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
-          <span>Làm mờ (Ghost)</span>
-        </button>
-        <button class="tool-card-btn" id="btnGlobalXray" title="Bật/Tắt X-Ray toàn bộ mô hình (Nhìn xuyên thấu dạng SketchUp)">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18" opacity="0.5"/><path d="m8 8 8 8m0-8-8 8"/></svg>
-          <span>X-Ray xuyên</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- HÀNG NÚT THAO TÁC Ở GÓC DƯỚI (SIÊU TIẾT KIỆM KHÔNG GIAN, TỰ CĂN TRÊN THẺ HUD) -->
     <div class="floating-actions-bar">
-      <!-- Nút Bỏ chọn nhiều tấm (chỉ xuất hiện khi chọn từ 2 tấm trở lên để hủy thao tác chọn) -->
+      <!-- 1. Hủy chọn nhiều tấm (chỉ hiện khi chọn > 1 tấm) -->
       <button class="round-tool-btn floating-deselect-btn" id="btnFloatingDeselect" title="Hủy chọn nhiều linh kiện" style="display:none;">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
 
-      <!-- Nút hiện lại tất cả tấm đã ẩn (tự động hiện khi có tấm bị ẩn) -->
+      <!-- 2. Hiện lại tất cả tấm đã ẩn (chỉ hiện khi có tấm ẩn) -->
       <button class="round-tool-btn unhide-btn" id="btnUnhideAll" title="Hiện lại tất cả các tấm đã ẩn" style="display:none; position:relative;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
         <span class="unhide-count" id="unhideCount">0</span>
       </button>
 
-      <!-- Nút xem thông tin tấm ván đang chọn (ảnh 1 - tự động hiện khi chọn tấm ván) -->
-      <button class="round-tool-btn floating-info-btn" id="btnFloatingInfo" title="Xem thông tin tấm ván" style="display:none;">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="16" x2="12" y2="12"/>
-          <line x1="12" y1="8" x2="12.01" y2="8"/>
-        </svg>
-      </button>
-
-      <!-- Nút ẩn tấm đang chọn (tự động hiện khi chọn tấm ván, đồng dạng tinh tế với các nút tròn khác) -->
+      <!-- 3. Ẩn tấm đang chọn (tự động hiện khi chọn tấm ván) -->
       <button class="round-tool-btn floating-hide-btn" id="btnFloatingHide" title="Ẩn tấm ván đang chọn" style="display:none;">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
           <line x1="2" y1="2" x2="22" y2="22"/>
         </svg>
       </button>
 
-      <!-- NÚT BẬT/TẮT LÀM MỜ XUNG QUANH (GHOST MODE) - ĐƯỢC ĐƯA RA NGOÀI VÀ MẶC ĐỊNH BẬT -->
-      <button class="round-tool-btn active" id="btnFloatingGhost" title="Làm mờ xung quanh khi chọn tấm (Ghost Mode)">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
+      <!-- 4. Đặt lại góc nhìn camera -->
+      <button class="round-tool-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
       </button>
 
-      <!-- Nút X-Ray nhìn xuyên thấu mô hình (kế bên trái nút Layer) -->
-      <button class="round-tool-btn" id="btnFloatingXray" title="Bật/Tắt X-Ray nhìn xuyên thấu (SketchUp X-Ray)">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- 5. Góc nhìn chuẩn SketchUp -->
+      <button class="round-tool-btn" id="btnToggleViews" title="Các góc nhìn kỹ thuật chuẩn (Iso, Front, Top, Left, Right)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      </button>
+
+      <!-- 6. Mặt cắt 3D di động (Section Cut) -->
+      <button class="round-tool-btn" id="btnToggleSection" title="Mặt cắt 3D di động (Section Cut)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><line x1="2" y1="12" x2="22" y2="12" stroke="#ff4500" stroke-width="2.5"/><polygon points="12 7 15 11 9 11" fill="#ff4500"/></svg>
+      </button>
+
+      <!-- 7. Rã rời cụm chi tiết (Explode View) -->
+      <button class="round-tool-btn" id="btnToggleExplode" title="Rã rời cụm chi tiết 3D (Explode View)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="m4 4 3 3m10 10 3 3m0-16-3 3M4 20l3-3"/></svg>
+      </button>
+
+      <!-- 8. Thước đo 3D & Đo 2 điểm -->
+      <button class="round-tool-btn" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều & bắt điểm">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1 3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg>
+      </button>
+
+      <!-- 9. Làm mờ xung quanh khi chọn tấm (Ghost Mode) -->
+      <button class="round-tool-btn active" id="btnFloatingGhost" title="Làm mờ xung quanh khi chọn tấm (Ghost Mode)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
+      </button>
+
+      <!-- 10. X-Ray nhìn xuyên thấu mô hình -->
+      <button class="round-tool-btn" id="btnFloatingXray" title="Bật/Tắt X-Ray nhìn xuyên thấu">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="2.5"/>
           <path d="M12 3v18M3 12h18" stroke-dasharray="2 2" opacity="0.6"/>
           <path d="m7 7 10 10m0-10-10 10"/>
         </svg>
       </button>
 
-      <!-- Nút Quản lý Layer nổi bên ngoài (kế bên trái nút Cài đặt) -->
+      <!-- 11. Quản lý Layer -->
       <button class="round-tool-btn" id="btnFloatingLayers" title="Quản lý Layer (Hiện/Ẩn nhóm chi tiết)">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="12 2 2 7 12 12 22 7 12 2"/>
           <polyline points="2 17 12 22 22 17"/>
           <polyline points="2 12 12 17 22 12"/>
         </svg>
-      </button>
-
-      <!-- Nút FAB Chính: Mở/Đóng Bộ Công Cụ Tiện Ích 3D (Cài đặt) -->
-      <button class="toolbar-toggle-btn fab-main-btn" id="btnToolbarToggle" title="Bộ Công Cụ 3D">
-        <svg id="toolbarToggleIcon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="7" height="7" rx="2.2"/>
-          <rect x="14" y="3" width="7" height="7" rx="2.2"/>
-          <rect x="14" y="14" width="7" height="7" rx="2.2"/>
-          <rect x="3" y="14" width="7" height="7" rx="2.2"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- BOTTOM HUD CARD (CHI TIẾT TẤM VÁN ĐANG CHỌN - TĂNG KÍCH THƯỚC & RÕ RÀNG) -->
-  <div class="hud-bottom-card" id="hudCard">
-    <!-- NÚT ĐÓNG BẢNG THÔNG TIN -->
-    <button class="hud-close-card-btn" id="btnHudCloseCard" title="Đóng bảng thông tin">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-
-    <!-- VẠCH KÉO CỬ CHỈ CHO MOBILE (DRAG HANDLE VUỐT XUỐNG ĐÓNG BẢNG) -->
-    <div class="hud-drag-handle-bar" id="hudDragHandle" title="Vuốt xuống để đóng bảng"></div>
-
-    <!-- HÀNG 1: 4 NÚT HÀNH ĐỘNG CHIA ĐỀU NHAU 100% CÂN XỨNG -->
-    <div class="hud-top-row">
-      <div class="hud-top-actions">
-        <button class="hud-action-btn focus-btn" id="btnHudFocus" title="Thu phóng camera thẳng vào tấm ván đang chọn">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-          <span id="btnHudFocusText">Thu phóng</span>
-        </button>
-        <button class="hud-action-btn isolate-btn" id="btnHudIsolate" title="Cô lập – Chỉ hiển thị duy nhất tấm ván này (hoặc các tấm đang chọn)">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
-          <span id="btnHudIsolateText">Cô lập</span>
-        </button>
-        <button class="hud-action-btn hide-btn" id="btnHudHide" title="Ẩn tấm ván này (hoặc các tấm đang chọn) khỏi mô hình 3D">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-          <span id="btnHudHideText">Ẩn tấm</span>
-        </button>
-        <button class="hud-action-btn multiselect-btn" id="btnHudMultiSelect" title="Bật/Tắt chế độ chọn nhiều tấm cùng lúc để ẩn hoặc cô lập hàng loạt">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="13" height="13" rx="2"/>
-            <path d="M16 4H8a2 2 0 0 0-2 2v1"/>
-            <path d="M20 7v9a2 2 0 0 1-2 2h-1"/>
-            <path d="m6 13 2.5 2.5 4.5-4.5"/>
-          </svg>
-          <span id="btnHudMultiSelectText">Chọn nhiều</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- HÀNG 2: TÊN CHI TIẾT RIÊNG 1 HÀNG (KHUNG XANH LÁ) -->
-    <div class="hud-name-row">
-      <h3 class="hud-part-name" id="hudPartName" title="Tên chi tiết đầy đủ">Tên chi tiết</h3>
-    </div>
-
-    <!-- HÀNG 2: TOÀN BỘ HUY HIỆU & THÔNG SỐ VÁN -->
-    <div class="hud-bottom-row">
-      <div class="hud-specs-strip">
-        <span class="hud-badge-id" id="hudBadgeId">TẤM #0</span>
-        <span class="hud-badge-layer" id="hudBadgeLayer" title="Layer / Tag linh kiện">
-          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          <span id="hudLayerText">Layer0</span>
-        </span>
-        <span class="hud-spec-pill dim" id="hudDimensions">-- × -- × -- mm</span>
-        <span class="hud-spec-pill mat" id="hudMaterial">--</span>
-        <span class="hud-spec-pill eb" id="hudEdgeBanding" style="display:none;">--</span>
-        <span class="hud-spec-pill mod" id="hudModuleName" style="display:none;">--</span>
-      </div>
-    </div>
-
-    <!-- HÀNG 3: THÔNG TIN BỔ SUNG & NÚT QUÉT TIẾP -->
-    <div class="hud-bottom-row" style="margin-bottom: 0; margin-top: 2px; padding-top: 6px; border-top: 1px solid var(--panel-border);">
-      <div class="hud-specs-strip">
-        <span class="hud-spec-pill" id="hudDrills" style="display:none;">🔩 Khoan: --</span>
-        <span class="hud-spec-pill" id="hudCodeN1" style="display:none;">Code 1: --</span>
-        <span class="hud-spec-pill" id="hudCodeN2" style="display:none;">Code 2: --</span>
-      </div>
-      <button class="hud-mini-scan-btn" id="btnHudNextScan" title="Bật camera quét tiếp tem khác">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Quét
       </button>
     </div>
   </div>
@@ -3593,101 +3532,43 @@
         } catch (e) {}
       }
 
-      // ĐIỀU KHIỂN BẬT / TẮT BẢNG THÔNG TIN CHI TIẾT TẤM (HUD CARD)
+      // ĐIỀU KHIỂN BẬT / TẮT BẢNG THÔNG TIN CHI TIẾT TẤM (TOP CARD)
       function openHudCard() {
         const hud = document.getElementById('hudCard');
+        const pill = document.getElementById('selectedPartPill');
         if (!hud) return;
-        hud.style.transform = '';
-        hud.classList.add('show');
-        document.body.classList.add('hud-open');
-        const fInfo = document.getElementById('btnFloatingInfo');
-        if (fInfo) fInfo.classList.add('active');
-        const pillInfo = document.getElementById('selectedPartPill');
-        if (pillInfo) pillInfo.classList.add('active');
-        updateFloatingToolsPosition();
+        hud.style.display = 'flex';
+        if (pill) pill.style.display = 'none';
       }
 
       function closeHudCard() {
         const hud = document.getElementById('hudCard');
+        const pill = document.getElementById('selectedPartPill');
         if (!hud) return;
-        hud.style.transform = '';
-        hud.classList.remove('show');
-        document.body.classList.remove('hud-open');
-        const fInfo = document.getElementById('btnFloatingInfo');
-        if (fInfo) fInfo.classList.remove('active');
-        const pillInfo = document.getElementById('selectedPartPill');
-        if (pillInfo) pillInfo.classList.remove('active');
-        document.documentElement.style.removeProperty('--hud-height');
+        hud.style.display = 'none';
+        if (pill && (selectedBoardIndex !== null || (selectedBoardIndices && selectedBoardIndices.size > 0))) {
+          pill.style.display = 'inline-flex';
+        }
       }
 
       function toggleHudCard() {
         const hud = document.getElementById('hudCard');
         if (!hud) return;
-        if (hud.classList.contains('show')) {
+        if (hud.style.display === 'flex') {
           closeHudCard();
         } else {
           openHudCard();
         }
       }
 
-      // CỬ CHỈ VUỐT KÉO XUỐNG ĐỂ ĐÓNG BẢNG THÔNG TIN (SWIPE DOWN TO DISMISS)
+      // THIẾT LẬP THU GỌN BẢNG THÔNG TIN KHI CHẠM HEADER
       function setupHudSwipeGesture() {
-        const hud = document.getElementById('hudCard');
-        const handle = document.getElementById('hudDragHandle');
-        if (!hud || !handle) return;
-
-        let startY = 0;
-        let currentTranslateY = 0;
-        let isDragging = false;
-
-        const onTouchStart = (e) => {
-          if (!hud.classList.contains('show')) return;
-          startY = e.touches[0].clientY;
-          isDragging = true;
-          currentTranslateY = 0;
-          hud.style.transition = 'none';
-        };
-
-        const onTouchMove = (e) => {
-          if (!isDragging) return;
-          const deltaY = e.touches[0].clientY - startY;
-          if (deltaY > 0) {
-            // Chỉ trượt xuống theo ngón tay
-            currentTranslateY = deltaY;
-            hud.style.transform = `translateY(${deltaY}px)`;
-          }
-        };
-
-        const onTouchEnd = () => {
-          if (!isDragging) return;
-          isDragging = false;
-          hud.style.transition = 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
-          if (currentTranslateY > 45) {
-            // Vuốt xuống > 45px -> Đóng bảng mượt mà kèm rung nhẹ (vẫn giữ highlight tấm ván)
+        const header = document.getElementById('hudCardHeader');
+        if (header) {
+          header.onclick = function() {
             triggerHaptic('light');
             closeHudCard();
-          } else {
-            // Kéo chưa đủ -> Bật nảy về vị trí hiển thị ban đầu
-            hud.style.transform = 'translateY(0)';
-          }
-          currentTranslateY = 0;
-        };
-
-        handle.addEventListener('touchstart', onTouchStart, { passive: true });
-        handle.addEventListener('touchmove', onTouchMove, { passive: true });
-        handle.addEventListener('touchend', onTouchEnd);
-
-        const topRow = hud.querySelector('.hud-top-row');
-        if (topRow) {
-          topRow.addEventListener('touchstart', (e) => {
-            if (e.target.closest('button')) return;
-            onTouchStart(e);
-          }, { passive: true });
-          topRow.addEventListener('touchmove', (e) => {
-            if (e.target.closest('button')) return;
-            onTouchMove(e);
-          }, { passive: true });
-          topRow.addEventListener('touchend', onTouchEnd);
+          };
         }
       }
 
@@ -3752,11 +3633,15 @@
           showHudInfo(selectedBoardIndex);
         }
 
-        // 5. Hiển thị nút Thông tin (ảnh 1), nút Viên thuốc và nút Ẩn cố định bên ngoài
-        const fInfo = document.getElementById('btnFloatingInfo');
-        if (fInfo) fInfo.style.display = 'flex';
+        // 5. Hiển thị nút Viên thuốc (hoặc giữ mở Bảng thông tin nếu người dùng đang mở)
+        const hud = document.getElementById('hudCard');
         const pillInfo = document.getElementById('selectedPartPill');
-        if (pillInfo) pillInfo.style.display = 'inline-flex';
+        if (hud && hud.style.display === 'flex') {
+          if (pillInfo) pillInfo.style.display = 'none';
+        } else {
+          if (hud) hud.style.display = 'none';
+          if (pillInfo) pillInfo.style.display = 'inline-flex';
+        }
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'flex';
         updateDeselectFloatingButton();
@@ -3805,6 +3690,7 @@
         if (fDeselect) fDeselect.style.display = 'none';
         const hud = document.getElementById('hudCard');
         if (hud) {
+          hud.style.display = 'none';
           hud.style.transform = '';
           hud.classList.remove('show');
         }
@@ -3901,10 +3787,13 @@
         const txtMulti = document.getElementById('btnHudMultiSelectText');
         if (txtMulti) txtMulti.textContent = `Đang chọn (${count})`;
 
-        const fInfo = document.getElementById('btnFloatingInfo');
-        if (fInfo) fInfo.style.display = 'flex';
         const pillInfo = document.getElementById('selectedPartPill');
-        if (pillInfo) pillInfo.style.display = 'inline-flex';
+        if (hud && hud.style.display === 'flex') {
+          if (pillInfo) pillInfo.style.display = 'none';
+        } else {
+          if (hud) hud.style.display = 'none';
+          if (pillInfo) pillInfo.style.display = 'inline-flex';
+        }
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'flex';
         updateDeselectFloatingButton();
@@ -5093,9 +4982,12 @@
 
       // 11. GẮN SỰ KIỆN NÚT BẤM GIAO DIỆN
       function setupEventListeners() {
-        document.getElementById('btnStartQrScan').onclick = openQrScanner;
-        document.getElementById('btnCloseQr').onclick = closeQrScanner;
-        document.getElementById('btnHudNextScan').onclick = openQrScanner;
+        const btnStartQr = document.getElementById('btnStartQrScan');
+        if (btnStartQr) btnStartQr.onclick = openQrScanner;
+        const btnCloseQr = document.getElementById('btnCloseQr');
+        if (btnCloseQr) btnCloseQr.onclick = closeQrScanner;
+        const btnHudNextScan = document.getElementById('btnHudNextScan');
+        if (btnHudNextScan) btnHudNextScan.onclick = openQrScanner;
         const btnSwitchCam = document.getElementById('btnSwitchCamera');
         if (btnSwitchCam) btnSwitchCam.onclick = switchCamera;
 
@@ -5204,7 +5096,7 @@
         if (selectedPartPill) {
           selectedPartPill.onclick = function() {
             triggerHaptic('medium');
-            toggleHudCard();
+            openHudCard();
           };
         }
 
