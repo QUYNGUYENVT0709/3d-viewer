@@ -3610,6 +3610,10 @@
         }
       }
 
+      window.openHudCard = openHudCard;
+      window.closeHudCard = closeHudCard;
+      window.toggleHudCard = toggleHudCard;
+
       // THIẾT LẬP THU GỌN BẢNG THÔNG TIN KHI CHẠM HEADER
       function setupHudSwipeGesture() {
         const header = document.getElementById('hudCardHeader');
@@ -3746,6 +3750,9 @@
         document.body.classList.remove('hud-open');
         document.documentElement.style.removeProperty('--hud-height');
       }
+
+      window.selectBoard = selectBoard;
+      window.clearSelection = clearSelection;
 
       // Tự động đo chiều cao thực tế thẻ HUD để đẩy cụm nút nổi lên cao chuẩn 100%, không bị đè
       function updateFloatingToolsPosition() {
