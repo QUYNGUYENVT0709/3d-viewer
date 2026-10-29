@@ -4902,6 +4902,12 @@
 
       function toggleSectionCut(state) {
         isSectionActive = (state !== undefined) ? state : !isSectionActive;
+        if (isSectionActive) {
+          if (typeof toggleMeasureTool === 'function' && isMeasureEnabled) toggleMeasureTool(false);
+          if (isExplodeActive) toggleExplodePanel(false);
+          const vp = document.getElementById('viewsPanel');
+          if (vp && vp.classList.contains('active')) toggleViewsPanel(false);
+        }
         const panel = document.getElementById('sectionPanel');
         const btn = document.getElementById('btnToggleSection');
         if (panel) panel.classList.toggle('active', isSectionActive);
@@ -4974,6 +4980,12 @@
 
       function toggleExplodePanel(state) {
         isExplodeActive = (state !== undefined) ? state : !isExplodeActive;
+        if (isExplodeActive) {
+          if (typeof toggleMeasureTool === 'function' && isMeasureEnabled) toggleMeasureTool(false);
+          if (isSectionActive) toggleSectionCut(false);
+          const vp = document.getElementById('viewsPanel');
+          if (vp && vp.classList.contains('active')) toggleViewsPanel(false);
+        }
         const panel = document.getElementById('explodePanel');
         const btn = document.getElementById('btnToggleExplode');
         if (panel) panel.classList.toggle('active', isExplodeActive);
@@ -5056,6 +5068,11 @@
         const panel = document.getElementById('viewsPanel');
         const btn = document.getElementById('btnToggleViews');
         const isOpen = (state !== undefined) ? state : !panel.classList.contains('active');
+        if (isOpen) {
+          if (typeof toggleMeasureTool === 'function' && isMeasureEnabled) toggleMeasureTool(false);
+          if (isSectionActive) toggleSectionCut(false);
+          if (isExplodeActive) toggleExplodePanel(false);
+        }
         if (panel) panel.classList.toggle('active', isOpen);
         if (btn) btn.classList.toggle('active', isOpen);
         if (isOpen && window.setToolbarCollapsed) window.setToolbarCollapsed(true);
@@ -5088,9 +5105,12 @@
 
       function toggleMeasureTool(state) {
         isMeasureEnabled = (state !== undefined) ? state : !isMeasureEnabled;
+        if (isMeasureEnabled) {
+          closeAllToolPopups();
+        }
         const btnToggleMeasure = document.getElementById('btnToggleMeasure');
         const measureHud = document.getElementById('measureHud');
-        if (btnToggleMeasure) btnToggleMeasure.classList.toggle('active-cyan', isMeasureEnabled);
+        if (btnToggleMeasure) btnToggleMeasure.classList.toggle('active', isMeasureEnabled);
         if (measureHud) measureHud.style.display = isMeasureEnabled ? 'flex' : 'none';
         if (isMeasureEnabled && window.setToolbarCollapsed) window.setToolbarCollapsed(true);
         if (window.updateFabIndicator) window.updateFabIndicator();
