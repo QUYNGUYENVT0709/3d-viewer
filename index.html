@@ -603,6 +603,104 @@
       border-color: rgba(239, 68, 68, 0.4) !important;
       transform: scale(0.96);
     }
+
+    /* NÚT XEM THÔNG TIN TẤM CỐ ĐỊNH TRONG THANH NỔI (ẢNH 1) */
+    .floating-info-btn {
+      background: var(--panel-bg) !important;
+      border: 0.5px solid var(--panel-border) !important;
+      color: var(--accent-color) !important;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+      animation: popIn 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    .floating-info-btn:hover, .floating-info-btn:active,
+    .floating-info-btn.active {
+      background: var(--accent-color) !important;
+      color: #ffffff !important;
+      border-color: var(--accent-color) !important;
+      box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4) !important;
+      transform: scale(0.96);
+    }
+
+    /* NÚT VIÊN THUỐC XEM THÔNG TIN TẤM (GÓC TRÊN TRÁI DƯỚI TÊN FILE) */
+    .selected-part-pill {
+      position: absolute;
+      top: calc(max(4px, env(safe-area-inset-top, 4px)) + 46px);
+      left: 10px;
+      pointer-events: auto;
+      background: var(--panel-bg);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 0.5px solid var(--panel-border);
+      border-radius: 9999px;
+      padding: 6px 14px 6px 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      max-width: 80vw;
+      cursor: pointer;
+      z-index: 95;
+      transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.2s, border-color 0.2s, box-shadow 0.2s;
+      animation: popIn 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    .selected-part-pill:active {
+      transform: scale(0.96);
+    }
+    .selected-part-pill.active {
+      background: rgba(0, 122, 255, 0.14);
+      border-color: rgba(0, 122, 255, 0.45);
+      box-shadow: 0 4px 16px rgba(0, 122, 255, 0.2);
+    }
+    .selected-part-pill .pill-info-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .selected-part-pill .pill-text {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      letter-spacing: -0.2px;
+    }
+    .selected-part-pill .pill-action-hint {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent-color);
+      margin-left: 2px;
+      white-space: nowrap;
+    }
+
+    /* NÚT ĐÓNG THẺ HUD */
+    .hud-close-card-btn {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(120, 120, 128, 0.16);
+      border: none;
+      color: var(--text-secondary, #666);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .hud-close-card-btn:hover, .hud-close-card-btn:active {
+      transform: scale(0.92);
+      background: rgba(120, 120, 128, 0.3);
+    }
     @keyframes popIn {
       0% { opacity: 0; transform: scale(0.6); }
       100% { opacity: 1; transform: scale(1); }
@@ -1907,6 +2005,22 @@
       #btnToggleFullscreen {
         display: inline-flex !important;
       }
+      .selected-part-pill {
+        top: 38px !important;
+        left: 8px !important;
+        padding: 4px 10px 4px 6px !important;
+      }
+      .selected-part-pill .pill-info-icon {
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .selected-part-pill .pill-info-icon svg {
+        width: 11px !important;
+        height: 11px !important;
+      }
+      .selected-part-pill .pill-text {
+        font-size: 11px !important;
+      }
     }
 
     /* MẶC ĐỊNH Ở MÀN HÌNH DỌC: Ẩn nút toàn màn hình để không chật thanh công cụ & không nuốt nút Quét */
@@ -1953,7 +2067,7 @@
   <header class="top-header">
     <div class="brand-pill" title="Tên công trình">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color); flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <span class="project-name" id="displayProjectName">SX- TỦ ÁO TÚ 3</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -1976,6 +2090,19 @@
       </button>
     </div>
   </header>
+
+  <!-- NÚT VIÊN THUỐC XEM THÔNG TIN TẤM (GÓC TRÁI TRÊN DƯỚI TÊN FILE - CHẠM ĐỂ MỞ BẢNG THÔNG TIN) -->
+  <div class="selected-part-pill" id="selectedPartPill" style="display:none;" title="Chạm để xem thông tin chi tiết tấm ván">
+    <div class="pill-info-icon">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="16" x2="12" y2="12"/>
+        <line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
+    </div>
+    <span class="pill-text" id="selectedPartPillText">Xem thông tin tấm</span>
+    <span class="pill-action-hint">Chạm xem</span>
+  </div>
 
   <!-- SEARCH OVERLAY -->
   <div class="search-wrapper" id="searchWrapper">
@@ -2107,6 +2234,15 @@
         <span class="unhide-count" id="unhideCount">0</span>
       </button>
 
+      <!-- Nút xem thông tin tấm ván đang chọn (ảnh 1 - tự động hiện khi chọn tấm ván) -->
+      <button class="round-tool-btn floating-info-btn" id="btnFloatingInfo" title="Xem thông tin tấm ván" style="display:none;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+      </button>
+
       <!-- Nút ẩn tấm đang chọn (tự động hiện khi chọn tấm ván, đồng dạng tinh tế với các nút tròn khác) -->
       <button class="round-tool-btn floating-hide-btn" id="btnFloatingHide" title="Ẩn tấm ván đang chọn" style="display:none;">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -2152,6 +2288,14 @@
 
   <!-- BOTTOM HUD CARD (CHI TIẾT TẤM VÁN ĐANG CHỌN - TĂNG KÍCH THƯỚC & RÕ RÀNG) -->
   <div class="hud-bottom-card" id="hudCard">
+    <!-- NÚT ĐÓNG BẢNG THÔNG TIN -->
+    <button class="hud-close-card-btn" id="btnHudCloseCard" title="Đóng bảng thông tin">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
     <!-- VẠCH KÉO CỬ CHỈ CHO MOBILE (DRAG HANDLE VUỐT XUỐNG ĐÓNG BẢNG) -->
     <div class="hud-drag-handle-bar" id="hudDragHandle" title="Vuốt xuống để đóng bảng"></div>
 
@@ -3449,6 +3593,43 @@
         } catch (e) {}
       }
 
+      // ĐIỀU KHIỂN BẬT / TẮT BẢNG THÔNG TIN CHI TIẾT TẤM (HUD CARD)
+      function openHudCard() {
+        const hud = document.getElementById('hudCard');
+        if (!hud) return;
+        hud.style.transform = '';
+        hud.classList.add('show');
+        document.body.classList.add('hud-open');
+        const fInfo = document.getElementById('btnFloatingInfo');
+        if (fInfo) fInfo.classList.add('active');
+        const pillInfo = document.getElementById('selectedPartPill');
+        if (pillInfo) pillInfo.classList.add('active');
+        updateFloatingToolsPosition();
+      }
+
+      function closeHudCard() {
+        const hud = document.getElementById('hudCard');
+        if (!hud) return;
+        hud.style.transform = '';
+        hud.classList.remove('show');
+        document.body.classList.remove('hud-open');
+        const fInfo = document.getElementById('btnFloatingInfo');
+        if (fInfo) fInfo.classList.remove('active');
+        const pillInfo = document.getElementById('selectedPartPill');
+        if (pillInfo) pillInfo.classList.remove('active');
+        document.documentElement.style.removeProperty('--hud-height');
+      }
+
+      function toggleHudCard() {
+        const hud = document.getElementById('hudCard');
+        if (!hud) return;
+        if (hud.classList.contains('show')) {
+          closeHudCard();
+        } else {
+          openHudCard();
+        }
+      }
+
       // CỬ CHỈ VUỐT KÉO XUỐNG ĐỂ ĐÓNG BẢNG THÔNG TIN (SWIPE DOWN TO DISMISS)
       function setupHudSwipeGesture() {
         const hud = document.getElementById('hudCard');
@@ -3482,9 +3663,9 @@
           isDragging = false;
           hud.style.transition = 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
           if (currentTranslateY > 45) {
-            // Vuốt xuống > 45px -> Đóng bảng mượt mà kèm rung nhẹ
+            // Vuốt xuống > 45px -> Đóng bảng mượt mà kèm rung nhẹ (vẫn giữ highlight tấm ván)
             triggerHaptic('light');
-            clearSelection();
+            closeHudCard();
           } else {
             // Kéo chưa đủ -> Bật nảy về vị trí hiển thị ban đầu
             hud.style.transform = 'translateY(0)';
@@ -3564,14 +3745,18 @@
           }
         }
 
-        // 4. Hiển thị bảng HUD chi tiết tấm dưới đáy màn hình
+        // 4. Cập nhật dữ liệu bảng thông tin chi tiết tấm (bảng vẫn ẩn theo mặc định)
         if (selectedBoardIndices.size > 1) {
           updateMultiSelectHud();
         } else {
           showHudInfo(selectedBoardIndex);
         }
 
-        // 5. Hiển thị nút Ẩn cố định bên ngoài & cập nhật nút Bỏ chọn nhiều tấm
+        // 5. Hiển thị nút Thông tin (ảnh 1), nút Viên thuốc và nút Ẩn cố định bên ngoài
+        const fInfo = document.getElementById('btnFloatingInfo');
+        if (fInfo) fInfo.style.display = 'flex';
+        const pillInfo = document.getElementById('selectedPartPill');
+        if (pillInfo) pillInfo.style.display = 'inline-flex';
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'flex';
         updateDeselectFloatingButton();
@@ -3604,6 +3789,16 @@
 
         updateModelMaterials();
         updateMeasureHelper();
+        const fInfo = document.getElementById('btnFloatingInfo');
+        if (fInfo) {
+          fInfo.style.display = 'none';
+          fInfo.classList.remove('active');
+        }
+        const pillInfo = document.getElementById('selectedPartPill');
+        if (pillInfo) {
+          pillInfo.style.display = 'none';
+          pillInfo.classList.remove('active');
+        }
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'none';
         const fDeselect = document.getElementById('btnFloatingDeselect');
@@ -3644,9 +3839,14 @@
         }
 
         const hud = document.getElementById('hudCard');
-        if (hud) hud.classList.add('show');
-        document.body.classList.add('hud-open');
-        updateFloatingToolsPosition();
+        if (hud && hud.classList.contains('show')) {
+          updateFloatingToolsPosition();
+        }
+
+        const elPillText = document.getElementById('selectedPartPillText');
+        if (elPillText) {
+          elPillText.textContent = `Đã chọn ${count} tấm ván`;
+        }
 
         const badgeId = document.getElementById('hudBadgeId');
         if (badgeId) badgeId.textContent = `${count} TẤM`;
@@ -3701,6 +3901,10 @@
         const txtMulti = document.getElementById('btnHudMultiSelectText');
         if (txtMulti) txtMulti.textContent = `Đang chọn (${count})`;
 
+        const fInfo = document.getElementById('btnFloatingInfo');
+        if (fInfo) fInfo.style.display = 'flex';
+        const pillInfo = document.getElementById('selectedPartPill');
+        if (pillInfo) pillInfo.style.display = 'inline-flex';
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'flex';
         updateDeselectFloatingButton();
@@ -3911,10 +4115,18 @@
           }
         }
 
-        hud.style.transform = '';
-        hud.classList.add('show');
-        document.body.classList.add('hud-open');
-        updateFloatingToolsPosition();
+        // Cập nhật nội dung nút viên thuốc góc trái trên dưới tên file
+        const elPillText = document.getElementById('selectedPartPillText');
+        if (elPillText) {
+          const partTitle = info.part_name || `Linh kiện #${idx}`;
+          elPillText.textContent = `${partTitle} (Tấm #${idx})`;
+        }
+
+        // Bảng thông tin không tự động bật lên (chỉ cập nhật vị trí nếu người dùng đã chủ động mở bảng trước đó)
+        if (hud && hud.classList.contains('show')) {
+          hud.style.transform = '';
+          updateFloatingToolsPosition();
+        }
 
         // Thông tin bổ sung Hàng 3: Khoan, Code 1, Code 2
         const elDrills = document.getElementById('hudDrills');
@@ -4976,6 +5188,33 @@
         const btnFloatingHide = document.getElementById('btnFloatingHide');
         if (btnFloatingHide) {
           btnFloatingHide.onclick = hideSelectedBoard;
+        }
+
+        // Nút Xem thông tin tấm cố định thanh nổi (Ảnh 1)
+        const btnFloatingInfo = document.getElementById('btnFloatingInfo');
+        if (btnFloatingInfo) {
+          btnFloatingInfo.onclick = function() {
+            triggerHaptic('medium');
+            toggleHudCard();
+          };
+        }
+
+        // Nút Viên thuốc Xem thông tin tấm (Góc trên trái dưới tên file)
+        const selectedPartPill = document.getElementById('selectedPartPill');
+        if (selectedPartPill) {
+          selectedPartPill.onclick = function() {
+            triggerHaptic('medium');
+            toggleHudCard();
+          };
+        }
+
+        // Nút Đóng bảng thông tin trên thẻ HUD
+        const btnHudCloseCard = document.getElementById('btnHudCloseCard');
+        if (btnHudCloseCard) {
+          btnHudCloseCard.onclick = function() {
+            triggerHaptic('light');
+            closeHudCard();
+          };
         }
 
         // Nút Hiện lại tất cả tấm đã ẩn
