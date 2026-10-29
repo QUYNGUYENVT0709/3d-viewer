@@ -235,12 +235,12 @@
       -webkit-backdrop-filter: blur(35px) saturate(200%);
       border: 0.5px solid var(--panel-border);
       border-radius: 18px;
-      padding: 12px 14px;
+      padding: 10px 14px 12px 14px;
       box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.05);
       z-index: 100;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       animation: popIn 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
     .hud-top-card.show {
@@ -252,38 +252,59 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      padding-bottom: 8px;
-      border-bottom: 0.5px solid var(--panel-border);
+      padding-bottom: 2px;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
     }
-    .hud-collapse-hint {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--accent-color);
-      white-space: nowrap;
-      padding: 4px 10px;
-      border-radius: 9999px;
-      background: rgba(0, 122, 255, 0.1);
-      flex-shrink: 0;
-      display: inline-flex;
+    .hud-bottom-chevron {
+      position: absolute;
+      bottom: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 18px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(30px) saturate(180%);
+      -webkit-backdrop-filter: blur(30px) saturate(180%);
+      border: 0.5px solid var(--panel-border);
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      display: flex;
       align-items: center;
-      gap: 3px;
+      justify-content: center;
       cursor: pointer;
-      transition: background 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      z-index: 10;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.15s ease, background 0.15s ease;
     }
-    .hud-collapse-hint:active {
-      transform: scale(0.92);
-      background: rgba(0, 122, 255, 0.2);
+    .hud-bottom-chevron:active {
+      transform: translateX(-50%) scale(0.92);
+      background: rgba(0, 122, 255, 0.15);
+    }
+    .hud-chevron-icon {
+      width: 14px;
+      height: 14px;
+      stroke: var(--accent-color);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hud-top-card.is-expanded .hud-chevron-icon {
+      transform: rotate(180deg);
     }
     .hud-middle-row {
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 6px;
+      padding-top: 6px;
+      border-top: 0.5px solid var(--panel-border);
+    }
+    .hud-top-card.is-expanded .hud-middle-row {
+      display: flex;
+      animation: fadeInDown 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .hud-actions-row {
-      margin-top: 2px;
-      padding-top: 8px;
+      margin-top: 0;
+      padding-top: 6px;
       border-top: 0.5px solid var(--panel-border);
     }
 
@@ -2162,12 +2183,11 @@
     <span>QUÝ NGUYỄN • HOTLINE: 0343.797.858 • © 3D VIEWER PRO</span>
   </div>
 
-  <!-- BANNER HƯỚNG DẪN & KẾT QUẢ THƯỚC ĐO 3D -->
+  <!-- BANNER HƯỚNG DẪN & KẾT QUẢ THƯỚC ĐO 3D (CHỈ ĐO 2 ĐIỂM BẰNG KÍNH LÚP BẮT ĐIỂM) -->
   <div class="measure-hud" id="measureHud" style="display: none;">
     <span class="measure-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg></span>
-    <span class="measure-text" id="measureHudText">Chạm vào tấm ván để đo 3 chiều (Dài × Rộng × Dày), hoặc bấm "Đo 2 Điểm" để kéo thước!</span>
+    <span class="measure-text" id="measureHudText">Chạm hoặc nhấn giữ & rê kính lúp để chọn <strong>Điểm 1</strong>!</span>
     <div class="measure-actions">
-      <button class="measure-btn-sub" id="btnMeasurePointMode"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg> Đo 2 Điểm</button>
       <button class="measure-close-btn" id="btnCloseMeasureHud" title="Tắt thước đo">✕</button>
     </div>
   </div>
@@ -2209,29 +2229,15 @@
     </div>
   </header>
 
-  <!-- NÚT VIÊN THUỐC XEM THÔNG TIN TẤM (GÓC TRÁI TRÊN DƯỚI TÊN FILE - CHẠM ĐỂ MỞ BẢNG THÔNG TIN) -->
-  <div class="selected-part-pill" id="selectedPartPill" style="display:none;" title="Chạm để xem thông tin chi tiết tấm ván">
-    <div class="pill-info-icon">
-      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="12" y1="16" x2="12" y2="12"/>
-        <line x1="12" y1="8" x2="12.01" y2="8"/>
-      </svg>
-    </div>
-    <span class="pill-text" id="selectedPartPillText">Xem thông tin tấm</span>
-    <span class="pill-action-hint">Chạm xem</span>
-  </div>
-
-  <!-- BẢNG THÔNG TIN CHI TIẾT TẤM VÁN (GÓC TRÊN TRÁI ĐÚNG VỊ TRÍ VẼ) -->
+  <!-- BẢNG THÔNG TIN TẤM VÁN MỞ RỘNG (MẶC ĐỊNH COMPACT 2 DÒNG: TÊN + 4 CÔNG CỤ; CHẠM CHEVRON ĐỂ XỔ XUỐNG FULL CHI TIẾT) -->
   <div class="hud-top-card" id="hudCard" style="display:none;">
     <!-- DÒNG 1: TÊN CHI TIẾT NẰM TRÊN CÙNG -->
-    <div class="hud-top-header-wrap" id="hudCardHeader" title="Chạm để thu gọn">
+    <div class="hud-top-header-wrap" id="hudCardHeader" title="Chạm để xem / thu gọn thông số chi tiết">
       <h3 class="hud-part-name" id="hudPartName" title="Tên chi tiết đầy đủ">Tên chi tiết</h3>
-      <span class="hud-collapse-hint">Thu gọn ▲</span>
     </div>
 
-    <!-- DÒNG 2: TOÀN BỘ HUY HIỆU & THÔNG SỐ VÁN (TẤM, LAYER, KÍCH THƯỚC, VẬT LIỆU, CỤM...) -->
-    <div class="hud-middle-row">
+    <!-- DÒNG 2: TOÀN BỘ HUY HIỆU & THÔNG SỐ VÁN (MẶC ĐỊNH ẨN, CHẠM CHEVRON ĐỂ SỔ XUỐNG) -->
+    <div class="hud-middle-row" id="hudDetailsRow">
       <div class="hud-specs-strip">
         <span class="hud-badge-id" id="hudBadgeId">TẤM #0</span>
         <span class="hud-badge-layer" id="hudBadgeLayer" title="Layer / Tag linh kiện">
@@ -2248,7 +2254,7 @@
       </div>
     </div>
 
-    <!-- DÒNG 3: HÀNG 4 NÚT HÀNH ĐỘNG ĐẢO XUỐNG DƯỚI CÙNG -->
+    <!-- DÒNG 3: HÀNG 4 NÚT HÀNH ĐỘNG DẠNG SEGMENTED CONTROL -->
     <div class="hud-actions-row">
       <div class="hud-top-actions">
         <button class="hud-action-btn focus-btn" id="btnHudFocus" title="Thu phóng camera thẳng vào tấm ván đang chọn">
@@ -2273,6 +2279,13 @@
           <span id="btnHudMultiSelectText">Chọn nhiều</span>
         </button>
       </div>
+    </div>
+
+    <!-- NÚT MŨI TÊN CHEVRON IOS CẠNH DƯỚI Ở GIỮA ĐỂ MỞ RỘNG / THU GỌN THÔNG SỐ -->
+    <div class="hud-bottom-chevron" id="hudBottomChevron" title="Xem chi tiết thông số tấm ván" aria-label="Mở rộng / Thu gọn thông số chi tiết">
+      <svg class="hud-chevron-icon" id="hudChevronIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
     </div>
   </div>
 
@@ -2599,6 +2612,9 @@
       let activePointerDown = false;
       let currentSnapResult = null;
       let lastVibrated = false;
+      let holdTimer = null;
+      let isHoldingForSnap = false;
+      let isCandidateForSnap = false;
 
       // Biến trạng thái Layer & Toolbar
       let layersData = [];
@@ -3652,23 +3668,18 @@
         } catch (e) {}
       }
 
-      // ĐIỀU KHIỂN BẬT / TẮT BẢNG THÔNG TIN CHI TIẾT TẤM (TOP CARD)
+      // ĐIỀU KHIỂN BẬT / TẮT & MỞ RỘNG BẢNG THÔNG TIN CHI TIẾT TẤM (TOP CARD)
       function openHudCard() {
         const hud = document.getElementById('hudCard');
-        const pill = document.getElementById('selectedPartPill');
         if (!hud) return;
         hud.style.display = 'flex';
-        if (pill) pill.style.display = 'none';
       }
 
       function closeHudCard() {
         const hud = document.getElementById('hudCard');
-        const pill = document.getElementById('selectedPartPill');
         if (!hud) return;
         hud.style.display = 'none';
-        if (pill && (selectedBoardIndex !== null || (selectedBoardIndices && selectedBoardIndices.size > 0))) {
-          pill.style.display = 'inline-flex';
-        }
+        hud.classList.remove('is-expanded');
       }
 
       function toggleHudCard() {
@@ -3681,17 +3692,24 @@
         }
       }
 
+      function toggleHudExpand() {
+        const hud = document.getElementById('hudCard');
+        if (!hud) return;
+        triggerHaptic('light');
+        hud.classList.toggle('is-expanded');
+      }
+
       window.openHudCard = openHudCard;
       window.closeHudCard = closeHudCard;
       window.toggleHudCard = toggleHudCard;
+      window.toggleHudExpand = toggleHudExpand;
 
-      // THIẾT LẬP THU GỌN BẢNG THÔNG TIN KHI CHẠM HEADER
+      // THIẾT LẬP MỞ RỘNG / THU GỌN BẢNG THÔNG TIN KHI CHẠM HEADER
       function setupHudSwipeGesture() {
         const header = document.getElementById('hudCardHeader');
         if (header) {
           header.onclick = function() {
-            triggerHaptic('light');
-            closeHudCard();
+            toggleHudExpand();
           };
         }
       }
@@ -3750,21 +3768,17 @@
           }
         }
 
-        // 4. Cập nhật dữ liệu bảng thông tin chi tiết tấm (bảng vẫn ẩn theo mặc định)
+        // 4. Cập nhật dữ liệu bảng thông tin chi tiết tấm
         if (selectedBoardIndices.size > 1) {
           updateMultiSelectHud();
         } else {
           showHudInfo(selectedBoardIndex);
         }
 
-        // 5. Hiển thị nút Viên thuốc (hoặc giữ mở Bảng thông tin nếu người dùng đang mở)
+        // 5. Hiển thị Bảng thông tin chi tiết tấm ở phía trên (mặc định dạng thu gọn 2 dòng: Tên + 4 nút thao tác)
         const hud = document.getElementById('hudCard');
-        const pillInfo = document.getElementById('selectedPartPill');
-        if (hud && hud.style.display === 'flex') {
-          if (pillInfo) pillInfo.style.display = 'none';
-        } else {
-          if (hud) hud.style.display = 'none';
-          if (pillInfo) pillInfo.style.display = 'inline-flex';
+        if (hud) {
+          hud.style.display = 'flex';
         }
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'none';
@@ -3803,11 +3817,6 @@
           fInfo.style.display = 'none';
           fInfo.classList.remove('active');
         }
-        const pillInfo = document.getElementById('selectedPartPill');
-        if (pillInfo) {
-          pillInfo.style.display = 'none';
-          pillInfo.classList.remove('active');
-        }
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'none';
         const fDeselect = document.getElementById('btnFloatingDeselect');
@@ -3815,6 +3824,7 @@
         const hud = document.getElementById('hudCard');
         if (hud) {
           hud.style.display = 'none';
+          hud.classList.remove('is-expanded');
           hud.style.transform = '';
           hud.classList.remove('show');
         }
@@ -3914,12 +3924,8 @@
         const txtMulti = document.getElementById('btnHudMultiSelectText');
         if (txtMulti) txtMulti.textContent = `Đang chọn (${count})`;
 
-        const pillInfo = document.getElementById('selectedPartPill');
-        if (hud && hud.style.display === 'flex') {
-          if (pillInfo) pillInfo.style.display = 'none';
-        } else {
-          if (hud) hud.style.display = 'none';
-          if (pillInfo) pillInfo.style.display = 'inline-flex';
+        if (hud) {
+          hud.style.display = 'flex';
         }
         const fHide = document.getElementById('btnFloatingHide');
         if (fHide) fHide.style.display = 'none';
@@ -4469,9 +4475,9 @@
         const mouse = new THREE.Vector2();
         let touchStartX = 0;
         let touchStartY = 0;
-        let holdTimer = null;
-        let isHoldingForSnap = false;
-        let isCandidateForSnap = false;
+        holdTimer = null;
+        isHoldingForSnap = false;
+        isCandidateForSnap = false;
         const activePointers = new Map();
 
         container.addEventListener('pointerdown', e => {
@@ -4500,7 +4506,7 @@
             return;
           }
 
-          if (isPointMeasureMode) {
+          if (isMeasureEnabled && isPointMeasureMode) {
             // Kiểm tra xem vị trí chạm ban đầu có nằm trên tấm ván / model không
             const initialHit = findSnapPoint(e.clientX, e.clientY);
 
@@ -4523,7 +4529,7 @@
             // Đếm thời gian đè giữ (Press & Hold ~220ms) để mở kính lúp
             if (holdTimer) clearTimeout(holdTimer);
             holdTimer = setTimeout(() => {
-              if (activePointers.size === 1 && isPointMeasureMode && isCandidateForSnap) {
+              if (activePointers.size === 1 && isMeasureEnabled && isPointMeasureMode && isCandidateForSnap) {
                 isHoldingForSnap = true;
                 if (controls) controls.enabled = false; // Tạm ngưng xoay camera để ngón tay rê kính lúp
                 if (navigator.vibrate) navigator.vibrate(25);
@@ -4552,7 +4558,7 @@
             return;
           }
 
-          if (isPointMeasureMode) {
+          if (isMeasureEnabled && isPointMeasureMode) {
             if (!isHoldingForSnap) {
               // Chưa đè đủ thời gian mở kính lúp:
               // Nếu ngón tay di chuyển > 10px thì đây là thao tác VUỐT XOAY CAMERA!
@@ -4586,7 +4592,7 @@
             }
           } catch (err) {}
 
-          if (isPointMeasureMode) {
+          if (isMeasureEnabled && isPointMeasureMode) {
             if (isHoldingForSnap) {
               // Người dùng đè giữ và buông tay:
               isHoldingForSnap = false;
@@ -5078,27 +5084,14 @@
         if (isOpen && window.setToolbarCollapsed) window.setToolbarCollapsed(true);
       }
 
-      // 10. ĐIỀU KHIỂN BẬT TẮT THƯỚC ĐO 3D & ĐẢO CHẾ ĐỘ (MẶC ĐỊNH ĐO 2 ĐIỂM)
+      // 10. ĐIỀU KHIỂN BẬT TẮT THƯỚC ĐO 3D (CHẾ ĐỘ ĐO 2 ĐIỂM BẰNG KÍNH LÚP BẮT ĐIỂM)
       function updateMeasureHudUI() {
         const hudText = document.getElementById('measureHudText');
-        const btnMeasurePointMode = document.getElementById('btnMeasurePointMode');
-        if (isPointMeasureMode) {
-          if (btnMeasurePointMode) {
-            btnMeasurePointMode.classList.add('active');
-            btnMeasurePointMode.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1 3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg> Đo Tấm`;
-            btnMeasurePointMode.title = "Chuyển sang chế độ đo kích thước tấm (Dài × Rộng × Dày)";
-          }
-          if (hudText) {
-            hudText.innerHTML = `Chạm hoặc rê kính lúp để chọn <strong>Điểm 1</strong>!`;
-          }
-        } else {
-          if (btnMeasurePointMode) {
-            btnMeasurePointMode.classList.remove('active');
-            btnMeasurePointMode.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg> Đo 2 Điểm`;
-            btnMeasurePointMode.title = "Chuyển sang chế độ đo 2 điểm tự do (nhấn giữ & rê kính lúp)";
-          }
-          if (hudText) {
-            hudText.innerHTML = `<strong>Chế độ đo tấm:</strong> Chạm vào tấm ván để đo 3 chiều (Dài × Rộng × Dày)!`;
+        if (hudText && isMeasureEnabled) {
+          if (!measurePointA) {
+            hudText.innerHTML = `Chạm hoặc nhấn giữ & rê kính lúp để chọn <strong>Điểm 1</strong>!`;
+          } else {
+            hudText.innerHTML = `Chạm hoặc rê kính lúp để chọn <strong>Điểm 2</strong>!`;
           }
         }
       }
@@ -5107,6 +5100,16 @@
         isMeasureEnabled = (state !== undefined) ? state : !isMeasureEnabled;
         if (isMeasureEnabled) {
           closeAllToolPopups();
+          isPointMeasureMode = true; // Luôn luôn là cơ chế đo 2 điểm tự do mặc định
+        } else {
+          isPointMeasureMode = false;
+          isHoldingForSnap = false;
+          isCandidateForSnap = false;
+          if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+          hideLoupe();
+          clearPointMeasure();
+          clearMeasureHelpers();
+          if (controls) controls.enabled = true; // Mở lại xoay camera và chọn tấm ngay lập tức
         }
         const btnToggleMeasure = document.getElementById('btnToggleMeasure');
         const measureHud = document.getElementById('measureHud');
@@ -5115,17 +5118,14 @@
         if (isMeasureEnabled && window.setToolbarCollapsed) window.setToolbarCollapsed(true);
         if (window.updateFabIndicator) window.updateFabIndicator();
 
-        if (!isMeasureEnabled) {
-          clearMeasureHelpers();
-          clearPointMeasure();
-        } else {
+        if (isMeasureEnabled) {
           clearPointMeasure();
           updateMeasureHudUI();
-          if (!isPointMeasureMode) {
-            updateMeasureHelper();
-          }
         }
       }
+
+      window.toggleMeasureTool = toggleMeasureTool;
+      window.getMeasureState = () => ({ isMeasureEnabled, isPointMeasureMode });
 
       // 11. GẮN SỰ KIỆN NÚT BẤM GIAO DIỆN
       function setupEventListeners() {
@@ -5194,9 +5194,8 @@
           };
         }
 
-        // Nút Thước đo 3 chiều & Đo 2 điểm
+        // Nút Thước đo 2 điểm tự do bằng kính lúp bắt điểm
         const btnToggleMeasure = document.getElementById('btnToggleMeasure');
-        const btnMeasurePointMode = document.getElementById('btnMeasurePointMode');
         const btnCloseMeasureHud = document.getElementById('btnCloseMeasureHud');
 
         if (btnToggleMeasure) {
@@ -5205,18 +5204,6 @@
 
         if (btnCloseMeasureHud) {
           btnCloseMeasureHud.onclick = () => toggleMeasureTool(false);
-        }
-
-        if (btnMeasurePointMode) {
-          btnMeasurePointMode.onclick = () => {
-            isPointMeasureMode = !isPointMeasureMode;
-            clearPointMeasure();
-            clearMeasureHelpers();
-            updateMeasureHudUI();
-            if (!isPointMeasureMode && selectedBoardIndex !== null) {
-              updateMeasureHelper();
-            }
-          };
         }
 
         // Nút Ẩn tấm đang chọn (Cả nút tròn HUD lẫn nút cố định nổi bên phải)
@@ -5229,21 +5216,27 @@
           btnFloatingHide.onclick = hideSelectedBoard;
         }
 
-        // Nút Xem thông tin tấm cố định thanh nổi (Ảnh 1)
+        // Nút Chevron iOS cạnh dưới ở giữa mở rộng / thu gọn thông số chi tiết tấm
+        const hudBottomChevron = document.getElementById('hudBottomChevron');
+        if (hudBottomChevron) {
+          hudBottomChevron.onclick = function(e) {
+            e.stopPropagation();
+            toggleHudExpand();
+          };
+        }
+        const hudCardHeader = document.getElementById('hudCardHeader');
+        if (hudCardHeader) {
+          hudCardHeader.onclick = function() {
+            toggleHudExpand();
+          };
+        }
+
+        // Nút Xem thông tin tấm cố định thanh nổi
         const btnFloatingInfo = document.getElementById('btnFloatingInfo');
         if (btnFloatingInfo) {
           btnFloatingInfo.onclick = function() {
             triggerHaptic('medium');
             toggleHudCard();
-          };
-        }
-
-        // Nút Viên thuốc Xem thông tin tấm (Góc trên trái dưới tên file)
-        const selectedPartPill = document.getElementById('selectedPartPill');
-        if (selectedPartPill) {
-          selectedPartPill.onclick = function() {
-            triggerHaptic('medium');
-            openHudCard();
           };
         }
 
