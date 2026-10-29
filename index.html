@@ -2026,19 +2026,30 @@
     /* ========================================================
        TỐI ƯU GIAO DIỆN MÀN HÌNH NGANG (LANDSCAPE MODE - KHÔNG VƯỚNG TAY)
        ======================================================== */
-    @media (orientation: landscape) and (max-height: 550px) {
+    @media (orientation: landscape) and (max-height: 640px) {
+      /* BẢNG THÔNG TIN GÓC TRÊN TRÁI: ĐƯA LÊN SÁT ĐỈNH & HIỂN THỊ NÚT MŨI TÊN CHEVRON */
       .hud-top-card {
-        top: calc(max(4px, env(safe-area-inset-top, 4px)) + 38px) !important;
+        top: max(6px, env(safe-area-inset-top, 6px)) !important;
         left: max(8px, env(safe-area-inset-left, 8px)) !important;
         right: auto !important;
         width: 320px !important;
         max-width: 44vw !important;
-        max-height: calc(100vh - 46px) !important;
-        overflow-y: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
         border-radius: 14px !important;
         padding: 8px 12px 10px 12px !important;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20) !important;
         gap: 6px !important;
+      }
+      .hud-middle-row {
+        max-height: calc(100vh - 110px) !important;
+        overflow-y: auto !important;
+      }
+      .hud-bottom-chevron {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 25 !important;
       }
 
       /* TỐI ƯU HÀNG NÚT TÍNH NĂNG TRONG HUD */
@@ -2118,18 +2129,26 @@
         font-size: 11.5px !important;
       }
 
-      /* TOP BAR GỌN GÀNG KHI XOAY NGANG */
+      /* TOP BAR GỌN GÀNG KHI XOAY NGANG: KÉO TÊN FILE SÁT VÀO NÚT THAY ĐỔI NỀN SÁNG TỐI */
       .top-header {
-        top: 4px !important;
-        left: 8px !important;
-        right: 8px !important;
+        top: max(6px, env(safe-area-inset-top, 6px)) !important;
+        left: auto !important;
+        right: max(8px, env(safe-area-inset-right, 8px)) !important;
+        width: auto !important;
+        justify-content: flex-end !important;
+        gap: 6px !important;
+        pointer-events: none;
+      }
+      .top-header > * {
+        pointer-events: auto;
       }
       .brand-pill {
-        padding: 5px 12px !important;
-        max-width: 45vw !important;
+        padding: 4px 10px !important;
+        max-width: 26vw !important;
+        margin-right: 0 !important;
       }
       .project-name {
-        font-size: 12px !important;
+        font-size: 11.5px !important;
       }
       .icon-btn {
         height: 32px !important;
@@ -2143,22 +2162,6 @@
       /* HIỆN NÚT TOÀN MÀN HÌNH KHI XOAY NGANG */
       #btnToggleFullscreen {
         display: inline-flex !important;
-      }
-      .selected-part-pill {
-        top: 38px !important;
-        left: 8px !important;
-        padding: 4px 10px 4px 6px !important;
-      }
-      .selected-part-pill .pill-info-icon {
-        width: 18px !important;
-        height: 18px !important;
-      }
-      .selected-part-pill .pill-info-icon svg {
-        width: 11px !important;
-        height: 11px !important;
-      }
-      .selected-part-pill .pill-text {
-        font-size: 11px !important;
       }
     }
 
