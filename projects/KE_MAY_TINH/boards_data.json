@@ -1,0 +1,590 @@
+[
+  {
+    "board_index": 1,
+    "part_name": "Kệ máy tính - Nóc <Chập đôi, chỉ 43>",
+    "module_name": "Kệ máy tính",
+    "length": 1388.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (1mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 2,
+    "part_name": "Kệ máy tính - Nóc <Chập đôi, chỉ 43>",
+    "module_name": "Kệ máy tính",
+    "length": 1388.0,
+    "width": 248.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (1mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 3,
+    "part_name": "Kệ máy tính - Hông phải",
+    "module_name": "Kệ máy tính",
+    "length": 248.0,
+    "width": 192.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 1mm | R1: 1mm | R2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 4,
+    "part_name": "Kệ máy tính - Tầng",
+    "module_name": "Kệ máy tính",
+    "length": 444.5,
+    "width": 248.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 1mm | D2: 1mm | R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 5,
+    "part_name": "Kệ máy tính - Vách",
+    "module_name": "Kệ máy tính",
+    "length": 248.0,
+    "width": 190.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 1mm | D2: 1mm | R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 6,
+    "part_name": "Kệ máy tính - Vách",
+    "module_name": "Kệ máy tính",
+    "length": 230.0,
+    "width": 190.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 1mm | D2: 1mm | R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 7,
+    "part_name": "Kệ máy tính - Hông trái",
+    "module_name": "Kệ máy tính",
+    "length": 230.0,
+    "width": 181.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 1mm | R1: 1mm | R2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 8,
+    "part_name": "Kệ máy tính - Đáy",
+    "module_name": "Kệ máy tính",
+    "length": 487.0,
+    "width": 230.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 1mm | D2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 9,
+    "part_name": "Kệ máy tính - HK-T trái",
+    "module_name": "Kệ máy tính",
+    "length": 230.0,
+    "width": 116.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 10,
+    "part_name": "Kệ máy tính - HK-T phải",
+    "module_name": "Kệ máy tính",
+    "length": 230.0,
+    "width": 116.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 11,
+    "part_name": "Kệ máy tính - Mặt cánh",
+    "module_name": "Kệ máy tính",
+    "length": 496.0,
+    "width": 152.3,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (1mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 12,
+    "part_name": "Kệ máy tính - HK-Đáy",
+    "module_name": "Kệ máy tính",
+    "length": 426.0,
+    "width": 230.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 13,
+    "part_name": "Kệ máy tính - HK-T trước",
+    "module_name": "Kệ máy tính",
+    "length": 426.0,
+    "width": 79.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 14,
+    "part_name": "Kệ máy tính - HK-T sau",
+    "module_name": "Kệ máy tính",
+    "length": 426.0,
+    "width": 99.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "Chỉ 21mm - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  }
+]
