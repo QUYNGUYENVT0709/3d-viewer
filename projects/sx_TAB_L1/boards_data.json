@@ -1,0 +1,6386 @@
+[
+  {
+    "board_index": 206,
+    "part_name": "PN1-BÀN PHẤN-THÀNH SAU-HK",
+    "module_name": "PN1",
+    "length": 361.3,
+    "width": 64.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 211,
+    "part_name": "PN1-BÀN PHẤN-THÀNH SAU-HK",
+    "module_name": "PN1",
+    "length": 361.3,
+    "width": 64.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 213,
+    "part_name": "PN1-BÀN PHẤN-THÀNH TRƯỚC-HK",
+    "module_name": "PN1",
+    "length": 361.3,
+    "width": 64.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 218,
+    "part_name": "PN1-TAB TREO[1]ĐÀ MÓC CÁNH",
+    "module_name": "PN1",
+    "length": 907.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 220,
+    "part_name": "PN1-BÀN PHẤN-NÓC",
+    "module_name": "PN1",
+    "length": 1038.0,
+    "width": 294.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 229,
+    "part_name": "PN1-BÀN PHẤN-ĐÁY",
+    "module_name": "PN1",
+    "length": 1003.5,
+    "width": 276.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 232,
+    "part_name": "PN1-BÀN PHẤN-HẬU",
+    "module_name": "PN1",
+    "length": 1004.5,
+    "width": 137.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 237,
+    "part_name": "PN1-TAB TREO[1]ĐÁY",
+    "module_name": "PN1",
+    "length": 929.0,
+    "width": 368.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 238,
+    "part_name": "PN1-TAB TREO[1]NÓC",
+    "module_name": "PN1",
+    "length": 940.0,
+    "width": 388.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 239,
+    "part_name": "PN1-TAB TREO[1]CÁNH VÁT",
+    "module_name": "PN1",
+    "length": 938.0,
+    "width": 166.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 255,
+    "part_name": "PN1-TAB TREO[1]ĐÀ MÓC CÁNH",
+    "module_name": "PN1",
+    "length": 907.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 425,
+    "part_name": "PN1-TAB TREO[2]ĐÁY",
+    "module_name": "PN1",
+    "length": 921.0,
+    "width": 368.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 428,
+    "part_name": "PN1-TAB TREO[2]NÓC",
+    "module_name": "PN1",
+    "length": 932.0,
+    "width": 388.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 462,
+    "part_name": "PN1-TAB TREO[1]CÁNH VÁT",
+    "module_name": "PN1",
+    "length": 938.0,
+    "width": 166.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 470,
+    "part_name": "PN3-BÀN PHẤN-HẬU",
+    "module_name": "PN3",
+    "length": 446.5,
+    "width": 115.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 506,
+    "part_name": "PN2-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN2",
+    "length": 736.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 216,
+    "part_name": "PN1-BÀN PHẤN-THÀNH TRƯỚC-HK",
+    "module_name": "PN1",
+    "length": 361.3,
+    "width": 64.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 219,
+    "part_name": "PN1-BÀN PHẤN-XƯƠNG CUỐN CONG",
+    "module_name": "PN1",
+    "length": 115.0,
+    "width": 30.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 230,
+    "part_name": "PN1-BÀN PHẤN-XƯƠNG CUỐN CONG",
+    "module_name": "PN1",
+    "length": 115.0,
+    "width": 30.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 235,
+    "part_name": "PN1-BÀN PHẤN-XƯƠNG CUỐN CONG",
+    "module_name": "PN1",
+    "length": 115.0,
+    "width": 30.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 240,
+    "part_name": "PN1-TAB TREO[1]HẬU",
+    "module_name": "PN1",
+    "length": 907.0,
+    "width": 376.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 243,
+    "part_name": "PN1-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN1",
+    "length": 868.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 245,
+    "part_name": "PN1-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN1",
+    "length": 868.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 247,
+    "part_name": "PN1-TAB TREO[1]THÀNH SAU-HK",
+    "module_name": "PN1",
+    "length": 868.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 248,
+    "part_name": "PN1-TAB TREO[1]THÀNH TRÁI-HK",
+    "module_name": "PN1",
+    "length": 300.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 250,
+    "part_name": "PN1-TAB TREO[1]THÀNH PHẢI-HK",
+    "module_name": "PN1",
+    "length": 300.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 252,
+    "part_name": "PN1-TAB TREO[1]THÀNH PHẢI-HK",
+    "module_name": "PN1",
+    "length": 300.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 267,
+    "part_name": "PN1-TAB TREO[2]THÀNH TRƯỚC-HK",
+    "module_name": "PN1",
+    "length": 860.0,
+    "width": 249.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 268,
+    "part_name": "PN1-TAB TREO[2]THÀNH SAU-HK",
+    "module_name": "PN1",
+    "length": 860.0,
+    "width": 249.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 270,
+    "part_name": "PN1-TAB TREO[2]ĐÀ MÓC CÁNH",
+    "module_name": "PN1",
+    "length": 899.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 429,
+    "part_name": "PN1-TAB TREO[2]HẬU",
+    "module_name": "PN1",
+    "length": 899.0,
+    "width": 376.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 430,
+    "part_name": "PN2-TAB TREO[1]ĐÀ MÓC CÁNH",
+    "module_name": "PN2",
+    "length": 775.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 444,
+    "part_name": "PN3-TAB TREO[1]THÀNH TRÁI-HK",
+    "module_name": "PN3",
+    "length": 350.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 455,
+    "part_name": "PN3-TAB TREO[2]ĐÁY",
+    "module_name": "PN3",
+    "length": 880.0,
+    "width": 428.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 458,
+    "part_name": "PN3-TAB TREO[2]ĐÀ MÓC CÁNH",
+    "module_name": "PN3",
+    "length": 858.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 461,
+    "part_name": "PN1-TAB TREO[2]CÁNH VÁT",
+    "module_name": "PN1",
+    "length": 930.0,
+    "width": 356.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 466,
+    "part_name": "PN3-TAB TREO[2]NÓC",
+    "module_name": "PN3",
+    "length": 891.0,
+    "width": 448.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 468,
+    "part_name": "PN3-BÀN PHẤN-XƯƠNG CUỐN CONG",
+    "module_name": "PN3",
+    "length": 115.0,
+    "width": 30.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 477,
+    "part_name": "PN3-BÀN PHẤN-XƯƠNG CUỐN CONG",
+    "module_name": "PN3",
+    "length": 115.0,
+    "width": 30.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 485,
+    "part_name": "PN3-BÀN PHẤN-THÀNH TRƯỚC-HK",
+    "module_name": "PN3",
+    "length": 297.5,
+    "width": 59.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 231,
+    "part_name": "PN1-BÀN PHẤN-ĐỐ",
+    "module_name": "PN1",
+    "length": 132.5,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 251,
+    "part_name": "PN1-TAB TREO[1]THÀNH SAU-HK",
+    "module_name": "PN1",
+    "length": 857.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 276,
+    "part_name": "PN2-TAB TREO[2]NÓC",
+    "module_name": "PN2",
+    "length": 806.0,
+    "width": 448.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 285,
+    "part_name": "PN2-TAB TREO[2]ĐÀ MÓC CÁNH",
+    "module_name": "PN2",
+    "length": 773.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 413,
+    "part_name": "PN2-TAB TREO[1]HẬU",
+    "module_name": "PN2",
+    "length": 775.0,
+    "width": 376.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 417,
+    "part_name": "PN2-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN2",
+    "length": 736.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 422,
+    "part_name": "PN2-TAB TREO[1]NÓC",
+    "module_name": "PN2",
+    "length": 808.0,
+    "width": 448.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 426,
+    "part_name": "PN1-TAB TREO[2]HÔNG PHẢI",
+    "module_name": "PN1",
+    "length": 381.5,
+    "width": 368.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 432,
+    "part_name": "PN2-TAB TREO[1]ĐÀ MÓC CÁNH",
+    "module_name": "PN2",
+    "length": 775.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 452,
+    "part_name": "PN3-TAB TREO[2]CÁNH VÁT",
+    "module_name": "PN3",
+    "length": 889.0,
+    "width": 356.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 453,
+    "part_name": "PN3-TAB TREO[2]HẬU",
+    "module_name": "PN3",
+    "length": 858.0,
+    "width": 376.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 456,
+    "part_name": "PN3-TAB TREO[1]ĐÀ MÓC CÁNH",
+    "module_name": "PN3",
+    "length": 621.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 457,
+    "part_name": "PN3-TAB TREO[2]THÀNH PHẢI-HK",
+    "module_name": "PN3",
+    "length": 350.0,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 460,
+    "part_name": "PN3-TAB TREO[2]THÀNH TRƯỚC-HK",
+    "module_name": "PN3",
+    "length": 819.0,
+    "width": 249.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 467,
+    "part_name": "PN3-TAB TREO[2]THÀNH SAU-HK",
+    "module_name": "PN3",
+    "length": 819.0,
+    "width": 249.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 482,
+    "part_name": "PN3-BÀN PHẤN-THÀNH SAU-HK",
+    "module_name": "PN3",
+    "length": 297.5,
+    "width": 59.6,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 504,
+    "part_name": "PN2-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN2",
+    "length": 736.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 505,
+    "part_name": "PN2-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN2",
+    "length": 736.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 249,
+    "part_name": "PN1-TAB TREO[1]THÀNH TRÁI-HK",
+    "module_name": "PN1",
+    "length": 300.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 278,
+    "part_name": "PN2-TAB TREO[2]THÀNH SAU-HK",
+    "module_name": "PN2",
+    "length": 734.0,
+    "width": 249.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 280,
+    "part_name": "PN2-TAB TREO[2]ĐÁY",
+    "module_name": "PN2",
+    "length": 795.0,
+    "width": 428.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 282,
+    "part_name": "PN2-TAB TREO[2]HẬU",
+    "module_name": "PN2",
+    "length": 773.0,
+    "width": 365.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 284,
+    "part_name": "PN2-TAB TREO[2]CÁNH VÁT",
+    "module_name": "PN2",
+    "length": 804.0,
+    "width": 356.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 286,
+    "part_name": "PN2-TAB TREO[2]THÀNH TRƯỚC-HK",
+    "module_name": "PN2",
+    "length": 734.0,
+    "width": 249.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 415,
+    "part_name": "PN2-TAB TREO[1]CÁNH VÁT",
+    "module_name": "PN2",
+    "length": 806.0,
+    "width": 166.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 419,
+    "part_name": "PN2-TAB TREO[1]ĐÁY",
+    "module_name": "PN2",
+    "length": 797.0,
+    "width": 428.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 420,
+    "part_name": "PN2-TAB TREO[1]CÁNH VÁT",
+    "module_name": "PN2",
+    "length": 806.0,
+    "width": 166.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 449,
+    "part_name": "PN3-TAB TREO[1]ĐÀ MÓC CÁNH",
+    "module_name": "PN3",
+    "length": 621.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 451,
+    "part_name": "PN3-TAB TREO[1]CÁNH VÁT",
+    "module_name": "PN3",
+    "length": 652.0,
+    "width": 166.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 463,
+    "part_name": "PN3-TAB TREO[1]THÀNH PHẢI-HK",
+    "module_name": "PN3",
+    "length": 350.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 469,
+    "part_name": "PN3-BÀN PHẤN-VÁCH",
+    "module_name": "PN3",
+    "length": 586.0,
+    "width": 137.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 471,
+    "part_name": "PN3-BÀN PHẤN-HÔNG PHẢI",
+    "module_name": "PN3",
+    "length": 638.0,
+    "width": 131.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 476,
+    "part_name": "PN3-BÀN PHẤN-XUONGCUONCONG",
+    "module_name": "PN3",
+    "length": 587.0,
+    "width": 92.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 478,
+    "part_name": "PN3-BÀN PHẤN-XUONGCUONCONG",
+    "module_name": "PN3",
+    "length": 587.0,
+    "width": 92.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 487,
+    "part_name": "PN3-BÀN PHẤN-TẤM CUỐN CONG",
+    "module_name": "PN3",
+    "length": 713.6,
+    "width": 131.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 488,
+    "part_name": "PN3-BÀN PHẤN-TẤM CUỐN CONG",
+    "module_name": "PN3",
+    "length": 713.6,
+    "width": 131.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 498,
+    "part_name": "PN3-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN3",
+    "length": 582.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 501,
+    "part_name": "PN3-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN3",
+    "length": 582.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 502,
+    "part_name": "PN3-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN3",
+    "length": 582.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 212,
+    "part_name": "PN1-BÀN PHẤN-THÀNH PHẢI-HK",
+    "module_name": "PN1",
+    "length": 240.0,
+    "width": 74.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 214,
+    "part_name": "PN1-BÀN PHẤN-THÀNH TRÁI-HK",
+    "module_name": "PN1",
+    "length": 240.0,
+    "width": 74.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 215,
+    "part_name": "PN1-BÀN PHẤN-THÀNH TRÁI-HK",
+    "module_name": "PN1",
+    "length": 240.0,
+    "width": 74.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 225,
+    "part_name": "PN1-BÀN PHẤN-XUONGCUONCONG",
+    "module_name": "PN1",
+    "length": 260.5,
+    "width": 92.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 227,
+    "part_name": "PN1-BÀN PHẤN-CÁNH VÁT",
+    "module_name": "PN1",
+    "length": 421.5,
+    "width": 128.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 233,
+    "part_name": "PN1-BÀN PHẤN-XUONGCUONCONG",
+    "module_name": "PN1",
+    "length": 260.5,
+    "width": 92.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 236,
+    "part_name": "PN1-TAB TREO[1]HÔNG TRÁI",
+    "module_name": "PN1",
+    "length": 381.5,
+    "width": 368.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 256,
+    "part_name": "PN1-BÀN PHẤN-CÁNH VÁT",
+    "module_name": "PN1",
+    "length": 421.5,
+    "width": 128.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 414,
+    "part_name": "PN2-TAB TREO[1]HÔNG PHẢI",
+    "module_name": "PN2",
+    "length": 428.0,
+    "width": 381.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 416,
+    "part_name": "PN2-TAB TREO[1]THÀNH PHẢI-HK",
+    "module_name": "PN2",
+    "length": 350.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 418,
+    "part_name": "PN2-TAB TREO[1]THÀNH TRÁI-HK",
+    "module_name": "PN2",
+    "length": 350.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 421,
+    "part_name": "PN2-TAB TREO[1]THÀNH TRÁI-HK",
+    "module_name": "PN2",
+    "length": 350.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 431,
+    "part_name": "PN2-TAB TREO[1]THÀNH PHẢI-HK",
+    "module_name": "PN2",
+    "length": 350.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 440,
+    "part_name": "PN3-TAB TREO[1]ĐÁY",
+    "module_name": "PN3",
+    "length": 643.0,
+    "width": 428.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 441,
+    "part_name": "PN3-TAB TREO[1]NÓC",
+    "module_name": "PN3",
+    "length": 654.0,
+    "width": 448.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 442,
+    "part_name": "PN3-TAB TREO[1]THÀNH PHẢI-HK",
+    "module_name": "PN3",
+    "length": 350.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 443,
+    "part_name": "PN3-TAB TREO[1]HẬU",
+    "module_name": "PN3",
+    "length": 621.0,
+    "width": 376.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 445,
+    "part_name": "PN3-TAB TREO[1]THÀNH TRÁI-HK",
+    "module_name": "PN3",
+    "length": 350.0,
+    "width": 87.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 448,
+    "part_name": "PN3-TAB TREO[1]CÁNH VÁT",
+    "module_name": "PN3",
+    "length": 652.0,
+    "width": 166.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "CANH"
+  },
+  {
+    "board_index": 473,
+    "part_name": "PN3-BÀN PHẤN-CÁNH VÁT",
+    "module_name": "PN3",
+    "length": 350.0,
+    "width": 128.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 475,
+    "part_name": "PN3-BÀN PHẤN-NÓC",
+    "module_name": "PN3",
+    "length": 638.0,
+    "width": 480.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 479,
+    "part_name": "PN3-BÀN PHẤN-ĐÁY",
+    "module_name": "PN3",
+    "length": 620.0,
+    "width": 446.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 480,
+    "part_name": "PN3-KHUNG GƯƠNG",
+    "module_name": "PN3",
+    "length": 698.0,
+    "width": 463.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 481,
+    "part_name": "PN3-KHUNG GƯƠNG",
+    "module_name": "PN3",
+    "length": 698.0,
+    "width": 639.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 484,
+    "part_name": "PN3-BÀN PHẤN-THÀNH TRÁI-HK",
+    "module_name": "PN3",
+    "length": 530.0,
+    "width": 69.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 486,
+    "part_name": "PN3-BÀN PHẤN-THÀNH PHẢI-HK",
+    "module_name": "PN3",
+    "length": 530.0,
+    "width": 69.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 503,
+    "part_name": "PN3-TAB TREO[1]THÀNH TRƯỚC-HK",
+    "module_name": "PN3",
+    "length": 582.0,
+    "width": 77.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 205,
+    "part_name": "PN1-BÀN PHẤN-VÁCH",
+    "module_name": "PN1",
+    "length": 259.6,
+    "width": 137.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 207,
+    "part_name": "PN1-BÀN PHẤN-VÁCH",
+    "module_name": "PN1",
+    "length": 259.5,
+    "width": 137.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 208,
+    "part_name": "PN1-BÀN PHẤN-VÁCH",
+    "module_name": "PN1",
+    "length": 259.5,
+    "width": 137.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 209,
+    "part_name": "PN1-BÀN PHẤN-THÀNH PHẢI-HK",
+    "module_name": "PN1",
+    "length": 240.0,
+    "width": 74.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 228,
+    "part_name": "PN1-BÀN PHẤN-HÔNG PHẢI",
+    "module_name": "PN1",
+    "length": 294.0,
+    "width": 131.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 241,
+    "part_name": "PN1-TAB TREO[1]HÔNG PHẢI",
+    "module_name": "PN1",
+    "length": 381.5,
+    "width": 368.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 253,
+    "part_name": "PN1-BÀN PHẤN-TẤM CUỐN CONG",
+    "module_name": "PN1",
+    "length": 369.6,
+    "width": 131.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 254,
+    "part_name": "PN1-BÀN PHẤN-TẤM CUỐN CONG",
+    "module_name": "PN1",
+    "length": 369.6,
+    "width": 131.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 266,
+    "part_name": "PN1-TAB TREO[2]THÀNH TRÁI-HK",
+    "module_name": "PN1",
+    "length": 300.0,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 269,
+    "part_name": "PN1-TAB TREO[2]THÀNH PHẢI-HK",
+    "module_name": "PN1",
+    "length": 300.0,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 273,
+    "part_name": "PN2-TAB TREO[2]HÔNG TRÁI",
+    "module_name": "PN2",
+    "length": 428.0,
+    "width": 381.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 275,
+    "part_name": "PN2-TAB TREO[2]THÀNH TRÁI-HK",
+    "module_name": "PN2",
+    "length": 350.0,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 279,
+    "part_name": "PN2-TAB TREO[2]HÔNG PHẢI",
+    "module_name": "PN2",
+    "length": 428.0,
+    "width": 381.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 281,
+    "part_name": "PN2-TAB TREO[2]THÀNH PHẢI-HK",
+    "module_name": "PN2",
+    "length": 350.0,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 424,
+    "part_name": "PN2-TAB TREO[1]HÔNG TRÁI",
+    "module_name": "PN2",
+    "length": 428.0,
+    "width": 381.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 427,
+    "part_name": "PN1-TAB TREO[2]HÔNG TRÁI",
+    "module_name": "PN1",
+    "length": 381.5,
+    "width": 368.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 447,
+    "part_name": "PN3-TAB TREO[1]HÔNG PHẢI",
+    "module_name": "PN3",
+    "length": 428.0,
+    "width": 381.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 450,
+    "part_name": "PN3-TAB TREO[2]HÔNG TRÁI",
+    "module_name": "PN3",
+    "length": 428.0,
+    "width": 381.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 454,
+    "part_name": "PN3-TAB TREO[2]THÀNH TRÁI-HK",
+    "module_name": "PN3",
+    "length": 350.0,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 464,
+    "part_name": "PN3-TAB TREO[2]HÔNG PHẢI",
+    "module_name": "PN3",
+    "length": 428.0,
+    "width": 381.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 497,
+    "part_name": "PN3-TAB TREO[1]HÔNG TRÁI",
+    "module_name": "PN3",
+    "length": 428.0,
+    "width": 381.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "VÁN AN CƯỜNG - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 423,
+    "part_name": "PN2-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN2",
+    "length": 734.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 433,
+    "part_name": "PN2-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN2",
+    "length": 734.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 465,
+    "part_name": "PN3-TAB TREO[2]ĐÁY-HK",
+    "module_name": "PN3",
+    "length": 817.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 483,
+    "part_name": "PN3-BÀN PHẤN-ĐÁY-HK",
+    "module_name": "PN3",
+    "length": 530.0,
+    "width": 295.5,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 508,
+    "part_name": "508",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 930.0,
+    "width": 700.0,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 581,
+    "part_name": "PN2-TAB TREO[2]ĐÁY-HK",
+    "module_name": "PN2",
+    "length": 732.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 595,
+    "part_name": "PN3-TAB TREO[2]ĐÁY-HK",
+    "module_name": "PN3",
+    "length": 817.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 600,
+    "part_name": "PN2-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN2",
+    "length": 734.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 639,
+    "part_name": "PN2-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN2",
+    "length": 734.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 7,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 244,
+    "part_name": "PN1-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 866.0,
+    "width": 300.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 246,
+    "part_name": "PN1-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 866.0,
+    "width": 300.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 277,
+    "part_name": "PN2-TAB TREO[2]ĐÁY-HK",
+    "module_name": "PN2",
+    "length": 732.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 446,
+    "part_name": "PN3-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN3",
+    "length": 580.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 459,
+    "part_name": "PN3-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN3",
+    "length": 580.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 585,
+    "part_name": "PN1-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 866.0,
+    "width": 300.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 593,
+    "part_name": "PN1-BÀN PHẤN-ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 359.3,
+    "width": 240.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 606,
+    "part_name": "PN1-BÀN PHẤN-ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 359.3,
+    "width": 240.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 609,
+    "part_name": "PN1-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 866.0,
+    "width": 300.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 632,
+    "part_name": "PN3-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN3",
+    "length": 580.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 636,
+    "part_name": "PN3-BÀN PHẤN-ĐÁY-HK",
+    "module_name": "PN3",
+    "length": 530.0,
+    "width": 295.5,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 641,
+    "part_name": "PN3-TAB TREO[1]ĐÁY-HK",
+    "module_name": "PN3",
+    "length": 580.0,
+    "width": 350.0,
+    "thickness": 9.5,
+    "sheet_id": 8,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 210,
+    "part_name": "PN1-BÀN PHẤN-ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 359.3,
+    "width": 240.0,
+    "thickness": 9.5,
+    "sheet_id": 9,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 217,
+    "part_name": "PN1-BÀN PHẤN-ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 359.3,
+    "width": 240.0,
+    "thickness": 9.5,
+    "sheet_id": 9,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 265,
+    "part_name": "PN1-TAB TREO[2]ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 858.0,
+    "width": 300.0,
+    "thickness": 9.5,
+    "sheet_id": 9,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  },
+  {
+    "board_index": 629,
+    "part_name": "PN1-TAB TREO[2]ĐÁY-HK",
+    "module_name": "PN1",
+    "length": 858.0,
+    "width": 300.0,
+    "thickness": 9.5,
+    "sheet_id": 9,
+    "sheet_type": "VÁN AN CƯỜNG - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "HOCKEO"
+  }
+]
