@@ -1,0 +1,6344 @@
+[
+  {
+    "board_index": 290,
+    "part_name": "Bếp trên - Đáy",
+    "module_name": "Bếp trên",
+    "length": 1359.5,
+    "width": 580.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 290,
+    "part_name": "Bếp trên - Đáy",
+    "module_name": "Bếp trên",
+    "length": 1359.5,
+    "width": 580.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 310,
+    "part_name": "Tủ máy giặt - md giữa - Đà",
+    "module_name": "Tủ máy giặt",
+    "length": 406.4,
+    "width": 50.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 319,
+    "part_name": "Tủ máy giặt - md dưới  - Hông phải",
+    "module_name": "Tủ máy giặt",
+    "length": 1871.5,
+    "width": 598.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 323,
+    "part_name": "Tủ máy giặt - md giữa - Vách",
+    "module_name": "Tủ máy giặt",
+    "length": 722.5,
+    "width": 563.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 323,
+    "part_name": "Tủ máy giặt - md giữa - Vách",
+    "module_name": "Tủ máy giặt",
+    "length": 722.5,
+    "width": 563.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 382,
+    "part_name": "Bếp dưới 1 - HK-T sau",
+    "module_name": "Bếp dưới 1",
+    "length": 803.5,
+    "width": 107.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 395,
+    "part_name": "Bếp dưới 2 - HK-T phải",
+    "module_name": "Bếp dưới 2",
+    "length": 500.0,
+    "width": 188.3,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 419,
+    "part_name": "Bếp trên - Tầng",
+    "module_name": "Bếp trên",
+    "length": 535.5,
+    "width": 429.8,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 274,
+    "part_name": "Bếp dưới 3 - Đà",
+    "module_name": "Bếp dưới 3",
+    "length": 151.5,
+    "width": 69.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 278,
+    "part_name": "Bếp dưới 3 - Chân",
+    "module_name": "Bếp dưới 3",
+    "length": 185.0,
+    "width": 100.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 279,
+    "part_name": "Bếp dưới 3 - Đà",
+    "module_name": "Bếp dưới 3",
+    "length": 151.5,
+    "width": 69.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 299,
+    "part_name": "Bếp dưới 2 - Cánh phải (Vát rộng)",
+    "module_name": "Bếp dưới 2",
+    "length": 728.5,
+    "width": 396.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 352,
+    "part_name": "Bếp dưới 1 - Hậu",
+    "module_name": "Bếp dưới 1",
+    "length": 2112.5,
+    "width": 777.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 360,
+    "part_name": "Bếp dưới 1 - Cánh trái (Vát rộng)",
+    "module_name": "Bếp dưới 1",
+    "length": 728.5,
+    "width": 396.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 361,
+    "part_name": "Bếp dưới 1 - Cánh phải (Vát rộng)",
+    "module_name": "Bếp dưới 1",
+    "length": 728.5,
+    "width": 413.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 377,
+    "part_name": "Bếp dưới 1 - HK-T sau",
+    "module_name": "Bếp dưới 1",
+    "length": 803.5,
+    "width": 170.8,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 334,
+    "part_name": "Tủ máy giặt - md dưới  - Chân",
+    "module_name": "Tủ máy giặt",
+    "length": 1237.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 346,
+    "part_name": "Tủ máy giặt - md giữa - Hậu",
+    "module_name": "Tủ máy giặt",
+    "length": 839.8,
+    "width": 722.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 371,
+    "part_name": "Bếp dưới 1 - HK-T trước",
+    "module_name": "Bếp dưới 1",
+    "length": 803.5,
+    "width": 150.8,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 372,
+    "part_name": "Bếp dưới 1 - HK-T sau",
+    "module_name": "Bếp dưới 1",
+    "length": 803.5,
+    "width": 170.7,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 376,
+    "part_name": "Bếp dưới 1 - HK-T trước",
+    "module_name": "Bếp dưới 1",
+    "length": 803.5,
+    "width": 150.8,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 398,
+    "part_name": "Bếp dưới 2 - HK-T sau",
+    "module_name": "Bếp dưới 2",
+    "length": 726.0,
+    "width": 170.8,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 414,
+    "part_name": "Bếp áp trần - Hậu",
+    "module_name": "Bếp áp trần",
+    "length": 1359.5,
+    "width": 1140.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 275,
+    "part_name": "Bếp dưới 3 - Hậu",
+    "module_name": "Bếp dưới 3",
+    "length": 777.5,
+    "width": 135.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 283,
+    "part_name": "Bếp dưới 2 - Hậu",
+    "module_name": "Bếp dưới 2",
+    "length": 1782.0,
+    "width": 777.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 286,
+    "part_name": "Bếp dưới 2 - Chân",
+    "module_name": "Bếp dưới 2",
+    "length": 1267.5,
+    "width": 100.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 362,
+    "part_name": "Bếp dưới 1 - Cánh trái (Vát rộng)",
+    "module_name": "Bếp dưới 1",
+    "length": 728.5,
+    "width": 413.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 392,
+    "part_name": "Bếp dưới 2 - HK-T trước",
+    "module_name": "Bếp dưới 2",
+    "length": 726.0,
+    "width": 150.8,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 396,
+    "part_name": "Bếp dưới 2 - HK-Đáy",
+    "module_name": "Bếp dưới 2",
+    "length": 724.0,
+    "width": 500.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 397,
+    "part_name": "Bếp dưới 2 - HK-T trước",
+    "module_name": "Bếp dưới 2",
+    "length": 726.0,
+    "width": 150.7,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 403,
+    "part_name": "Bếp dưới 2 - HK-T sau",
+    "module_name": "Bếp dưới 2",
+    "length": 726.0,
+    "width": 107.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 411,
+    "part_name": "Bếp dưới 3 - Cánh trái (Vát rộng)",
+    "module_name": "Bếp dưới 3",
+    "length": 728.5,
+    "width": 148.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 350,
+    "part_name": "Bếp dưới 1 - Ốp hông",
+    "module_name": "Bếp dưới 1",
+    "length": 857.5,
+    "width": 599.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 369,
+    "part_name": "Bếp dưới 1 - HK-T phải",
+    "module_name": "Bếp dưới 1",
+    "length": 500.0,
+    "width": 188.3,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 389,
+    "part_name": "Bếp dưới 2 - HK-T trái",
+    "module_name": "Bếp dưới 2",
+    "length": 500.0,
+    "width": 188.3,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 394,
+    "part_name": "Bếp dưới 2 - HK-T trái",
+    "module_name": "Bếp dưới 2",
+    "length": 500.0,
+    "width": 188.3,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 399,
+    "part_name": "Bếp dưới 2 - HK-T trái",
+    "module_name": "Bếp dưới 2",
+    "length": 500.0,
+    "width": 125.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 409,
+    "part_name": "Bếp dưới 3 - Hông phải",
+    "module_name": "Bếp dưới 3",
+    "length": 877.5,
+    "width": 579.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 413,
+    "part_name": "Bếp trên - Hậu",
+    "module_name": "Bếp trên",
+    "length": 1359.5,
+    "width": 982.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 298,
+    "part_name": "Bếp áp trần - Chỉ nóc",
+    "module_name": "Bếp áp trần",
+    "length": 1379.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CHỈ_NẸP"
+  },
+  {
+    "board_index": 315,
+    "part_name": "Tủ máy giặt - md trên - Tầng",
+    "module_name": "Tủ máy giặt",
+    "length": 540.8,
+    "width": 406.4,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 325,
+    "part_name": "Tủ máy giặt - md dưới  - Hông trái",
+    "module_name": "Tủ máy giặt",
+    "length": 1871.5,
+    "width": 598.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 351,
+    "part_name": "Bếp dưới 1 - Đáy",
+    "module_name": "Bếp dưới 1",
+    "length": 2112.5,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 365,
+    "part_name": "Bếp dưới 1 - Đà móc",
+    "module_name": "Bếp dưới 1",
+    "length": 877.5,
+    "width": 48.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 368,
+    "part_name": "Bếp dưới 1 - HK-T trái",
+    "module_name": "Bếp dưới 1",
+    "length": 500.0,
+    "width": 188.3,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 404,
+    "part_name": "Bếp dưới 2 - Đố",
+    "module_name": "Bếp dưới 2",
+    "length": 777.5,
+    "width": 98.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 282,
+    "part_name": "Bếp dưới 2 - Đáy",
+    "module_name": "Bếp dưới 2",
+    "length": 1782.0,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 316,
+    "part_name": "Tủ máy giặt - md dưới  - Vách",
+    "module_name": "Tủ máy giặt",
+    "length": 1805.5,
+    "width": 598.0,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 329,
+    "part_name": "Tủ máy giặt - md trên - Chỉ nóc",
+    "module_name": "Tủ máy giặt",
+    "length": 1290.0,
+    "width": 50.0,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CHỈ_NẸP"
+  },
+  {
+    "board_index": 374,
+    "part_name": "Bếp dưới 1 - HK-T phải",
+    "module_name": "Bếp dưới 1",
+    "length": 500.0,
+    "width": 188.3,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 380,
+    "part_name": "Bếp dưới 1 - HK-Đáy",
+    "module_name": "Bếp dưới 1",
+    "length": 801.5,
+    "width": 500.0,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 381,
+    "part_name": "Bếp dưới 1 - HK-T trước",
+    "module_name": "Bếp dưới 1",
+    "length": 803.5,
+    "width": 87.5,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 390,
+    "part_name": "Bếp dưới 2 - HK-T phải",
+    "module_name": "Bếp dưới 2",
+    "length": 500.0,
+    "width": 188.2,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 288,
+    "part_name": "Bếp trên - Hông trái",
+    "module_name": "Bếp trên",
+    "length": 993.5,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 292,
+    "part_name": "Bếp áp trần - Hông trái",
+    "module_name": "Bếp áp trần",
+    "length": 1140.0,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 295,
+    "part_name": "Bếp áp trần - Nóc",
+    "module_name": "Bếp áp trần",
+    "length": 1342.5,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 306,
+    "part_name": "Tủ máy giặt - Hông trái",
+    "module_name": "Tủ máy giặt",
+    "length": 1872.5,
+    "width": 79.0,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 330,
+    "part_name": "Tủ máy giặt - md trên - Nóc",
+    "module_name": "Tủ máy giặt",
+    "length": 1255.5,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 289,
+    "part_name": "Bếp trên - Hông trái",
+    "module_name": "Bếp trên",
+    "length": 993.5,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 294,
+    "part_name": "Bếp áp trần - Đáy",
+    "module_name": "Bếp áp trần",
+    "length": 1342.5,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 317,
+    "part_name": "Tủ máy giặt - md trên - Hông phải",
+    "module_name": "Tủ máy giặt",
+    "length": 1140.0,
+    "width": 563.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 321,
+    "part_name": "Tủ máy giặt - md dưới  - Tầng",
+    "module_name": "Tủ máy giặt",
+    "length": 1255.5,
+    "width": 581.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 353,
+    "part_name": "Đà",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 2112.5,
+    "width": 68.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 285,
+    "part_name": "Bếp dưới 2 - Đà",
+    "module_name": "Bếp dưới 2",
+    "length": 1782.0,
+    "width": 69.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 314,
+    "part_name": "Tủ máy giặt - md trên - Đáy",
+    "module_name": "Tủ máy giặt",
+    "length": 1255.5,
+    "width": 540.8,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 324,
+    "part_name": "Tủ máy giặt - md dưới  - Nóc",
+    "module_name": "Tủ máy giặt",
+    "length": 1255.5,
+    "width": 598.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 345,
+    "part_name": "Tủ máy giặt - md dưới  - Chân",
+    "module_name": "Tủ máy giặt",
+    "length": 564.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 347,
+    "part_name": "Tủ máy giặt - md trên - Hậu",
+    "module_name": "Tủ máy giặt",
+    "length": 1140.0,
+    "width": 839.8,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 393,
+    "part_name": "Bếp dưới 2 - HK-T sau",
+    "module_name": "Bếp dưới 2",
+    "length": 726.0,
+    "width": 170.7,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 402,
+    "part_name": "Bếp dưới 2 - HK-T trước",
+    "module_name": "Bếp dưới 2",
+    "length": 726.0,
+    "width": 87.5,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 291,
+    "part_name": "Bếp trên - Nóc",
+    "module_name": "Bếp trên",
+    "length": 1342.5,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 11,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 320,
+    "part_name": "Tủ máy giặt - md trên - Vách",
+    "module_name": "Tủ máy giặt",
+    "length": 1140.0,
+    "width": 563.5,
+    "thickness": 17.5,
+    "sheet_id": 11,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 327,
+    "part_name": "Tủ máy giặt - md trên - Chỉ nóc",
+    "module_name": "Tủ máy giặt",
+    "length": 1290.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 11,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CHỈ_NẸP"
+  },
+  {
+    "board_index": 336,
+    "part_name": "Tủ máy giặt - md dưới  - Đáy",
+    "module_name": "Tủ máy giặt",
+    "length": 1255.5,
+    "width": 598.0,
+    "thickness": 17.5,
+    "sheet_id": 11,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 386,
+    "part_name": "Bếp dưới 2 - Vách",
+    "module_name": "Bếp dưới 2",
+    "length": 760.0,
+    "width": 68.0,
+    "thickness": 17.5,
+    "sheet_id": 11,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 407,
+    "part_name": "Bếp dưới 2 - Tầng",
+    "module_name": "Bếp dưới 2",
+    "length": 964.5,
+    "width": 544.5,
+    "thickness": 17.5,
+    "sheet_id": 11,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 303,
+    "part_name": "Bếp áp trần - Chỉ nóc",
+    "module_name": "Bếp áp trần",
+    "length": 1379.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 12,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CHỈ_NẸP"
+  },
+  {
+    "board_index": 308,
+    "part_name": "Tủ máy giặt - md trên - Hậu",
+    "module_name": "Tủ máy giặt",
+    "length": 1140.0,
+    "width": 432.7,
+    "thickness": 17.5,
+    "sheet_id": 12,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 313,
+    "part_name": "Tủ máy giặt - md giữa - Nóc",
+    "module_name": "Tủ máy giặt",
+    "length": 1255.5,
+    "width": 563.5,
+    "thickness": 17.5,
+    "sheet_id": 12,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 326,
+    "part_name": "Tủ máy giặt - md trên - Hông trái",
+    "module_name": "Tủ máy giặt",
+    "length": 1140.0,
+    "width": 563.5,
+    "thickness": 17.5,
+    "sheet_id": 12,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 359,
+    "part_name": "Bếp dưới 1 - Vách",
+    "module_name": "Bếp dưới 1",
+    "length": 760.0,
+    "width": 68.0,
+    "thickness": 17.5,
+    "sheet_id": 12,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 391,
+    "part_name": "Bếp dưới 2 - HK-Đáy",
+    "module_name": "Bếp dưới 2",
+    "length": 724.0,
+    "width": 500.0,
+    "thickness": 17.5,
+    "sheet_id": 12,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 406,
+    "part_name": "Bếp dưới 2 - Đố",
+    "module_name": "Bếp dưới 2",
+    "length": 777.5,
+    "width": 98.0,
+    "thickness": 17.5,
+    "sheet_id": 12,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 417,
+    "part_name": "Bếp áp trần - Tầng",
+    "module_name": "Bếp áp trần",
+    "length": 535.5,
+    "width": 429.8,
+    "thickness": 17.5,
+    "sheet_id": 12,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 304,
+    "part_name": "Bếp áp trần - Vách",
+    "module_name": "Bếp áp trần",
+    "length": 1123.0,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 311,
+    "part_name": "Tủ máy giặt - md trên - Tầng",
+    "module_name": "Tủ máy giặt",
+    "length": 813.6,
+    "width": 539.8,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 355,
+    "part_name": "Bếp dưới 1 - Chân",
+    "module_name": "Bếp dưới 1",
+    "length": 2112.5,
+    "width": 100.0,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 373,
+    "part_name": "Bếp dưới 1 - HK-T trái",
+    "module_name": "Bếp dưới 1",
+    "length": 500.0,
+    "width": 188.3,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 378,
+    "part_name": "Bếp dưới 1 - HK-T trái",
+    "module_name": "Bếp dưới 1",
+    "length": 500.0,
+    "width": 125.0,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 379,
+    "part_name": "Bếp dưới 1 - HK-T phải",
+    "module_name": "Bếp dưới 1",
+    "length": 500.0,
+    "width": 125.0,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 400,
+    "part_name": "Bếp dưới 2 - HK-T phải",
+    "module_name": "Bếp dưới 2",
+    "length": 500.0,
+    "width": 125.0,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 415,
+    "part_name": "Bếp áp trần - Tầng",
+    "module_name": "Bếp áp trần",
+    "length": 877.2,
+    "width": 535.5,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 418,
+    "part_name": "Bếp trên - Tầng",
+    "module_name": "Bếp trên",
+    "length": 535.5,
+    "width": 429.8,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 420,
+    "part_name": "Bếp trên - Tầng",
+    "module_name": "Bếp trên",
+    "length": 877.2,
+    "width": 535.5,
+    "thickness": 17.5,
+    "sheet_id": 13,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 281,
+    "part_name": "Bếp dưới 2 - Hông phải",
+    "module_name": "Bếp dưới 2",
+    "length": 760.0,
+    "width": 544.5,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 293,
+    "part_name": "Bếp áp trần - Hông trái",
+    "module_name": "Bếp áp trần",
+    "length": 1140.0,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 296,
+    "part_name": "Bếp trên - Vách",
+    "module_name": "Bếp trên",
+    "length": 983.0,
+    "width": 545.5,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 322,
+    "part_name": "Tủ máy giặt - Hông trái",
+    "module_name": "Tủ máy giặt",
+    "length": 1862.5,
+    "width": 79.0,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 356,
+    "part_name": "Bếp dưới 1 - Vách",
+    "module_name": "Bếp dưới 1",
+    "length": 769.0,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 405,
+    "part_name": "Bếp dưới 2 - Vách góc",
+    "module_name": "Bếp dưới 2",
+    "length": 777.5,
+    "width": 547.0,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 280,
+    "part_name": "Bếp dưới 2 - Hông trái",
+    "module_name": "Bếp dưới 2",
+    "length": 760.0,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 284,
+    "part_name": "Đà",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 1782.0,
+    "width": 69.0,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 305,
+    "part_name": "Tủ máy giặt - md giữa - Hông trái",
+    "module_name": "Tủ máy giặt",
+    "length": 722.5,
+    "width": 563.5,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 318,
+    "part_name": "Tủ máy giặt - md giữa - Tầng",
+    "module_name": "Tủ máy giặt",
+    "length": 831.6,
+    "width": 563.5,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 333,
+    "part_name": "Tủ máy giặt - md dưới  - Chân",
+    "module_name": "Tủ máy giặt",
+    "length": 564.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 335,
+    "part_name": "Tủ máy giặt - md dưới  - Chân",
+    "module_name": "Tủ máy giặt",
+    "length": 564.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 349,
+    "part_name": "Bếp dưới 1 - Hông phải",
+    "module_name": "Bếp dưới 1",
+    "length": 760.0,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 358,
+    "part_name": "Bếp dưới 1 - Vách",
+    "module_name": "Bếp dưới 1",
+    "length": 769.0,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 421,
+    "part_name": "Bếp trên - Tầng",
+    "module_name": "Bếp trên",
+    "length": 877.2,
+    "width": 535.5,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 277,
+    "part_name": "Bếp dưới 3 - Hông trái",
+    "module_name": "Bếp dưới 3",
+    "length": 760.0,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 312,
+    "part_name": "Tủ máy giặt - md trên - Tầng",
+    "module_name": "Tủ máy giặt",
+    "length": 813.6,
+    "width": 520.0,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 344,
+    "part_name": "Tủ máy giặt - md dưới  - Chân",
+    "module_name": "Tủ máy giặt",
+    "length": 564.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 348,
+    "part_name": "Bếp dưới 1 - Hông trái",
+    "module_name": "Bếp dưới 1",
+    "length": 760.0,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 354,
+    "part_name": "Bếp dưới 1 - Đà",
+    "module_name": "Bếp dưới 1",
+    "length": 2112.5,
+    "width": 68.0,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 401,
+    "part_name": "Bếp dưới 2 - HK-Đáy",
+    "module_name": "Bếp dưới 2",
+    "length": 724.0,
+    "width": 500.0,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 408,
+    "part_name": "MRC - Hông phải",
+    "module_name": "MRC",
+    "length": 877.5,
+    "width": 579.0,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 416,
+    "part_name": "Bếp áp trần - Tầng",
+    "module_name": "Bếp áp trần",
+    "length": 877.2,
+    "width": 535.5,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 287,
+    "part_name": "Bếp dưới 2 - Vách",
+    "module_name": "Bếp dưới 2",
+    "length": 769.0,
+    "width": 543.5,
+    "thickness": 17.5,
+    "sheet_id": 17,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 297,
+    "part_name": "Bếp trên - Chỉ nóc",
+    "module_name": "Bếp trên",
+    "length": 877.5,
+    "width": 599.0,
+    "thickness": 17.5,
+    "sheet_id": 17,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CHỈ_NẸP"
+  },
+  {
+    "board_index": 331,
+    "part_name": "Tủ máy giặt - md giữa - Hông phải",
+    "module_name": "Tủ máy giặt",
+    "length": 722.5,
+    "width": 562.5,
+    "thickness": 17.5,
+    "sheet_id": 17,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 343,
+    "part_name": "Tủ máy giặt - md dưới  - Đà",
+    "module_name": "Tủ máy giặt",
+    "length": 1237.5,
+    "width": 65.5,
+    "thickness": 17.5,
+    "sheet_id": 17,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 370,
+    "part_name": "Bếp dưới 1 - HK-Đáy",
+    "module_name": "Bếp dưới 1",
+    "length": 801.5,
+    "width": 500.0,
+    "thickness": 17.5,
+    "sheet_id": 17,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 375,
+    "part_name": "Bếp dưới 1 - HK-Đáy",
+    "module_name": "Bếp dưới 1",
+    "length": 801.5,
+    "width": 500.0,
+    "thickness": 17.5,
+    "sheet_id": 17,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HỘC_KÉO"
+  },
+  {
+    "board_index": 410,
+    "part_name": "MRC - Nóc",
+    "module_name": "MRC",
+    "length": 645.0,
+    "width": 578.0,
+    "thickness": 17.5,
+    "sheet_id": 17,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 276,
+    "part_name": "Bếp dưới 3 - Đáy",
+    "module_name": "Bếp dưới 3",
+    "length": 543.5,
+    "width": 144.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 307,
+    "part_name": "Tủ máy giặt - md trên - Đà móc",
+    "module_name": "Tủ máy giặt",
+    "length": 813.6,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 328,
+    "part_name": "Tủ máy giặt - md giữa - Đáy",
+    "module_name": "Tủ máy giặt",
+    "length": 542.5,
+    "width": 424.4,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_THÙNG"
+  },
+  {
+    "board_index": 332,
+    "part_name": "Bếp áp trần - Chỉ nóc",
+    "module_name": "Bếp áp trần",
+    "length": 2040.0,
+    "width": 99.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CHỈ_NẸP"
+  },
+  {
+    "board_index": 337,
+    "part_name": "Tủ máy giặt - md dưới  - Chân",
+    "module_name": "Tủ máy giặt",
+    "length": 1237.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 357,
+    "part_name": "Bếp dưới 1 - Vách",
+    "module_name": "Bếp dưới 1",
+    "length": 760.0,
+    "width": 68.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 363,
+    "part_name": "Bếp dưới 1 - Mặt cánh (Vát dài)",
+    "module_name": "Bếp dưới 1",
+    "length": 873.5,
+    "width": 253.8,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 364,
+    "part_name": "Bếp dưới 1 - Mặt cánh (Vát dài)",
+    "module_name": "Bếp dưới 1",
+    "length": 873.5,
+    "width": 253.8,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 366,
+    "part_name": "Bếp dưới 1 - Mặt cánh (Vát dài)",
+    "module_name": "Bếp dưới 1",
+    "length": 873.5,
+    "width": 176.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 367,
+    "part_name": "Bếp dưới 1 - Đà móc",
+    "module_name": "Bếp dưới 1",
+    "length": 877.5,
+    "width": 48.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 383,
+    "part_name": "Bếp dưới 2 - Mặt cánh (Vát dài)",
+    "module_name": "Bếp dưới 2",
+    "length": 796.0,
+    "width": 253.8,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 384,
+    "part_name": "Bếp dưới 2 - Mặt cánh (Vát dài)",
+    "module_name": "Bếp dưới 2",
+    "length": 796.0,
+    "width": 253.8,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 385,
+    "part_name": "Bếp dưới 2 - Mặt cánh (Vát dài)",
+    "module_name": "Bếp dưới 2",
+    "length": 796.0,
+    "width": 176.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 387,
+    "part_name": "Bếp dưới 2 - Đà móc",
+    "module_name": "Bếp dưới 2",
+    "length": 800.0,
+    "width": 48.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 388,
+    "part_name": "Bếp dưới 2 - Đà móc",
+    "module_name": "Bếp dưới 2",
+    "length": 800.0,
+    "width": 48.0,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 412,
+    "part_name": "Tủ máy giặt - md giữa - Hậu",
+    "module_name": "Tủ máy giặt",
+    "length": 722.5,
+    "width": 432.7,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_HẬU"
+  },
+  {
+    "board_index": 422,
+    "part_name": "Bếp áp trần - Tầng",
+    "module_name": "Bếp áp trần",
+    "length": 535.5,
+    "width": 429.8,
+    "thickness": 17.5,
+    "sheet_id": 18,
+    "sheet_type": "C08_Toffee_Ember - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 309,
+    "part_name": "Tủ máy giặt - Cánh phải (Vát rộng)",
+    "module_name": "Tủ máy giặt",
+    "length": 1838.5,
+    "width": 402.4,
+    "thickness": 17.5,
+    "sheet_id": 19,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 338,
+    "part_name": "Bếp áp trần - Cánh trái (Vát rộng)",
+    "module_name": "Bếp áp trần",
+    "length": 1116.0,
+    "width": 447.7,
+    "thickness": 17.5,
+    "sheet_id": 19,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 339,
+    "part_name": "Bếp áp trần - Cánh trái (Vát rộng)",
+    "module_name": "Bếp áp trần",
+    "length": 1116.0,
+    "width": 452.1,
+    "thickness": 17.5,
+    "sheet_id": 19,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 302,
+    "part_name": "Bếp trên - Cánh trái (Vát rộng)",
+    "module_name": "Bếp trên",
+    "length": 996.0,
+    "width": 452.1,
+    "thickness": 17.5,
+    "sheet_id": 20,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 340,
+    "part_name": "Bếp áp trần - Cánh phải (Vát rộng)",
+    "module_name": "Bếp áp trần",
+    "length": 1116.0,
+    "width": 447.7,
+    "thickness": 17.5,
+    "sheet_id": 20,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 341,
+    "part_name": "Tủ máy giặt - Cánh trái (Vát rộng)",
+    "module_name": "Tủ máy giặt",
+    "length": 1116.0,
+    "width": 402.8,
+    "thickness": 17.5,
+    "sheet_id": 20,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 342,
+    "part_name": "Tủ máy giặt - Cánh phải (Vát rộng)",
+    "module_name": "Tủ máy giặt",
+    "length": 1116.0,
+    "width": 402.8,
+    "thickness": 17.5,
+    "sheet_id": 20,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 300,
+    "part_name": "Bếp trên - Cánh phải (Vát rộng)",
+    "module_name": "Bếp trên",
+    "length": 996.0,
+    "width": 447.7,
+    "thickness": 17.5,
+    "sheet_id": 21,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  },
+  {
+    "board_index": 301,
+    "part_name": "Bếp trên - Cánh trái (Vát rộng)",
+    "module_name": "Bếp trên",
+    "length": 996.0,
+    "width": 447.7,
+    "thickness": 17.5,
+    "sheet_id": 21,
+    "sheet_type": "C01_Vanilla_Cream - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "_CÁNH"
+  }
+]
