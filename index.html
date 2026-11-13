@@ -3053,6 +3053,10 @@
           layerEdgeMap = {};
           explodePlan = [];
           explodeFactor = 0;
+          const expSlider = document.getElementById('explodeSlider');
+          const expValSpan = document.getElementById('explodeValue');
+          if (expSlider) expSlider.value = 0;
+          if (expValSpan) expValSpan.textContent = '0%';
 
           const assetExtras = (gltf.asset && gltf.asset.extras) ? gltf.asset.extras : {};
           const isExactLtfGlb = !!assetExtras.ltfEdgeFormat;
@@ -3097,14 +3101,17 @@
               const isDashed = (primType === 'edge_dashed');
               if (isDashed) {
                 const stName = (child.userData.ltfLineStyle || 'Dash').toLowerCase();
-                let dashSz = 0.022 * dashScaleFactor;
-                let gapSz = 0.012 * dashScaleFactor;
+                const wScaleVec = new THREE.Vector3();
+                child.getWorldScale(wScaleVec);
+                const wScaleAvg = Math.max(1e-4, (Math.abs(wScaleVec.x) + Math.abs(wScaleVec.y) + Math.abs(wScaleVec.z)) / 3);
+                let dashSz = (0.020 * dashScaleFactor) / wScaleAvg;
+                let gapSz = (0.011 * dashScaleFactor) / wScaleAvg;
                 if (stName.includes('dot') && !stName.includes('dash')) {
-                  dashSz = 0.004 * dashScaleFactor;
-                  gapSz = 0.006 * dashScaleFactor;
+                  dashSz = (0.005 * dashScaleFactor) / wScaleAvg;
+                  gapSz = (0.006 * dashScaleFactor) / wScaleAvg;
                 } else if (stName.includes('short')) {
-                  dashSz = 0.012 * dashScaleFactor;
-                  gapSz = 0.008 * dashScaleFactor;
+                  dashSz = (0.012 * dashScaleFactor) / wScaleAvg;
+                  gapSz = (0.008 * dashScaleFactor) / wScaleAvg;
                 }
                 child.material = new THREE.LineDashedMaterial({
                   color: 0x000000,
@@ -5821,14 +5828,17 @@
       }
 
       // 2. RÃ RỜI CỤM CHI TIẾT BẢO TOÀN GROUP (GROUP-PRESERVING EXPLODE VIEW)
-      function isStructuralExplodeNode(node) {
+      function isStructuralExplodeNode(node, hasExplicitKinds) {
         if (!node || node.isLineSegments) return false;
         if (hasLabelAncestor(node)) return false;
-        if (node.userData && (node.userData.ltfKind === 'group' || node.userData.ltfKind === 'component')) {
-          return true;
+        if (hasExplicitKinds) {
+          if (node.userData && (node.userData.ltfKind === 'group' || node.userData.ltfKind === 'component')) {
+            return true;
+          }
+          return false;
         }
-        if (node.userData && node.userData.ltfKind === 'root_geom') return true;
-        return !node.isMesh && node.children && node.children.some(c => c.isMesh || c.isGroup || c.isLineSegments);
+        // Fallback cho GLB cũ xuất trước bản nâng cấp: hỗ trợ cả Mesh lẫn Group
+        return !!(node.isGroup || node.isMesh);
       }
 
       function computeExplodeBoardFlags(node) {
@@ -5847,6 +5857,21 @@
         return hasBoardDesc;
       }
 
+      function isLegacyAtomicMeshGroup(node) {
+        if (!node || !node.children || node.children.length === 0) return true;
+        if (node.userData && node.userData._ownBoardIdx != null) return true;
+        const nonLineChildren = node.children.filter(c => !c.isLineSegments);
+        if (nonLineChildren.length <= 1) return true;
+        // Nếu mọi con đều là Mesh lá có cùng boardIndex cụ thể => 1 tấm đa vật liệu (không xé lẻ)
+        const firstBIdx = (nonLineChildren[0].userData && nonLineChildren[0].userData.boardIndex != null)
+          ? nonLineChildren[0].userData.boardIndex
+          : null;
+        if (firstBIdx !== null && nonLineChildren.every(c => c.isMesh && c.userData && c.userData.boardIndex === firstBIdx)) {
+          return true;
+        }
+        return false;
+      }
+
       function resetAllExplodeNodePositions() {
         if (!modelRoot) return;
         modelRoot.traverse(obj => {
@@ -5862,17 +5887,24 @@
         if (!modelRoot) return;
 
         resetAllExplodeNodePositions();
+        let hasExplicitKinds = false;
+        modelRoot.traverse(o => {
+          if (o.userData && (o.userData.ltfKind === 'group' || o.userData.ltfKind === 'component')) {
+            hasExplicitKinds = true;
+          }
+        });
         const modelHasAnyBoards = computeExplodeBoardFlags(modelRoot);
 
         function collectExplodePlan(container, depth) {
           if (!container || !container.children) return;
-          const structuralChildren = container.children.filter(c => isStructuralExplodeNode(c));
+          const structuralChildren = container.children.filter(c => isStructuralExplodeNode(c, hasExplicitKinds));
           if (structuralChildren.length === 0) return;
 
-          const hasDirectMeshChild = container.children.some(c => c.isMesh || c.isLineSegments);
-          if (structuralChildren.length === 1 && !hasDirectMeshChild && (!container.userData || container.userData._ownBoardIdx == null)) {
-            collectExplodePlan(structuralChildren[0], depth);
-            return;
+          if (structuralChildren.length === 1 && (!container.userData || container.userData._ownBoardIdx == null)) {
+            if (hasExplicitKinds || (!structuralChildren[0].isMesh && !isLegacyAtomicMeshGroup(structuralChildren[0]))) {
+              collectExplodePlan(structuralChildren[0], depth);
+              return;
+            }
           }
 
           if (structuralChildren.length < 2 && depth > 0) return;
@@ -5912,10 +5944,14 @@
             });
 
             if (explodeMode === 'nested') {
-              const isOwnBoard = (child.userData && child.userData._ownBoardIdx != null);
-              const isHardwareComp = (child.userData && child.userData.ltfKind === 'component' && !child.userData._hasBoardDescendant);
-              const isNonAbfInAbfModel = (modelHasAnyBoards && child.userData && !child.userData._hasBoardDescendant);
-              if (!isOwnBoard && !isHardwareComp && !isNonAbfInAbfModel) {
+              if (hasExplicitKinds) {
+                const isOwnBoard = (child.userData && child.userData._ownBoardIdx != null);
+                const isHardwareComp = (child.userData && child.userData.ltfKind === 'component' && !child.userData._hasBoardDescendant);
+                const isNonAbfInAbfModel = (modelHasAnyBoards && child.userData && !child.userData._hasBoardDescendant);
+                if (!isOwnBoard && !isHardwareComp && !isNonAbfInAbfModel) {
+                  collectExplodePlan(child, depth + 1);
+                }
+              } else if (!child.isMesh && !isLegacyAtomicMeshGroup(child)) {
                 collectExplodePlan(child, depth + 1);
               }
             }
