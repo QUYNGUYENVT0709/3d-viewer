@@ -2264,7 +2264,7 @@
   <header class="top-header">
     <div class="brand-pill" title="Tên công trình">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color); flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <span class="project-name" id="displayProjectName">TUẤN</span>
+      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
     </div>
 
     <div class="top-tools">
@@ -4575,10 +4575,19 @@
         }
       }
 
-      async function openStreamWithHighRes(deviceIdOrFacing) {
-        const baseVideo = (typeof deviceIdOrFacing === 'string')
-          ? { deviceId: { exact: deviceIdOrFacing } }
-          : { facingMode: { ideal: deviceIdOrFacing || 'environment' } };
+      async function openStreamWithHighRes(cameraTarget) {
+        let baseVideo;
+        if (cameraTarget && typeof cameraTarget === 'object') {
+          if (cameraTarget.deviceId) {
+            baseVideo = { deviceId: { exact: cameraTarget.deviceId } };
+          } else {
+            baseVideo = { facingMode: { ideal: cameraTarget.facingMode || 'environment' } };
+          }
+        } else if (typeof cameraTarget === 'string' && cameraTarget !== 'environment' && cameraTarget !== 'user') {
+          baseVideo = { deviceId: { exact: cameraTarget } };
+        } else {
+          baseVideo = { facingMode: { ideal: cameraTarget || 'environment' } };
+        }
 
         const attempts = [
           Object.assign({}, baseVideo, {
@@ -4593,12 +4602,27 @@
           baseVideo
         ];
 
+        // Nếu đang tìm theo deviceId bị OverconstrainedError, fallback an toàn sang facingMode / camera mặc định
+        if (baseVideo.deviceId) {
+          attempts.push({
+            facingMode: { ideal: 'environment' },
+            width: { ideal: 1280 },
+            height: { ideal: 720 }
+          });
+        }
+        attempts.push({ facingMode: { ideal: 'environment' } });
+        attempts.push(true);
+
         let lastErr = null;
         for (let i = 0; i < attempts.length; i++) {
           try {
             return await navigator.mediaDevices.getUserMedia({ audio: false, video: attempts[i] });
           } catch (e) {
             lastErr = e;
+            // Nếu người dùng từ chối quyền Camera (NotAllowedError / PermissionDeniedError), dừng ngay không thử lại
+            if (e && (e.name === 'NotAllowedError' || e.name === 'PermissionDeniedError')) {
+              throw e;
+            }
           }
         }
         throw lastErr || new Error('Cannot start camera stream');
@@ -4665,11 +4689,14 @@
 
           await applyQrZoom(qrZoomLevel);
 
-          // Chỉ lưu camera sau vào localStorage, tuyệt đối không ghim nhầm camera trước
+          // Chỉ lưu camera sau thật (deviceId hợp lệ) vào localStorage, tuyệt đối không ghim nhầm camera trước
           const trackLabel = (qrVideoTrack && qrVideoTrack.label) || '';
           const isFrontCam = /front|user|trước|selfie/i.test(trackLabel);
-          if (typeof cameraIdOrFacing === 'string' && !isFrontCam) {
-            try { localStorage.setItem('ltf_preferred_back_cam_v2', cameraIdOrFacing); } catch (e) {}
+          const resolvedCamId = (qrVideoTrack && typeof qrVideoTrack.getSettings === 'function' && qrVideoTrack.getSettings().deviceId)
+            || (cameraIdOrFacing && typeof cameraIdOrFacing === 'object' ? cameraIdOrFacing.deviceId : null)
+            || (typeof cameraIdOrFacing === 'string' && cameraIdOrFacing !== 'environment' && cameraIdOrFacing !== 'user' ? cameraIdOrFacing : null);
+          if (resolvedCamId && !isFrontCam) {
+            try { localStorage.setItem('ltf_preferred_back_cam_v2', resolvedCamId); } catch (e) {}
           } else if (isFrontCam) {
             try { localStorage.removeItem('ltf_preferred_back_cam_v2'); } catch (e) {}
           }
@@ -4728,26 +4755,27 @@
 
         try {
           if (preferredCamId) {
-            await startCameraScanner(preferredCamId);
+            await startCameraScanner({ deviceId: preferredCamId });
             return;
           }
-          await startCameraScanner('environment');
+          await startCameraScanner({ facingMode: 'environment' });
         } catch (e1) {
           console.warn('Thử fallback sang danh sách camera sau:', e1);
           try {
             try { localStorage.removeItem('ltf_preferred_back_cam_v2'); } catch (e) {}
             const cams = await getBackAndAllCameras();
-            if (cams && cams.length > 0) {
-              qrCamerasList = cams;
-              let backIndex = cams.findIndex(c => /back|rear|environment|sau/i.test(c.label) && !/wide|ultra|macro|tele/i.test(c.label));
-              if (backIndex === -1) backIndex = cams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
+            const validCams = (cams || []).filter(c => c && c.deviceId);
+            if (validCams.length > 0) {
+              qrCamerasList = validCams;
+              let backIndex = validCams.findIndex(c => /back|rear|environment|sau/i.test(c.label) && !/wide|ultra|macro|tele/i.test(c.label));
+              if (backIndex === -1) backIndex = validCams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
               if (backIndex === -1) backIndex = 0;
               currentQrCamIndex = backIndex;
-              await startCameraScanner(cams[backIndex].deviceId);
-              if (btnSwitch && cams.length > 1) btnSwitch.style.display = 'inline-flex';
+              await startCameraScanner({ deviceId: validCams[backIndex].deviceId });
+              if (btnSwitch && validCams.length > 1) btnSwitch.style.display = 'inline-flex';
               return;
             }
-            await startCameraScanner('user');
+            await startCameraScanner({ facingMode: 'user' });
           } catch (finalErr) {
             alert('Không thể truy cập Camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(' + finalErr + ')');
             closeQrScanner();
@@ -4761,7 +4789,9 @@
         currentQrCamIndex = (currentQrCamIndex + 1) % qrCamerasList.length;
         try {
           const nextCamId = qrCamerasList[currentQrCamIndex].deviceId;
-          await startCameraScanner(nextCamId);
+          if (nextCamId) {
+            await startCameraScanner({ deviceId: nextCamId });
+          }
         } catch (e) {
           console.warn('Lỗi đổi camera:', e);
         }
