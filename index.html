@@ -5828,6 +5828,33 @@
       }
 
       // 2. RÃ RỜI CỤM CHI TIẾT BẢO TOÀN GROUP (GROUP-PRESERVING EXPLODE VIEW)
+      function hasRenderableMeshDescendant(node) {
+        if (!node) return false;
+        let found = false;
+        node.traverse(o => {
+          if (!found && !o.isLineSegments && o.isMesh && o.geometry) {
+            found = true;
+          }
+        });
+        return found;
+      }
+
+      function containerHasOwnMesh(node) {
+        if (!node || !node.children) return false;
+        return node.children.some(c => {
+          if (!c || c.isLineSegments) return false;
+          if (hasLabelAncestor(c)) return false;
+          if (c.userData && (c.userData.ltfKind === 'group' || c.userData.ltfKind === 'component' || c.userData.ltfKind === 'label')) {
+            return false;
+          }
+          if (c.isMesh && c.geometry) return true;
+          if (c.children && c.children.length > 0 && !(c.userData && c.userData.ltfKind) && c.children.every(gc => gc.isMesh || gc.isLineSegments)) {
+            return c.children.some(gc => gc.isMesh && gc.geometry);
+          }
+          return false;
+        });
+      }
+
       function isStructuralExplodeNode(node, hasExplicitKinds) {
         if (!node || node.isLineSegments) return false;
         if (hasLabelAncestor(node)) return false;
@@ -5837,15 +5864,28 @@
           }
           return false;
         }
-        // Fallback cho GLB cũ xuất trước bản nâng cấp: hỗ trợ cả Mesh lẫn Group
-        return !!(node.isGroup || node.isMesh);
+        // GLTFLoader r128 tạo Object3D (isGroup = undefined) cho các glTF node chỉ chứa children (SimLab/Assembly/Group)
+        if (node.isGroup || node.isMesh) return true;
+        if (node.children && node.children.length > 0 && hasRenderableMeshDescendant(node)) {
+          return true;
+        }
+        return false;
+      }
+
+      function isAbfBoardNodeName(name) {
+        if (!name) return false;
+        return /ABF_PART_\d+|\[ABF:\d+\]/i.test(String(name));
       }
 
       function computeExplodeBoardFlags(node) {
         if (!node) return false;
-        const ownBoard = (node.userData && node.userData.boardIndex !== undefined && node.userData.boardIndex !== null)
+        let ownBoard = (node.userData && node.userData.boardIndex !== undefined && node.userData.boardIndex !== null)
           ? node.userData.boardIndex
           : null;
+        if (ownBoard === null && isAbfBoardNodeName(node.name)) {
+          const m = String(node.name).match(/ABF_PART_(\d+)|\[ABF:(\d+)\]/i);
+          if (m) ownBoard = parseInt(m[1] || m[2], 10);
+        }
         let hasBoardDesc = (ownBoard !== null);
         if (node.children) {
           node.children.forEach(c => {
@@ -5860,7 +5900,12 @@
       function isLegacyAtomicMeshGroup(node) {
         if (!node || !node.children || node.children.length === 0) return true;
         if (node.userData && node.userData._ownBoardIdx != null) return true;
-        const nonLineChildren = node.children.filter(c => !c.isLineSegments);
+        if (isAbfBoardNodeName(node.name)) return true;
+        const nonLineChildren = node.children.filter(c => !c.isLineSegments && !hasLabelAncestor(c));
+        if (nonLineChildren.length === 0) return true;
+        // Nếu có ít nhất 1 con là container chứa hình học (Object3D/Group) => phải unwrap/duyệt tiếp, không coi là lá
+        const hasNestedContainer = nonLineChildren.some(c => !c.isMesh && c.children && c.children.length > 0 && hasRenderableMeshDescendant(c));
+        if (hasNestedContainer) return false;
         if (nonLineChildren.length <= 1) return true;
         // Nếu mọi con đều là Mesh lá có cùng boardIndex cụ thể => 1 tấm đa vật liệu (không xé lẻ)
         const firstBIdx = (nonLineChildren[0].userData && nonLineChildren[0].userData.boardIndex != null)
@@ -5900,14 +5945,15 @@
           const structuralChildren = container.children.filter(c => isStructuralExplodeNode(c, hasExplicitKinds));
           if (structuralChildren.length === 0) return;
 
-          if (structuralChildren.length === 1 && (!container.userData || container.userData._ownBoardIdx == null)) {
+          const hasOwnLooseGeo = (container !== modelRoot) && containerHasOwnMesh(container);
+          if (structuralChildren.length === 1 && !hasOwnLooseGeo && (!container.userData || container.userData._ownBoardIdx == null)) {
             if (hasExplicitKinds || (!structuralChildren[0].isMesh && !isLegacyAtomicMeshGroup(structuralChildren[0]))) {
               collectExplodePlan(structuralChildren[0], depth);
               return;
             }
           }
 
-          if (structuralChildren.length < 2 && depth > 0) return;
+          if (structuralChildren.length < 2 && !hasOwnLooseGeo && depth > 0) return;
 
           const cBox = new THREE.Box3().setFromObject(container);
           const cCenter = cBox.isEmpty()
@@ -5915,7 +5961,9 @@
             : cBox.getCenter(new THREE.Vector3());
           const cSize = cBox.isEmpty() ? new THREE.Vector3(1, 1, 1) : cBox.getSize(new THREE.Vector3());
           const cSpan = Math.max(cSize.x, cSize.y, cSize.z, 0.25);
-          const depthWeight = (depth === 0) ? 0.85 : Math.max(0.28, 0.65 / Math.pow(1.45, depth));
+          const halfSpan = Math.max(cSpan * 0.5, 0.125);
+          const depthWeight = (depth === 0) ? 0.85 : Math.max(0.32, 0.68 / Math.pow(1.4, depth));
+          const baseWorldDist = Math.max(cSpan * depthWeight, 0.18);
 
           structuralChildren.forEach((child, idx) => {
             if (!child.userData.origPosition) {
@@ -5925,13 +5973,18 @@
             if (childBox.isEmpty()) return;
             const childCenter = childBox.getCenter(new THREE.Vector3());
 
-            const dirWorld = childCenter.clone().sub(cCenter);
-            if (dirWorld.lengthSq() < 1e-8) {
+            const offsetFromCenter = childCenter.clone().sub(cCenter);
+            const distFromCenter = offsetFromCenter.length();
+            const dirWorld = offsetFromCenter.clone();
+            if (distFromCenter < halfSpan * 0.04) {
               const angle = (idx * 2.39996);
-              dirWorld.set(Math.cos(angle), 0.35, Math.sin(angle)).normalize();
+              dirWorld.set(Math.cos(angle), 0.35 + ((idx % 3) * 0.12), Math.sin(angle)).normalize();
             } else {
               dirWorld.normalize();
             }
+
+            const radialRatio = Math.min(1.6, distFromCenter / halfSpan);
+            const radialMult = 0.30 + 0.85 * radialRatio;
 
             const p0 = container.worldToLocal(childCenter.clone());
             const p1 = container.worldToLocal(childCenter.clone().add(dirWorld));
@@ -5940,7 +5993,7 @@
             explodePlan.push({
               node: child,
               localDirPerMeter: localDirPerMeter,
-              maxWorldDist: cSpan * depthWeight
+              maxWorldDist: baseWorldDist * radialMult
             });
 
             if (explodeMode === 'nested') {
