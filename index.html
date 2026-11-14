@@ -2251,7 +2251,7 @@
         <span class="hud-spec-pill mat" id="hudMaterial">--</span>
         <span class="hud-spec-pill mod" id="hudModuleName" style="display:none;">--</span>
         <span class="hud-spec-pill eb" id="hudEdgeBanding" style="display:none;">--</span>
-        <span class="hud-spec-pill" id="hudDrills" style="display:none;">🔩 Khoan: --</span>
+        <span class="hud-spec-pill" id="hudDrills" style="display:none;">Khoan: --</span>
         <span class="hud-spec-pill" id="hudCodeN1" style="display:none;">Code 1: --</span>
         <span class="hud-spec-pill" id="hudCodeN2" style="display:none;">Code 2: --</span>
       </div>
@@ -2313,7 +2313,7 @@
       <button class="axis-btn" id="btnSecAxisX" data-axis="x" style="border-left: 3px solid #ef4444;">Trục X (Ngang)</button>
       <button class="axis-btn active" id="btnSecAxisY" data-axis="y" style="border-left: 3px solid #10b981;">Trục Y (Đứng)</button>
       <button class="axis-btn" id="btnSecAxisZ" data-axis="z" style="border-left: 3px solid #0284c7;">Trục Z (Sâu)</button>
-      <button class="axis-btn" id="btnFlipSection" title="Đảo ngược hướng cắt">Đảo chiều 🔁</button>
+      <button class="axis-btn" id="btnFlipSection" title="Đảo ngược hướng cắt">Đảo chiều</button>
     </div>
     <div class="slider-row">
       <span style="font-size: 11.5px; color: var(--text-sub); white-space: nowrap;">Vị trí lát cắt:</span>
@@ -4157,7 +4157,7 @@
         const elDrills = document.getElementById('hudDrills');
         if (elDrills) {
           if (info.drills_count && info.drills_count > 0) {
-            elDrills.textContent = `🔩 Khoan: ${info.drills_count} lỗ`;
+            elDrills.textContent = `Khoan: ${info.drills_count} lỗ`;
             elDrills.style.display = 'inline-flex';
           } else {
             elDrills.style.display = 'none';
@@ -4259,7 +4259,7 @@
             const tipStatus = document.getElementById('qrTipStatus');
             const tipText = document.getElementById('qrTipText');
             if (tipStatus) tipStatus.classList.add('locked');
-            if (tipText) tipText.textContent = '🎯 Đã khóa vị trí tấm ván!';
+            if (tipText) tipText.textContent = 'Đã khóa vị trí tấm ván!';
             triggerHaptic('success');
 
             setTimeout(() => {
