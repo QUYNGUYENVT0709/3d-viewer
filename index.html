@@ -14,8 +14,8 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   
-  <!-- Thư viện giải mã QR siêu nhẹ tốc độ cao (kết hợp cùng Native BarcodeDetector phần cứng) -->
-  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+  <!-- Thư viện quét mã QR bằng camera trực tiếp trên trình duyệt (HTML5 QR Code) -->
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 
   <style>
     :root {
@@ -634,31 +634,6 @@
       display: flex;
       animation: popInUp 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
-    .explode-mode-row {
-      display: flex;
-      gap: 6px;
-      padding: 3px;
-      border-radius: 10px;
-      background: rgba(148, 163, 184, 0.14);
-      border: 0.5px solid rgba(148, 163, 184, 0.22);
-    }
-    .explode-mode-btn {
-      flex: 1;
-      height: 28px;
-      border: none;
-      border-radius: 8px;
-      background: transparent;
-      color: var(--text-sub);
-      font-size: 11.5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
-    .explode-mode-btn.active {
-      background: var(--accent-color);
-      color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 122, 255, 0.28);
-    }
     @keyframes popInUp {
       from { opacity: 0; transform: translate(-50%, 12px) scale(0.96); }
       to { opacity: 1; transform: translate(-50%, 0) scale(1); }
@@ -1002,169 +977,82 @@
     /* KHUNG NGẮM TRUNG TÂM (VIEWFINDER RETICLE KHOÉT RỖNG CHUẨN ĐIỆN ẢNH) */
     .qr-reticle-box {
       position: relative;
-      width: 262px;
-      height: 262px;
-      max-width: 72vw;
-      max-height: 72vw;
-      border-radius: 26px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.56);
-      overflow: hidden;
-      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease, box-shadow 0.25s ease;
+      width: 250px;
+      height: 250px;
+      max-width: 75vw;
+      max-height: 75vw;
+      border-radius: 24px;
+      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.62);
+      transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
     .qr-reticle-box.locked {
-      opacity: 0.25;
-      transform: scale(0.98);
-      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.72);
+      transform: scale(0.96);
+      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.75);
     }
 
-    /* 4 GÓC BO TRÒN PHÁT SÁNG TINH TẾ CHUẨN ZALO / iOS */
+    /* 4 GÓC BO TRÒN PHÁT SÁNG NEON CHUẨN ZALO */
     .reticle-corner {
       position: absolute;
-      width: 30px;
-      height: 30px;
-      border-color: #38bdf8;
+      width: 32px;
+      height: 32px;
+      border-color: #00e5ff;
       border-style: solid;
       border-width: 0;
-      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.75));
+      filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.85));
       transition: border-color 0.25s ease, filter 0.25s ease;
     }
     .reticle-corner.top-left {
-      top: 0;
-      left: 0;
-      border-top-width: 3.5px;
-      border-left-width: 3.5px;
-      border-top-left-radius: 24px;
+      top: -2px;
+      left: -2px;
+      border-top-width: 4px;
+      border-left-width: 4px;
+      border-top-left-radius: 20px;
     }
     .reticle-corner.top-right {
-      top: 0;
-      right: 0;
-      border-top-width: 3.5px;
-      border-right-width: 3.5px;
-      border-top-right-radius: 24px;
+      top: -2px;
+      right: -2px;
+      border-top-width: 4px;
+      border-right-width: 4px;
+      border-top-right-radius: 20px;
     }
     .reticle-corner.bottom-left {
-      bottom: 0;
-      left: 0;
-      border-bottom-width: 3.5px;
-      border-left-width: 3.5px;
-      border-bottom-left-radius: 24px;
+      bottom: -2px;
+      left: -2px;
+      border-bottom-width: 4px;
+      border-left-width: 4px;
+      border-bottom-left-radius: 20px;
     }
     .reticle-corner.bottom-right {
-      bottom: 0;
-      right: 0;
-      border-bottom-width: 3.5px;
-      border-right-width: 3.5px;
-      border-bottom-right-radius: 24px;
+      bottom: -2px;
+      right: -2px;
+      border-bottom-width: 4px;
+      border-right-width: 4px;
+      border-bottom-right-radius: 20px;
     }
     .qr-reticle-box.locked .reticle-corner {
       border-color: #00e676 !important;
-      filter: drop-shadow(0 0 14px #00e676) !important;
+      filter: drop-shadow(0 0 16px #00e676) !important;
     }
 
-    /* DẢI SÁNG RADAR QUÉT MƯỢT GPU (60FPS TRANSFORM) */
+    /* TIA LASER QUÉT CHUYỂN ĐỘNG CHUẨN ZALO / TELEGRAM RADAR */
     .qr-laser-line {
       position: absolute;
-      left: 14px;
-      right: 14px;
-      top: 12px;
-      height: 2.5px;
-      background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.45) 20%, #7dd3fc 50%, rgba(56, 189, 248, 0.45) 80%, transparent 100%);
-      box-shadow: 0 0 14px rgba(56, 189, 248, 0.9), 0 0 28px rgba(56, 189, 248, 0.45);
-      border-radius: 4px;
-      will-change: transform, opacity;
-      animation: scanLaserAnim 2.1s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
-    }
-    .qr-laser-line::after {
-      content: '';
-      position: absolute;
-      left: 6%;
-      right: 6%;
-      top: -28px;
-      height: 28px;
-      background: linear-gradient(180deg, transparent 0%, rgba(56, 189, 248, 0.14) 100%);
-      pointer-events: none;
+      left: 10px;
+      right: 10px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.4) 20%, #00e5ff 50%, rgba(0, 229, 255, 0.4) 80%, transparent 100%);
+      box-shadow: 0 0 18px #00e5ff, 0 0 35px rgba(0, 229, 255, 0.6);
+      border-radius: 3px;
+      top: 10px;
+      animation: scanLaserAnim 2s ease-in-out infinite alternate;
     }
     @keyframes scanLaserAnim {
-      0% { transform: translateY(0px) scaleX(0.94); opacity: 0.7; }
-      50% { opacity: 1; transform: translateY(115px) scaleX(1); }
-      100% { transform: translateY(232px) scaleX(0.94); opacity: 0.7; }
+      0% { top: 12px; opacity: 0.6; transform: scaleX(0.95); }
+      50% { opacity: 1; transform: scaleX(1); }
+      100% { top: calc(100% - 15px); opacity: 0.6; transform: scaleX(0.95); }
     }
     .qr-reticle-box.locked .qr-laser-line {
       display: none;
-    }
-
-    /* LỚP ĐÓNG BĂNG KHUNG HÌNH & KHUNG KHÓA MỤC TIÊU CHUẨN ZALO */
-    .qr-freeze-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 3;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.1s ease;
-    }
-    .qr-freeze-canvas.active {
-      opacity: 1;
-    }
-    .qr-capture-flash {
-      position: absolute;
-      inset: 0;
-      background: #ffffff;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 4;
-    }
-    .qr-capture-flash.flash {
-      animation: qrFlashAnim 0.24s ease-out forwards;
-    }
-    @keyframes qrFlashAnim {
-      0% { opacity: 0.35; }
-      100% { opacity: 0; }
-    }
-    .qr-target-lock {
-      position: absolute;
-      z-index: 6;
-      pointer-events: none;
-      border-radius: 14px;
-      border: 3px solid #facc15;
-      background: rgba(250, 204, 21, 0.12);
-      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25), 0 0 24px rgba(250, 204, 21, 0.75);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transform: scale(1.22);
-      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.16s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-    }
-    .qr-target-lock.active {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .qr-target-lock.confirmed {
-      border-color: #22c55e;
-      background: rgba(34, 197, 94, 0.16);
-      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25), 0 0 28px rgba(34, 197, 94, 0.85);
-    }
-    .qr-target-check {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: #22c55e;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 16px rgba(34, 197, 94, 0.7);
-      transform: scale(0.5);
-      opacity: 0;
-      transition: transform 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.05s, opacity 0.15s ease 0.05s;
-    }
-    .qr-target-lock.active .qr-target-check {
-      transform: scale(1);
-      opacity: 1;
     }
 
     /* HUY HIỆU TÓM MÃ THÀNH CÔNG */
@@ -1339,62 +1227,6 @@
     @keyframes qrDotPulse {
       0%, 100% { opacity: 0.4; transform: scale(0.9); }
       50% { opacity: 1; transform: scale(1.3); }
-    }
-    .qr-controls-bar {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 8px;
-      border-radius: 26px;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-    }
-    .qr-zoom-btn,
-    .qr-torch-btn {
-      border: none;
-      background: rgba(255, 255, 255, 0.12);
-      color: #e2e8f0;
-      font-size: 12px;
-      font-weight: 700;
-      height: 30px;
-      min-width: 38px;
-      padding: 0 10px;
-      border-radius: 15px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      transition: all 0.16s ease;
-    }
-    .qr-zoom-btn.active {
-      background: #00e5ff;
-      color: #020617;
-      box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
-    }
-    .qr-torch-btn.active {
-      background: #facc15;
-      color: #020617;
-      box-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
-    }
-    .qr-focus-ring {
-      position: absolute;
-      width: 64px;
-      height: 64px;
-      border: 2px solid #facc15;
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(1.2);
-      opacity: 0;
-      pointer-events: none;
-      z-index: 4;
-      box-shadow: 0 0 12px rgba(250, 204, 21, 0.65);
-      transition: transform 0.22s ease, opacity 0.25s ease;
-    }
-    .qr-focus-ring.show {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
     }
 
     /* PROJECTS LIST MODAL */
@@ -2376,7 +2208,7 @@
   <header class="top-header">
     <div class="brand-pill" title="Tên công trình">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color); flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <span class="project-name" id="displayProjectName">Đang tải mô hình...</span>
+      <span class="project-name" id="displayProjectName">A THANH 18-10</span>
     </div>
 
     <div class="top-tools">
@@ -2507,10 +2339,6 @@
       <input type="range" id="explodeSlider" min="0" max="100" value="0" class="custom-range">
       <span id="explodeValue" class="slider-val">0%</span>
     </div>
-    <div class="explode-mode-row">
-      <button type="button" class="explode-mode-btn active" id="btnExplodeGroup" data-mode="group">Giữ nguyên Group</button>
-      <button type="button" class="explode-mode-btn" id="btnExplodeNested" data-mode="nested">Bung lồng cấp</button>
-    </div>
   </div>
 
   <!-- POPUP PANEL: GÓC NHÌN CHUẨN SKETCHUP (VIEWS) -->
@@ -2626,15 +2454,7 @@
     <!-- VIDEO CAMERA PHỦ TRÀN TOÀN MÀN HÌNH -->
     <div class="qr-full-viewport" id="qrViewportContainer">
       <div id="reader"></div>
-      <canvas class="qr-freeze-canvas" id="qrFreezeCanvas"></canvas>
-      <div class="qr-capture-flash" id="qrCaptureFlash"></div>
-      <div class="qr-target-lock" id="qrTargetLock">
-        <div class="qr-target-check">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-      </div>
-      <div class="qr-focus-ring" id="qrFocusRing"></div>
-
+      
       <!-- MÀN HÌNH LOADING TRẠNG THÁI CAMERA -->
       <div class="qr-camera-loading" id="qrCameraLoading">
         <div class="qr-loading-spinner"></div>
@@ -2678,18 +2498,9 @@
 
     <!-- THANH HƯỚNG DẪN DƯỚI ĐÁY -->
     <div class="qr-bottom-bar">
-      <div class="qr-controls-bar" id="qrControlsBar">
-        <button type="button" class="qr-zoom-btn" data-zoom="1">1x</button>
-        <button type="button" class="qr-zoom-btn active" data-zoom="1.8">1.8x</button>
-        <button type="button" class="qr-zoom-btn" data-zoom="2.5">2.5x</button>
-        <button type="button" class="qr-torch-btn" id="btnToggleTorch" style="display:none;" title="Bật/tắt đèn flash">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          <span>Đèn</span>
-        </button>
-      </div>
       <div class="qr-hint-pill" id="qrTipStatus">
         <span class="qr-hint-dot"></span>
-        <span id="qrTipText">Đưa mã QR vào khung ngắm</span>
+        <span id="qrTipText">Căn khung ngắm vào mã QR trên con tem</span>
       </div>
     </div>
   </div>
@@ -2747,14 +2558,12 @@
       let scene, camera, renderer, controls;
       let modelRoot = null;
       let allMeshes = [];
-      let allEdgeLines = [];
       let boardMeshMap = {}; // { board_index: [mesh1, mesh2, ...] }
-      let boardEdgeMap = {}; // { board_index: [line1, line2, ...] }
       let boardsData = {};   // { board_index: { part_name, dimensions, ... } }
       let selectedBoardIndex = null;
       let isGhostMode = true; // Mặc định khởi động lần đầu là BẬT theo yêu cầu
       let isDarkMode = false;
-      let qrActiveStream = null;
+      let html5QrCode = null;
 
       // Vật liệu Highlight chuẩn phong cách SketchUp Selection (Mặt tấm sáng nhẹ dịu mắt)
       const highlightMaterial = new THREE.MeshStandardMaterial({
@@ -2813,8 +2622,6 @@
       // Biến trạng thái Layer & Toolbar
       let layersData = [];
       let layerMeshMap = {};
-      let layerEdgeMap = {};
-      let hasNativeGlbEdges = false;
       let hiddenLayers = new Set();
       let isToolbarCollapsed = true;
       let isMultiSelectMode = false;
@@ -2829,8 +2636,6 @@
       let sectionPlaneHelper = null;
       let isExplodeActive = false;
       let explodeFactor = 0;
-      let explodeMode = 'group'; // 'group' | 'nested'
-      let explodePlan = [];
       let isIsolatedMode = false;
 
       // Parse URL Params & Hash (Hỗ trợ cả link ?p=...&i=... lẫn dạng rút gọn ?p=...#12)
@@ -2978,18 +2783,12 @@
         controls.update();
 
         // Hiệu ứng thở nhẹ (Pulse) tinh tế cho viền Blue SketchUp của tấm đang được chọn
-        if (selectedBoardIndex !== null) {
+        if (selectedBoardIndex !== null && boardMeshMap[selectedBoardIndex]) {
           const pulse = (Math.sin(Date.now() * 0.006) + 1) * 0.5;
-          const meshes = boardMeshMap[selectedBoardIndex] || [];
+          const meshes = Array.isArray(boardMeshMap[selectedBoardIndex]) ? boardMeshMap[selectedBoardIndex] : [boardMeshMap[selectedBoardIndex]];
           meshes.forEach(m => {
             if (m.userData.edgeLines && m.userData.edgeLines.material) {
               m.userData.edgeLines.material.opacity = 0.75 + pulse * 0.25;
-            }
-          });
-          const edges = boardEdgeMap[selectedBoardIndex] || [];
-          edges.forEach(l => {
-            if (l.material) {
-              l.material.opacity = 0.75 + pulse * 0.25;
             }
           });
         }
@@ -3046,121 +2845,22 @@
           modelRoot = gltf.scene;
           scene.add(modelRoot);
           allMeshes = [];
-          allEdgeLines = [];
           boardMeshMap = {};
-          boardEdgeMap = {};
           layerMeshMap = {};
-          layerEdgeMap = {};
-          explodePlan = [];
-          explodeFactor = 0;
-          const expSlider = document.getElementById('explodeSlider');
-          const expValSpan = document.getElementById('explodeValue');
-          if (expSlider) expSlider.value = 0;
-          if (expValSpan) expValSpan.textContent = '0%';
 
-          const assetExtras = (gltf.asset && gltf.asset.extras) ? gltf.asset.extras : {};
-          const isExactLtfGlb = !!assetExtras.ltfEdgeFormat;
-          if (Array.isArray(assetExtras.ltfLayers) && assetExtras.ltfLayers.length > 0 && (!layersData || layersData.length === 0)) {
-            layersData = assetExtras.ltfLayers;
-          }
-
-          hasNativeGlbEdges = false;
+          // Duyệt toàn bộ các node mesh trong mô hình
           modelRoot.traverse(child => {
-            if (!child.userData.origPosition) {
-              child.userData.origPosition = child.position.clone();
-            }
-            if (child.isLineSegments && (child.userData.ltfPrimitiveType === 'edge_solid' || child.userData.ltfPrimitiveType === 'edge_dashed')) {
-              hasNativeGlbEdges = true;
-            }
-          });
-
-          const preBox = new THREE.Box3().setFromObject(modelRoot);
-          const preSize = new THREE.Vector3();
-          if (!preBox.isEmpty()) preBox.getSize(preSize);
-          const modelDiag = Math.max(preSize.x, preSize.y, preSize.z, 0.5);
-          const dashScaleFactor = Math.max(0.55, Math.min(2.2, modelDiag / 2.2));
-          const maxAniso = (renderer && renderer.capabilities && renderer.capabilities.getMaxAnisotropy)
-            ? Math.min(8, renderer.capabilities.getMaxAnisotropy())
-            : 1;
-
-          // Duyệt toàn bộ các node mesh & line (nét liền / nét đứt) trong mô hình
-          modelRoot.traverse(child => {
-            if (child.isLineSegments) {
-              const bIdx = getMeshBoardIndex(child);
-              if (bIdx !== null) {
-                child.userData.boardIndex = bIdx;
-                if (!boardEdgeMap[bIdx]) boardEdgeMap[bIdx] = [];
-                boardEdgeMap[bIdx].push(child);
-              }
-              const layerName = resolveObjLayerName(child, bIdx);
-              child.userData.layerName = layerName;
-              if (!layerEdgeMap[layerName]) layerEdgeMap[layerName] = [];
-              layerEdgeMap[layerName].push(child);
-
-              const primType = child.userData.ltfPrimitiveType || 'edge_solid';
-              const isDashed = (primType === 'edge_dashed');
-              if (isDashed) {
-                const stName = (child.userData.ltfLineStyle || 'Dash').toLowerCase();
-                const wScaleVec = new THREE.Vector3();
-                child.getWorldScale(wScaleVec);
-                const wScaleAvg = Math.max(1e-4, (Math.abs(wScaleVec.x) + Math.abs(wScaleVec.y) + Math.abs(wScaleVec.z)) / 3);
-                let dashSz = (0.020 * dashScaleFactor) / wScaleAvg;
-                let gapSz = (0.011 * dashScaleFactor) / wScaleAvg;
-                if (stName.includes('dot') && !stName.includes('dash')) {
-                  dashSz = (0.005 * dashScaleFactor) / wScaleAvg;
-                  gapSz = (0.006 * dashScaleFactor) / wScaleAvg;
-                } else if (stName.includes('short')) {
-                  dashSz = (0.012 * dashScaleFactor) / wScaleAvg;
-                  gapSz = (0.008 * dashScaleFactor) / wScaleAvg;
-                }
-                child.material = new THREE.LineDashedMaterial({
-                  color: 0x000000,
-                  dashSize: dashSz,
-                  gapSize: gapSz,
-                  transparent: true,
-                  opacity: 0.92,
-                  depthTest: true,
-                  depthWrite: true
-                });
-                if (typeof child.computeLineDistances === 'function') {
-                  child.computeLineDistances();
-                }
-              } else {
-                child.material = new THREE.LineBasicMaterial({
-                  color: 0x000000,
-                  linewidth: 1,
-                  transparent: true,
-                  opacity: 1.0,
-                  depthTest: true,
-                  depthWrite: true
-                });
-              }
-              child.renderOrder = 2;
-              child.userData.isDashedEdge = isDashed;
-              allEdgeLines.push(child);
-
-              if (hiddenLayers.has(layerName)) {
-                child.visible = false;
-              }
-              return;
-            }
-
             if (child.isMesh) {
               allMeshes.push(child);
               // Khử hoàn toàn bóng lóa nhựa giả, đưa về chất liệu gỗ/ván mờ tự nhiên chuẩn SketchUp
               if (child.material) {
-                if (!isExactLtfGlb) {
-                  child.material.side = THREE.DoubleSide;
-                }
+                child.material.side = THREE.DoubleSide;
                 child.material.roughness = 1.0;
                 child.material.metalness = 0.0;
                 if (child.material.clearcoat !== undefined) child.material.clearcoat = 0;
                 if (child.material.iridescence !== undefined) child.material.iridescence = 0;
                 if (child.material.transmission !== undefined) child.material.transmission = 0;
                 if (child.material.sheen !== undefined) child.material.sheen = 0;
-                if (child.material.map && maxAniso > 1) {
-                  child.material.map.anisotropy = maxAniso;
-                }
 
                 // Đẩy mặt phẳng lùi nhẹ (Polygon Offset) để đường nét kỹ thuật luôn nổi rõ ở mọi mối nối tiếp giáp
                 child.material.polygonOffset = true;
@@ -3169,14 +2869,12 @@
               }
               child.userData.origMaterial = child.material;
 
-              // Nếu GLB chưa có đường nét gốc từ Ruby thì fallback tạo EdgesGeometry
-              if (!hasNativeGlbEdges && child.geometry) {
+              // Tạo đường nét viền kỹ thuật sắc nét chuẩn góc nhìn SketchUp
+              if (child.geometry) {
                 const edgeGeo = new THREE.EdgesGeometry(child.geometry, 15);
                 const edgeMat = new THREE.LineBasicMaterial({
                   color: 0x000000,
                   linewidth: 1,
-                  transparent: true,
-                  opacity: 1.0,
                   depthTest: true,
                   depthWrite: true
                 });
@@ -3195,7 +2893,22 @@
               }
 
               // Trích xuất Layer gốc của đối tượng từ GLB hoặc metadata
-              const layerName = resolveObjLayerName(child, bIdx);
+              let layerName = null;
+              let curr = child;
+              while (curr && curr !== scene) {
+                if (curr.name) {
+                  const lm = curr.name.match(/__LYR_\[(.*?)\]__/);
+                  if (lm && lm[1]) {
+                    layerName = lm[1].trim();
+                    break;
+                  }
+                }
+                curr = curr.parent;
+              }
+              if (!layerName && bIdx !== null && boardsData[bIdx] && boardsData[bIdx].layer) {
+                layerName = boardsData[bIdx].layer;
+              }
+              if (!layerName) layerName = "Layer0";
               child.userData.layerName = layerName;
 
               if (!layerMeshMap[layerName]) layerMeshMap[layerName] = [];
@@ -3312,41 +3025,11 @@
         return null;
       }
 
-      // Trích xuất Layer gốc từ extras/tên node/metadata theo chuỗi cha con
-      function resolveObjLayerName(obj, bIdx) {
-        let curr = obj;
-        while (curr && curr !== scene && (!modelRoot || curr !== modelRoot.parent)) {
-          if (curr.userData && curr.userData.ltfLayer) {
-            return String(curr.userData.ltfLayer).trim();
-          }
-          if (curr.name) {
-            const lm = curr.name.match(/__LYR_\[(.*?)\]__/);
-            if (lm && lm[1]) return lm[1].trim();
-          }
-          curr = curr.parent;
-        }
-        if (bIdx !== null && bIdx !== undefined && boardsData[bIdx] && boardsData[bIdx].layer) {
-          return boardsData[bIdx].layer;
-        }
-        return 'Layer0';
-      }
-
-      function hasLabelAncestor(obj) {
-        let curr = obj;
-        while (curr && curr !== scene && (!modelRoot || curr !== modelRoot.parent)) {
-          if (curr.userData && (curr.userData.isLabel === true || curr.userData.ltfKind === 'label')) return true;
-          const clean = (curr.name || '').replace(/^__LYR_\[.*?\]__/, '');
-          if (/^_?ABF_Label/i.test(clean) || /^label/i.test(clean)) return true;
-          curr = curr.parent;
-        }
-        return false;
-      }
-
       // Tìm ID tấm bằng cách duyệt ngược cây cha con (Ancestor Chain)
       function getMeshBoardIndex(mesh) {
         if (!mesh) return null;
         let curr = mesh;
-        while (curr && curr !== scene && (!modelRoot || curr !== modelRoot.parent)) {
+        while (curr && curr !== scene && curr !== modelRoot.parent) {
           if (curr.userData && curr.userData.boardIndex !== undefined && curr.userData.boardIndex !== null) {
             return curr.userData.boardIndex;
           }
@@ -3359,48 +3042,15 @@
         return null;
       }
 
-      function applyEdgeVisualState(lineObj, isLabel, isTarget, hasAnySelection, defaultEdgeHex) {
-        if (!lineObj || !lineObj.material) return;
-        const baseOp = lineObj.userData.isDashedEdge ? 0.92 : 1.0;
-        if (isLabel) {
-          lineObj.material.color.setHex(defaultEdgeHex);
-          lineObj.material.opacity = isTarget ? 1.0 : (isGhostMode && hasAnySelection ? 0.3 : 0.85);
-          lineObj.material.depthTest = true;
-          lineObj.renderOrder = 2;
-        } else if (isTarget) {
-          lineObj.material.color.setHex(0x0055ff);
-          lineObj.material.opacity = 1.0;
-          lineObj.material.depthTest = false;
-          lineObj.renderOrder = 999;
-        } else if (isGlobalXray) {
-          lineObj.material.color.setHex(defaultEdgeHex);
-          lineObj.material.opacity = 0.85;
-          lineObj.material.depthTest = true;
-          lineObj.renderOrder = 2;
-        } else if (isGhostMode && hasAnySelection) {
-          lineObj.material.color.setHex(defaultEdgeHex);
-          lineObj.material.opacity = 0.25;
-          lineObj.material.depthTest = true;
-          lineObj.renderOrder = 2;
-        } else {
-          lineObj.material.color.setHex(defaultEdgeHex);
-          lineObj.material.opacity = baseOp;
-          lineObj.material.depthTest = true;
-          lineObj.renderOrder = 2;
-        }
-      }
-
       // Cập nhật vật liệu toàn bộ Scene
       function updateModelMaterials() {
         const defaultEdgeHex = 0x000000; // Viền model luôn giữ cố định MÀU ĐEN chuẩn kỹ thuật
-        const hasAnySelection = (selectedBoardIndex !== null || selectedBoardIndices.size > 0);
-
         allMeshes.forEach(mesh => {
           const bIdx = mesh.userData.boardIndex;
           const lyrName = mesh.userData.layerName;
 
           // Ẩn nếu thuộc Layer bị tắt hoặc tấm bị ẩn thủ công
-          if (hiddenLayers.has(lyrName) || (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx))) {
+          if (hiddenLayers.has(lyrName) || hiddenBoardIndices.has(bIdx)) {
             mesh.visible = false;
             if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = false;
             return;
@@ -3409,37 +3059,55 @@
           if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = true;
 
           // Kiểm tra xem mesh có phải là tem nhãn ABF_Label không
-          const isLabel = hasLabelAncestor(mesh);
+          const isLabel = (mesh.name && mesh.name.toLowerCase().includes('label')) ||
+                          (mesh.parent && mesh.parent.name && mesh.parent.name.toLowerCase().includes('label'));
+
           const isTarget = (selectedBoardIndices.size > 0 && selectedBoardIndices.has(bIdx)) || (selectedBoardIndex !== null && bIdx === selectedBoardIndex);
 
           if (isLabel) {
+            // Giữ nguyên tem nhãn ABF_Label sắc nét, trung thực bản vẽ
             mesh.material = mesh.userData.origMaterial;
+            if (mesh.userData.edgeLines) {
+              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+              mesh.userData.edgeLines.material.opacity = isTarget ? 1.0 : (isGhostMode ? 0.3 : 0.85);
+              mesh.userData.edgeLines.material.depthTest = true;
+              mesh.userData.edgeLines.renderOrder = 1;
+            }
           } else if (isTarget) {
+            // Phong cách SketchUp Chuẩn: MẶT TẤM VẪN GIỮ NGUYÊN VẬT LIỆU GỐC (vân gỗ thật, không phủ màu xanh)
             mesh.material = mesh.userData.origMaterial;
+            if (mesh.userData.edgeLines) {
+              // CHỈ CÓ ĐƯỜNG VIỀN SÁNG NÉT MÀU BLUE SKETCHUP ĐẬM ĐÀ (Chuẩn màu nút quét / xanh chọn SketchUp #0055ff / #007aff)
+              mesh.userData.edgeLines.material.color.setHex(0x0055ff);
+              mesh.userData.edgeLines.material.opacity = 1.0;
+              mesh.userData.edgeLines.material.depthTest = false;
+              mesh.userData.edgeLines.renderOrder = 999;
+            }
           } else if (isGlobalXray) {
             mesh.material = xrayMaterial;
-          } else if (isGhostMode && hasAnySelection) {
+            if (mesh.userData.edgeLines) {
+              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+              mesh.userData.edgeLines.material.opacity = 0.85;
+              mesh.userData.edgeLines.material.depthTest = true;
+              mesh.userData.edgeLines.renderOrder = 1;
+            }
+          } else if (isGhostMode && (selectedBoardIndex !== null || selectedBoardIndices.size > 0)) {
             mesh.material = ghostMaterial;
+            if (mesh.userData.edgeLines) {
+              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+              mesh.userData.edgeLines.material.opacity = 0.25;
+              mesh.userData.edgeLines.material.depthTest = true;
+              mesh.userData.edgeLines.renderOrder = 1;
+            }
           } else {
             mesh.material = mesh.userData.origMaterial;
+            if (mesh.userData.edgeLines) {
+              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
+              mesh.userData.edgeLines.material.opacity = 1.0;
+              mesh.userData.edgeLines.material.depthTest = true;
+              mesh.userData.edgeLines.renderOrder = 1;
+            }
           }
-
-          if (mesh.userData.edgeLines) {
-            applyEdgeVisualState(mesh.userData.edgeLines, isLabel, isTarget, hasAnySelection, defaultEdgeHex);
-          }
-        });
-
-        allEdgeLines.forEach(lineObj => {
-          const bIdx = lineObj.userData.boardIndex;
-          const lyrName = lineObj.userData.layerName;
-          if (hiddenLayers.has(lyrName) || (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx))) {
-            lineObj.visible = false;
-            return;
-          }
-          lineObj.visible = true;
-          const isLabel = hasLabelAncestor(lineObj);
-          const isTarget = (selectedBoardIndices.size > 0 && selectedBoardIndices.has(bIdx)) || (selectedBoardIndex !== null && bIdx === selectedBoardIndex);
-          applyEdgeVisualState(lineObj, isLabel, isTarget, hasAnySelection, defaultEdgeHex);
         });
       }
 
@@ -4379,26 +4047,29 @@
         let pulseCount = 0;
         const totalPulses = 3;
 
-        function setBoardEdgesColor(hex) {
-          meshList.forEach(m => {
-            if (m.userData.edgeLines) m.userData.edgeLines.material.color.setHex(hex);
-          });
-          (boardEdgeMap[boardIndex] || []).forEach(l => {
-            if (l.material) l.material.color.setHex(hex);
-          });
-        }
-
         function doPulse() {
           if (pulseCount >= totalPulses) {
-            setBoardEdgesColor(0x0055ff);
+            meshList.forEach(m => {
+              if (m.userData.edgeLines) {
+                m.userData.edgeLines.material.color.setHex(0x0055ff);
+              }
+            });
             return;
           }
           pulseCount++;
           // Chớp sáng viền sang màu Blue sáng rực rỡ
-          setBoardEdgesColor(0x38bdf8);
+          meshList.forEach(m => {
+            if (m.userData.edgeLines) {
+              m.userData.edgeLines.material.color.setHex(0x38bdf8);
+            }
+          });
           setTimeout(() => {
             // Trở về màu viền Blue SketchUp
-            setBoardEdgesColor(0x0055ff);
+            meshList.forEach(m => {
+              if (m.userData.edgeLines) {
+                m.userData.edgeLines.material.color.setHex(0x0055ff);
+              }
+            });
             setTimeout(doPulse, 200);
           }, 200);
         }
@@ -4532,145 +4203,19 @@
         if (txtMulti) txtMulti.textContent = isMultiSelectMode ? 'Đang chọn' : 'Chọn nhiều';
       }
 
-      // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP (HYBRID NATIVE BARCODEDETECTOR + MULTI-SCALE ROI JSQR CHUẨN ZALO)
+      // 8. TÍNH NĂNG QUÉT QR BẰNG CAMERA TRỰC TIẾP (CHUẨN APPLE VISION CODE SCANNER SIÊU TỐC)
       let isQrProcessing = false;
       let qrCamerasList = [];
       let currentQrCamIndex = 0;
-      let qrScanRafId = null;
-      let qrVideoEl = null;
-      let qrVideoTrack = null;
-      let qrNativeDetector = null;
-      let qrZoomLevel = 1.8;
-      let qrHardwareZoomSupported = false;
-      let qrTorchOn = false;
-      let qrPassCounter = 0;
-      let qrDetectBusy = false;
-      let qrRoiCanvas = null;
-      let qrRoiCtx = null;
-      let qrFullCanvas = null;
-      let qrFullCtx = null;
-      let qrJsQrLoadingPromise = null;
-
-      function ensureJsQrReady() {
-        if (typeof window.jsQR === 'function') return Promise.resolve(true);
-        if (qrJsQrLoadingPromise) return qrJsQrLoadingPromise;
-        qrJsQrLoadingPromise = new Promise((resolve) => {
-          const s = document.createElement('script');
-          s.src = 'https://unpkg.com/jsqr@1.4.0/dist/jsQR.min.js';
-          s.onload = () => resolve(typeof window.jsQR === 'function');
-          s.onerror = () => resolve(false);
-          document.head.appendChild(s);
-        });
-        return qrJsQrLoadingPromise;
-      }
-
-      async function initNativeBarcodeDetector() {
-        if (qrNativeDetector) return qrNativeDetector;
-        if (!('BarcodeDetector' in window)) return null;
-        try {
-          if (typeof window.BarcodeDetector.getSupportedFormats === 'function') {
-            const formats = await window.BarcodeDetector.getSupportedFormats();
-            if (!formats || !formats.includes('qr_code')) return null;
-          }
-          qrNativeDetector = new window.BarcodeDetector({ formats: ['qr_code'] });
-          return qrNativeDetector;
-        } catch (e) {
-          return null;
-        }
-      }
-
-      function enhanceGrayscaleContrast(imageData) {
-        const d = imageData.data;
-        let min = 255, max = 0;
-        const len = d.length;
-        for (let i = 0; i < len; i += 16) {
-          const lum = (d[i] * 77 + d[i + 1] * 150 + d[i + 2] * 29) >> 8;
-          if (lum < min) min = lum;
-          if (lum > max) max = lum;
-        }
-        const span = max - min;
-        if (span < 12 || span > 220) return imageData;
-        const scale = 255.0 / span;
-        for (let i = 0; i < len; i += 4) {
-          const lum = (d[i] * 77 + d[i + 1] * 150 + d[i + 2] * 29) >> 8;
-          let v = ((lum - min) * scale) | 0;
-          if (v < 0) v = 0;
-          else if (v > 255) v = 255;
-          // Nhấn tương phản nhẹ chữ S quanh ngưỡng giữa giúp mã QR nhạt sắc cạnh hơn
-          v = v < 115 ? (v * 0.85) | 0 : Math.min(255, (v * 1.12) | 0);
-          d[i] = v;
-          d[i + 1] = v;
-          d[i + 2] = v;
-        }
-        return imageData;
-      }
-
-      function updateZoomButtonsUI() {
-        const btns = document.querySelectorAll('.qr-zoom-btn');
-        btns.forEach(btn => {
-          const z = parseFloat(btn.getAttribute('data-zoom'));
-          btn.classList.toggle('active', Math.abs(z - qrZoomLevel) < 0.05);
-        });
-      }
-
-      async function applyQrZoom(targetZoom) {
-        qrZoomLevel = targetZoom;
-        updateZoomButtonsUI();
-        if (qrVideoTrack && qrHardwareZoomSupported && typeof qrVideoTrack.getCapabilities === 'function') {
-          try {
-            const cap = qrVideoTrack.getCapabilities();
-            if (cap && cap.zoom) {
-              const clamped = Math.min(Math.max(targetZoom, cap.zoom.min), cap.zoom.max);
-              await qrVideoTrack.applyConstraints({ advanced: [{ zoom: clamped }] });
-              if (qrVideoEl) qrVideoEl.style.transform = '';
-              return;
-            }
-          } catch (e) {}
-        }
-        // Fallback zoom kỹ thuật số mượt mà nếu phần cứng/WebView không mở API zoom
-        if (qrVideoEl) {
-          qrVideoEl.style.transformOrigin = 'center center';
-          qrVideoEl.style.transform = targetZoom > 1.01 ? `scale(${targetZoom})` : '';
-        }
-      }
-
-      async function toggleQrTorch() {
-        if (!qrVideoTrack || typeof qrVideoTrack.getCapabilities !== 'function') return;
-        try {
-          const cap = qrVideoTrack.getCapabilities();
-          if (!cap || !cap.torch) return;
-          qrTorchOn = !qrTorchOn;
-          await qrVideoTrack.applyConstraints({ advanced: [{ torch: qrTorchOn }] });
-          const btnTorch = document.getElementById('btnToggleTorch');
-          if (btnTorch) btnTorch.classList.toggle('active', qrTorchOn);
-          triggerHaptic('light');
-        } catch (e) {
-          console.warn('Không thể bật/tắt đèn flash:', e);
-        }
-      }
 
       // Hàm giải phóng triệt để phần cứng camera (Dừng toàn bộ MediaStreamTrack để Android tắt thông báo máy ảnh)
       function releaseCameraHardware() {
-        if (qrScanRafId) {
-          cancelAnimationFrame(qrScanRafId);
-          qrScanRafId = null;
+        if (html5QrCode) {
+          try { html5QrCode.stop(); } catch(e){}
+          try { html5QrCode.clear(); } catch(e){}
+          html5QrCode = null;
         }
-        qrDetectBusy = false;
-        qrTorchOn = false;
-        qrHardwareZoomSupported = false;
-
-        if (qrActiveStream && typeof qrActiveStream.getTracks === 'function') {
-          qrActiveStream.getTracks().forEach(track => {
-            try {
-              track.stop();
-              track.enabled = false;
-            } catch (e) {}
-          });
-        }
-        qrActiveStream = null;
-        qrVideoTrack = null;
-        qrVideoEl = null;
-
+        // Dừng triệt để tất cả Track của mọi video element trên trang web
         const allVideos = document.querySelectorAll('video');
         allVideos.forEach(v => {
           if (v.srcObject && typeof v.srcObject.getTracks === 'function') {
@@ -4678,465 +4223,90 @@
               try {
                 track.stop();
                 track.enabled = false;
-              } catch (e) {}
+              } catch(e){}
             });
             v.srcObject = null;
           }
         });
-
-        const btnTorch = document.getElementById('btnToggleTorch');
-        if (btnTorch) {
-          btnTorch.style.display = 'none';
-          btnTorch.classList.remove('active');
-        }
         const readerEl = document.getElementById('reader');
         if (readerEl) readerEl.innerHTML = '';
-
-        const freezeCanvas = document.getElementById('qrFreezeCanvas');
-        if (freezeCanvas) freezeCanvas.classList.remove('active');
-        const targetLock = document.getElementById('qrTargetLock');
-        if (targetLock) {
-          targetLock.classList.remove('active', 'confirmed');
-        }
-        const flashEl = document.getElementById('qrCaptureFlash');
-        if (flashEl) flashEl.classList.remove('flash');
       }
 
-      function mapQrPointsToScreenBox(rawPoints, cropMeta) {
-        const vp = document.getElementById('qrViewportContainer');
-        if (!vp || !qrVideoEl || !qrVideoEl.videoWidth || !qrVideoEl.videoHeight) return null;
-        if (!rawPoints || rawPoints.length < 2) return null;
-
-        const rect = vp.getBoundingClientRect();
-        const W = rect.width;
-        const H = rect.height;
-        const vw = qrVideoEl.videoWidth;
-        const vh = qrVideoEl.videoHeight;
-
-        const baseScale = Math.max(W / vw, H / vh);
-        const renderScale = baseScale * (qrHardwareZoomSupported ? 1 : qrZoomLevel);
-        const offsetX = (W - vw * renderScale) * 0.5;
-        const offsetY = (H - vh * renderScale) * 0.5;
-
-        let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-        for (let i = 0; i < rawPoints.length; i++) {
-          const p = rawPoints[i];
-          if (!p) continue;
-          let vx = p.x;
-          let vy = p.y;
-          if (cropMeta) {
-            vx = cropMeta.sx + (p.x / cropMeta.targetSize) * cropMeta.cropSize;
-            vy = cropMeta.sy + (p.y / cropMeta.targetSize) * cropMeta.cropSize;
-          }
-          const sx = offsetX + vx * renderScale;
-          const sy = offsetY + vy * renderScale;
-          if (sx < minX) minX = sx;
-          if (sy < minY) minY = sy;
-          if (sx > maxX) maxX = sx;
-          if (sy > maxY) maxY = sy;
-        }
-        if (!isFinite(minX) || !isFinite(minY)) return null;
-
-        const pad = 10;
-        const boxW = Math.max(46, (maxX - minX) + pad * 2);
-        const boxH = Math.max(46, (maxY - minY) + pad * 2);
-        const side = Math.max(boxW, boxH);
-        const cx = (minX + maxX) * 0.5;
-        const cy = (minY + maxY) * 0.5;
-        return {
-          left: Math.max(8, Math.min(W - side - 8, cx - side * 0.5)),
-          top: Math.max(8, Math.min(H - side - 8, cy - side * 0.5)),
-          size: side
-        };
-      }
-
-      function freezeVideoFrameToCanvas() {
-        const vp = document.getElementById('qrViewportContainer');
-        const canvas = document.getElementById('qrFreezeCanvas');
-        if (!vp || !canvas || !qrVideoEl || !qrVideoEl.videoWidth || !qrVideoEl.videoHeight) return;
-
-        const rect = vp.getBoundingClientRect();
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        const cw = Math.max(1, Math.floor(rect.width * dpr));
-        const ch = Math.max(1, Math.floor(rect.height * dpr));
-        canvas.width = cw;
-        canvas.height = ch;
-
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
-
-        const vw = qrVideoEl.videoWidth;
-        const vh = qrVideoEl.videoHeight;
-        const baseScale = Math.max(cw / vw, ch / vh);
-        const renderScale = baseScale * (qrHardwareZoomSupported ? 1 : qrZoomLevel);
-        const drawW = vw * renderScale;
-        const drawH = vh * renderScale;
-        const dx = (cw - drawW) * 0.5;
-        const dy = (ch - drawH) * 0.5;
-
-        ctx.drawImage(qrVideoEl, dx, dy, drawW, drawH);
-        canvas.classList.add('active');
-
-        const flashEl = document.getElementById('qrCaptureFlash');
-        if (flashEl) {
-          flashEl.classList.remove('flash');
-          void flashEl.offsetWidth;
-          flashEl.classList.add('flash');
-        }
-      }
-
-      function onQrDecodedSuccess(decodedText, screenBox = null) {
-        if (!decodedText || isQrProcessing) return;
-        isQrProcessing = true;
-
-        if (qrScanRafId) {
-          cancelAnimationFrame(qrScanRafId);
-          qrScanRafId = null;
-        }
-
-        // Hiệu ứng chụp bắt & khóa mục tiêu kiểu Zalo
-        freezeVideoFrameToCanvas();
-
-        const targetLock = document.getElementById('qrTargetLock');
-        if (targetLock) {
-          if (screenBox) {
-            targetLock.style.left = screenBox.left + 'px';
-            targetLock.style.top = screenBox.top + 'px';
-            targetLock.style.width = screenBox.size + 'px';
-            targetLock.style.height = screenBox.size + 'px';
-          } else {
-            const vp = document.getElementById('qrViewportContainer');
-            const rect = vp ? vp.getBoundingClientRect() : { width: window.innerWidth, height: window.innerHeight };
-            const s = 110;
-            targetLock.style.left = ((rect.width - s) * 0.5) + 'px';
-            targetLock.style.top = ((rect.height - s) * 0.5) + 'px';
-            targetLock.style.width = s + 'px';
-            targetLock.style.height = s + 'px';
-          }
-          targetLock.classList.remove('active', 'confirmed');
-          void targetLock.offsetWidth;
-          targetLock.classList.add('active');
-          setTimeout(() => targetLock.classList.add('confirmed'), 110);
-        }
-
-        const reticle = document.getElementById('qrReticleOverlay');
-        if (reticle) reticle.classList.add('locked');
-        const tipStatus = document.getElementById('qrTipStatus');
-        const tipText = document.getElementById('qrTipText');
-        if (tipStatus) tipStatus.classList.add('locked');
-        if (tipText) tipText.textContent = 'Đã bắt được mã QR!';
-        triggerHaptic('success');
-
-        setTimeout(() => {
-          closeQrScanner();
-          handleScannedCode(decodedText);
-          isQrProcessing = false;
-        }, 320);
-      }
-
-      function drawCenterCropToCanvas(video, canvas, ctx, cropRatio, targetSize) {
-        const vw = video.videoWidth;
-        const vh = video.videoHeight;
-        if (!vw || !vh) return null;
-        const minSide = Math.min(vw, vh);
-        const effRatio = qrHardwareZoomSupported ? cropRatio : Math.max(0.24, cropRatio / Math.max(1.0, qrZoomLevel * 0.92));
-        const cropSize = Math.max(110, Math.floor(minSide * effRatio));
-        const sx = Math.floor((vw - cropSize) * 0.5);
-        const sy = Math.floor((vh - cropSize) * 0.5);
-        if (canvas.width !== targetSize || canvas.height !== targetSize) {
-          canvas.width = targetSize;
-          canvas.height = targetSize;
-        }
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = 'medium';
-        ctx.drawImage(video, sx, sy, cropSize, cropSize, 0, 0, targetSize, targetSize);
-        return { sx: sx, sy: sy, cropSize: cropSize, targetSize: targetSize };
-      }
-
-      function extractBarcodePoints(codeObj) {
-        if (!codeObj) return null;
-        if (codeObj.cornerPoints && codeObj.cornerPoints.length >= 2) return codeObj.cornerPoints;
-        if (codeObj.boundingBox) {
-          const b = codeObj.boundingBox;
-          return [
-            { x: b.x, y: b.y },
-            { x: b.x + b.width, y: b.y + b.height }
-          ];
-        }
-        return null;
-      }
-
-      function extractJsQrPoints(codeObj) {
-        if (!codeObj || !codeObj.location) return null;
-        const l = codeObj.location;
-        return [l.topLeftCorner, l.topRightCorner, l.bottomRightCorner, l.bottomLeftCorner];
-      }
-
-      function startQrScanLoop() {
-        if (!qrRoiCanvas) {
-          qrRoiCanvas = document.createElement('canvas');
-          qrRoiCtx = qrRoiCanvas.getContext('2d', { willReadFrequently: true });
-        }
-        if (!qrFullCanvas) {
-          qrFullCanvas = document.createElement('canvas');
-          qrFullCtx = qrFullCanvas.getContext('2d', { willReadFrequently: true });
-        }
-
-        const tick = async () => {
-          if (isQrProcessing || !qrVideoEl || !qrActiveStream) return;
-
-          if (!qrDetectBusy && qrVideoEl.readyState >= 2 && qrVideoEl.videoWidth > 0) {
-            qrDetectBusy = true;
-            try {
-              const pass = qrPassCounter++;
-
-              // Ưu tiên 1: Native Hardware BarcodeDetector (tốc độ < 15ms, bắt xa như Zalo)
-              if (qrNativeDetector) {
-                const codes = await qrNativeDetector.detect(qrVideoEl);
-                if (codes && codes.length > 0 && codes[0].rawValue) {
-                  const box = mapQrPointsToScreenBox(extractBarcodePoints(codes[0]), null);
-                  onQrDecodedSuccess(codes[0].rawValue, box);
-                  qrDetectBusy = false;
-                  return;
-                }
-                // Xen kẽ crop tâm 46% và 34% cho BarcodeDetector để bắt mã QR cực nhỏ ở xa
-                const nativeCropRatio = (pass % 4 === 1) ? 0.46 : ((pass % 4 === 3) ? 0.34 : 0);
-                if (nativeCropRatio > 0) {
-                  const meta = drawCenterCropToCanvas(qrVideoEl, qrRoiCanvas, qrRoiCtx, nativeCropRatio, 600);
-                  if (meta) {
-                    const roiCodes = await qrNativeDetector.detect(qrRoiCanvas);
-                    if (roiCodes && roiCodes.length > 0 && roiCodes[0].rawValue) {
-                      const box = mapQrPointsToScreenBox(extractBarcodePoints(roiCodes[0]), meta);
-                      onQrDecodedSuccess(roiCodes[0].rawValue, box);
-                      qrDetectBusy = false;
-                      return;
-                    }
-                  }
-                }
-              }
-
-              // Ưu tiên 2: jsQR Multi-Scale ROI (chạy liên tục nếu thiếu BarcodeDetector, hoặc xen kẽ mỗi 2 frame)
-              const hasJsQr = (typeof window.jsQR === 'function');
-              if (hasJsQr && (!qrNativeDetector || pass % 2 === 0)) {
-                const mode = pass % 4;
-                if (mode === 0) {
-                  // Pass A: Tâm khung ngắm 36% phóng đại lên 420px (bắt cực nhạy mã nhỏ ở xa)
-                  const meta = drawCenterCropToCanvas(qrVideoEl, qrRoiCanvas, qrRoiCtx, 0.36, 420);
-                  if (meta) {
-                    const imgData = qrRoiCtx.getImageData(0, 0, 420, 420);
-                    const code = window.jsQR(imgData.data, 420, 420, { inversionAttempts: 'attemptBoth' });
-                    if (code && code.data) {
-                      onQrDecodedSuccess(code.data, mapQrPointsToScreenBox(extractJsQrPoints(code), meta));
-                      qrDetectBusy = false;
-                      return;
-                    }
-                  }
-                } else if (mode === 1) {
-                  // Pass B: Tâm khung ngắm 52% lên 480px (khoảng cách trung bình 20-30cm)
-                  const meta = drawCenterCropToCanvas(qrVideoEl, qrRoiCanvas, qrRoiCtx, 0.52, 480);
-                  if (meta) {
-                    const imgData = qrRoiCtx.getImageData(0, 0, 480, 480);
-                    const code = window.jsQR(imgData.data, 480, 480, { inversionAttempts: 'attemptBoth' });
-                    if (code && code.data) {
-                      onQrDecodedSuccess(code.data, mapQrPointsToScreenBox(extractJsQrPoints(code), meta));
-                      qrDetectBusy = false;
-                      return;
-                    }
-                  }
-                } else if (mode === 2) {
-                  // Pass C: Tâm khung ngắm 42% + kéo dãn tương phản cho tem in nhiệt nhạt / thiếu sáng
-                  const meta = drawCenterCropToCanvas(qrVideoEl, qrRoiCanvas, qrRoiCtx, 0.42, 420);
-                  if (meta) {
-                    const imgData = enhanceGrayscaleContrast(qrRoiCtx.getImageData(0, 0, 420, 420));
-                    const code = window.jsQR(imgData.data, 420, 420, { inversionAttempts: 'attemptBoth' });
-                    if (code && code.data) {
-                      onQrDecodedSuccess(code.data, mapQrPointsToScreenBox(extractJsQrPoints(code), meta));
-                      qrDetectBusy = false;
-                      return;
-                    }
-                  }
-                } else {
-                  // Pass D: Vùng rộng 82% lên 640px (bắt khi đưa tem gần sát camera hoặc lệch tâm)
-                  const meta = drawCenterCropToCanvas(qrVideoEl, qrFullCanvas, qrFullCtx, 0.82, 640);
-                  if (meta) {
-                    const imgData = qrFullCtx.getImageData(0, 0, 640, 640);
-                    const code = window.jsQR(imgData.data, 640, 640, { inversionAttempts: 'attemptBoth' });
-                    if (code && code.data) {
-                      onQrDecodedSuccess(code.data, mapQrPointsToScreenBox(extractJsQrPoints(code), meta));
-                      qrDetectBusy = false;
-                      return;
-                    }
-                  }
-                }
-              }
-            } catch (err) {
-              // Bỏ qua lỗi frame đơn lẻ khi camera đang đổi độ phân giải
-            }
-            qrDetectBusy = false;
-          }
-
-          if (!isQrProcessing && qrActiveStream) {
-            qrScanRafId = requestAnimationFrame(tick);
-          }
-        };
-
-        qrScanRafId = requestAnimationFrame(tick);
-      }
-
-      async function getBackAndAllCameras() {
-        try {
-          const devices = await navigator.mediaDevices.enumerateDevices();
-          const videoInputs = (devices || []).filter(d => d.kind === 'videoinput');
-          // Xếp camera sau chính lên trước, camera phụ/góc rộng xuống sau, tránh chọn nhầm camera trước
-          const backCams = videoInputs.filter(d => !/front|user|trước|selfie/i.test(d.label || ''));
-          return backCams.length > 0 ? backCams : videoInputs;
-        } catch (e) {
-          return [];
-        }
-      }
-
-      async function openStreamWithHighRes(cameraTarget) {
-        let baseVideo;
-        if (cameraTarget && typeof cameraTarget === 'object') {
-          if (cameraTarget.deviceId) {
-            baseVideo = { deviceId: { exact: cameraTarget.deviceId } };
-          } else {
-            baseVideo = { facingMode: { ideal: cameraTarget.facingMode || 'environment' } };
-          }
-        } else if (typeof cameraTarget === 'string' && cameraTarget !== 'environment' && cameraTarget !== 'user') {
-          baseVideo = { deviceId: { exact: cameraTarget } };
-        } else {
-          baseVideo = { facingMode: { ideal: cameraTarget || 'environment' } };
-        }
-
-        const attempts = [
-          Object.assign({}, baseVideo, {
-            width: { ideal: 1920, min: 1280 },
-            height: { ideal: 1080, min: 720 },
-            frameRate: { ideal: 30 }
-          }),
-          Object.assign({}, baseVideo, {
-            width: { ideal: 1280 },
-            height: { ideal: 720 }
-          }),
-          baseVideo
-        ];
-
-        // Nếu đang tìm theo deviceId bị OverconstrainedError, fallback an toàn sang facingMode / camera mặc định
-        if (baseVideo.deviceId) {
-          attempts.push({
-            facingMode: { ideal: 'environment' },
-            width: { ideal: 1280 },
-            height: { ideal: 720 }
-          });
-        }
-        attempts.push({ facingMode: { ideal: 'environment' } });
-        attempts.push(true);
-
-        let lastErr = null;
-        for (let i = 0; i < attempts.length; i++) {
-          try {
-            return await navigator.mediaDevices.getUserMedia({ audio: false, video: attempts[i] });
-          } catch (e) {
-            lastErr = e;
-            // Nếu người dùng từ chối quyền Camera (NotAllowedError / PermissionDeniedError), dừng ngay không thử lại
-            if (e && (e.name === 'NotAllowedError' || e.name === 'PermissionDeniedError')) {
-              throw e;
-            }
-          }
-        }
-        throw lastErr || new Error('Cannot start camera stream');
-      }
-
-      async function startCameraScanner(cameraIdOrFacing) {
+      async function startCameraScanner(cameraIdOrConfig) {
         const loadingEl = document.getElementById('qrCameraLoading');
         if (loadingEl) loadingEl.classList.remove('hidden');
 
         try {
           releaseCameraHardware();
 
-          const [, stream] = await Promise.all([
-            initNativeBarcodeDetector(),
-            openStreamWithHighRes(cameraIdOrFacing)
-          ]);
-          ensureJsQrReady();
+          html5QrCode = new Html5Qrcode("reader");
 
-          qrActiveStream = stream;
-          const tracks = stream.getVideoTracks();
-          qrVideoTrack = tracks && tracks.length > 0 ? tracks[0] : null;
-
-          const readerEl = document.getElementById('reader');
-          if (!readerEl) throw new Error('Missing #reader');
-          readerEl.innerHTML = '';
-
-          const videoEl = document.createElement('video');
-          videoEl.setAttribute('playsinline', 'true');
-          videoEl.setAttribute('webkit-playsinline', 'true');
-          videoEl.setAttribute('autoplay', 'true');
-          videoEl.muted = true;
-          videoEl.setAttribute('muted', 'true');
-          videoEl.srcObject = stream;
-          readerEl.appendChild(videoEl);
-          qrVideoEl = videoEl;
-
-          await videoEl.play().catch(() => {});
-
-          // Cấu hình AutoFocus liên tục + Zoom mặc định 1.5x + Torch nếu phần cứng hỗ trợ
-          if (qrVideoTrack && typeof qrVideoTrack.getCapabilities === 'function') {
-            try {
-              const cap = qrVideoTrack.getCapabilities();
-              const adv = [];
-              if (cap.focusMode && cap.focusMode.includes('continuous')) {
-                adv.push({ focusMode: 'continuous' });
-              }
-              if (cap.zoom && cap.zoom.min >= 0.5 && cap.zoom.min <= 2.0 && cap.zoom.max > cap.zoom.min) {
-                qrHardwareZoomSupported = true;
-                const initZoom = Math.min(Math.max(qrZoomLevel, cap.zoom.min), cap.zoom.max);
-                qrZoomLevel = initZoom;
-                adv.push({ zoom: initZoom });
-              } else {
-                qrHardwareZoomSupported = false;
-              }
-              if (adv.length > 0) {
-                await qrVideoTrack.applyConstraints({ advanced: adv }).catch(() => {});
-              }
-              const btnTorch = document.getElementById('btnToggleTorch');
-              if (btnTorch) {
-                btnTorch.style.display = cap.torch ? 'inline-flex' : 'none';
-              }
-            } catch (e) {}
-          }
-
-          await applyQrZoom(qrZoomLevel);
-
-          // Chỉ lưu camera sau thật (deviceId hợp lệ) vào localStorage, tuyệt đối không ghim nhầm camera trước
-          const trackLabel = (qrVideoTrack && qrVideoTrack.label) || '';
-          const isFrontCam = /front|user|trước|selfie/i.test(trackLabel);
-          const resolvedCamId = (qrVideoTrack && typeof qrVideoTrack.getSettings === 'function' && qrVideoTrack.getSettings().deviceId)
-            || (cameraIdOrFacing && typeof cameraIdOrFacing === 'object' ? cameraIdOrFacing.deviceId : null)
-            || (typeof cameraIdOrFacing === 'string' && cameraIdOrFacing !== 'environment' && cameraIdOrFacing !== 'user' ? cameraIdOrFacing : null);
-          if (resolvedCamId && !isFrontCam) {
-            try { localStorage.setItem('ltf_preferred_back_cam_v2', resolvedCamId); } catch (e) {}
-          } else if (isFrontCam) {
-            try { localStorage.removeItem('ltf_preferred_back_cam_v2'); } catch (e) {}
-          }
-
-          if (loadingEl) loadingEl.classList.add('hidden');
-          startQrScanLoop();
-
-          // Nạp danh sách camera sau để bật nút đổi ống kính nếu có > 1 camera
-          getBackAndAllCameras().then(cams => {
-            if (cams && cams.length > 1) {
-              qrCamerasList = cams;
-              const currentId = qrVideoTrack && qrVideoTrack.getSettings ? qrVideoTrack.getSettings().deviceId : null;
-              const idx = currentId ? cams.findIndex(c => c.deviceId === currentId) : -1;
-              if (idx >= 0) currentQrCamIndex = idx;
-              const btnSwitch = document.getElementById('btnSwitchCamera');
-              if (btnSwitch) btnSwitch.style.display = 'inline-flex';
+          // Tận dụng BarcodeDetector phần cứng 60fps của Chrome/Android để quét cực nhạy và tức thì
+          const config = {
+            fps: 25,
+            disableFlip: false,
+            experimentalFeatures: {
+              useBarCodeDetectorIfSupported: true
             }
-          }).catch(() => {});
+          };
+
+          const onScanSuccess = (decodedText) => {
+            if (isQrProcessing) return;
+            isQrProcessing = true;
+
+            const reticle = document.getElementById('qrReticleOverlay');
+            if (reticle) reticle.classList.add('locked');
+            const tipStatus = document.getElementById('qrTipStatus');
+            const tipText = document.getElementById('qrTipText');
+            if (tipStatus) tipStatus.classList.add('locked');
+            if (tipText) tipText.textContent = '🎯 Đã khóa vị trí tấm ván!';
+            triggerHaptic('success');
+
+            setTimeout(() => {
+              closeQrScanner();
+              handleScannedCode(decodedText);
+              isQrProcessing = false;
+            }, 320);
+          };
+
+          await html5QrCode.start(
+            cameraIdOrConfig,
+            config,
+            onScanSuccess,
+            () => {}
+          );
+
+          // Ghi nhớ camera đang dùng vào localStorage để lần sau khởi động không hỏi lại và lên hình tức thì
+          if (typeof cameraIdOrConfig === 'string') {
+            try { localStorage.setItem('ltf_preferred_cam_id', cameraIdOrConfig); } catch(e){}
+          }
+
+          // Kích hoạt video phát mượt và ẩn loading sau khi stream đã nạp
+          setTimeout(() => {
+            const videoEl = document.querySelector('#reader video');
+            if (videoEl) {
+              videoEl.setAttribute('playsinline', 'true');
+              videoEl.setAttribute('webkit-playsinline', 'true');
+              videoEl.muted = true;
+              videoEl.setAttribute('muted', 'true');
+              videoEl.play().catch(() => {});
+            }
+            if (loadingEl) loadingEl.classList.add('hidden');
+          }, 120);
+
+          // Đọc danh sách camera trong nền để bật nút "Đổi cam" nếu thiết bị có nhiều ống kính
+          if (qrCamerasList.length === 0) {
+            Html5Qrcode.getCameras().then(cams => {
+              if (cams && cams.length > 1) {
+                qrCamerasList = cams;
+                const btnSwitch = document.getElementById('btnSwitchCamera');
+                if (btnSwitch) btnSwitch.style.display = 'inline-flex';
+              }
+            }).catch(() => {});
+          }
+
         } catch (err) {
-          console.warn('Lỗi khi mở camera với cấu hình:', cameraIdOrFacing, err);
+          console.warn("Lỗi khi mở camera với cấu hình:", cameraIdOrConfig, err);
           throw err;
         }
       }
@@ -5151,53 +4321,43 @@
 
         if (reticle) reticle.classList.remove('locked');
         if (tipStatus) tipStatus.classList.remove('locked');
-        if (tipText) tipText.textContent = 'Đưa mã QR vào khung ngắm';
+        if (tipText) tipText.textContent = 'Căn tem vào tâm ngắm • Bắt chuẩn 100%';
         if (loadingEl) loadingEl.classList.remove('hidden');
-        if (btnSwitch) btnSwitch.style.display = 'none';
         isQrProcessing = false;
-        qrZoomLevel = 1.8;
-        updateZoomButtonsUI();
         triggerHaptic('light');
 
         modal.classList.add('active');
 
-        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-          alert('Trình duyệt không hỗ trợ Camera. Vui lòng mở bằng Chrome hoặc Safari!');
-          closeQrScanner();
-          return;
-        }
-
+        // Khởi động tức thì (Zero-Lag): ưu tiên dùng camera ID đã ghi nhớ từ lần quét trước
         let preferredCamId = null;
-        try {
-          localStorage.removeItem('ltf_preferred_cam_id');
-          preferredCamId = localStorage.getItem('ltf_preferred_back_cam_v2');
-        } catch (e) {}
+        try { preferredCamId = localStorage.getItem('ltf_preferred_cam_id'); } catch(e){}
 
         try {
           if (preferredCamId) {
-            await startCameraScanner({ deviceId: preferredCamId });
+            await startCameraScanner(preferredCamId);
             return;
           }
-          await startCameraScanner({ facingMode: 'environment' });
+          // Nếu lần đầu chưa lưu: mở trực tiếp camera sau
+          await startCameraScanner({ facingMode: "environment" });
         } catch (e1) {
-          console.warn('Thử fallback sang danh sách camera sau:', e1);
+          console.warn("Thử fallback sang danh sách camera phần cứng:", e1);
           try {
-            try { localStorage.removeItem('ltf_preferred_back_cam_v2'); } catch (e) {}
-            const cams = await getBackAndAllCameras();
-            const validCams = (cams || []).filter(c => c && c.deviceId);
-            if (validCams.length > 0) {
-              qrCamerasList = validCams;
-              let backIndex = validCams.findIndex(c => /back|rear|environment|sau/i.test(c.label) && !/wide|ultra|macro|tele/i.test(c.label));
-              if (backIndex === -1) backIndex = validCams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
+            const cams = await Html5Qrcode.getCameras();
+            if (cams && cams.length > 0) {
+              qrCamerasList = cams;
+              let backIndex = cams.findIndex(c => /back|rear|environment|sau/i.test(c.label));
+              if (backIndex === -1 && cams.length > 1) {
+                backIndex = cams.length - 1;
+              }
               if (backIndex === -1) backIndex = 0;
               currentQrCamIndex = backIndex;
-              await startCameraScanner({ deviceId: validCams[backIndex].deviceId });
-              if (btnSwitch && validCams.length > 1) btnSwitch.style.display = 'inline-flex';
+              await startCameraScanner(cams[backIndex].id);
+              if (btnSwitch && cams.length > 1) btnSwitch.style.display = 'inline-flex';
               return;
             }
-            await startCameraScanner({ facingMode: 'user' });
+            await startCameraScanner({ facingMode: "user" });
           } catch (finalErr) {
-            alert('Không thể truy cập Camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(' + finalErr + ')');
+            alert("Không thể truy cập Camera. Vui lòng cho phép quyền Camera trong cài đặt trình duyệt!\n(" + finalErr + ")");
             closeQrScanner();
           }
         }
@@ -5208,12 +4368,11 @@
         triggerHaptic('medium');
         currentQrCamIndex = (currentQrCamIndex + 1) % qrCamerasList.length;
         try {
-          const nextCamId = qrCamerasList[currentQrCamIndex].deviceId;
-          if (nextCamId) {
-            await startCameraScanner({ deviceId: nextCamId });
-          }
+          const nextCamId = qrCamerasList[currentQrCamIndex].id;
+          try { localStorage.setItem('ltf_preferred_cam_id', nextCamId); } catch(e){}
+          await startCameraScanner(nextCamId);
         } catch (e) {
-          console.warn('Lỗi đổi camera:', e);
+          console.warn("Lỗi đổi camera:", e);
         }
       }
 
@@ -5226,56 +4385,13 @@
 
         if (reticle) reticle.classList.remove('locked');
         if (tipStatus) tipStatus.classList.remove('locked');
-        if (tipText) tipText.textContent = 'Đưa mã QR vào khung ngắm';
+        if (tipText) tipText.textContent = 'Căn tem vào tâm ngắm • Bắt chuẩn 100%';
         if (loadingEl) loadingEl.classList.remove('hidden');
         modal.classList.remove('active');
 
         // Giải phóng triệt để phần cứng camera khỏi hệ điều hành
         releaseCameraHardware();
       }
-
-      // Gắn sự kiện nút Zoom, Đèn pin và Chạm để lấy nét (Tap-to-Focus)
-      (function bindQrControls() {
-        document.querySelectorAll('.qr-zoom-btn').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const z = parseFloat(btn.getAttribute('data-zoom')) || 1.0;
-            triggerHaptic('light');
-            applyQrZoom(z);
-          });
-        });
-        const btnTorch = document.getElementById('btnToggleTorch');
-        if (btnTorch) {
-          btnTorch.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleQrTorch();
-          });
-        }
-        const vp = document.getElementById('qrViewportContainer');
-        const ring = document.getElementById('qrFocusRing');
-        if (vp) {
-          vp.addEventListener('click', async (e) => {
-            if (!qrVideoTrack) return;
-            if (ring) {
-              const rect = vp.getBoundingClientRect();
-              ring.style.left = (e.clientX - rect.left) + 'px';
-              ring.style.top = (e.clientY - rect.top) + 'px';
-              ring.classList.remove('show');
-              void ring.offsetWidth;
-              ring.classList.add('show');
-              setTimeout(() => ring.classList.remove('show'), 450);
-            }
-            if (typeof qrVideoTrack.getCapabilities === 'function') {
-              try {
-                const cap = qrVideoTrack.getCapabilities();
-                if (cap.focusMode && cap.focusMode.includes('continuous')) {
-                  await qrVideoTrack.applyConstraints({ advanced: [{ focusMode: 'continuous' }] }).catch(() => {});
-                }
-              } catch (err) {}
-            }
-          });
-        }
-      })();
 
       // Tự động tắt giải phóng camera khi người dùng ẩn tab / chuyển ứng dụng
       document.addEventListener('visibilitychange', () => {
@@ -5617,7 +4733,6 @@
         const allLayerNames = new Set();
         layersData.forEach(l => { if (l.name) allLayerNames.add(l.name); });
         Object.keys(layerMeshMap).forEach(name => allLayerNames.add(name));
-        Object.keys(layerEdgeMap).forEach(name => allLayerNames.add(name));
 
         if (allLayerNames.size === 0) {
           box.innerHTML = `<div style="padding:24px 16px; text-align:center; color:var(--text-sub); font-size:13px;">Chưa có dữ liệu Layer trong mô hình này.</div>`;
@@ -5630,8 +4745,7 @@
         sortedLayers.forEach((name, idx) => {
           const isHidden = hiddenLayers.has(name);
           const meshes = layerMeshMap[name] || [];
-          const edges = layerEdgeMap[name] || [];
-          const count = meshes.length > 0 ? meshes.length : edges.length;
+          const count = meshes.length;
 
           const layerDef = layersData.find(l => l.name === name);
           let dotColor = DEFAULT_LAYER_COLORS[idx % DEFAULT_LAYER_COLORS.length];
@@ -5686,10 +4800,6 @@
         meshes.forEach(m => {
           m.visible = !isHidden;
           if (m.userData.edgeLines) m.userData.edgeLines.visible = !isHidden;
-        });
-        const edges = layerEdgeMap[layerName] || [];
-        edges.forEach(l => {
-          l.visible = !isHidden;
         });
 
         if (selectedBoardIndex !== null) {
@@ -5827,218 +4937,44 @@
         }
       }
 
-      // 2. RÃ RỜI CỤM CHI TIẾT BẢO TOÀN GROUP (GROUP-PRESERVING EXPLODE VIEW)
-      function hasRenderableMeshDescendant(node) {
-        if (!node) return false;
-        let found = false;
-        node.traverse(o => {
-          if (!found && !o.isLineSegments && o.isMesh && o.geometry) {
-            found = true;
-          }
-        });
-        return found;
-      }
-
-      function containerHasOwnMesh(node) {
-        if (!node || !node.children) return false;
-        return node.children.some(c => {
-          if (!c || c.isLineSegments) return false;
-          if (hasLabelAncestor(c)) return false;
-          if (c.userData && (c.userData.ltfKind === 'group' || c.userData.ltfKind === 'component' || c.userData.ltfKind === 'label')) {
-            return false;
-          }
-          if (c.isMesh && c.geometry) return true;
-          if (c.children && c.children.length > 0 && !(c.userData && c.userData.ltfKind) && c.children.every(gc => gc.isMesh || gc.isLineSegments)) {
-            return c.children.some(gc => gc.isMesh && gc.geometry);
-          }
-          return false;
-        });
-      }
-
-      function isStructuralExplodeNode(node, hasExplicitKinds) {
-        if (!node || node.isLineSegments) return false;
-        if (hasLabelAncestor(node)) return false;
-        if (hasExplicitKinds) {
-          if (node.userData && (node.userData.ltfKind === 'group' || node.userData.ltfKind === 'component')) {
-            return true;
-          }
-          return false;
-        }
-        // GLTFLoader r128 tạo Object3D (isGroup = undefined) cho các glTF node chỉ chứa children (SimLab/Assembly/Group)
-        if (node.isGroup || node.isMesh) return true;
-        if (node.children && node.children.length > 0 && hasRenderableMeshDescendant(node)) {
-          return true;
-        }
-        return false;
-      }
-
-      function isAbfBoardNodeName(name) {
-        if (!name) return false;
-        return /ABF_PART_\d+|\[ABF:\d+\]/i.test(String(name));
-      }
-
-      function computeExplodeBoardFlags(node) {
-        if (!node) return false;
-        let ownBoard = (node.userData && node.userData.boardIndex !== undefined && node.userData.boardIndex !== null)
-          ? node.userData.boardIndex
-          : null;
-        if (ownBoard === null && isAbfBoardNodeName(node.name)) {
-          const m = String(node.name).match(/ABF_PART_(\d+)|\[ABF:(\d+)\]/i);
-          if (m) ownBoard = parseInt(m[1] || m[2], 10);
-        }
-        let hasBoardDesc = (ownBoard !== null);
-        if (node.children) {
-          node.children.forEach(c => {
-            if (computeExplodeBoardFlags(c)) hasBoardDesc = true;
-          });
-        }
-        node.userData._ownBoardIdx = ownBoard;
-        node.userData._hasBoardDescendant = hasBoardDesc;
-        return hasBoardDesc;
-      }
-
-      function isLegacyAtomicMeshGroup(node) {
-        if (!node || !node.children || node.children.length === 0) return true;
-        if (node.userData && node.userData._ownBoardIdx != null) return true;
-        if (isAbfBoardNodeName(node.name)) return true;
-        const nonLineChildren = node.children.filter(c => !c.isLineSegments && !hasLabelAncestor(c));
-        if (nonLineChildren.length === 0) return true;
-        // Nếu có ít nhất 1 con là container chứa hình học (Object3D/Group) => phải unwrap/duyệt tiếp, không coi là lá
-        const hasNestedContainer = nonLineChildren.some(c => !c.isMesh && c.children && c.children.length > 0 && hasRenderableMeshDescendant(c));
-        if (hasNestedContainer) return false;
-        if (nonLineChildren.length <= 1) return true;
-        // Nếu mọi con đều là Mesh lá có cùng boardIndex cụ thể => 1 tấm đa vật liệu (không xé lẻ)
-        const firstBIdx = (nonLineChildren[0].userData && nonLineChildren[0].userData.boardIndex != null)
-          ? nonLineChildren[0].userData.boardIndex
-          : null;
-        if (firstBIdx !== null && nonLineChildren.every(c => c.isMesh && c.userData && c.userData.boardIndex === firstBIdx)) {
-          return true;
-        }
-        return false;
-      }
-
-      function resetAllExplodeNodePositions() {
-        if (!modelRoot) return;
-        modelRoot.traverse(obj => {
-          if (obj.userData && obj.userData.origPosition) {
-            obj.position.copy(obj.userData.origPosition);
-          }
-        });
-        modelRoot.updateMatrixWorld(true);
-      }
-
+      // 2. RÃ RỜI CỤM CHI TIẾT (EXPLODE VIEW)
       function initMeshExplodeData() {
-        explodePlan = [];
-        if (!modelRoot) return;
+        if (!modelRoot || allMeshes.length === 0) return;
+        const box = new THREE.Box3().setFromObject(modelRoot);
+        const modelCenter = new THREE.Vector3();
+        box.getCenter(modelCenter);
 
-        resetAllExplodeNodePositions();
-        let hasExplicitKinds = false;
-        modelRoot.traverse(o => {
-          if (o.userData && (o.userData.ltfKind === 'group' || o.userData.ltfKind === 'component')) {
-            hasExplicitKinds = true;
+        allMeshes.forEach(mesh => {
+          if (!mesh.userData.origPosition) {
+            mesh.userData.origPosition = mesh.position.clone();
           }
+          const mBox = new THREE.Box3().setFromObject(mesh);
+          const mCenter = new THREE.Vector3();
+          mBox.getCenter(mCenter);
+
+          const dir = mCenter.clone().sub(modelCenter);
+          if (dir.length() < 0.0001) {
+            dir.set(0, 1, 0);
+          } else {
+            dir.normalize();
+          }
+          mesh.userData.explodeDir = dir;
         });
-        const modelHasAnyBoards = computeExplodeBoardFlags(modelRoot);
-
-        function collectExplodePlan(container, depth) {
-          if (!container || !container.children) return;
-          const structuralChildren = container.children.filter(c => isStructuralExplodeNode(c, hasExplicitKinds));
-          if (structuralChildren.length === 0) return;
-
-          const hasOwnLooseGeo = (container !== modelRoot) && containerHasOwnMesh(container);
-          if (structuralChildren.length === 1 && !hasOwnLooseGeo && (!container.userData || container.userData._ownBoardIdx == null)) {
-            if (hasExplicitKinds || (!structuralChildren[0].isMesh && !isLegacyAtomicMeshGroup(structuralChildren[0]))) {
-              collectExplodePlan(structuralChildren[0], depth);
-              return;
-            }
-          }
-
-          if (structuralChildren.length < 2 && !hasOwnLooseGeo && depth > 0) return;
-
-          const cBox = new THREE.Box3().setFromObject(container);
-          const cCenter = cBox.isEmpty()
-            ? container.getWorldPosition(new THREE.Vector3())
-            : cBox.getCenter(new THREE.Vector3());
-          const cSize = cBox.isEmpty() ? new THREE.Vector3(1, 1, 1) : cBox.getSize(new THREE.Vector3());
-          const cSpan = Math.max(cSize.x, cSize.y, cSize.z, 0.25);
-          const halfSpan = Math.max(cSpan * 0.5, 0.125);
-          const depthWeight = (depth === 0) ? 0.85 : Math.max(0.32, 0.68 / Math.pow(1.4, depth));
-          const baseWorldDist = Math.max(cSpan * depthWeight, 0.18);
-
-          structuralChildren.forEach((child, idx) => {
-            if (!child.userData.origPosition) {
-              child.userData.origPosition = child.position.clone();
-            }
-            const childBox = new THREE.Box3().setFromObject(child);
-            if (childBox.isEmpty()) return;
-            const childCenter = childBox.getCenter(new THREE.Vector3());
-
-            const offsetFromCenter = childCenter.clone().sub(cCenter);
-            const distFromCenter = offsetFromCenter.length();
-            const dirWorld = offsetFromCenter.clone();
-            if (distFromCenter < halfSpan * 0.04) {
-              const angle = (idx * 2.39996);
-              dirWorld.set(Math.cos(angle), 0.35 + ((idx % 3) * 0.12), Math.sin(angle)).normalize();
-            } else {
-              dirWorld.normalize();
-            }
-
-            const radialRatio = Math.min(1.6, distFromCenter / halfSpan);
-            const radialMult = 0.30 + 0.85 * radialRatio;
-
-            const p0 = container.worldToLocal(childCenter.clone());
-            const p1 = container.worldToLocal(childCenter.clone().add(dirWorld));
-            const localDirPerMeter = p1.sub(p0);
-
-            explodePlan.push({
-              node: child,
-              localDirPerMeter: localDirPerMeter,
-              maxWorldDist: baseWorldDist * radialMult
-            });
-
-            if (explodeMode === 'nested') {
-              if (hasExplicitKinds) {
-                const isOwnBoard = (child.userData && child.userData._ownBoardIdx != null);
-                const isHardwareComp = (child.userData && child.userData.ltfKind === 'component' && !child.userData._hasBoardDescendant);
-                const isNonAbfInAbfModel = (modelHasAnyBoards && child.userData && !child.userData._hasBoardDescendant);
-                if (!isOwnBoard && !isHardwareComp && !isNonAbfInAbfModel) {
-                  collectExplodePlan(child, depth + 1);
-                }
-              } else if (!child.isMesh && !isLegacyAtomicMeshGroup(child)) {
-                collectExplodePlan(child, depth + 1);
-              }
-            }
-          });
-        }
-
-        collectExplodePlan(modelRoot, 0);
-      }
-
-      function setExplodeMode(mode) {
-        const nextMode = (mode === 'nested') ? 'nested' : 'group';
-        if (explodeMode === nextMode) return;
-        explodeMode = nextMode;
-        const btnG = document.getElementById('btnExplodeGroup');
-        const btnN = document.getElementById('btnExplodeNested');
-        if (btnG) btnG.classList.toggle('active', explodeMode === 'group');
-        if (btnN) btnN.classList.toggle('active', explodeMode === 'nested');
-        explodePlan = [];
-        updateExplode(explodeFactor * 100);
       }
 
       function updateExplode(factorPercent) {
         explodeFactor = factorPercent / 100;
-        if (!modelRoot) return;
+        if (!modelRoot || allMeshes.length === 0) return;
 
-        if (explodePlan.length === 0) {
-          initMeshExplodeData();
-        }
+        initMeshExplodeData();
+        const box = new THREE.Box3().setFromObject(modelRoot);
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        const maxDist = Math.max(size.x, size.y, size.z) * 0.85;
 
-        explodePlan.forEach(item => {
-          if (item.node && item.node.userData.origPosition && item.localDirPerMeter) {
-            item.node.position
-              .copy(item.node.userData.origPosition)
-              .addScaledVector(item.localDirPerMeter, explodeFactor * item.maxWorldDist);
+        allMeshes.forEach(mesh => {
+          if (mesh.userData.origPosition && mesh.userData.explodeDir) {
+            mesh.position.copy(mesh.userData.origPosition).addScaledVector(mesh.userData.explodeDir, explodeFactor * maxDist);
           }
         });
       }
@@ -6080,24 +5016,18 @@
         allMeshes.forEach(mesh => {
           const bIdx = mesh.userData.boardIndex;
           if (isIsolatedMode) {
-            const vis = activeSet.has(bIdx);
-            mesh.visible = vis;
-            if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = vis;
+            if (activeSet.has(bIdx)) {
+              mesh.visible = true;
+              if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = true;
+            } else {
+              mesh.visible = false;
+              if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = false;
+            }
           } else {
             const lyrName = mesh.userData.layerName;
             const isHidden = hiddenLayers.has(lyrName) || (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx));
             mesh.visible = !isHidden;
             if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = !isHidden;
-          }
-        });
-        allEdgeLines.forEach(lineObj => {
-          const bIdx = lineObj.userData.boardIndex;
-          if (isIsolatedMode) {
-            lineObj.visible = activeSet.has(bIdx);
-          } else {
-            const lyrName = lineObj.userData.layerName;
-            const isHidden = hiddenLayers.has(lyrName) || (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx));
-            lineObj.visible = !isHidden;
           }
         });
 
@@ -6464,10 +5394,6 @@
             updateExplode(val);
           };
         }
-        const btnExplodeGroup = document.getElementById('btnExplodeGroup');
-        const btnExplodeNested = document.getElementById('btnExplodeNested');
-        if (btnExplodeGroup) btnExplodeGroup.onclick = () => setExplodeMode('group');
-        if (btnExplodeNested) btnExplodeNested.onclick = () => setExplodeMode('nested');
         if (btnResetExplode) btnResetExplode.onclick = resetExplode;
 
         // Nút Góc nhìn chuẩn SketchUp (Standard Views)
@@ -6632,13 +5558,6 @@
               if (mesh.userData.edgeLines && mesh.userData.boardIndex !== selectedBoardIndex) {
                 if (!isGhostMode || selectedBoardIndex === null) {
                   mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-                }
-              }
-            });
-            allEdgeLines.forEach(lineObj => {
-              if (lineObj.material && lineObj.userData.boardIndex !== selectedBoardIndex) {
-                if (!isGhostMode || selectedBoardIndex === null) {
-                  lineObj.material.color.setHex(defaultEdgeHex);
                 }
               }
             });
