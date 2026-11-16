@@ -1,0 +1,4538 @@
+[
+  {
+    "board_index": 667,
+    "part_name": "PN CON*[T.ÁO_2]-Hông Phải",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 2399.0,
+    "width": 551.8,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 540,
+    "part_name": "PN CON*[T.ÁO_2]-Hông Trái",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 2399.0,
+    "width": 551.8,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 446,
+    "part_name": "PN CON*[Giường1M8]- Xương đỡ vạt vai trái",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2025.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 496,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Thành Phải",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 299.0,
+    "width": 86.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 550,
+    "part_name": "PN CON*[T.ÁO_1]-Hông Trái",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 2399.0,
+    "width": 322.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 549,
+    "part_name": "PN CON*[T.ÁO_1]-Hông Phải",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 2399.0,
+    "width": 322.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 456,
+    "part_name": "PN CON*[Giường1M8]- Xương giường",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2077.5,
+    "width": 310.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 457,
+    "part_name": "PN CON*[Giường1M8]- Vai Trái Trong Ghép 34 (Dán Chỉ To)",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2060.0,
+    "width": 95.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 485,
+    "part_name": "PN CON*[Giường1M8]- Vai PhảiTrong Ghép 34 (Dán Chỉ To)",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2060.0,
+    "width": 95.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 443,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Vách",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 346.0,
+    "width": 115.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 501,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Thành Sau",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 309.9,
+    "width": 77.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 502,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Thành Phải",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 299.0,
+    "width": 86.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 498,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Thành Trái",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 299.0,
+    "width": 86.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 503,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Thành Trái",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 299.0,
+    "width": 86.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 491,
+    "part_name": "PN CON*[Giường1M8]- Vạt Giường",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2051.0,
+    "width": 899.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 562,
+    "part_name": "PN CON*[T.ÁO_1]-Cánh (Vát 45)",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 805.5,
+    "width": 259.3,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 561,
+    "part_name": "PN CON*[T.ÁO_1]-Cánh (Vát 45)",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 805.5,
+    "width": 259.3,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 554,
+    "part_name": "PN CON*[T.ÁO_1]-TẦNG CÓ CÁNH",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 527.5,
+    "width": 299.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 488,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Mặt Hộc (Vát 45)",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 364.5,
+    "width": 128.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 452,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Mặt Hộc (Vát 45)",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 364.5,
+    "width": 128.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 455,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Vách",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 346.0,
+    "width": 115.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 504,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Thành Sau",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 309.9,
+    "width": 77.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 497,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Thành Trước",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 309.9,
+    "width": 77.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 499,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Thành Trước",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 309.9,
+    "width": 77.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 506,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Nẹp góc",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 132.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 483,
+    "part_name": "PN CON*[Giường1M8]- Vạt Giường",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2051.0,
+    "width": 899.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 553,
+    "part_name": "PN CON*[T.ÁO_1]-Tầng Rời",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 527.5,
+    "width": 298.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 486,
+    "part_name": "PN CON*[Giường1M8]-Đuôi Giường TẤM GHÉP TRONG R35",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1810.0,
+    "width": 96.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 662,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Phải",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 176.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 648,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Phải",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 176.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 664,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Trái",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 176.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 480,
+    "part_name": "PN CON*[Giường1M8]- Vai Trái Ngoài Ghép 34 (Dán Chỉ To)",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2030.0,
+    "width": 348.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 490,
+    "part_name": "PN CON*[Giường1M8]- Vai PhảiNgoài Ghép 34 (Dán Chỉ To)",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2030.0,
+    "width": 348.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 454,
+    "part_name": "PN CON*[Giường1M8]-Đuôi Giường Uốn R35",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1980.0,
+    "width": 348.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 445,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hậu",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 721.0,
+    "width": 115.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 513,
+    "part_name": "PN CON*[T.ÁO_2]-Chân Trước",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 1355.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 520,
+    "part_name": "PN CON*[T.ÁO_2]-Tầng",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 551.8,
+    "width": 382.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 557,
+    "part_name": "PN CON*[T.ÁO_2]-Tầng Rời",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 546.8,
+    "width": 382.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 479,
+    "part_name": "PN CON*[Giường1M8]- ĐG GHÉP 34 DÁN CHỈ TO",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1878.0,
+    "width": 1098.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 494,
+    "part_name": "PN CON*[T.ÁO_2]-NẸP TƯỜNG",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 2400.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 544,
+    "part_name": "PN CON*[T.ÁO_1]-Nóc",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 527.5,
+    "width": 322.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 551,
+    "part_name": "PN CON*[T.ÁO_1]-Đáy",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 527.5,
+    "width": 322.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 546,
+    "part_name": "PN CON*[T.ÁO_1]-Đáy",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 527.5,
+    "width": 303.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 659,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Trái",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 176.5,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 492,
+    "part_name": "PN CON*[Giường1M8]- Xương giường",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1845.0,
+    "width": 310.5,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 481,
+    "part_name": "PN CON*[Giường1M8]- Xương giường",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1845.0,
+    "width": 310.5,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 521,
+    "part_name": "PN CON*[T.ÁO_2]-Nóc",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 1320.0,
+    "width": 551.8,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 645,
+    "part_name": "PN CON*[T.ÁO_2]-Tầng",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 920.0,
+    "width": 551.8,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 646,
+    "part_name": "PN CON*[T.ÁO_2]-Vách",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 551.8,
+    "width": 515.0,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 547,
+    "part_name": "PN CON*[T.ÁO_1]-Chân Trước",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 527.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 545,
+    "part_name": "PN CON*[T.ÁO_1]-Chân Sau",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 527.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 514,
+    "part_name": "PN CON*[T.ÁO_2]-Đáy",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 1320.0,
+    "width": 551.8,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 482,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Nóc",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 1310.3,
+    "width": 399.0,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 515,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Trái",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 176.5,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 444,
+    "part_name": "PN CON*[T.ÁO_2]-NẸP TƯỜNG",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 2400.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 657,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Phải",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 176.5,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 467,
+    "part_name": "PN CON*[Giường1M8]- ĐG GHÉP 34 DÁN CHỈ TO",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1098.0,
+    "width": 738.0,
+    "thickness": 17.5,
+    "sheet_id": 8,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 448,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Đáy",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 721.0,
+    "width": 380.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 559,
+    "part_name": "PN CON*[T.ÁO_1]-Hông Phải",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 594.0,
+    "width": 581.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 651,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Phải",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 176.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 510,
+    "part_name": "PN CON*[T.ÁO_1]-NẸP TƯỜNG",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 2400.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 523,
+    "part_name": "PN CON*[T.ÁO_2]-Tầng",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 1320.0,
+    "width": 551.8,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 555,
+    "part_name": "PN CON*[T.ÁO_2]-Tầng Rời",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 546.8,
+    "width": 382.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 556,
+    "part_name": "PN CON*[T.ÁO_2]-Tầng Rời",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 546.8,
+    "width": 382.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 650,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Trái",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 176.5,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 663,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Sau",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 389.7,
+    "width": 167.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 654,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Sau",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 389.7,
+    "width": 167.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 660,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Trước",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 389.7,
+    "width": 167.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 653,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Trước",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 389.7,
+    "width": 167.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 658,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Trước",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 389.6,
+    "width": 167.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 511,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Sau",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 389.6,
+    "width": 167.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 655,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Sau",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 389.6,
+    "width": 167.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 518,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Thành Trước",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 389.6,
+    "width": 167.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Thành NK"
+  },
+  {
+    "board_index": 512,
+    "part_name": "PN CON*[T.ÁO_2]-VÁCH",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 2315.0,
+    "width": 551.8,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 451,
+    "part_name": "PN CON*[Giường1M8]- Xương đỡ vạt vai phải",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 2025.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 484,
+    "part_name": "PN CON*[Giường1M8]- ĐG GHÉP 34 DÁN CHỈ TO",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1880.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 447,
+    "part_name": "PN CON*[Giường1M8]- Xương đỡ vạt",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1775.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 453,
+    "part_name": "PN CON*[Giường1M8]- Xương đỡ vạt",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1775.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 558,
+    "part_name": "PN CON*[T.ÁO_1]-CHỈ PHỤ",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 1722.5,
+    "width": 50.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 522,
+    "part_name": "PN CON*[T.ÁO_2]-Chân Sau",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 1320.0,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 487,
+    "part_name": "PN CON*[Giường1M8]- ĐG GHÉP 34 DÁN CHỈ TO",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1040.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 489,
+    "part_name": "PN CON*[Giường1M8]- ĐG GHÉP 34 DÁN CHỈ TO",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1040.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 449,
+    "part_name": "PN CON*[Giường1M8]- ĐG GHÉP 34 DÁN CHỈ TO",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1040.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 493,
+    "part_name": "PN CON*[Giường1M8]- ĐG GHÉP 34 DÁN CHỈ TO",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 1040.0,
+    "width": 58.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 647,
+    "part_name": "PN CON*[T.ÁO_2]-ĐÀ MÓC",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 920.0,
+    "width": 63.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 450,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Vách",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 380.0,
+    "width": 131.5,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 472,
+    "part_name": "PN CON*[Giường1M8]- ĐG GHÉP 34 DÁN CHỈ TO",
+    "module_name": "PN CON*[Giường1M8]",
+    "length": 740.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 552,
+    "part_name": "PN CON*[T.ÁO_1]-ĐÀ MÓC",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 527.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 519,
+    "part_name": "PN CON*[T.ÁO_2]-CHÂN CON",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 516.8,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 516,
+    "part_name": "PN CON*[T.ÁO_2]-CHÂN CON",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 516.8,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 10,
+    "sheet_type": "22605RL - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 524,
+    "part_name": "PN CON*[T.ÁO_2]-HẬU TỦ",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 2400.0,
+    "width": 946.3,
+    "thickness": 9.5,
+    "sheet_id": 11,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 548,
+    "part_name": "PN CON*[T.ÁO_1]-HẬU TỦ",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 2400.0,
+    "width": 562.5,
+    "thickness": 9.5,
+    "sheet_id": 12,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 517,
+    "part_name": "PN CON*[T.ÁO_2]-HẬU TỦ",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 2400.0,
+    "width": 408.8,
+    "thickness": 9.5,
+    "sheet_id": 12,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 661,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Đáy",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 408.7,
+    "thickness": 9.5,
+    "sheet_id": 13,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Đáy NK"
+  },
+  {
+    "board_index": 656,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Đáy",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 408.7,
+    "thickness": 9.5,
+    "sheet_id": 13,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Đáy NK"
+  },
+  {
+    "board_index": 495,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Đáy",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 300.9,
+    "width": 300.0,
+    "thickness": 9.5,
+    "sheet_id": 13,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Đáy NK"
+  },
+  {
+    "board_index": 652,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Đáy",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 408.7,
+    "thickness": 9.5,
+    "sheet_id": 13,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Đáy NK"
+  },
+  {
+    "board_index": 500,
+    "part_name": "PN CON*[TAB ÂM TỦ]-Hộc Kéo_Đáy",
+    "module_name": "PN CON*[TAB ÂM TỦ]",
+    "length": 300.9,
+    "width": 300.0,
+    "thickness": 9.5,
+    "sheet_id": 13,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Đáy NK"
+  },
+  {
+    "board_index": 649,
+    "part_name": "PN CON*[T.ÁO_2]-Hộc Kéo_Đáy",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 500.0,
+    "width": 408.7,
+    "thickness": 9.5,
+    "sheet_id": 13,
+    "sheet_type": "22605RL - 9.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Đáy NK"
+  },
+  {
+    "board_index": 560,
+    "part_name": "PN CON*[T.ÁO_1]-CHỈ NÓC ỐP GIẢ CÁNH",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 1740.0,
+    "width": 594.0,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 665,
+    "part_name": "PN CON*[T.ÁO_2]-Cánh (Tay Nắm)",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 1795.0,
+    "width": 468.6,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 670,
+    "part_name": "PN CON*[T.ÁO_2]-Mặt Hộc (Vát 45)",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 468.6,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 672,
+    "part_name": "PN CON*[T.ÁO_2]-Mặt Hộc (Vát 45)",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 468.6,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 671,
+    "part_name": "PN CON*[T.ÁO_2]-Mặt Hộc (Vát 45)",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 468.6,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 669,
+    "part_name": "PN CON*[T.ÁO_2]-Mặt Hộc (Vát 45)",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 468.6,
+    "width": 259.0,
+    "thickness": 17.5,
+    "sheet_id": 14,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 666,
+    "part_name": "PN CON*[T.ÁO_2]-Cánh (Tay Nắm)",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 1795.0,
+    "width": 468.6,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 668,
+    "part_name": "PN CON*[T.ÁO_2]-Cánh (Vát 45)",
+    "module_name": "PN CON*[T.ÁO_2]",
+    "length": 1646.7,
+    "width": 403.7,
+    "thickness": 17.5,
+    "sheet_id": 15,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 507,
+    "part_name": "PN CON*[T.ÁO_1]-MẶT ỐP HÔNG",
+    "module_name": "PN CON*[T.ÁO_1]",
+    "length": 2399.0,
+    "width": 348.0,
+    "thickness": 17.5,
+    "sheet_id": 16,
+    "sheet_type": "10237FR - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  }
+]
