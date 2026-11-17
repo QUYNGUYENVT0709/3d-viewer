@@ -1,5 +1,11 @@
 [
   {
+    "slug": "SX_VACH_THO_CONG",
+    "name": "SX_VÁCH THỜ CONG",
+    "total_boards": 50,
+    "updated_at": "2026-11-17 16:41:03"
+  },
+  {
     "slug": "test_Plugin_ltf",
     "name": "test Plugin ltf",
     "total_boards": 108,
