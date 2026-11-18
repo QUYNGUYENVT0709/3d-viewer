@@ -1,0 +1,842 @@
+[
+  {
+    "board_index": 9,
+    "part_name": "[LAVABO_TRỆT]-Đáy",
+    "module_name": "[LAVABO_TRỆT]",
+    "length": 964.0,
+    "width": 532.0,
+    "thickness": 18.0,
+    "sheet_id": 1,
+    "sheet_type": "WPB - 18mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 0mm | D2: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 10,
+    "part_name": "[LAVABO_TRỆT]-Hậu",
+    "module_name": "[LAVABO_TRỆT]",
+    "length": 964.0,
+    "width": 382.0,
+    "thickness": 18.0,
+    "sheet_id": 1,
+    "sheet_type": "WPB - 18mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "R1: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 12,
+    "part_name": "[LAVABO_TRỆT]-Xà Trước 1",
+    "module_name": "[LAVABO_TRỆT]",
+    "length": 964.0,
+    "width": 50.0,
+    "thickness": 18.0,
+    "sheet_id": 1,
+    "sheet_type": "WPB - 18mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "R1: 0mm | R2: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 11,
+    "part_name": "[LAVABO_TRỆT]-Xà Trước 2",
+    "module_name": "[LAVABO_TRỆT]",
+    "length": 964.0,
+    "width": 50.0,
+    "thickness": 18.0,
+    "sheet_id": 1,
+    "sheet_type": "WPB - 18mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "R1: 0mm | R2: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 18,
+    "part_name": "[LAVABO_TRỆT]-Hông Trái* MẶT ĐẸP",
+    "module_name": "[LAVABO_TRỆT]",
+    "length": 532.0,
+    "width": 400.0,
+    "thickness": 18.0,
+    "sheet_id": 1,
+    "sheet_type": "WPB - 18mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (0mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 16,
+    "part_name": "[LAVABO_TRỆT]-Hông Phải* MẶT ĐẸP",
+    "module_name": "[LAVABO_TRỆT]",
+    "length": 532.0,
+    "width": 400.0,
+    "thickness": 18.0,
+    "sheet_id": 1,
+    "sheet_type": "WPB - 18mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 0mm | D2: 0mm | R1: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 14,
+    "part_name": "[LAVABO_TRỆT]-Mặt Hộc (Vát 45)",
+    "module_name": "[LAVABO_TRỆT]",
+    "length": 495.5,
+    "width": 372.5,
+    "thickness": 18.0,
+    "sheet_id": 1,
+    "sheet_type": "WPB - 18mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán & Vát 45° - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (0mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 15,
+    "part_name": "[LAVABO_TRỆT]-Mặt Hộc (Vát 45)",
+    "module_name": "[LAVABO_TRỆT]",
+    "length": 495.5,
+    "width": 372.5,
+    "thickness": 18.0,
+    "sheet_id": 1,
+    "sheet_type": "WPB - 18mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán & Vát 45° - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh - 1mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (0mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "02-CÁNH"
+  },
+  {
+    "board_index": 25,
+    "part_name": "[THỜ PHẬT]-MẶT BÀN THỜ GHÉP 34",
+    "module_name": "[THỜ PHẬT]",
+    "length": 890.0,
+    "width": 480.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 5,
+      "summary": "Dán 4 cạnh (0mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 24,
+    "part_name": "[THỜ PHẬT]-HẬU GHÉP 34 DÁN CHỈ TO",
+    "module_name": "[THỜ PHẬT]",
+    "length": 890.0,
+    "width": 150.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 0mm | D2: 0mm | R1: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 22,
+    "part_name": "[THỜ PHẬT]-ĐÁY",
+    "module_name": "[THỜ PHẬT]",
+    "length": 815.0,
+    "width": 245.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 4,
+      "summary": "Dán 4 cạnh (0mm)"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 5,
+    "part_name": "[THỜ PHẬT]-HẬU GHÉP 34 DÁN CHỈ TO",
+    "module_name": "[THỜ PHẬT]",
+    "length": 790.0,
+    "width": 50.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 1,
+      "summary": "D1: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 6,
+    "part_name": "[THỜ PHẬT]-XƯƠNG TREO",
+    "module_name": "[THỜ PHẬT]",
+    "length": 760.0,
+    "width": 50.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 1,
+    "part_name": "[THỜ PHẬT]-MẶT BÀN THỜ GHÉP 34",
+    "module_name": "[THỜ PHẬT]",
+    "length": 480.0,
+    "width": 150.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 0mm | D2: 0mm | R1: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 2,
+    "part_name": "[THỜ PHẬT]-MẶT BÀN THỜ GHÉP 34",
+    "module_name": "[THỜ PHẬT]",
+    "length": 480.0,
+    "width": 150.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 0mm | D2: 0mm | R1: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 21,
+    "part_name": "[THỜ PHẬT]-HÔNG",
+    "module_name": "[THỜ PHẬT]",
+    "length": 345.0,
+    "width": 161.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 0mm | R1: 0mm | R2: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 20,
+    "part_name": "[THỜ PHẬT]-HÔNG",
+    "module_name": "[THỜ PHẬT]",
+    "length": 345.0,
+    "width": 161.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 3,
+      "summary": "D1: 0mm | R1: 0mm | R2: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 23,
+    "part_name": "[THỜ PHẬT]-HẬU HOA SEN",
+    "module_name": "[THỜ PHẬT]",
+    "length": 562.4,
+    "width": 450.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 4,
+    "part_name": "[THỜ PHẬT]-HẬU GHÉP 34 DÁN CHỈ TO",
+    "module_name": "[THỜ PHẬT]",
+    "length": 150.0,
+    "width": 50.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 0mm | R1: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 3,
+    "part_name": "[THỜ PHẬT]-HẬU GHÉP 34 DÁN CHỈ TO",
+    "module_name": "[THỜ PHẬT]",
+    "length": 150.0,
+    "width": 50.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "22607 - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Nẹp Đôi - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "D1: 0mm | R1: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  }
+]
