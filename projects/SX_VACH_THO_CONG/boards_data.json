@@ -22,19 +22,19 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
+        "banded": true,
         "text": "0",
-        "label": "",
+        "label": "NẸP ĐEN - 0mm",
         "type": "Rộng 1"
       },
       "r2": {
-        "banded": false,
+        "banded": true,
         "text": "0",
-        "label": "",
+        "label": "NẸP ĐEN - 0mm",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 2,
+      "summary": "R1: 0mm | R2: 0mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -45,38 +45,38 @@
     "board_index": 35,
     "part_name": "[GIỮA]-VÁCH ỐP MẶT SAU",
     "module_name": "[GIỮA]",
-    "length": 2298.0,
-    "width": 1179.0,
+    "length": 2300.0,
+    "width": 1181.0,
     "thickness": 17.5,
     "sheet_id": 2,
     "sheet_type": "27402PL - 17.5mm",
     "edge_banding": {
       "d1": {
         "banded": true,
-        "text": "1",
-        "label": "NẸP ĐEN - 1mm",
+        "text": "0",
+        "label": "NẸP ĐEN - 0mm",
         "type": "Dài 1"
       },
       "d2": {
         "banded": true,
-        "text": "1",
-        "label": "NẸP ĐEN - 1mm",
+        "text": "0",
+        "label": "NẸP ĐEN - 0mm",
         "type": "Dài 2"
       },
       "r1": {
         "banded": true,
-        "text": "1",
-        "label": "NẸP ĐEN - 1mm",
+        "text": "0",
+        "label": "NẸP ĐEN - 0mm",
         "type": "Rộng 1"
       },
       "r2": {
         "banded": true,
-        "text": "1",
-        "label": "NẸP ĐEN - 1mm",
+        "text": "0",
+        "label": "NẸP ĐEN - 0mm",
         "type": "Rộng 2"
       },
       "total_edges": 4,
-      "summary": "Dán 4 cạnh (1mm)"
+      "summary": "Dán 4 cạnh (0mm)"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -84,11 +84,11 @@
     "layer": "Layer0"
   },
   {
-    "board_index": 36,
-    "part_name": "[TRÁI]-VÁCH UỐN TRÁI MẶT TRONG",
+    "board_index": 31,
+    "part_name": "[TRÁI]-VÁCH UỐN TRÁI MẶT NGOÀI",
     "module_name": "[TRÁI]",
     "length": 2300.0,
-    "width": 1037.4,
+    "width": 1146.6,
     "thickness": 17.5,
     "sheet_id": 3,
     "sheet_type": "27402PL - 17.5mm",
@@ -106,19 +106,19 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
         "type": "Rộng 1"
       },
       "r2": {
-        "banded": false,
+        "banded": true,
         "text": "0",
-        "label": "",
+        "label": "Dán cạnh  - 0mm",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 2,
+      "summary": "R1: 1mm | R2: 0mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -126,13 +126,13 @@
     "layer": "Layer0"
   },
   {
-    "board_index": 45,
-    "part_name": "[PHẢI]-ĐỐ MẶT",
+    "board_index": 43,
+    "part_name": "[PHẢI]-VÁCH UỐN PHẢI MẶT NGOÀI",
     "module_name": "[PHẢI]",
     "length": 2300.0,
-    "width": 67.0,
+    "width": 1069.0,
     "thickness": 17.5,
-    "sheet_id": 3,
+    "sheet_id": 4,
     "sheet_type": "27402PL - 17.5mm",
     "edge_banding": {
       "d1": {
@@ -148,61 +148,19 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
         "type": "Rộng 1"
       },
       "r2": {
-        "banded": false,
+        "banded": true,
         "text": "0",
-        "label": "",
+        "label": "Dán cạnh  - 0mm",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 42,
-    "part_name": "[TRÁI]-ĐỐ MẶT",
-    "module_name": "[TRÁI]",
-    "length": 2300.0,
-    "width": 67.0,
-    "thickness": 17.5,
-    "sheet_id": 3,
-    "sheet_type": "27402PL - 17.5mm",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 2,
+      "summary": "R1: 1mm | R2: 0mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -252,13 +210,13 @@
     "layer": "Layer0"
   },
   {
-    "board_index": 40,
-    "part_name": "[PHẢI]-VÁCH UỐN PHẢI MẶT TRONG",
-    "module_name": "[PHẢI]",
+    "board_index": 36,
+    "part_name": "[TRÁI]-VÁCH UỐN TRÁI MẶT TRONG",
+    "module_name": "[TRÁI]",
     "length": 2300.0,
-    "width": 960.0,
+    "width": 1036.4,
     "thickness": 17.5,
-    "sheet_id": 4,
+    "sheet_id": 5,
     "sheet_type": "27402PL - 17.5mm",
     "edge_banding": {
       "d1": {
@@ -274,19 +232,19 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
+        "banded": true,
         "text": "0",
-        "label": "",
+        "label": "Dán cạnh  - 0mm",
         "type": "Rộng 1"
       },
       "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 2,
+      "summary": "R1: 0mm | R2: 1mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -300,7 +258,7 @@
     "length": 2300.0,
     "width": 67.0,
     "thickness": 17.5,
-    "sheet_id": 4,
+    "sheet_id": 5,
     "sheet_type": "27402PL - 17.5mm",
     "edge_banding": {
       "d1": {
@@ -336,13 +294,97 @@
     "layer": "Layer0"
   },
   {
-    "board_index": 19,
-    "part_name": "[PHẢI]-ĐỐ MẶT",
-    "module_name": "[PHẢI]",
-    "length": 685.0,
+    "board_index": 42,
+    "part_name": "[TRÁI]-ĐỐ MẶT",
+    "module_name": "[TRÁI]",
+    "length": 2300.0,
     "width": 67.0,
     "thickness": 17.5,
-    "sheet_id": 4,
+    "sheet_id": 5,
+    "sheet_type": "27402PL - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 40,
+    "part_name": "[PHẢI]-VÁCH UỐN PHẢI MẶT TRONG",
+    "module_name": "[PHẢI]",
+    "length": 2300.0,
+    "width": 959.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
+    "sheet_type": "27402PL - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "R1: 0mm | R2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 45,
+    "part_name": "[PHẢI]-ĐỐ MẶT",
+    "module_name": "[PHẢI]",
+    "length": 2300.0,
+    "width": 67.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
     "sheet_type": "27402PL - 17.5mm",
     "edge_banding": {
       "d1": {
@@ -384,7 +426,49 @@
     "length": 685.0,
     "width": 67.0,
     "thickness": 17.5,
-    "sheet_id": 4,
+    "sheet_id": 6,
+    "sheet_type": "27402PL - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 19,
+    "part_name": "[PHẢI]-ĐỐ MẶT",
+    "module_name": "[PHẢI]",
+    "length": 685.0,
+    "width": 67.0,
+    "thickness": 17.5,
+    "sheet_id": 6,
     "sheet_type": "27402PL - 17.5mm",
     "edge_banding": {
       "d1": {
@@ -423,92 +507,8 @@
     "board_index": 12,
     "part_name": "[GIỮA]-ĐỐ LED HẮT",
     "module_name": "[GIỮA]",
-    "length": 685.0,
+    "length": 684.0,
     "width": 67.0,
-    "thickness": 17.5,
-    "sheet_id": 4,
-    "sheet_type": "27402PL - 17.5mm",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 31,
-    "part_name": "[TRÁI]-VÁCH UỐN TRÁI MẶT NGOÀI",
-    "module_name": "[TRÁI]",
-    "length": 2300.0,
-    "width": 1147.6,
-    "thickness": 17.5,
-    "sheet_id": 5,
-    "sheet_type": "27402PL - 17.5mm",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 43,
-    "part_name": "[PHẢI]-VÁCH UỐN PHẢI MẶT NGOÀI",
-    "module_name": "[PHẢI]",
-    "length": 2300.0,
-    "width": 1070.0,
     "thickness": 17.5,
     "sheet_id": 6,
     "sheet_type": "27402PL - 17.5mm",
@@ -526,9 +526,9 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
         "type": "Rộng 1"
       },
       "r2": {
@@ -537,8 +537,8 @@
         "label": "",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 1,
+      "summary": "R1: 1mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -549,7 +549,7 @@
     "board_index": 21,
     "part_name": "[GIỮA]-ĐỐ LED HẮT",
     "module_name": "[GIỮA]",
-    "length": 685.0,
+    "length": 684.0,
     "width": 67.0,
     "thickness": 17.5,
     "sheet_id": 6,
@@ -568,9 +568,9 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
         "type": "Rộng 1"
       },
       "r2": {
@@ -579,50 +579,8 @@
         "label": "",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 26,
-    "part_name": "[TRÁI]-VÁCH UỐN TRÁI MẶT NGOÀI",
-    "module_name": "[TRÁI]",
-    "length": 1147.6,
-    "width": 685.0,
-    "thickness": 17.5,
-    "sheet_id": 7,
-    "sheet_type": "27402PL - 17.5mm",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 1,
+      "summary": "R1: 1mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -652,19 +610,61 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
+        "banded": true,
         "text": "0",
-        "label": "",
+        "label": "NẸP ĐEN - 0mm",
         "type": "Rộng 1"
       },
       "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "NẸP ĐEN - 0mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "R1: 0mm | R2: 0mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 26,
+    "part_name": "[TRÁI]-VÁCH UỐN TRÁI MẶT NGOÀI",
+    "module_name": "[TRÁI]",
+    "length": 1146.6,
+    "width": 685.0,
+    "thickness": 17.5,
+    "sheet_id": 7,
+    "sheet_type": "27402PL - 17.5mm",
+    "edge_banding": {
+      "d1": {
         "banded": false,
         "text": "0",
         "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 2,
+      "summary": "R1: 1mm | R2: 0mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -717,7 +717,7 @@
     "board_index": 28,
     "part_name": "[PHẢI]-VÁCH UỐN PHẢI MẶT NGOÀI",
     "module_name": "[PHẢI]",
-    "length": 1070.0,
+    "length": 1069.0,
     "width": 685.0,
     "thickness": 17.5,
     "sheet_id": 8,
@@ -736,19 +736,19 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
         "type": "Rộng 1"
       },
       "r2": {
-        "banded": false,
+        "banded": true,
         "text": "0",
-        "label": "",
+        "label": "Dán cạnh  - 0mm",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 2,
+      "summary": "R1: 1mm | R2: 0mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -759,7 +759,7 @@
     "board_index": 27,
     "part_name": "[TRÁI]-VÁCH UỐN TRÁI MẶT TRONG",
     "module_name": "[TRÁI]",
-    "length": 1037.4,
+    "length": 1036.4,
     "width": 685.0,
     "thickness": 17.5,
     "sheet_id": 8,
@@ -778,19 +778,19 @@
         "type": "Dài 2"
       },
       "r1": {
-        "banded": false,
+        "banded": true,
         "text": "0",
-        "label": "",
+        "label": "Dán cạnh  - 0mm",
         "type": "Rộng 1"
       },
       "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
         "type": "Rộng 2"
       },
-      "total_edges": 0,
-      "summary": ""
+      "total_edges": 2,
+      "summary": "R1: 0mm | R2: 1mm"
     },
     "drills_count": 0,
     "code_n1": "",
@@ -801,11 +801,53 @@
     "board_index": 29,
     "part_name": "[PHẢI]-VÁCH UỐN PHẢI MẶT TRONG",
     "module_name": "[PHẢI]",
-    "length": 960.0,
+    "length": 959.0,
     "width": 685.0,
     "thickness": 17.5,
     "sheet_id": 8,
     "sheet_type": "27402PL - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": true,
+        "text": "0",
+        "label": "Dán cạnh  - 0mm",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": true,
+        "text": "1",
+        "label": "NẸP ĐEN - 1mm",
+        "type": "Rộng 2"
+      },
+      "total_edges": 2,
+      "summary": "R1: 0mm | R2: 1mm"
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 33,
+    "part_name": "[TRÁI]-KHUNG XƯƠNG TRÁI",
+    "module_name": "[TRÁI]",
+    "length": 650.9,
+    "width": 610.7,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "XƯƠNG - 17.5mm",
     "edge_banding": {
       "d1": {
         "banded": false,
@@ -845,48 +887,6 @@
     "module_name": "[TRÁI]",
     "length": 2300.0,
     "width": 67.0,
-    "thickness": 17.5,
-    "sheet_id": 9,
-    "sheet_type": "XƯƠNG - 17.5mm",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 33,
-    "part_name": "[TRÁI]-KHUNG XƯƠNG TRÁI",
-    "module_name": "[TRÁI]",
-    "length": 650.9,
-    "width": 610.7,
     "thickness": 17.5,
     "sheet_id": 9,
     "sheet_type": "XƯƠNG - 17.5mm",
@@ -1260,6 +1260,90 @@
     "layer": "Layer0"
   },
   {
+    "board_index": 14,
+    "part_name": "[TRÁI]-KHUNG XƯƠNG TRÁI",
+    "module_name": "[TRÁI]",
+    "length": 685.0,
+    "width": 65.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "XƯƠNG - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 20,
+    "part_name": "[PHẢI]-KHUNG XƯƠNG PHẢI",
+    "module_name": "[PHẢI]",
+    "length": 685.0,
+    "width": 65.0,
+    "thickness": 17.5,
+    "sheet_id": 9,
+    "sheet_type": "XƯƠNG - 17.5mm",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
     "board_index": 18,
     "part_name": "[PHẢI]-KHUNG XƯƠNG PHẢI",
     "module_name": "[PHẢI]",
@@ -1475,90 +1559,6 @@
     "module_name": "[PHẢI]",
     "length": 650.5,
     "width": 491.1,
-    "thickness": 17.5,
-    "sheet_id": 9,
-    "sheet_type": "XƯƠNG - 17.5mm",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 14,
-    "part_name": "[TRÁI]-KHUNG XƯƠNG TRÁI",
-    "module_name": "[TRÁI]",
-    "length": 685.0,
-    "width": 65.0,
-    "thickness": 17.5,
-    "sheet_id": 9,
-    "sheet_type": "XƯƠNG - 17.5mm",
-    "edge_banding": {
-      "d1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 1"
-      },
-      "d2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Dài 2"
-      },
-      "r1": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 1"
-      },
-      "r2": {
-        "banded": false,
-        "text": "0",
-        "label": "",
-        "type": "Rộng 2"
-      },
-      "total_edges": 0,
-      "summary": ""
-    },
-    "drills_count": 0,
-    "code_n1": "",
-    "code_n2": "",
-    "layer": "Layer0"
-  },
-  {
-    "board_index": 20,
-    "part_name": "[PHẢI]-KHUNG XƯƠNG PHẢI",
-    "module_name": "[PHẢI]",
-    "length": 685.0,
-    "width": 65.0,
     "thickness": 17.5,
     "sheet_id": 9,
     "sheet_type": "XƯƠNG - 17.5mm",
