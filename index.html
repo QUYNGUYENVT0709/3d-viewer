@@ -2885,8 +2885,18 @@
       let targetJsonFile = null;
       let allProjectsRegistry = [];
 
+      const R2_CDN_BASE = 'https://cdn3d.ltfdecor.com';
+      const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/QUYNGUYENVT0709/3d-viewer/main';
+      let targetProjectName = '';
+
+      function formatFallbackProjectTitle(slug) {
+        if (!slug) return '';
+        return String(slug).replace(/^u[0-9a-f]{6}_/i, '').replace(/_/g, ' ').trim() || slug;
+      }
+
       if (targetProjectSlug) {
-        document.getElementById('displayProjectName').textContent = targetProjectSlug;
+        targetProjectName = formatFallbackProjectTitle(targetProjectSlug);
+        document.getElementById('displayProjectName').textContent = targetProjectName;
         if (!targetModelFile) {
           targetModelFile = `projects/${targetProjectSlug}/model.glb`;
           targetJsonFile = `projects/${targetProjectSlug}/boards_data.json`;
@@ -3031,12 +3041,18 @@
         renderer.render(scene, camera);
       }
 
-      // 3. TẢI DỮ LIỆU METADATA BOARDS
+      // 3. TẢI DỮ LIỆU METADATA BOARDS (Ưu tiên Cloudflare R2 CDN -> tự động fallback GitHub Pages / Git Raw cho tem cũ)
       async function loadBoardsData(jsonPath = 'boards_data.json') {
-        const tryPaths = [
-          jsonPath + (jsonPath.includes('?') ? '&' : '?') + 't=' + Date.now(),
-          jsonPath.startsWith('http') ? jsonPath : `https://raw.githubusercontent.com/QUYNGUYENVT0709/3d-viewer/main/${jsonPath}?t=${Date.now()}`
-        ];
+        const ts = Date.now();
+        const isAbs = typeof jsonPath === 'string' && /^https?:\/\//i.test(jsonPath);
+        const sep = jsonPath.includes('?') ? '&' : '?';
+        const tryPaths = isAbs
+          ? [`${jsonPath}${sep}t=${ts}`]
+          : [
+              `${R2_CDN_BASE}/${jsonPath}${sep}t=${ts}`,
+              `${jsonPath}${sep}t=${ts}`,
+              `${GITHUB_RAW_BASE}/${jsonPath}${sep}t=${ts}`
+            ];
         for (const p of tryPaths) {
           try {
             const res = await fetch(p);
@@ -3047,7 +3063,12 @@
                   const idx = parseInt(item.board_index, 10);
                   if (!isNaN(idx)) boardsData[idx] = item;
                 });
-              } else if (typeof data === 'object') {
+              } else if (typeof data === 'object' && data !== null) {
+                if (data.project_name && String(data.project_name).trim()) {
+                  targetProjectName = String(data.project_name).trim();
+                  const nameEl = document.getElementById('displayProjectName');
+                  if (nameEl) nameEl.textContent = targetProjectName;
+                }
                 const list = data.boards || data;
                 if (Array.isArray(list)) {
                   list.forEach(item => {
@@ -3069,9 +3090,18 @@
         }
       }
 
-      // 4. TẢI FILE 3D GLB/GLTF
-      function loadGlbModel(source, isFallback = false) {
-        setLoading(true, isFallback ? "Đang đồng bộ trực tiếp từ Git..." : "Đang tải mô hình 3D...", "Vui lòng đợi giây lát");
+      // 4. TẢI FILE 3D GLB/GLTF (Ưu tiên Cloudflare R2 CDN -> tự động fallback GitHub Pages -> GitHub Raw cho tem cũ)
+      function loadGlbModel(source, fallbackStep = 0, originalRelPath = null) {
+        const isRelStr = (typeof source === 'string' && !/^https?:\/\//i.test(source));
+        const relPath = originalRelPath || (isRelStr ? source : null);
+        let loadTarget = source;
+        if (isRelStr && fallbackStep === 0) {
+          loadTarget = `${R2_CDN_BASE}/${source}?t=${Date.now()}`;
+        }
+        const loadingTitle = fallbackStep === 0
+          ? "Đang tải mô hình 3D..."
+          : (fallbackStep === 1 ? "Đang tải từ kho dự phòng..." : "Đang đồng bộ trực tiếp từ Git...");
+        setLoading(true, loadingTitle, "Vui lòng đợi giây lát");
         const loader = new THREE.GLTFLoader();
 
         const loadSuccess = function(gltf) {
@@ -3192,13 +3222,19 @@
         };
 
         const loadError = function(error) {
-          console.warn("Không tải được đường dẫn:", source, error);
+          console.warn("Không tải được đường dẫn:", loadTarget, error);
 
-          // 1. Tự động fallback sang raw.githubusercontent.com ngay lập tức nếu GitHub Pages đang build dở
-          if (!isFallback && typeof source === 'string' && !source.startsWith('http')) {
-            const rawUrl = `https://raw.githubusercontent.com/QUYNGUYENVT0709/3d-viewer/main/${source}?t=${Date.now()}`;
+          // 1. Waterfall tự động: R2 CDN (step 0) -> GitHub Pages (step 1) -> GitHub Raw (step 2)
+          if (relPath && fallbackStep === 0) {
+            const ghPagesUrl = `${relPath}?t=${Date.now()}`;
+            console.log("Không thấy trên R2 (dự án cũ), tự chuyển sang GitHub Pages:", ghPagesUrl);
+            loadGlbModel(ghPagesUrl, 1, relPath);
+            return;
+          }
+          if (relPath && fallbackStep === 1) {
+            const rawUrl = `${GITHUB_RAW_BASE}/${relPath}?t=${Date.now()}`;
             console.log("GitHub Pages chưa hoàn tất build, tự động chuyển sang Git Raw:", rawUrl);
-            loadGlbModel(rawUrl, true);
+            loadGlbModel(rawUrl, 2, relPath);
             return;
           }
 
@@ -3212,7 +3248,7 @@
             if (h3) h3.textContent = projTitle ? `Đang đồng bộ: ${projTitle}` : "Chưa có mô hình 3D";
             const p = emptyBox.querySelector('p');
             if (p) {
-              p.innerHTML = `Mô hình 3D vừa xuất lên GitHub và máy chủ đang đồng bộ.<br>` +
+              p.innerHTML = `Mô hình 3D đang được đồng bộ lên máy chủ CDN.<br>` +
                             `Hệ thống sẽ <strong>tự động thử lại</strong> sau <span id="retryCountdown" style="color:#0284c7;font-weight:700;">5</span> giây...`;
               let countdown = 5;
               const timer = setInterval(() => {
@@ -3222,21 +3258,18 @@
                 if (countdown <= 0) {
                   clearInterval(timer);
                   emptyBox.classList.remove('active');
-                  const cleanPath = (typeof source === 'string')
-                    ? source.replace(/^https:\/\/raw\.githubusercontent\.com\/QUYNGUYENVT0709\/3d-viewer\/main\//, '').split('?')[0]
-                    : `projects/${targetProjectSlug}/model.glb`;
-                  const retryUrl = `https://raw.githubusercontent.com/QUYNGUYENVT0709/3d-viewer/main/${cleanPath}?t=${Date.now()}`;
-                  loadGlbModel(retryUrl, true);
+                  const retryRel = relPath || `projects/${targetProjectSlug}/model.glb`;
+                  loadGlbModel(retryRel, 0, retryRel);
                 }
               }, 1000);
             }
           }
         };
 
-        if (typeof source === 'string') {
-          loader.load(source, loadSuccess, loadProgress, loadError);
-        } else if (source instanceof ArrayBuffer) {
-          loader.parse(source, '', loadSuccess, loadError);
+        if (typeof loadTarget === 'string') {
+          loader.load(loadTarget, loadSuccess, loadProgress, loadError);
+        } else if (loadTarget instanceof ArrayBuffer) {
+          loader.parse(loadTarget, '', loadSuccess, loadError);
         }
       }
 
