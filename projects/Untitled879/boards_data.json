@@ -1,0 +1,3782 @@
+[
+  {
+    "board_index": 1,
+    "part_name": "TỦ cầu thangHÔNG PHẢI",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 1437.7,
+    "width": 883.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 50,
+    "part_name": "KỆ TIVI-Hồi-",
+    "module_name": "KỆ TIVI",
+    "length": 1586.5,
+    "width": 298.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 2,
+    "part_name": "TỦ cầu thangHÔNG PHẢI",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 956.4,
+    "width": 598.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 5,
+    "part_name": "TỦ cầu thangHÔNG PHẢI",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 598.0,
+    "width": 543.4,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 32,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 31.5,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 69,
+    "part_name": "KỆ TIVI-Thành Phải NK",
+    "module_name": "KỆ TIVI",
+    "length": 198.0,
+    "width": 153.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 74,
+    "part_name": "KỆ TIVI-Thành Phải NK",
+    "module_name": "KỆ TIVI",
+    "length": 198.0,
+    "width": 153.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 68,
+    "part_name": "KỆ TIVI-Thành Trái NK",
+    "module_name": "KỆ TIVI",
+    "length": 198.0,
+    "width": 153.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 89,
+    "part_name": "KỆ TIVI-LEN CHÂN",
+    "module_name": "KỆ TIVI",
+    "length": 229.0,
+    "width": 29.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 87,
+    "part_name": "KỆ TIVI-LEN CHÂN",
+    "module_name": "KỆ TIVI",
+    "length": 229.0,
+    "width": 29.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 90,
+    "part_name": "KỆ TIVI-LEN CHÂN",
+    "module_name": "KỆ TIVI",
+    "length": 229.0,
+    "width": 29.0,
+    "thickness": 17.5,
+    "sheet_id": 1,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 4,
+    "part_name": "TỦ cầu thangHÔNG PHẢI",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 1373.9,
+    "width": 598.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 78,
+    "part_name": "KỆ TIVI-Thành Trái NK",
+    "module_name": "KỆ TIVI",
+    "length": 198.0,
+    "width": 153.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 85,
+    "part_name": "TỦ cầu thangCÁNH",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 1435.8,
+    "width": 460.2,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 11,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 92.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 53,
+    "part_name": "KỆ TIVI-LEN CHÂN",
+    "module_name": "KỆ TIVI",
+    "length": 1552.5,
+    "width": 29.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 34,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 92.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 86,
+    "part_name": "KỆ TIVI-LEN CHÂN",
+    "module_name": "KỆ TIVI",
+    "length": 229.0,
+    "width": 29.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 38,
+    "part_name": "TỦ cầu thangHẬU",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 954.1,
+    "width": 449.7,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 47,
+    "part_name": "TỦ cầu thangHẬU",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 954.1,
+    "width": 449.7,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 58,
+    "part_name": "KỆ TIVI-VÁCH",
+    "module_name": "KỆ TIVI",
+    "length": 301.0,
+    "width": 245.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 40,
+    "part_name": "TỦ cầu thangHẬU",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 684.7,
+    "width": 403.3,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 72,
+    "part_name": "KỆ TIVI-Thành Trước",
+    "module_name": "KỆ TIVI",
+    "length": 340.0,
+    "width": 136.5,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 88,
+    "part_name": "KỆ TIVI-LEN CHÂN",
+    "module_name": "KỆ TIVI",
+    "length": 229.0,
+    "width": 29.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 79,
+    "part_name": "KỆ TIVI-Thành Phải NK",
+    "module_name": "KỆ TIVI",
+    "length": 198.0,
+    "width": 153.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 64,
+    "part_name": "KỆ TIVI-Thành Phải NK",
+    "module_name": "KỆ TIVI",
+    "length": 198.0,
+    "width": 153.0,
+    "thickness": 17.5,
+    "sheet_id": 2,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 39,
+    "part_name": "TỦ cầu thangHẬU",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 1371.7,
+    "width": 454.7,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 67,
+    "part_name": "KỆ TIVI-Thành Trước",
+    "module_name": "KỆ TIVI",
+    "length": 340.0,
+    "width": 136.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 48,
+    "part_name": "TỦ cầu thangHẬU",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 1371.7,
+    "width": 454.7,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 73,
+    "part_name": "KỆ TIVI-Thành Trái NK",
+    "module_name": "KỆ TIVI",
+    "length": 198.0,
+    "width": 153.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 3,
+    "part_name": "TỦ cầu thangHÔNG TRÁI",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 598.0,
+    "width": 168.3,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 35,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 57,
+    "part_name": "KỆ TIVI-VÁCH",
+    "module_name": "KỆ TIVI",
+    "length": 301.0,
+    "width": 245.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 31,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 31.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 56,
+    "part_name": "KỆ TIVI-VÁCH",
+    "module_name": "KỆ TIVI",
+    "length": 301.0,
+    "width": 245.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 15,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 92.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 22,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 78.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 84,
+    "part_name": "TỦ cầu thangCÁNH",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 1102.9,
+    "width": 455.2,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 63,
+    "part_name": "KỆ TIVI-Thành Trái NK",
+    "module_name": "KỆ TIVI",
+    "length": 198.0,
+    "width": 153.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 83,
+    "part_name": "TỦ cầu thangCÁNH",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 773.7,
+    "width": 455.7,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 28,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 78.0,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 77,
+    "part_name": "KỆ TIVI-Thành Trước",
+    "module_name": "KỆ TIVI",
+    "length": 340.0,
+    "width": 136.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 36,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 31.5,
+    "thickness": 17.5,
+    "sheet_id": 3,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 54,
+    "part_name": "KỆ TIVI-HẬU",
+    "module_name": "KỆ TIVI",
+    "length": 1552.5,
+    "width": 339.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 52,
+    "part_name": "KỆ TIVI-Hồi-",
+    "module_name": "KỆ TIVI",
+    "length": 1568.5,
+    "width": 245.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 42,
+    "part_name": "TỦ cầu thangTẦNG",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 616.0,
+    "width": 428.7,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 55,
+    "part_name": "KỆ TIVI-ĐÀ MÓC",
+    "module_name": "KỆ TIVI",
+    "length": 1568.5,
+    "width": 49.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 20,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 79.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 16,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 31.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 18,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 79.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 13,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 31.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 44,
+    "part_name": "TỦ cầu thangTẦNG",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 616.0,
+    "width": 428.7,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 29,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 79.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 10,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 31.5,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 43,
+    "part_name": "TỦ cầu thangTẦNG",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 616.0,
+    "width": 423.7,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 45,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 616.0,
+    "width": 428.7,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 46,
+    "part_name": "TỦ cầu thangHẬU",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 684.7,
+    "width": 403.3,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 51,
+    "part_name": "KỆ TIVI-HÔNG PHẢI",
+    "module_name": "KỆ TIVI",
+    "length": 344.5,
+    "width": 298.0,
+    "thickness": 17.5,
+    "sheet_id": 4,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 7,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 616.0,
+    "width": 423.7,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 6,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 616.0,
+    "width": 417.7,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 49,
+    "part_name": "KỆ TIVI-HÔNG TRÁI",
+    "module_name": "KỆ TIVI",
+    "length": 344.5,
+    "width": 298.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 70,
+    "part_name": "KỆ TIVI-Tấm Đáy NK",
+    "module_name": "KỆ TIVI",
+    "length": 331.0,
+    "width": 198.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "TAM_HAU"
+  },
+  {
+    "board_index": 21,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 79.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 41,
+    "part_name": "TỦ cầu thangTẦNG",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 616.0,
+    "width": 423.7,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 61,
+    "part_name": "KỆ TIVI-Mặt Ngăn Kéo",
+    "module_name": "KỆ TIVI",
+    "length": 388.5,
+    "width": 275.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 80,
+    "part_name": "KỆ TIVI-Tấm Đáy NK",
+    "module_name": "KỆ TIVI",
+    "length": 331.0,
+    "width": 198.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "TAM_HAU"
+  },
+  {
+    "board_index": 81,
+    "part_name": "KỆ TIVI-Thành Sau NK",
+    "module_name": "KỆ TIVI",
+    "length": 340.0,
+    "width": 136.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 30,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 17,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 57.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 75,
+    "part_name": "KỆ TIVI-Tấm Đáy NK",
+    "module_name": "KỆ TIVI",
+    "length": 331.0,
+    "width": 198.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "TAM_HAU"
+  },
+  {
+    "board_index": 60,
+    "part_name": "KỆ TIVI-Mặt Ngăn Kéo",
+    "module_name": "KỆ TIVI",
+    "length": 388.5,
+    "width": 275.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 62,
+    "part_name": "KỆ TIVI-Mặt Ngăn Kéo",
+    "module_name": "KỆ TIVI",
+    "length": 378.8,
+    "width": 275.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 14,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 57.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 8,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 57.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 71,
+    "part_name": "KỆ TIVI-Thành Sau NK",
+    "module_name": "KỆ TIVI",
+    "length": 340.0,
+    "width": 136.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 9,
+    "part_name": "TỦ cầu thangXƯƠNG gắn ray",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 59.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 82,
+    "part_name": "KỆ TIVI-Thành Trước",
+    "module_name": "KỆ TIVI",
+    "length": 340.0,
+    "width": 136.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 66,
+    "part_name": "KỆ TIVI-Thành Sau NK",
+    "module_name": "KỆ TIVI",
+    "length": 340.0,
+    "width": 136.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 37,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 57.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 59,
+    "part_name": "KỆ TIVI-Mặt Ngăn Kéo",
+    "module_name": "KỆ TIVI",
+    "length": 378.8,
+    "width": 275.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 33,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 57.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 12,
+    "part_name": "TỦ cầu thangĐÁY",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 57.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 65,
+    "part_name": "KỆ TIVI-Tấm Đáy NK",
+    "module_name": "KỆ TIVI",
+    "length": 331.0,
+    "width": 198.0,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "TAM_HAU"
+  },
+  {
+    "board_index": 76,
+    "part_name": "KỆ TIVI-Thành Sau NK",
+    "module_name": "KỆ TIVI",
+    "length": 340.0,
+    "width": 136.5,
+    "thickness": 17.5,
+    "sheet_id": 5,
+    "sheet_type": "MDF - 17.5MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 26,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 79.0,
+    "thickness": 9.0,
+    "sheet_id": 6,
+    "sheet_type": "MDF - 9MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 24,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 79.0,
+    "thickness": 9.0,
+    "sheet_id": 6,
+    "sheet_type": "MDF - 9MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 23,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 79.0,
+    "thickness": 9.0,
+    "sheet_id": 6,
+    "sheet_type": "MDF - 9MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 19,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 79.0,
+    "thickness": 9.0,
+    "sheet_id": 6,
+    "sheet_type": "MDF - 9MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 25,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 78.0,
+    "thickness": 9.0,
+    "sheet_id": 6,
+    "sheet_type": "MDF - 9MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  },
+  {
+    "board_index": 27,
+    "part_name": "TỦ cầu thangXƯƠNG gắn bánh xe",
+    "module_name": "Tủ Tiêu Chuẩn",
+    "length": 600.0,
+    "width": 78.0,
+    "thickness": 9.0,
+    "sheet_id": 6,
+    "sheet_type": "MDF - 9MM",
+    "edge_banding": {
+      "d1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 1"
+      },
+      "d2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Dài 2"
+      },
+      "r1": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 1"
+      },
+      "r2": {
+        "banded": false,
+        "text": "0",
+        "label": "",
+        "type": "Rộng 2"
+      },
+      "total_edges": 0,
+      "summary": ""
+    },
+    "drills_count": 0,
+    "code_n1": "",
+    "code_n2": "",
+    "layer": "Layer0"
+  }
+]
