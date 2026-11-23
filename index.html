@@ -2382,6 +2382,649 @@
         display: inline-flex !important;
       }
     }
+
+    #viewport3D canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+      outline: none;
+    }
+
+    /* ========================================================
+       TỐI ƯU GIAO DIỆN TRÌNH DUYỆT WEB PC & TABLET (DESKTOP RESPONSIVE)
+       ======================================================== */
+    @media (min-width: 768px) and (min-height: 540px) {
+      .top-header {
+        top: 12px;
+        left: 16px;
+        right: 16px;
+      }
+      .brand-pill {
+        max-width: 420px;
+        padding: 8px 16px;
+      }
+      #btnToggleFullscreen {
+        display: inline-flex !important;
+      }
+      .hud-top-card {
+        top: 62px;
+        left: 16px;
+        right: auto;
+        width: 420px;
+        max-width: calc(100vw - 32px);
+      }
+      .search-wrapper {
+        top: 62px;
+        left: auto;
+        right: 16px;
+        margin: 0;
+        width: 380px;
+        max-width: calc(100vw - 32px);
+      }
+      .floating-tools {
+        bottom: 18px;
+      }
+      .floating-actions-bar {
+        background: var(--panel-bg);
+        backdrop-filter: blur(28px) saturate(190%);
+        -webkit-backdrop-filter: blur(28px) saturate(190%);
+        border: 0.5px solid var(--panel-border);
+        border-radius: 9999px;
+        padding: 5px 8px;
+        gap: 6px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+      .round-tool-btn {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        background: transparent;
+        border-color: transparent;
+        box-shadow: none;
+      }
+      .round-tool-btn:hover {
+        background: var(--btn-hover);
+      }
+      .tool-popup-panel {
+        bottom: 76px;
+      }
+      .measure-hud {
+        bottom: 76px;
+      }
+    }
+
+    /* ========================================================
+       PRO CAD / APPLE LIQUID GLASS UPGRADES (PORTRAIT + LANDSCAPE + PC)
+       ======================================================== */
+    /* 1. HUD HEADER: TÊN + CHIP KÍCH THƯỚC GỌN + NÚT ✕ BỎ CHỌN TỨC THÌ */
+    .hud-top-header-wrap {
+      align-items: center;
+      gap: 8px;
+    }
+    .hud-title-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      min-width: 0;
+    }
+    .hud-dim-quick {
+      flex-shrink: 0;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--accent-color);
+      background: rgba(0, 122, 255, 0.11);
+      padding: 2.5px 7px;
+      border-radius: 7px;
+      white-space: nowrap;
+      letter-spacing: -0.1px;
+    }
+    body.dark-mode .hud-dim-quick {
+      background: rgba(10, 132, 255, 0.2);
+      color: #60a5fa;
+    }
+    .hud-deselect-x {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 0.5px solid var(--panel-border);
+      background: var(--grid-bg);
+      color: var(--text-sub);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+    .hud-deselect-x:hover, .hud-deselect-x:active {
+      background: rgba(239, 68, 68, 0.14);
+      color: #ef4444;
+      transform: scale(0.92);
+    }
+
+    /* 2. VIÊN THUỐC NGỮ CẢNH PHÍA TRÊN THANH ĐÁY (KHÔNG XÔ LỆCH 8 NÚT CỐ ĐỊNH!) */
+    .context-pill-bar {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: calc(max(14px, env(safe-area-inset-bottom, 14px)) + 52px);
+      z-index: 106;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 6px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 0.5px solid var(--panel-border);
+      border-radius: 9999px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      pointer-events: auto;
+      animation: popIn 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .context-pill-bar.has-items {
+      display: flex;
+    }
+    .ctx-pill-btn {
+      height: 30px;
+      padding: 0 10px;
+      border-radius: 9999px;
+      border: none;
+      background: var(--grid-bg);
+      color: var(--text-main);
+      font-size: 11.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.14s ease, background 0.15s ease;
+    }
+    .ctx-pill-btn:active {
+      transform: scale(0.94);
+    }
+    .ctx-pill-btn.ctx-primary {
+      background: rgba(0, 122, 255, 0.14);
+      color: var(--accent-color);
+    }
+    .ctx-pill-btn.ctx-danger {
+      background: rgba(239, 68, 68, 0.13);
+      color: #ef4444;
+    }
+    .ctx-pill-count {
+      background: var(--accent-color);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      min-width: 17px;
+      height: 17px;
+      padding: 0 4px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 3. LAYER PANEL NON-BLOCKING FLOATING GLASS SHEET
+          - Màn hình dọc (Portrait): Bottom Sheet gọn ~33vh (0.8x) ở nửa dưới, chừa ~66% phía trên xoay/zoom model (nút ↕ mở rộng 64vh).
+          - Màn hình ngang (Landscape): Thanh mảnh 218px bên phải.
+          - Desktop PC: Floating sidebar 300px bên phải. */
+    .layer-panel-backdrop {
+      display: none !important;
+      pointer-events: none !important;
+      background: transparent !important;
+    }
+    .layer-panel {
+      top: auto;
+      left: max(8px, env(safe-area-inset-left, 8px));
+      right: max(8px, env(safe-area-inset-right, 8px));
+      bottom: calc(max(12px, env(safe-area-inset-bottom, 12px)) + 52px);
+      width: auto;
+      max-width: none;
+      height: 33vh;
+      min-height: 185px;
+      max-height: 36vh;
+      border-radius: 16px;
+      border: 0.5px solid var(--panel-border);
+      background: var(--panel-bg);
+      backdrop-filter: blur(32px) saturate(200%);
+      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.06);
+      transform: translateY(calc(100% + 90px));
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), height 0.24s cubic-bezier(0.22, 1, 0.36, 1), max-height 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+      overflow: hidden;
+    }
+    .layer-panel.open {
+      transform: translateY(0);
+    }
+    .layer-panel.is-tall {
+      height: 64vh;
+      max-height: 68vh;
+    }
+    .layer-panel-header {
+      padding: 6px 10px;
+    }
+    .layer-panel-title {
+      font-size: 12.5px;
+      gap: 6px;
+    }
+    .layer-panel-title svg {
+      width: 15px;
+      height: 15px;
+    }
+    .layer-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .layer-expand-btn {
+      background: var(--grid-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--text-sub);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, background 0.15s ease, color 0.15s ease;
+    }
+    .layer-expand-btn svg {
+      width: 12px;
+      height: 12px;
+    }
+    .layer-expand-btn:hover, .layer-expand-btn:active {
+      background: rgba(0, 122, 255, 0.14);
+      color: var(--accent-color);
+    }
+    .layer-panel.is-tall .layer-expand-btn svg {
+      transform: rotate(180deg);
+    }
+    .layer-panel-close {
+      width: 26px;
+      height: 26px;
+      font-size: 12px;
+    }
+    .layer-toolbar {
+      padding: 4px 8px;
+      border-bottom: 0.5px solid var(--panel-border);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .layer-search-input {
+      width: 100%;
+      height: 26px;
+      border-radius: 7px;
+      border: 0.5px solid var(--panel-border);
+      background: var(--search-input-bg);
+      color: var(--text-main);
+      padding: 0 9px;
+      font-size: 11px;
+      outline: none;
+    }
+    .layer-quick-actions {
+      display: flex;
+      gap: 4px;
+    }
+    .layer-quick-btn {
+      flex: 1;
+      height: 23px;
+      border-radius: 6px;
+      border: 0.5px solid var(--panel-border);
+      background: var(--grid-bg);
+      color: var(--text-main);
+      font-size: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      white-space: nowrap;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .layer-quick-btn:hover {
+      background: var(--btn-hover);
+    }
+    .layer-quick-btn.is-active {
+      background: rgba(0, 122, 255, 0.15);
+      border-color: rgba(0, 122, 255, 0.35);
+      color: var(--accent-color);
+    }
+    .layer-list {
+      padding: 3px 0;
+    }
+    .layer-item {
+      padding: 4.5px 9px;
+      gap: 6px;
+    }
+    .layer-eye-btn {
+      width: 25px;
+      height: 25px;
+      border-radius: 7px;
+    }
+    .layer-eye-btn svg {
+      width: 13px;
+      height: 13px;
+    }
+    .layer-color-dot {
+      width: 8px;
+      height: 8px;
+    }
+    .layer-name {
+      font-size: 11.5px;
+    }
+    .layer-count {
+      font-size: 10px;
+      padding: 1.5px 5px;
+      border-radius: 5px;
+    }
+    .layer-item.is-hidden-row .layer-name {
+      opacity: 0.45;
+      text-decoration: line-through;
+    }
+    .layer-solo-btn {
+      width: 23px;
+      height: 23px;
+      border-radius: 6px;
+      border: 0.5px solid transparent;
+      background: transparent;
+      color: var(--text-sub);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .layer-solo-btn svg {
+      width: 12px;
+      height: 12px;
+    }
+    .layer-solo-btn:hover {
+      background: var(--grid-bg);
+      color: var(--accent-color);
+    }
+    .layer-solo-btn.active {
+      background: var(--accent-color);
+      color: #ffffff;
+      border-color: var(--accent-color);
+      box-shadow: 0 2px 8px rgba(0, 122, 255, 0.35);
+    }
+    .layer-hidden-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 4px;
+      border-radius: 999px;
+      background: #f59e0b;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(245, 158, 11, 0.45);
+      pointer-events: none;
+    }
+    .layer-hidden-badge.show {
+      display: inline-flex;
+    }
+
+    /* 4. PROJECTION SWITCH (PHỐI CẢNH / SONG SONG 2D) TRONG VIEWS PANEL */
+    .proj-segment {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      padding: 3px;
+      border-radius: 10px;
+      background: var(--grid-bg);
+      border: 0.5px solid var(--panel-border);
+      margin-bottom: 8px;
+    }
+    .proj-seg-btn {
+      height: 28px;
+      border: none;
+      border-radius: 7px;
+      background: transparent;
+      color: var(--text-sub);
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .proj-seg-btn.active {
+      background: var(--btn-bg);
+      color: var(--accent-color);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    /* 5. IOS LIQUID GLASS TOAST PILL */
+    .ltf-toast {
+      position: absolute;
+      left: 50%;
+      top: calc(max(8px, env(safe-area-inset-top, 8px)) + 50px);
+      transform: translateX(-50%) translateY(-10px) scale(0.96);
+      background: rgba(17, 24, 39, 0.84);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      border: 0.5px solid rgba(255, 255, 255, 0.14);
+      z-index: 260;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+      max-width: 86vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: opacity 0.2s ease, transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    body.dark-mode .ltf-toast {
+      background: rgba(44, 44, 46, 0.92);
+    }
+    .ltf-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+
+    /* 6. TOOLTIP NHẸ TRÊN TRÌNH DUYỆT PC KHI RÊ CHUỘT VÀO NÚT CÔNG CỤ */
+    @media (hover: hover) and (pointer: fine) {
+      .round-tool-btn[data-tip] {
+        position: relative;
+      }
+      .round-tool-btn[data-tip]::after {
+        content: attr(data-tip);
+        position: absolute;
+        bottom: calc(100% + 9px);
+        left: 50%;
+        transform: translateX(-50%) translateY(4px);
+        background: rgba(17, 24, 39, 0.9);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 8px;
+        border-radius: 7px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.14s ease, transform 0.14s ease;
+        z-index: 300;
+      }
+      .round-tool-btn[data-tip]:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    /* 7. TỐI ƯU CỰC CHUẨN CHO MÀN HÌNH NGANG ĐIỆN THOẠI (LANDSCAPE MODE) */
+    @media (orientation: landscape) and (max-height: 640px) {
+      .context-pill-bar {
+        left: auto !important;
+        right: max(10px, env(safe-area-inset-right, 10px)) !important;
+        transform: none !important;
+        bottom: calc(max(10px, env(safe-area-inset-bottom, 10px)) + 44px) !important;
+        padding: 3px 5px !important;
+      }
+      .ctx-pill-btn {
+        height: 26px !important;
+        font-size: 10.5px !important;
+        padding: 0 8px !important;
+      }
+      .layer-panel {
+        left: auto !important;
+        top: calc(max(6px, env(safe-area-inset-top, 6px)) + 38px) !important;
+        bottom: calc(max(10px, env(safe-area-inset-bottom, 10px)) + 46px) !important;
+        right: max(10px, env(safe-area-inset-right, 10px)) !important;
+        width: 218px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        border-radius: 14px !important;
+        transform: translateX(calc(100% + 24px)) !important;
+      }
+      .layer-panel.open {
+        transform: translateX(0) !important;
+      }
+      .layer-expand-btn {
+        display: none !important;
+      }
+      .layer-panel .layer-panel-header {
+        padding: 7px 10px !important;
+      }
+      .layer-panel .layer-panel-title {
+        font-size: 12.5px !important;
+      }
+      .layer-panel .layer-toolbar {
+        padding: 5px 8px !important;
+        gap: 5px !important;
+      }
+      .layer-panel .layer-quick-btn {
+        font-size: 9.5px !important;
+        height: 24px !important;
+        padding: 0 3px !important;
+      }
+      .layer-panel .layer-item {
+        padding: 5px 8px !important;
+        gap: 5px !important;
+      }
+      .layer-panel .layer-name {
+        font-size: 11.5px !important;
+      }
+      .layer-panel .layer-eye-btn {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      .layer-panel .layer-solo-btn {
+        width: 22px !important;
+        height: 22px !important;
+      }
+      .ltf-toast {
+        top: auto !important;
+        bottom: calc(max(10px, env(safe-area-inset-bottom, 10px)) + 48px) !important;
+        left: 50% !important;
+      }
+      .hud-dim-quick {
+        font-size: 9.5px !important;
+        padding: 2px 5px !important;
+      }
+      .hud-deselect-x {
+        width: 22px !important;
+        height: 22px !important;
+      }
+    }
+
+    /* 8. DESKTOP >= 768PX */
+    @media (min-width: 768px) and (min-height: 540px) {
+      .context-pill-bar {
+        bottom: 76px;
+      }
+      .layer-panel {
+        left: auto;
+        top: 62px;
+        bottom: 22px;
+        right: 16px;
+        width: 300px;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        border-radius: 18px;
+        transform: translateX(calc(100% + 28px));
+      }
+      .layer-panel.open {
+        transform: translateX(0);
+      }
+      .layer-expand-btn {
+        display: none;
+      }
+      .layer-panel-header {
+        padding: 10px 14px;
+      }
+      .layer-panel-title {
+        font-size: 13.5px;
+      }
+      .layer-panel-close {
+        width: 30px;
+        height: 30px;
+        font-size: 13.5px;
+      }
+      .layer-toolbar {
+        padding: 7px 11px;
+        gap: 6px;
+      }
+      .layer-search-input {
+        height: 30px;
+        font-size: 12px;
+        border-radius: 9px;
+      }
+      .layer-quick-btn {
+        height: 26px;
+        font-size: 10.5px;
+        border-radius: 7px;
+      }
+      .layer-list {
+        padding: 5px 0;
+      }
+      .layer-item {
+        padding: 7px 12px;
+        gap: 8px;
+      }
+      .layer-eye-btn {
+        width: 28px;
+        height: 28px;
+      }
+      .layer-eye-btn svg {
+        width: 15px;
+        height: 15px;
+      }
+      .layer-name {
+        font-size: 12.5px;
+      }
+      .layer-count {
+        font-size: 10.5px;
+        padding: 2px 6px;
+      }
+      .layer-solo-btn {
+        width: 26px;
+        height: 26px;
+      }
+      .layer-solo-btn svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2440,11 +3083,17 @@
     </div>
   </header>
 
-  <!-- BẢNG THÔNG TIN TẤM VÁN MỞ RỘNG (MẶC ĐỊNH COMPACT 2 DÒNG: TÊN + 4 CÔNG CỤ; CHẠM CHEVRON ĐỂ XỔ XUỐNG FULL CHI TIẾT) -->
+  <!-- BẢNG THÔNG TIN TẤM VÁN MỞ RỘNG (MẶC ĐỊNH COMPACT 2 DÒNG: TÊN + KÍCH THƯỚC + ✕ + 4 CÔNG CỤ; CHẠM CHEVRON ĐỂ XỔ XUỐNG FULL CHI TIẾT) -->
   <div class="hud-top-card" id="hudCard" style="display:none;">
-    <!-- DÒNG 1: TÊN CHI TIẾT NẰM TRÊN CÙNG -->
+    <!-- DÒNG 1: TÊN CHI TIẾT + KÍCH THƯỚC GỌN + NÚT ✕ BỎ CHỌN -->
     <div class="hud-top-header-wrap" id="hudCardHeader" title="Chạm để xem / thu gọn thông số chi tiết">
-      <h3 class="hud-part-name" id="hudPartName" title="Tên chi tiết đầy đủ">Tên chi tiết</h3>
+      <div class="hud-title-group">
+        <h3 class="hud-part-name" id="hudPartName" title="Tên chi tiết đầy đủ">Tên chi tiết</h3>
+        <span class="hud-dim-quick" id="hudDimQuick" style="display:none;"></span>
+      </div>
+      <button type="button" class="hud-deselect-x" id="btnHudClearX" title="Bỏ chọn (Esc)" aria-label="Bỏ chọn">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
 
     <!-- DÒNG 2: TOÀN BỘ HUY HIỆU & THÔNG SỐ VÁN (MẶC ĐỊNH ẨN, CHẠM CHEVRON ĐỂ SỔ XUỐNG) -->
@@ -2522,11 +3171,12 @@
       <button class="axis-btn active" id="btnSecAxisY" data-axis="y" style="border-left: 3px solid #10b981;">Trục Y (Đứng)</button>
       <button class="axis-btn" id="btnSecAxisZ" data-axis="z" style="border-left: 3px solid #0284c7;">Trục Z (Sâu)</button>
       <button class="axis-btn" id="btnFlipSection" title="Đảo ngược hướng cắt">Đảo chiều</button>
+      <button class="axis-btn active" id="btnToggleSectionHelper" title="Hiện/Ẩn khung cam mặt cắt">Khung cắt</button>
     </div>
     <div class="slider-row">
-      <span style="font-size: 11.5px; color: var(--text-sub); white-space: nowrap;">Vị trí lát cắt:</span>
+      <span style="font-size: 11.5px; color: var(--text-sub); white-space: nowrap;">Vị trí:</span>
       <input type="range" id="sectionSlider" min="0" max="100" value="50" class="custom-range">
-      <span id="sectionValue" class="slider-val">50%</span>
+      <span id="sectionValue" class="slider-val" style="min-width: 78px; text-align:right;">50%</span>
     </div>
     <div style="font-size: 10.5px; color: var(--text-sub); text-align: center; border-top: 1px solid var(--panel-border); padding-top: 4px;">
       Kéo thanh trượt để di chuyển mặt cắt xuyên qua khối tủ
@@ -2558,33 +3208,40 @@
       </div>
       <button class="panel-close-mini" id="btnCloseViews" title="Đóng góc nhìn">✕</button>
     </div>
+    <div class="proj-segment" role="group" aria-label="Chế độ chiếu camera">
+      <button type="button" class="proj-seg-btn active" id="btnProjPersp" data-proj="perspective">Phối cảnh 3D</button>
+      <button type="button" class="proj-seg-btn" id="btnProjOrtho" data-proj="ortho">Song song 2D</button>
+    </div>
     <div class="views-grid">
-      <button class="view-item-btn" id="btnViewIso" data-view="iso">Phối cảnh (Iso)</button>
-      <button class="view-item-btn" id="btnViewFront" data-view="front">Mặt trước (Front)</button>
-      <button class="view-item-btn" id="btnViewTop" data-view="top">Mặt bằng (Top)</button>
-      <button class="view-item-btn" id="btnViewRight" data-view="right">Mặt phải (Right)</button>
-      <button class="view-item-btn" id="btnViewLeft" data-view="left">Mặt trái (Left)</button>
+      <button class="view-item-btn" id="btnViewIso" data-view="iso">Phối cảnh (1)</button>
+      <button class="view-item-btn" id="btnViewFront" data-view="front">Mặt trước (2)</button>
+      <button class="view-item-btn" id="btnViewTop" data-view="top">Mặt bằng (3)</button>
+      <button class="view-item-btn" id="btnViewRight" data-view="right">Mặt phải (4)</button>
+      <button class="view-item-btn" id="btnViewLeft" data-view="left">Mặt trái (5)</button>
     </div>
   </div>
 
-  <!-- BẢNG ĐIỀU KHIỂN CÔNG CỤ 3D CỐ ĐỊNH Ở ĐÁY MÀN HÌNH (TOÀN BỘ CÔNG CỤ ĐƯỢC LẤY RA NGOÀI) -->
+  <!-- VIÊN THUỐC NGỮ CẢNH PHÍA TRÊN THANH ĐÁY (HOÀN TÁC ẨN / HIỆN HẾT / BỎ CHỌN -> 8 NÚT ĐÁY KHÔNG BỊ XÔ LỆCH) -->
+  <div class="context-pill-bar" id="contextPillBar">
+    <button type="button" class="ctx-pill-btn ctx-primary" id="btnUndoHide" title="Hoàn tác lượt ẩn gần nhất (Ctrl+Z)" style="display:none;">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg>
+      <span>Hoàn tác ẩn</span>
+    </button>
+    <button type="button" class="ctx-pill-btn" id="btnUnhideAll" title="Hiện lại tất cả các tấm đã ẩn (Shift+H)" style="display:none;">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>Hiện hết</span>
+      <span class="ctx-pill-count" id="unhideCount">0</span>
+    </button>
+    <button type="button" class="ctx-pill-btn ctx-danger" id="btnFloatingDeselect" title="Bỏ chọn tất cả (Esc)" style="display:none;">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <span>Bỏ chọn</span>
+    </button>
+  </div>
+
+  <!-- BẢNG ĐIỀU KHIỂN CÔNG CỤ 3D CỐ ĐỊNH 8 VỊ TRÍ Ở ĐÁY MÀN HÌNH -->
   <div class="floating-tools" id="floatingTools">
     <div class="floating-actions-bar">
-      <!-- 1. Hủy chọn nhiều tấm (chỉ hiện khi chọn > 1 tấm) -->
-      <button class="round-tool-btn floating-deselect-btn" id="btnFloatingDeselect" title="Hủy chọn nhiều linh kiện" style="display:none;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-
-      <!-- 2. Hiện lại tất cả tấm đã ẩn (chỉ hiện khi có tấm ẩn) -->
-      <button class="round-tool-btn unhide-btn" id="btnUnhideAll" title="Hiện lại tất cả các tấm đã ẩn" style="display:none; position:relative;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        <span class="unhide-count" id="unhideCount">0</span>
-      </button>
-
-      <!-- 3. Ẩn tấm đang chọn (tự động hiện khi chọn tấm ván) -->
+      <!-- Nút ẩn dự phòng giữ tương thích ID -->
       <button class="round-tool-btn floating-hide-btn" id="btnFloatingHide" title="Ẩn tấm ván đang chọn" style="display:none;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
@@ -2592,38 +3249,38 @@
         </svg>
       </button>
 
-      <!-- 4. Đặt lại góc nhìn camera -->
-      <button class="round-tool-btn" id="btnResetView" title="Đặt lại góc nhìn camera">
+      <!-- 1. Đặt lại góc nhìn camera -->
+      <button class="round-tool-btn" id="btnResetView" data-tip="Vừa màn hình (Shift+Z)" title="Đặt lại góc nhìn camera">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
       </button>
 
-      <!-- 5. Góc nhìn chuẩn SketchUp -->
-      <button class="round-tool-btn" id="btnToggleViews" title="Các góc nhìn kỹ thuật chuẩn (Iso, Front, Top, Left, Right)">
+      <!-- 2. Góc nhìn chuẩn SketchUp & Chiếu 2D/3D -->
+      <button class="round-tool-btn" id="btnToggleViews" data-tip="Góc nhìn & 2D (1–5, P)" title="Góc nhìn chuẩn & Phối cảnh / Song song">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
       </button>
 
-      <!-- 6. Mặt cắt 3D di động (Section Cut) -->
-      <button class="round-tool-btn" id="btnToggleSection" title="Mặt cắt 3D di động (Section Cut)">
+      <!-- 3. Mặt cắt 3D di động (Section Cut) -->
+      <button class="round-tool-btn" id="btnToggleSection" data-tip="Mặt cắt 3D" title="Mặt cắt 3D di động (Section Cut)">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><line x1="2" y1="12" x2="22" y2="12" stroke="#ff4500" stroke-width="2.5"/><polygon points="12 7 15 11 9 11" fill="#ff4500"/></svg>
       </button>
 
-      <!-- 7. Rã rời cụm chi tiết (Explode View) -->
-      <button class="round-tool-btn" id="btnToggleExplode" title="Rã rời cụm chi tiết 3D (Explode View)">
+      <!-- 4. Rã rời cụm chi tiết (Explode View) -->
+      <button class="round-tool-btn" id="btnToggleExplode" data-tip="Rã rời lắp đặt" title="Rã rời cụm chi tiết 3D (Explode View)">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="m4 4 3 3m10 10 3 3m0-16-3 3M4 20l3-3"/></svg>
       </button>
 
-      <!-- 8. Thước đo 3D & Đo 2 điểm -->
-      <button class="round-tool-btn" id="btnToggleMeasure" title="Bật/Tắt thước đo 3 chiều & bắt điểm">
+      <!-- 5. Thước đo 3D & Đo 2 điểm -->
+      <button class="round-tool-btn" id="btnToggleMeasure" data-tip="Thước đo 3D (M)" title="Bật/Tắt thước đo 3 chiều & bắt điểm">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1 3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2m-5-1 2-2m-5-1 2-2"/></svg>
       </button>
 
-      <!-- 9. Làm mờ xung quanh khi chọn tấm (Ghost Mode) -->
-      <button class="round-tool-btn active" id="btnFloatingGhost" title="Làm mờ xung quanh khi chọn tấm (Ghost Mode)">
+      <!-- 6. Làm mờ xung quanh khi chọn tấm (Ghost Mode) -->
+      <button class="round-tool-btn" id="btnFloatingGhost" data-tip="Bóng ma (G)" title="Làm mờ xung quanh khi chọn tấm (Ghost Mode)">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 1 6 2 8l1 2h8l1-2c1-2 2-5 2-8a7 7 0 0 0-7-7z"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
       </button>
 
-      <!-- 10. X-Ray nhìn xuyên thấu mô hình -->
-      <button class="round-tool-btn" id="btnFloatingXray" title="Bật/Tắt X-Ray nhìn xuyên thấu">
+      <!-- 7. X-Ray nhìn xuyên thấu mô hình -->
+      <button class="round-tool-btn" id="btnFloatingXray" data-tip="X-Ray (X)" title="Bật/Tắt X-Ray nhìn xuyên thấu">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="2.5"/>
           <path d="M12 3v18M3 12h18" stroke-dasharray="2 2" opacity="0.6"/>
@@ -2631,31 +3288,48 @@
         </svg>
       </button>
 
-      <!-- 11. Quản lý Layer -->
-      <button class="round-tool-btn" id="btnFloatingLayers" title="Quản lý Layer (Hiện/Ẩn nhóm chi tiết)">
+      <!-- 8. Quản lý Layer -->
+      <button class="round-tool-btn" id="btnFloatingLayers" data-tip="Quản lý Layer (L)" title="Quản lý Layer (Hiện/Ẩn nhóm chi tiết)" style="position:relative;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="12 2 2 7 12 12 22 7 12 2"/>
           <polyline points="2 17 12 22 22 17"/>
           <polyline points="2 12 12 17 22 12"/>
         </svg>
+        <span class="layer-hidden-badge" id="layerHiddenBadge">0</span>
       </button>
     </div>
   </div>
 
-  <!-- LAYER PANEL (Quản lý Layer giống SketchUp Mobile) -->
+  <!-- LAYER PANEL NON-BLOCKING FLOATING GLASS (XOAY/ZOOM MODEL THOẢI MÁI KHI MỞ) -->
   <div class="layer-panel-backdrop" id="layerPanelBackdrop"></div>
   <div class="layer-panel" id="layerPanel">
     <div class="layer-panel-header">
       <div class="layer-panel-title">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-        Quản Lý Layer
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Quản Lý Layer</span>
       </div>
-      <button class="layer-panel-close" id="btnCloseLayerPanel">✕</button>
+      <div class="layer-header-actions">
+        <button type="button" class="layer-expand-btn" id="btnExpandLayerPanel" title="Mở rộng / Thu gọn chiều cao bảng Layer" aria-label="Mở rộng hoặc thu gọn bảng Layer">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+        <button class="layer-panel-close" id="btnCloseLayerPanel" title="Đóng bảng Layer (L / Esc)">✕</button>
+      </div>
+    </div>
+    <div class="layer-toolbar" id="layerToolbar">
+      <input type="text" class="layer-search-input" id="layerSearchInput" placeholder="Lọc nhanh tên Layer..." style="display:none;" />
+      <div class="layer-quick-actions">
+        <button type="button" class="layer-quick-btn" id="btnLayerShowAll" title="Hiện toàn bộ các Layer">Hiện tất cả</button>
+        <button type="button" class="layer-quick-btn" id="btnLayerHideAll" title="Ẩn toàn bộ các Layer">Ẩn tất cả</button>
+        <button type="button" class="layer-quick-btn is-active" id="btnLayerToggleLabels" title="Bật/Tắt nhanh toàn bộ tem nhãn chữ 3D" style="display:none;">Nhãn 3D</button>
+      </div>
     </div>
     <div class="layer-list" id="layerList">
       <div style="padding:20px; text-align:center; color:var(--text-sub); font-size:13px;">Chưa có dữ liệu Layer. Hãy xuất lại mô hình từ SketchUp.</div>
     </div>
   </div>
+
+  <!-- TOAST PHẢN HỒI NHANH CHUẨN IOS LIQUID GLASS -->
+  <div class="ltf-toast" id="ltfToast" role="status" aria-live="polite"></div>
 
   <!-- QR SCANNER CAMERA FULL-SCREEN (CHUẨN APPLE CAMERA & LIQUID GLASS) -->
   <div class="qr-modal" id="qrModal">
@@ -2790,15 +3464,121 @@
 
       // 1. STATE & DATA
       let scene, camera, renderer, controls;
+      let perspCamera = null;
+      let orthoCamera = null;
+      let isOrthoMode = false;
+      let camRigLightGroup = null;
+      let hemiLight = null;
       let modelRoot = null;
       let allMeshes = [];
-      let boardMeshMap = {}; // { board_index: [mesh1, mesh2, ...] }
-      let boardsData = {};   // { board_index: { part_name, dimensions, ... } }
+      let allLines = [];      // Toàn bộ THREE.Line / THREE.LineSegments gốc từ GLB (_ABF_Label, đường khoan, nét đứt, ConstructionLine)
+      let boardMeshMap = {};  // { unitKey: [mesh1, mesh2, ...] }
+      let unitLineMap = {};   // { unitKey: [line1, line2, ...] }
+      let unitMeta = {};      // { unitKey: { key, kind: 'board'|'decor', name, layerName, thicknessMm, dimsMm, rootNode, meshes, lines } }
+      let layerUnitsMap = {}; // { layerName: Set(unitKey) } -> đếm chuẩn số đối tượng thực, không đếm ảo mesh con
+      let boardsData = {};    // { board_index: { part_name, dimensions, ... } }
       let selectedBoardIndex = null;
-      let isGhostMode = true; // Mặc định khởi động lần đầu là BẬT theo yêu cầu
+      let isGhostManual = false;  // Trạng thái Ghost do người dùng chủ động bấm bật/tắt thủ công
+      let isGhostAutoQr = false;  // Trạng thái Ghost tạm thời tự động bật khi quét tem QR (tự tắt khi chạm ra ngoài nếu không bật thủ công)
+      let isGhostMode = false;    // Mặc định TẮT; hiệu lực = isGhostManual || isGhostAutoQr
       let isDarkMode = false;
+      let labels3dHidden = false; // Công tắc nhanh Ẩn/Hiện toàn bộ tem nhãn chữ 3D (_ABF_Label)
+      let hasAny3dLabels = false;
+      let hideHistoryStack = [];  // Ngăn xếp lịch sử ẩn để Hoàn tác (Undo 1 bước)
+      let soloLayerState = null;  // { layerName, prevHidden: Set } cho nút Cô lập 1 Layer (Solo)
+      let showSectionHelper = true;
       let qrMediaStream = null;
       let qrVideoTrack = null;
+      let needsRender = true;
+      let activeCamAnimToken = 0;
+      let _toastTimer = null;
+
+      function showToast(msg, duration = 1550) {
+        const el = document.getElementById('ltfToast');
+        if (!el || !msg) return;
+        el.textContent = msg;
+        el.classList.add('show');
+        if (_toastTimer) clearTimeout(_toastTimer);
+        _toastTimer = setTimeout(() => {
+          el.classList.remove('show');
+        }, duration);
+      }
+
+      function syncGhostState() {
+        isGhostMode = !!(isGhostManual || isGhostAutoQr);
+        const bFloat = document.getElementById('btnFloatingGhost');
+        const bTog = document.getElementById('btnToggleGhost');
+        if (bFloat) bFloat.classList.toggle('active', isGhostMode);
+        if (bTog) bTog.classList.toggle('active', isGhostMode);
+        if (window.updateFabIndicator) window.updateFabIndicator();
+      }
+
+      function requestRender() {
+        needsRender = true;
+      }
+
+      function cancelCameraAnimation() {
+        activeCamAnimToken++;
+      }
+
+      function isRenderableHiddenByLayer(obj) {
+        if (!obj || !obj.userData) return false;
+        const anc = obj.userData.ancestorLayers;
+        if (Array.isArray(anc) && anc.length > 0) {
+          for (let i = 0; i < anc.length; i++) {
+            if (hiddenLayers.has(anc[i])) return true;
+          }
+          return false;
+        }
+        const lyr = obj.userData.layerName;
+        return !!(lyr && hiddenLayers.has(lyr));
+      }
+
+      function getVisibleRaycastMeshes() {
+        const out = [];
+        for (let i = 0; i < allMeshes.length; i++) {
+          const m = allMeshes[i];
+          if (!m.visible) continue;
+          const uKey = (m.userData.unitKey !== undefined && m.userData.unitKey !== null) ? m.userData.unitKey : m.userData.boardIndex;
+          if (uKey !== undefined && uKey !== null && hiddenBoardIndices.has(uKey)) continue;
+          if (isRenderableHiddenByLayer(m)) continue;
+          let p = m.parent;
+          let hiddenAncestor = false;
+          while (p && p !== scene) {
+            if (!p.visible) { hiddenAncestor = true; break; }
+            p = p.parent;
+          }
+          if (!hiddenAncestor) out.push(m);
+        }
+        return out;
+      }
+
+      const _sharedRaycaster = new THREE.Raycaster();
+      const _sharedRayNdc = new THREE.Vector2();
+
+      function raycastVisibleSurface(clientX, clientY) {
+        if (!camera || !allMeshes || allMeshes.length === 0) return null;
+        if (clientX === null || clientY === null) {
+          _sharedRayNdc.set(0, 0);
+        } else {
+          _sharedRayNdc.x = (clientX / window.innerWidth) * 2 - 1;
+          _sharedRayNdc.y = -(clientY / window.innerHeight) * 2 + 1;
+        }
+        _sharedRaycaster.setFromCamera(_sharedRayNdc, camera);
+        const candidates = getVisibleRaycastMeshes();
+        if (candidates.length === 0) return null;
+        const hits = _sharedRaycaster.intersectObjects(candidates, false);
+        if (!hits || hits.length === 0) return null;
+        if (isSectionActive && sectionPlane) {
+          for (let i = 0; i < hits.length; i++) {
+            if (sectionPlane.distanceToPoint(hits[i].point) >= -1e-4) {
+              return hits[i];
+            }
+          }
+          return null;
+        }
+        return hits[0];
+      }
 
       // Vật liệu Highlight chuẩn phong cách SketchUp Selection (Mặt tấm sáng nhẹ dịu mắt)
       const highlightMaterial = new THREE.MeshStandardMaterial({
@@ -2972,73 +3752,553 @@
         });
       }
 
-      // 2. KHỞI TẠO THREE.JS ENGINE
+      // 2. BỘ ĐIỀU KHIỂN CAMERA CHUẨN SKETCHUP VIEWER (IOS / ANDROID / DESKTOP WEB)
+      //    - 1 ngón / Chuột trái-giữa: Orbit khóa chân trời + Dynamic Raycast Pivot + quán tính mượt
+      //    - 2 ngón: Anchor-Locked Pinch-Zoom + Pan 1:1 đồng thời dính tay + chui xuyên khoang tủ không khựng
+      //    - Con lăn chuột / Trackpad: Zoom-to-Cursor chuẩn SketchUp Desktop
+      //    - Chuột phải / Shift+Kéo: Pan 1:1 theo độ sâu bề mặt dưới trỏ
+      class SketchUpCameraController {
+        constructor(cam, domEl) {
+          this.camera = cam;
+          this.domElement = domEl;
+          this.target = new THREE.Vector3(0, 0, 0);
+          this.orbitPivot = new THREE.Vector3(0, 0, 0); // Tâm xoay độc lập với target -> xoay quanh điểm chạm lệch tâm KHÔNG BAO GIỜ giật hình!
+          this.enabled = true;
+          this.minDistance = 0.02;
+          this.maxDistance = 500;
+          this.rotateSpeed = 0.92;
+
+          this.modelCenter = new THREE.Vector3(0, 0, 0);
+          this.modelRadius = 2.0;
+
+          // Quán tính xoay mượt dứt khoát chuẩn iOS/SketchUp Viewer
+          this.velTheta = 0;
+          this.velPhi = 0;
+          this.isDragging = false;
+
+          // Cache điểm neo cho Wheel Zoom-to-Cursor
+          this._wheelAnchorPoint = null;
+          this._wheelAnchorDepth = 2.0;
+          this._wheelLastX = -9999;
+          this._wheelLastY = -9999;
+          this._wheelLastTs = 0;
+
+          // Vector & Quaternion tái sử dụng tránh rác GC 60/120fps
+          this._worldUp = new THREE.Vector3(0, 1, 0);
+          this._vRight = new THREE.Vector3();
+          this._vUp = new THREE.Vector3();
+          this._vFwd = new THREE.Vector3();
+          this._vOffset = new THREE.Vector3();
+          this._qYaw = new THREE.Quaternion();
+          this._qPitch = new THREE.Quaternion();
+          this._qRot = new THREE.Quaternion();
+          this._vTmp1 = new THREE.Vector3();
+          this._vTmp2 = new THREE.Vector3();
+          this._vTmp3 = new THREE.Vector3();
+          this._plane = new THREE.Plane();
+          this._ray = new THREE.Raycaster();
+          this._ndc = new THREE.Vector2();
+        }
+
+        setModelBounds(box) {
+          if (!box || box.isEmpty()) return;
+          box.getCenter(this.modelCenter);
+          const sz = new THREE.Vector3();
+          box.getSize(sz);
+          const maxDim = Math.max(sz.x, sz.y, sz.z);
+          this.modelRadius = Math.max(maxDim * 0.5, 0.15);
+          this.minDistance = Math.max(this.modelRadius * 0.012, 0.02);
+          this.maxDistance = Math.max(this.modelRadius * 28, 30);
+          this.syncDynamicClipPlanes();
+        }
+
+        cancelInertia() {
+          this.velTheta = 0;
+          this.velPhi = 0;
+        }
+
+        getCameraAxes() {
+          this._vRight.set(1, 0, 0).applyQuaternion(this.camera.quaternion).normalize();
+          this._vUp.set(0, 1, 0).applyQuaternion(this.camera.quaternion).normalize();
+          this._vFwd.set(0, 0, -1).applyQuaternion(this.camera.quaternion).normalize();
+        }
+
+        // Xác định điểm 3D neo tại tọa độ màn hình (clientX, clientY):
+        // Ưu tiên raycast trúng bề mặt đang hiển thị -> fallback mặt phẳng đi qua target / tâm mô hình
+        computeAnchorAt(clientX, clientY, preferSurface = true) {
+          this.getCameraAxes();
+          if (preferSurface) {
+            const hit = raycastVisibleSurface(clientX, clientY);
+            if (hit && hit.point) {
+              const depth = hit.point.clone().sub(this.camera.position).dot(this._vFwd);
+              if (depth > 0.005) {
+                return { point: hit.point.clone(), depth, hitSurface: true };
+              }
+            }
+          }
+
+          // Fallback: giao điểm tia qua (clientX, clientY) với mặt phẳng song song màn hình đi qua target hoặc modelCenter
+          const refPt = this._vTmp1.copy(this.target);
+          let refDepth = refPt.clone().sub(this.camera.position).dot(this._vFwd);
+          if (refDepth < 0.05) {
+            refPt.copy(this.modelCenter);
+            refDepth = refPt.clone().sub(this.camera.position).dot(this._vFwd);
+          }
+          if (refDepth < 0.05) {
+            refDepth = Math.max(this.modelRadius * 1.5, 0.8);
+            refPt.copy(this.camera.position).addScaledVector(this._vFwd, refDepth);
+          }
+
+          this._plane.setFromNormalAndCoplanarPoint(this._vFwd, refPt);
+          this._ndc.set(
+            (clientX / Math.max(window.innerWidth, 1)) * 2 - 1,
+            -(clientY / Math.max(window.innerHeight, 1)) * 2 + 1
+          );
+          this._ray.setFromCamera(this._ndc, this.camera);
+          const outPt = new THREE.Vector3();
+          if (this._ray.ray.intersectPlane(this._plane, outPt)) {
+            const d = outPt.clone().sub(this.camera.position).dot(this._vFwd);
+            return { point: outPt, depth: Math.max(d, 0.05), hitSurface: false };
+          }
+          return {
+            point: this.camera.position.clone().addScaledVector(this._vFwd, refDepth),
+            depth: refDepth,
+            hitSurface: false
+          };
+        }
+
+        // Đặt tâm xoay động chuẩn SketchUp Viewer vào `this.orbitPivot` (KHÔNG ghi đè `this.target` -> 0px giật hình kể cả chạm mép ngoài!)
+        setDynamicOrbitPivot(startX, startY) {
+          let pivot = null;
+          // 1. Ưu tiên điểm bề mặt ngay dưới ngón tay / con trỏ chuột
+          const directHit = raycastVisibleSurface(startX, startY);
+          if (directHit && directHit.point) {
+            pivot = directHit.point;
+          } else {
+            // 2. Nếu đặt tay ngoài vùng trống -> lấy điểm bề mặt tại chính giữa màn hình
+            const centerHit = raycastVisibleSurface(null, null);
+            if (centerHit && centerHit.point) {
+              pivot = centerHit.point;
+            }
+          }
+
+          if (pivot) {
+            this.getCameraAxes();
+            const depth = pivot.clone().sub(this.camera.position).dot(this._vFwd);
+            if (depth > 0.02 && depth < this.maxDistance) {
+              this.orbitPivot.copy(pivot);
+              return;
+            }
+          }
+
+          // 3. Nếu nhìn hoàn toàn ra vùng trống -> xoay quanh tâm mô hình (hoặc target hiện tại nếu model ở sau lưng)
+          this.getCameraAxes();
+          const toModel = this.modelCenter.clone().sub(this.camera.position);
+          const proj = toModel.dot(this._vFwd);
+          if (proj > 0.05 && proj < this.maxDistance) {
+            this.orbitPivot.copy(this.modelCenter);
+          } else {
+            this.orbitPivot.copy(this.target);
+          }
+        }
+
+        // Xoay 1 ngón / chuột trái-giữa quanh `this.orbitPivot` theo phép quay vật rắn (Rigid-Body Orbit)
+        // -> Điểm dưới ngón tay đứng yên tuyệt đối, đường chân trời luôn ngang phẳng, ZERO giật khung hình!
+        applyOrbitDelta(dx, dy, recordMomentum = true) {
+          const h = Math.max(window.innerHeight, 200);
+          const dTheta = -(dx / h) * Math.PI * 1.9 * this.rotateSpeed;
+          const dPhi = -(dy / h) * Math.PI * 1.75 * this.rotateSpeed;
+          this.rotateByAngles(dTheta, dPhi);
+          if (recordMomentum) {
+            this.velTheta = this.velTheta * 0.45 + dTheta * 0.55;
+            this.velPhi = this.velPhi * 0.45 + dPhi * 0.55;
+          }
+        }
+
+        rotateByAngles(dTheta, dPhi) {
+          if (Math.abs(dTheta) < 1e-7 && Math.abs(dPhi) < 1e-7) return;
+          this.getCameraAxes();
+
+          // Chống lật ngược camera quá đỉnh/đáy (giữ đường chân trời chuẩn SketchUp)
+          const curPolar = Math.acos(Math.max(-1, Math.min(1, -this._vFwd.y)));
+          const clampedPolar = Math.max(0.04, Math.min(Math.PI - 0.04, curPolar + dPhi));
+          const effPitch = clampedPolar - curPolar;
+
+          // Kết hợp quay ngang quanh trục đứng World Up + quay dọc quanh trục ngang camera
+          this._qYaw.setFromAxisAngle(this._worldUp, dTheta);
+          this._qPitch.setFromAxisAngle(this._vRight, effPitch);
+          this._qRot.copy(this._qYaw).multiply(this._qPitch);
+
+          // Quay đồng bộ CẢ camera.position lẫn this.target quanh điểm neo this.orbitPivot
+          // -> Hướng nhìn thay đổi liên tục từ 0°, KHÔNG BAO GIỜ nhảy tâm nhìn đột ngột!
+          this._vTmp1.copy(this.camera.position).sub(this.orbitPivot).applyQuaternion(this._qRot);
+          this.camera.position.copy(this.orbitPivot).add(this._vTmp1);
+
+          this._vTmp2.copy(this.target).sub(this.orbitPivot).applyQuaternion(this._qRot);
+          this.target.copy(this.orbitPivot).add(this._vTmp2);
+
+          this.camera.up.copy(this._worldUp);
+          this.camera.lookAt(this.target);
+          this.syncDynamicClipPlanes();
+          requestRender();
+        }
+
+        // Kéo Pan 1:1 theo đúng độ sâu bề mặt (hỗ trợ cả Phối cảnh 3D lẫn Chiếu Song Song 2D)
+        applyScreenPan(dx, dy, depth) {
+          if (dx === 0 && dy === 0) return;
+          this.getCameraAxes();
+          const vh = Math.max(window.innerHeight, 1);
+          let worldPerPx;
+          if (this.camera.isOrthographicCamera) {
+            worldPerPx = (this.camera.top - this.camera.bottom) / (Math.max(this.camera.zoom, 1e-4) * vh);
+          } else {
+            const fovRad = this.camera.fov * (Math.PI / 180);
+            const d = Math.max(depth || this.camera.position.distanceTo(this.target), 0.04);
+            worldPerPx = (2 * d * Math.tan(fovRad * 0.5)) / vh;
+          }
+
+          this._vTmp1.copy(this._vRight).multiplyScalar(-dx * worldPerPx);
+          this._vTmp2.copy(this._vUp).multiplyScalar(dy * worldPerPx);
+          this._vTmp1.add(this._vTmp2);
+
+          this.camera.position.add(this._vTmp1);
+          this.target.add(this._vTmp1);
+          this.camera.lookAt(this.target);
+          this.syncDynamicClipPlanes();
+          requestRender();
+        }
+
+        // LÕI SKETCHUP VIEWER: Zoom bám chặt điểm neo + Pan 1:1 đồng thời (cả Perspective 3D lẫn Orthographic 2D)
+        applyAnchorZoomAndPan(anchorState, scale, panDx, panDy, screenX, screenY) {
+          if (!anchorState || !anchorState.point) return;
+          this.getCameraAxes();
+
+          const safeScale = Math.max(0.55, Math.min(1.85, scale));
+          const vh = Math.max(window.innerHeight, 1);
+
+          // Nhánh Chiếu Song Song 2D (OrthographicCamera): Zoom scale + dịch bù ngang giữ điểm neo 0.000px trôi!
+          if (this.camera.isOrthographicCamera) {
+            if (Math.abs(safeScale - 1.0) > 1e-5) {
+              const oldZoom = Math.max(this.camera.zoom, 1e-4);
+              const newZoom = Math.max(0.03, Math.min(120, oldZoom / safeScale));
+              const effScale = oldZoom / newZoom;
+
+              this._vTmp1.copy(anchorState.point).sub(this.camera.position);
+              const rx = this._vTmp1.dot(this._vRight);
+              const ry = this._vTmp1.dot(this._vUp);
+              const shiftFactor = 1.0 - effScale;
+
+              this._vTmp2.copy(this._vRight).multiplyScalar(rx * shiftFactor)
+                .addScaledVector(this._vUp, ry * shiftFactor);
+              this.camera.position.add(this._vTmp2);
+              this.target.add(this._vTmp2);
+              this.camera.zoom = newZoom;
+              this.camera.updateProjectionMatrix();
+            }
+
+            if (panDx !== 0 || panDy !== 0) {
+              const worldPerPx = (this.camera.top - this.camera.bottom) / (Math.max(this.camera.zoom, 1e-4) * vh);
+              this._vTmp1.copy(this._vRight).multiplyScalar(-panDx * worldPerPx);
+              this._vTmp2.copy(this._vUp).multiplyScalar(panDy * worldPerPx);
+              this._vTmp1.add(this._vTmp2);
+              this.camera.position.add(this._vTmp1);
+              this.target.add(this._vTmp1);
+            }
+
+            this.camera.lookAt(this.target);
+            this.syncDynamicClipPlanes();
+            requestRender();
+            return;
+          }
+
+          const minDepth = Math.max(this.modelRadius * 0.008, 0.028);
+          const maxDepth = Math.max(this.modelRadius * 20, 22);
+
+          // 1. Zoom (Dolly) bám đúng điểm neo 3D anchorState.point
+          if (Math.abs(safeScale - 1.0) > 1e-5) {
+            const curDepth = Math.max(anchorState.depth, 0.01);
+            const proposedDepth = curDepth * safeScale;
+
+            if (safeScale < 1.0 && proposedDepth < minDepth) {
+              // Non-blocking SketchUp Dolly: khi zoom cực sát (chui vào bên trong khoang tủ),
+              // tự trượt êm camera + target tiến theo tia nhìn dưới điểm pinch/chuột, không kẹt cứng!
+              this._ndc.set(
+                (screenX / Math.max(window.innerWidth, 1)) * 2 - 1,
+                -(screenY / vh) * 2 + 1
+              );
+              this._ray.setFromCamera(this._ndc, this.camera);
+              const zoomPower = Math.min(0.4, 1.0 - safeScale);
+              const stepDist = Math.max(minDepth * 1.45, 0.035) * zoomPower * 2.4;
+              this._vTmp1.copy(this._ray.ray.direction).multiplyScalar(stepDist);
+              this.camera.position.add(this._vTmp1);
+              this.target.add(this._vTmp1);
+              anchorState.point.add(this._vTmp1);
+              anchorState.depth = minDepth;
+            } else {
+              const clampedDepth = Math.max(minDepth, Math.min(maxDepth, proposedDepth));
+              const effScale = clampedDepth / curDepth;
+
+              // Giữ điểm neo 3D bất biến tại đúng tọa độ pixel dưới tay/chuột
+              this._vTmp1.copy(this.camera.position).sub(anchorState.point);
+              const deltaCam = this._vTmp2.copy(this._vTmp1).multiplyScalar(effScale - 1.0);
+              const oldTargetDist = this.camera.position.distanceTo(this.target);
+
+              this.camera.position.add(deltaCam);
+
+              // Giữ nguyên hướng nhìn (không lệch trục): dịch target theo phần ngang & thu/giãn phần dọc
+              const fwdMove = deltaCam.dot(this._vFwd);
+              const newTargetDist = Math.max(minDepth, Math.min(maxDepth, oldTargetDist - fwdMove));
+              this.target.copy(this.camera.position).addScaledVector(this._vFwd, newTargetDist);
+
+              anchorState.depth = clampedDepth;
+            }
+          }
+
+          // 2. Pan 1:1 đồng thời theo độ dịch chuyển trung điểm 2 ngón tay
+          if (panDx !== 0 || panDy !== 0) {
+            const fovRad = this.camera.fov * (Math.PI / 180);
+            const worldPerPx = (2 * Math.max(anchorState.depth, 0.025) * Math.tan(fovRad * 0.5)) / vh;
+
+            this._vTmp1.copy(this._vRight).multiplyScalar(-panDx * worldPerPx);
+            this._vTmp2.copy(this._vUp).multiplyScalar(panDy * worldPerPx);
+            this._vTmp1.add(this._vTmp2);
+
+            this.camera.position.add(this._vTmp1);
+            this.target.add(this._vTmp1);
+          }
+
+          this.camera.lookAt(this.target);
+          this.syncDynamicClipPlanes();
+          requestRender();
+        }
+
+        // Con lăn chuột & Pinch Trackpad PC -> Zoom-to-Cursor chuẩn SketchUp Desktop
+        handleWheelZoom(e) {
+          if (!this.enabled) return;
+          e.preventDefault();
+          cancelCameraAnimation();
+          this.cancelInertia();
+
+          const now = performance.now();
+          const moved = Math.hypot(e.clientX - this._wheelLastX, e.clientY - this._wheelLastY);
+          if (!this._wheelAnchorPoint || (now - this._wheelLastTs > 180) || moved > 8) {
+            const anchor = this.computeAnchorAt(e.clientX, e.clientY, true);
+            this._wheelAnchorPoint = anchor;
+          }
+          this._wheelLastX = e.clientX;
+          this._wheelLastY = e.clientY;
+          this._wheelLastTs = now;
+
+          // Chuẩn hóa tốc độ cuộn giữa chuột bánh răng (Chrome/Edge/Firefox) và trackpad mượt (Mac/Windows Precision)
+          let dy = e.deltaY;
+          if (e.deltaMode === 1) dy *= 32;
+          else if (e.deltaMode === 2) dy *= 400;
+          const clampedDy = Math.max(-180, Math.min(180, dy));
+          const factor = e.ctrlKey ? 0.0085 : 0.00145;
+          const scale = Math.exp(clampedDy * factor);
+
+          this.applyAnchorZoomAndPan(this._wheelAnchorPoint, scale, 0, 0, e.clientX, e.clientY);
+        }
+
+        // Tự động chỉnh Near/Far theo độ zoom -> chống cắt cụt mặt ván khi soi gần & chống nhấp nháy Z-fighting khi zoom xa
+        syncDynamicClipPlanes() {
+          if (this.camera.isOrthographicCamera) {
+            const nearOrtho = -Math.max(this.modelRadius * 30, 60);
+            const farOrtho = Math.max(this.modelRadius * 50, 200);
+            if (Math.abs(nearOrtho - this.camera.near) > 1 || Math.abs(farOrtho - this.camera.far) > 1) {
+              this.camera.near = nearOrtho;
+              this.camera.far = farOrtho;
+              this.camera.updateProjectionMatrix();
+            }
+            return;
+          }
+          const dist = Math.max(this.camera.position.distanceTo(this.target), 0.01);
+          const targetNear = Math.max(0.002, Math.min(dist * 0.018, this.modelRadius * 0.005));
+          const targetFar = Math.max(dist + this.modelRadius * 6, this.modelRadius * 45, 120);
+          if (Math.abs(targetNear - this.camera.near) / Math.max(this.camera.near, 1e-6) > 0.08 ||
+              Math.abs(targetFar - this.camera.far) / Math.max(this.camera.far, 1e-6) > 0.08) {
+            this.camera.near = targetNear;
+            this.camera.far = targetFar;
+            this.camera.updateProjectionMatrix();
+          }
+        }
+
+        update() {
+          if (!this.isDragging && (Math.abs(this.velTheta) > 1e-4 || Math.abs(this.velPhi) > 1e-4)) {
+            this.rotateByAngles(this.velTheta, this.velPhi);
+            this.velTheta *= 0.86;
+            this.velPhi *= 0.86;
+            if (Math.abs(this.velTheta) < 1e-4) this.velTheta = 0;
+            if (Math.abs(this.velPhi) < 1e-4) this.velPhi = 0;
+            return true;
+          }
+          this.camera.lookAt(this.target);
+          this.syncDynamicClipPlanes();
+          return false;
+        }
+      }
+
+      // Chuyển đổi mượt không nhảy tỷ lệ giữa Phối cảnh 3D (Perspective) <-> Chiếu Song Song 2D (Orthographic)
+      function setProjectionMode(mode, silent = false) {
+        const wantOrtho = (mode === 'ortho');
+        if (wantOrtho === isOrthoMode || !perspCamera || !orthoCamera || !controls) return;
+        cancelCameraAnimation();
+        controls.cancelInertia();
+
+        const aspect = window.innerWidth / Math.max(window.innerHeight, 1);
+        const fovRad = perspCamera.fov * (Math.PI / 180);
+
+        if (wantOrtho) {
+          const dist = Math.max(perspCamera.position.distanceTo(controls.target), 0.08);
+          const halfH = dist * Math.tan(fovRad * 0.5);
+          orthoCamera.left = -halfH * aspect;
+          orthoCamera.right = halfH * aspect;
+          orthoCamera.top = halfH;
+          orthoCamera.bottom = -halfH;
+          orthoCamera.zoom = 1.0;
+          orthoCamera.position.copy(perspCamera.position);
+          orthoCamera.up.copy(perspCamera.up);
+          orthoCamera.lookAt(controls.target);
+          orthoCamera.updateProjectionMatrix();
+          if (camRigLightGroup) {
+            perspCamera.remove(camRigLightGroup);
+            orthoCamera.add(camRigLightGroup);
+          }
+          camera = orthoCamera;
+          isOrthoMode = true;
+        } else {
+          const curHalfH = (orthoCamera.top - orthoCamera.bottom) / (2 * Math.max(orthoCamera.zoom, 1e-4));
+          const newDist = Math.max(0.08, curHalfH / Math.tan(fovRad * 0.5));
+          const dir = orthoCamera.position.clone().sub(controls.target);
+          if (dir.lengthSq() < 1e-6) dir.set(0.65, 0.5, 0.75);
+          dir.normalize();
+          perspCamera.position.copy(controls.target).addScaledVector(dir, newDist);
+          perspCamera.up.copy(orthoCamera.up);
+          perspCamera.aspect = aspect;
+          perspCamera.lookAt(controls.target);
+          perspCamera.updateProjectionMatrix();
+          if (camRigLightGroup) {
+            orthoCamera.remove(camRigLightGroup);
+            perspCamera.add(camRigLightGroup);
+          }
+          camera = perspCamera;
+          isOrthoMode = false;
+        }
+
+        controls.camera = camera;
+        controls.syncDynamicClipPlanes();
+        if (loupeCamera) loupeCamera = null;
+
+        const btnP = document.getElementById('btnProjPersp');
+        const btnO = document.getElementById('btnProjOrtho');
+        if (btnP) btnP.classList.toggle('active', !isOrthoMode);
+        if (btnO) btnO.classList.toggle('active', isOrthoMode);
+
+        requestRender();
+        if (!silent) {
+          showToast(isOrthoMode ? 'Chế độ Chiếu song song 2D (Orthographic)' : 'Chế độ Phối cảnh 3D (Perspective)');
+        }
+      }
+
+      // 2B. KHỞI TẠO THREE.JS ENGINE + ÁNH SÁNG TÁCH KHỐI KIẾN TRÚC CHUẨN SKETCHUP PRO
       function init3D() {
         const container = document.getElementById('viewport3D');
         scene = new THREE.Scene();
         scene.background = new THREE.Color(0xf8fafc);
 
-        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
-        camera.position.set(2, 2, 2.5);
+        const aspect = window.innerWidth / Math.max(window.innerHeight, 1);
+        perspCamera = new THREE.PerspectiveCamera(45, aspect, 0.005, 500);
+        perspCamera.position.set(2, 2, 2.5);
+        orthoCamera = new THREE.OrthographicCamera(-2 * aspect, 2 * aspect, 2, -2, -100, 300);
+        orthoCamera.position.copy(perspCamera.position);
+        camera = perspCamera;
 
         renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance", preserveDrawingBuffer: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
         renderer.outputEncoding = THREE.sRGBEncoding;
         renderer.localClippingEnabled = true;
         container.appendChild(renderer.domElement);
 
-        controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.08;
-        controls.rotateSpeed = 0.8;
-        controls.panSpeed = 0.8;
-        controls.minDistance = 0.02;
-        controls.maxDistance = 500;
+        // Bộ điều khiển Camera chuẩn SketchUp Viewer
+        controls = new SketchUpCameraController(camera, renderer.domElement);
 
-        // Ánh sáng tự nhiên trung thực chuẩn SketchUp: Ánh sáng môi trường dịu nhẹ, trung thực màu gỗ/ván, không bóng lóa giả tạo
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.95);
-        scene.add(ambientLight);
+        // Hệ ánh sáng sáng trong, trung thực 100% màu vân gỗ & nội thất chuẩn SketchUp Pro (KHÔNG ám xám, KHÔNG chìm màu!)
+        hemiLight = new THREE.AmbientLight(0xffffff, 0.88);
+        scene.add(hemiLight);
 
-        // Đèn định hướng nhẹ tạo chiều sâu khối hộp 3D tự nhiên (không chói gắt)
-        const dirLight = new THREE.DirectionalLight(0xffffff, 0.20);
-        dirLight.position.set(15, 30, 20);
-        scene.add(dirLight);
+        // Đèn Headlamp gắn CẢ nguồn sáng LẪN target vào Camera -> tách nhẹ sắc độ X/Y/Z đều khắp cả dãy nhà dài 30m!
+        camRigLightGroup = new THREE.Group();
+        const lightTarget = new THREE.Object3D();
+        lightTarget.position.set(0, 0, -1);
+        camRigLightGroup.add(lightTarget);
 
-        // Bỏ hoàn toàn GridHelper để không bị đường viền bao la làm nhỏ mô hình
+        const keyLight = new THREE.DirectionalLight(0xffffff, 0.26);
+        keyLight.position.set(3, 6, 4);
+        keyLight.target = lightTarget;
+        camRigLightGroup.add(keyLight);
 
-        // Raycaster bắt chạm màn hình chọn tấm trực tiếp
+        const fillLight = new THREE.DirectionalLight(0xffffff, 0.10);
+        fillLight.position.set(-4, 2, 1);
+        fillLight.target = lightTarget;
+        camRigLightGroup.add(fillLight);
+
+        perspCamera.add(camRigLightGroup);
+        scene.add(perspCamera);
+        scene.add(orthoCamera);
+
+        // Bộ xử lý cử chỉ chạm / vuốt / zoom / chọn tấm / thước đo kính lúp hợp nhất (0 xung đột)
         setupRaycasting(container);
 
         // Resize handler
         window.addEventListener('resize', onWindowResize);
 
-        // Render loop
+        // Render loop tiết kiệm pin thông minh
         animate();
       }
 
       function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
+        const aspect = window.innerWidth / Math.max(window.innerHeight, 1);
+        if (perspCamera) {
+          perspCamera.aspect = aspect;
+          perspCamera.updateProjectionMatrix();
+        }
+        if (orthoCamera) {
+          const halfH = (orthoCamera.top - orthoCamera.bottom) * 0.5;
+          orthoCamera.left = -halfH * aspect;
+          orthoCamera.right = halfH * aspect;
+          orthoCamera.updateProjectionMatrix();
+        }
         renderer.setSize(window.innerWidth, window.innerHeight);
+        requestRender();
       }
 
-      function animate() {
+      let _lastPulseRenderTs = 0;
+      function animate(nowTs) {
         requestAnimationFrame(animate);
-        controls.update();
+        const inertiaMoved = controls ? controls.update() : false;
+        if (inertiaMoved) needsRender = true;
 
-        // Hiệu ứng thở nhẹ (Pulse) tinh tế cho viền Blue SketchUp của tấm đang được chọn
+        // Hiệu ứng thở nhẹ (Pulse) tinh tế cho viền Blue SketchUp của tấm đang được chọn (giới hạn nhịp ~30fps tiết kiệm pin)
         if (selectedBoardIndex !== null && boardMeshMap[selectedBoardIndex]) {
-          const pulse = (Math.sin(Date.now() * 0.006) + 1) * 0.5;
-          const meshes = Array.isArray(boardMeshMap[selectedBoardIndex]) ? boardMeshMap[selectedBoardIndex] : [boardMeshMap[selectedBoardIndex]];
-          meshes.forEach(m => {
-            if (m.userData.edgeLines && m.userData.edgeLines.material) {
-              m.userData.edgeLines.material.opacity = 0.75 + pulse * 0.25;
-            }
-          });
+          const ts = nowTs || performance.now();
+          if (ts - _lastPulseRenderTs >= 32) {
+            _lastPulseRenderTs = ts;
+            const pulse = (Math.sin(ts * 0.006) + 1) * 0.5;
+            const meshes = Array.isArray(boardMeshMap[selectedBoardIndex]) ? boardMeshMap[selectedBoardIndex] : [boardMeshMap[selectedBoardIndex]];
+            meshes.forEach(m => {
+              if (m.userData.edgeLines && m.userData.edgeLines.material) {
+                m.userData.edgeLines.material.opacity = 0.75 + pulse * 0.25;
+              }
+            });
+            needsRender = true;
+          }
         }
 
-        renderer.render(scene, camera);
+        if (needsRender) {
+          needsRender = false;
+          renderer.render(scene, camera);
+        }
       }
 
       // 3. TẢI DỮ LIỆU METADATA BOARDS (Ưu tiên Cloudflare R2 CDN -> tự động fallback GitHub Pages / Git Raw cho tem cũ)
@@ -3090,6 +4350,104 @@
         }
       }
 
+      // Tạo đường viền kỹ thuật sắc nét chuẩn SketchUp (tôn trọng cạnh smooth/soft từ vertex normals -> không kẻ sọc đen mặt cong/lỗ khoan/gối đệm!)
+      function buildSmartSketchUpEdges(geometry, thresholdDeg = 18) {
+        if (!geometry || !geometry.attributes || !geometry.attributes.position) return null;
+        const posAttr = geometry.attributes.position;
+        const normAttr = geometry.attributes.normal;
+        if (!normAttr) {
+          return new THREE.EdgesGeometry(geometry, thresholdDeg);
+        }
+
+        const idxAttr = geometry.index;
+        const triCount = idxAttr ? Math.floor(idxAttr.count / 3) : Math.floor(posAttr.count / 3);
+        if (triCount <= 0) return null;
+
+        const cosThreshold = Math.cos(thresholdDeg * Math.PI / 180);
+        const smoothNormCos = 0.965; // ~15° khác biệt pháp tuyến đỉnh -> cạnh smooth của SketchUp
+        const edgeMap = new Map();
+        const q = (v) => Math.round(v * 20000);
+
+        for (let t = 0; t < triCount; t++) {
+          const i0 = idxAttr ? idxAttr.getX(t * 3) : (t * 3);
+          const i1 = idxAttr ? idxAttr.getX(t * 3 + 1) : (t * 3 + 1);
+          const i2 = idxAttr ? idxAttr.getX(t * 3 + 2) : (t * 3 + 2);
+
+          const ax = posAttr.getX(i0), ay = posAttr.getY(i0), az = posAttr.getZ(i0);
+          const bx = posAttr.getX(i1), by = posAttr.getY(i1), bz = posAttr.getZ(i1);
+          const cx = posAttr.getX(i2), cy = posAttr.getY(i2), cz = posAttr.getZ(i2);
+
+          const e1x = bx - ax, e1y = by - ay, e1z = bz - az;
+          const e2x = cx - ax, e2y = cy - ay, e2z = cz - az;
+          let fnx = e1y * e2z - e1z * e2y;
+          let fny = e1z * e2x - e1x * e2z;
+          let fnz = e1x * e2y - e1y * e2x;
+          const flen = Math.hypot(fnx, fny, fnz);
+          if (flen < 1e-12) continue;
+          fnx /= flen; fny /= flen; fnz /= flen;
+
+          const pairs = [[i0, i1], [i1, i2], [i2, i0]];
+          for (let p = 0; p < 3; p++) {
+            let va = pairs[p][0], vb = pairs[p][1];
+            const pax = posAttr.getX(va), pay = posAttr.getY(va), paz = posAttr.getZ(va);
+            const pbx = posAttr.getX(vb), pby = posAttr.getY(vb), pbz = posAttr.getZ(vb);
+            const qa = `${q(pax)},${q(pay)},${q(paz)}`;
+            const qb = `${q(pbx)},${q(pby)},${q(pbz)}`;
+            if (qa === qb) continue;
+
+            let key, aIdx, bIdx, x1, y1, z1, x2, y2, z2;
+            if (qa < qb) {
+              key = qa + '|' + qb;
+              aIdx = va; bIdx = vb;
+              x1 = pax; y1 = pay; z1 = paz;
+              x2 = pbx; y2 = pby; z2 = pbz;
+            } else {
+              key = qb + '|' + qa;
+              aIdx = vb; bIdx = va;
+              x1 = pbx; y1 = pby; z1 = pbz;
+              x2 = pax; y2 = pay; z2 = paz;
+            }
+
+            const nax = normAttr.getX(aIdx), nay = normAttr.getY(aIdx), naz = normAttr.getZ(aIdx);
+            const nbx = normAttr.getX(bIdx), nby = normAttr.getY(bIdx), nbz = normAttr.getZ(bIdx);
+
+            const rec = edgeMap.get(key);
+            if (!rec) {
+              edgeMap.set(key, {
+                count: 1,
+                x1, y1, z1, x2, y2, z2,
+                fnx, fny, fnz,
+                nax, nay, naz, nbx, nby, nbz,
+                hard: false
+              });
+            } else {
+              rec.count++;
+              if (!rec.hard) {
+                const faceDot = rec.fnx * fnx + rec.fny * fny + rec.fnz * fnz;
+                if (faceDot <= cosThreshold) {
+                  const dotA = rec.nax * nax + rec.nay * nay + rec.naz * naz;
+                  const dotB = rec.nbx * nbx + rec.nby * nby + rec.nbz * nbz;
+                  if (dotA < smoothNormCos || dotB < smoothNormCos) {
+                    rec.hard = true;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        const outPos = [];
+        edgeMap.forEach(rec => {
+          if (rec.count === 1 || rec.hard) {
+            outPos.push(rec.x1, rec.y1, rec.z1, rec.x2, rec.y2, rec.z2);
+          }
+        });
+        if (outPos.length === 0) return null;
+        const outGeo = new THREE.BufferGeometry();
+        outGeo.setAttribute('position', new THREE.Float32BufferAttribute(outPos, 3));
+        return outGeo;
+      }
+
       // 4. TẢI FILE 3D GLB/GLTF (Ưu tiên Cloudflare R2 CDN -> tự động fallback GitHub Pages -> GitHub Raw cho tem cũ)
       function loadGlbModel(source, fallbackStep = 0, originalRelPath = null) {
         const isRelStr = (typeof source === 'string' && !/^https?:\/\//i.test(source));
@@ -3109,109 +4467,346 @@
 
           modelRoot = gltf.scene;
           scene.add(modelRoot);
+          modelRoot.updateMatrixWorld(true);
+
+          // Reset sạch trạng thái model cũ (tránh dính cache khi đổi công trình hoặc nạp file GLB khác)
           allMeshes = [];
+          allLines = [];
           boardMeshMap = {};
+          unitLineMap = {};
+          unitMeta = {};
           layerMeshMap = {};
+          layerUnitsMap = {};
+          hiddenBoardIndices.clear();
+          hideHistoryStack = [];
+          selectedBoardIndices.clear();
+          selectedBoardIndex = null;
+          isIsolatedMode = false;
+          labels3dHidden = false;
+          hasAny3dLabels = false;
+          soloLayerState = null;
+          explodeFactor = 0;
+          explodeUnitsList = [];
+          updateUnhideButton();
 
-          // Duyệt toàn bộ các node mesh trong mô hình
-          modelRoot.traverse(child => {
-            if (child.isMesh) {
-              allMeshes.push(child);
-              // Khử hoàn toàn bóng lóa nhựa giả, đưa về chất liệu gỗ/ván mờ tự nhiên chuẩn SketchUp
-              if (child.material) {
-                child.material.side = THREE.DoubleSide;
-                child.material.roughness = 1.0;
-                child.material.metalness = 0.0;
-                if (child.material.clearcoat !== undefined) child.material.clearcoat = 0;
-                if (child.material.iridescence !== undefined) child.material.iridescence = 0;
-                if (child.material.transmission !== undefined) child.material.transmission = 0;
-                if (child.material.sheen !== undefined) child.material.sheen = 0;
+          // Nạp màu & thông tin Layer chuẩn từ glTF asset.extras (nếu có)
+          try {
+            const gltfLayers = gltf && gltf.asset && gltf.asset.extras && gltf.asset.extras.ltfLayers;
+            if (Array.isArray(gltfLayers) && gltfLayers.length > 0 && layersData.length === 0) {
+              layersData = gltfLayers;
+            }
+          } catch (e) {}
 
-                // Đẩy mặt phẳng lùi nhẹ (Polygon Offset) để đường nét kỹ thuật luôn nổi rõ ở mọi mối nối tiếp giáp
-                child.material.polygonOffset = true;
-                child.material.polygonOffsetFactor = 1.0;
-                child.material.polygonOffsetUnits = 1.0;
+          // Helper trích xuất Layer của riêng 1 node
+          const extractOwnLayer = (node) => {
+            if (!node) return null;
+            if (node.userData && node.userData.ltfLayer) {
+              const s = String(node.userData.ltfLayer).trim();
+              if (s) return s;
+            }
+            if (node.name) {
+              const lm = node.name.match(/__LYR_\[(.*?)\]__/);
+              if (lm && lm[1]) return lm[1].trim();
+            }
+            return null;
+          };
+
+          const isDefaultLayerName = (name) => {
+            if (!name) return true;
+            const low = String(name).trim().toLowerCase();
+            return low === '' || low === 'layer0' || low === 'untagged';
+          };
+
+          const isLabelNode = (node) => {
+            if (!node) return false;
+            if (node.userData && (node.userData.isLabel === true || node.userData.ltfKind === 'label')) return true;
+            if (node.name && /_?abf_label/i.test(node.name)) return true;
+            return false;
+          };
+
+          const extractDisplayName = (node, fallback) => {
+            if (node && node.userData && node.userData.ltfName) {
+              const cleaned = String(node.userData.ltfName).replace(/^_+/, '').trim();
+              return cleaned || fallback;
+            }
+            if (node && node.name) {
+              const clean = node.name
+                .replace(/^ABF_PART_\d+__/i, '')
+                .replace(/__LYR_\[.*?\]__/g, '')
+                .replace(/^_+|_+$/g, '')
+                .trim();
+              if (clean) return clean;
+            }
+            return fallback;
+          };
+
+          const resolveOwnBoardKey = (node) => {
+            if (!node || isLabelNode(node)) return null;
+            if (node.userData && node.userData.boardIndex !== undefined && node.userData.boardIndex !== null) {
+              const n = parseInt(node.userData.boardIndex, 10);
+              if (!isNaN(n) && n > 0) return n;
+            }
+            const nameIdx = extractBoardIndexFromName(node.name);
+            if (nameIdx !== null && nameIdx > 0) return nameIdx;
+            if (node.userData && node.userData.ltfIsBoard === true) {
+              return node.userData.ltfUnitId ? String(node.userData.ltfUnitId) : null;
+            }
+            return null;
+          };
+
+          // Tiền kiểm tra nhánh con nào có chứa tấm ván (hỗ trợ cả GLB mới lẫn GLB cũ trước khi có ltfContainsBoard)
+          const subtreeBoardFlag = new WeakMap();
+          const subtreeRenderableFlag = new WeakMap();
+          const preScanTree = (node) => {
+            let hasBoard = resolveOwnBoardKey(node) !== null || !!(node.userData && node.userData.ltfContainsBoard);
+            let hasRenderable = !!(node.isMesh || node.isLine || node.isLineSegments);
+            if (node.children && node.children.length > 0) {
+              for (let i = 0; i < node.children.length; i++) {
+                const res = preScanTree(node.children[i]);
+                if (res.hasBoard) hasBoard = true;
+                if (res.hasRenderable) hasRenderable = true;
               }
-              child.userData.origMaterial = child.material;
+            }
+            subtreeBoardFlag.set(node, hasBoard);
+            subtreeRenderableFlag.set(node, hasRenderable);
+            return { hasBoard, hasRenderable };
+          };
+          preScanTree(modelRoot);
 
-              // Tạo đường nét viền kỹ thuật sắc nét chuẩn góc nhìn SketchUp
-              if (child.geometry) {
-                const edgeGeo = new THREE.EdgesGeometry(child.geometry, 15);
+          // Helper tính chuỗi Layer hiệu lực từ node đi lên gốc (chuẩn quy tắc kế thừa Layer cha->con của SketchUp)
+          const collectEffectiveLayers = (obj, unitKey) => {
+            const nonDefault = [];
+            let curr = obj;
+            while (curr && curr !== scene) {
+              const lyr = extractOwnLayer(curr);
+              if (lyr && !isDefaultLayerName(lyr) && !nonDefault.includes(lyr)) {
+                nonDefault.push(lyr);
+              }
+              curr = curr.parent;
+            }
+            if (nonDefault.length === 0 && typeof unitKey === 'number' && boardsData[unitKey] && boardsData[unitKey].layer) {
+              const bLyr = String(boardsData[unitKey].layer).trim();
+              if (bLyr && !isDefaultLayerName(bLyr)) nonDefault.push(bLyr);
+            }
+            return nonDefault.length > 0 ? nonDefault : ['Layer0'];
+          };
+
+          // PASS 1: Phân định ranh giới Tấm ván chuẩn (dính chùm 100% đối tượng con + vector) & Nhóm 3D tách bạch
+          let autoThicknessSeq = 0;
+          let decorSeq = 0;
+
+          const registerUnitMeta = (key, kind, node, primaryLayer) => {
+            if (!unitMeta[key]) {
+              const ud = node.userData || {};
+              unitMeta[key] = {
+                key: key,
+                kind: kind,
+                name: extractDisplayName(node, kind === 'board' ? (typeof key === 'number' ? `Tấm #${key}` : `Tấm ván ${key}`) : `Nhóm 3D ${key}`),
+                layerName: primaryLayer || 'Layer0',
+                thicknessMm: ud.ltfThicknessMm || null,
+                dimsMm: Array.isArray(ud.ltfBoardDimsMm) ? ud.ltfBoardDimsMm : null,
+                rootNode: node,
+                meshes: [],
+                lines: []
+              };
+            }
+            if (!boardMeshMap[key]) boardMeshMap[key] = [];
+            if (!unitLineMap[key]) unitLineMap[key] = [];
+            return unitMeta[key];
+          };
+
+          const assignUnits = (node, activeUnitKey, activeUnitRoot, insideBoard, ancestorIsLabel) => {
+            const nodeIsLabel = ancestorIsLabel || isLabelNode(node);
+            let currKey = activeUnitKey;
+            let currRoot = activeUnitRoot;
+            let currInsideBoard = insideBoard;
+
+            if (!insideBoard && !nodeIsLabel && node !== modelRoot) {
+              let ownBoardKey = resolveOwnBoardKey(node);
+              if (ownBoardKey === null && node.userData && node.userData.ltfIsBoard === true) {
+                ownBoardKey = `B${++autoThicknessSeq}`;
+              }
+
+              if (ownBoardKey !== null) {
+                currKey = ownBoardKey;
+                currRoot = node;
+                currInsideBoard = true;
+                const nodeLayers = collectEffectiveLayers(node, ownBoardKey);
+                registerUnitMeta(ownBoardKey, 'board', node, nodeLayers[0]);
+              } else if (currKey === null && !subtreeBoardFlag.get(node) && subtreeRenderableFlag.get(node)) {
+                // Nhóm 3D phụ / trang trí tách bạch (bếp, giường, mặt đá, phụ kiện ngoài tấm): giữ nguyên 1 khối tách bạch
+                const kindTag = node.userData && node.userData.ltfKind;
+                if (kindTag !== 'root_geom') {
+                  currKey = `G${++decorSeq}`;
+                  currRoot = node;
+                  const nodeLayers = collectEffectiveLayers(node, currKey);
+                  registerUnitMeta(currKey, 'decor', node, nodeLayers[0]);
+                }
+              }
+            }
+
+            if (node.isMesh || node.isLine || node.isLineSegments) {
+              const effLayers = collectEffectiveLayers(node, currKey);
+              node.userData.ancestorLayers = effLayers;
+              node.userData.layerName = effLayers[0];
+              node.userData.unitKey = currKey;
+              node.userData.boardIndex = currKey;
+              node.userData.ownerUnitRoot = currRoot;
+              node.userData.isLabel = nodeIsLabel;
+
+              if (nodeIsLabel) hasAny3dLabels = true;
+
+              // Ghi nhận vào bảng Layer: đếm chính xác số đối tượng/tấm thực (`layerUnitsMap`), KHÔNG đếm ảo mesh+line con
+              effLayers.forEach(lyr => {
+                if (!layerMeshMap[lyr]) layerMeshMap[lyr] = [];
+                layerMeshMap[lyr].push(node);
+                if (!layerUnitsMap[lyr]) layerUnitsMap[lyr] = new Set();
+                layerUnitsMap[lyr].add(currKey !== null ? String(currKey) : `node_${node.id}`);
+              });
+
+              if (node.isMesh) {
+                allMeshes.push(node);
+                if (currKey !== null) {
+                  if (!boardMeshMap[currKey]) boardMeshMap[currKey] = [];
+                  boardMeshMap[currKey].push(node);
+                  if (unitMeta[currKey]) unitMeta[currKey].meshes.push(node);
+                }
+              } else {
+                allLines.push(node);
+                if (currKey !== null) {
+                  if (!unitLineMap[currKey]) unitLineMap[currKey] = [];
+                  unitLineMap[currKey].push(node);
+                  if (unitMeta[currKey]) unitMeta[currKey].lines.push(node);
+                }
+              }
+            }
+
+            if (node.children && node.children.length > 0) {
+              // Sao chép danh sách con trước khi duyệt
+              const kids = node.children.slice();
+              for (let i = 0; i < kids.length; i++) {
+                assignUnits(kids[i], currKey, currRoot, currInsideBoard, nodeIsLabel);
+              }
+            }
+          };
+
+          assignUnits(modelRoot, null, null, false, false);
+
+          // PASS 2: Chuẩn hóa vật liệu, đường viền sắc nét thông minh & nét đứt SketchUp
+          allMeshes.forEach(child => {
+            if (child.material) {
+              child.material.side = THREE.DoubleSide;
+              child.material.roughness = 1.0;
+              child.material.metalness = 0.0;
+              if (child.material.clearcoat !== undefined) child.material.clearcoat = 0;
+              if (child.material.iridescence !== undefined) child.material.iridescence = 0;
+              if (child.material.transmission !== undefined) child.material.transmission = 0;
+              if (child.material.sheen !== undefined) child.material.sheen = 0;
+
+              child.material.polygonOffset = true;
+              child.material.polygonOffsetFactor = 1.0;
+              child.material.polygonOffsetUnits = 1.0;
+            }
+            child.userData.origMaterial = child.material;
+
+            // Tạo đường viền kỹ thuật chuẩn SketchUp (tự bỏ qua các lưới cong mượt như gối/nệm/vòi đã đánh dấu ltfSmoothMesh)
+            const isSmoothMesh = !!(child.userData && child.userData.ltfSmoothMesh);
+            if (child.geometry && !isSmoothMesh) {
+              const edgeGeo = buildSmartSketchUpEdges(child.geometry, 18);
+              if (edgeGeo) {
                 const edgeMat = new THREE.LineBasicMaterial({
                   color: 0x000000,
                   linewidth: 1,
+                  transparent: true,
+                  opacity: 1.0,
                   depthTest: true,
                   depthWrite: true
                 });
                 const edgeLines = new THREE.LineSegments(edgeGeo, edgeMat);
                 edgeLines.renderOrder = 1;
+                edgeLines.userData.isAutoEdge = true;
                 child.add(edgeLines);
                 child.userData.edgeLines = edgeLines;
-              }
-
-              // Tìm ID tấm từ tên đối tượng hoặc duyệt ngược lên toàn bộ các node cha (Parent Hierarchy)
-              const bIdx = getMeshBoardIndex(child);
-              if (bIdx !== null) {
-                child.userData.boardIndex = bIdx;
-                if (!boardMeshMap[bIdx]) boardMeshMap[bIdx] = [];
-                boardMeshMap[bIdx].push(child);
-              }
-
-              // Trích xuất Layer gốc của đối tượng từ GLB hoặc metadata
-              let layerName = null;
-              let curr = child;
-              while (curr && curr !== scene) {
-                if (curr.name) {
-                  const lm = curr.name.match(/__LYR_\[(.*?)\]__/);
-                  if (lm && lm[1]) {
-                    layerName = lm[1].trim();
-                    break;
-                  }
-                }
-                curr = curr.parent;
-              }
-              if (!layerName && bIdx !== null && boardsData[bIdx] && boardsData[bIdx].layer) {
-                layerName = boardsData[bIdx].layer;
-              }
-              if (!layerName) layerName = "Layer0";
-              child.userData.layerName = layerName;
-
-              if (!layerMeshMap[layerName]) layerMeshMap[layerName] = [];
-              layerMeshMap[layerName].push(child);
-
-              if (hiddenLayers.has(layerName)) {
-                child.visible = false;
-                if (child.userData.edgeLines) child.userData.edgeLines.visible = false;
               }
             }
           });
 
+          // Chuẩn hóa toàn bộ đối tượng dạng nét từ GLB (_ABF_Label, đường khoan/rãnh phẳng, nét đứt, ConstructionLine)
+          allLines.forEach(lineObj => {
+            const ud = lineObj.userData || {};
+            const matUd = (lineObj.material && lineObj.material.userData) ? lineObj.material.userData : {};
+            const styleStr = String(ud.ltfLineStyle || '').toLowerCase();
+            const isDashed = !!(ud.ltfPrimitiveType === 'edge_dashed' || styleStr || matUd.ltfDashed);
+
+            let lineMat;
+            if (isDashed) {
+              let dashSize = 0.022;
+              let gapSize = 0.012;
+              if (styleStr.includes('dot') && !styleStr.includes('dash')) {
+                dashSize = 0.004;
+                gapSize = 0.008;
+              } else if (styleStr.includes('short')) {
+                dashSize = 0.012;
+                gapSize = 0.008;
+              }
+              lineMat = new THREE.LineDashedMaterial({
+                color: 0x111827,
+                dashSize: dashSize,
+                gapSize: gapSize,
+                transparent: true,
+                opacity: 0.92,
+                depthTest: true
+              });
+              if (typeof lineObj.computeLineDistances === 'function') {
+                lineObj.computeLineDistances();
+              }
+            } else {
+              lineMat = new THREE.LineBasicMaterial({
+                color: 0x000000,
+                transparent: true,
+                opacity: 1.0,
+                depthTest: true
+              });
+            }
+            lineObj.material = lineMat;
+            lineObj.userData.origMaterial = lineMat;
+            lineObj.userData.isDashedLine = isDashed;
+            lineObj.renderOrder = ud.isLabel ? 2 : 1;
+          });
+
+          // Cập nhật trạng thái hiển thị đồng bộ toàn bộ Mesh + Line + Layer
+          updateModelMaterials();
+
           // Xây dựng bảng điều khiển Layer chuẩn SketchUp
           buildLayersList();
 
-          // Zoom căn chỉnh camera vừa vặn toàn bộ mô hình
-          zoomToFit(modelRoot);
+          // Cập nhật biên mô hình cho bộ điều khiển Camera SketchUp & Zoom vừa khít
+          const rootBox = new THREE.Box3().setFromObject(modelRoot);
+          if (controls && typeof controls.setModelBounds === 'function') {
+            controls.setModelBounds(rootBox);
+          }
+          zoomToFit(modelRoot, false);
 
           setLoading(false);
           document.getElementById('emptyState').classList.remove('active');
 
-          // Cập nhật danh sách tìm kiếm
+          // Cập nhật danh sách tìm kiếm (chỉ liệt kê Tấm ván chuẩn)
           buildSearchList();
 
           // MẶC ĐỊNH KHỞI ĐỘNG: TẮT ĐO ĐẠC, CHO PHÉP CHỌN TẤM VÁN TRỰC TIẾP
-          // (Chế độ chọn tấm ván là mặc định, đo đạc phải bật thủ công)
           isMeasureEnabled = false;
           isPointMeasureMode = false;
 
-          // Nếu URL có sẵn tham số ?id=... thì tự động focus ngay lập tức!
+          // Nếu URL có sẵn tham số ?i=... / #... từ tem QR -> tự động focus + bật Ghost QR tạm thời!
           if (targetParamId) {
             const targetNum = parseInt(targetParamId, 10);
-            if (!isNaN(targetNum)) {
+            if (!isNaN(targetNum) && boardMeshMap[targetNum]) {
               setTimeout(() => {
-                selectBoard(targetNum, true);
+                selectBoard(targetNum, true, true);
               }, 300);
             }
           }
+          requestRender();
         };
 
         const loadProgress = function(xhr) {
@@ -3310,15 +4905,30 @@
         return null;
       }
 
-      // Cập nhật vật liệu toàn bộ Scene
+      // Cập nhật hiển thị & vật liệu toàn bộ Scene (NGUỒN CHÂN LÝ DUY NHẤT cho cả Mesh + LineSegments/_ABF_Label + Layer + Ẩn + Cô lập + Ghost/X-Ray)
       function updateModelMaterials() {
-        const defaultEdgeHex = 0x000000; // Viền model luôn giữ cố định MÀU ĐEN chuẩn kỹ thuật
-        allMeshes.forEach(mesh => {
-          const bIdx = mesh.userData.boardIndex;
-          const lyrName = mesh.userData.layerName;
+        const defaultEdgeHex = 0x000000; // Viền đen sắc nét tuyệt đối chuẩn SketchUp -> nổi bật rõ từng khe cánh & chi tiết!
+        const hasSelection = (selectedBoardIndices && selectedBoardIndices.size > 0) || (selectedBoardIndex !== null);
+        const isSelectedKey = (key) => {
+          if (key === undefined || key === null) return false;
+          if (selectedBoardIndices && selectedBoardIndices.size > 0 && selectedBoardIndices.has(key)) return true;
+          return (selectedBoardIndex !== null && key === selectedBoardIndex);
+        };
 
-          // Ẩn nếu thuộc Layer bị tắt hoặc tấm bị ẩn thủ công
-          if (hiddenLayers.has(lyrName) || hiddenBoardIndices.has(bIdx)) {
+        // 1. Toàn bộ khối Mesh + viền kỹ thuật gắn kèm
+        allMeshes.forEach(mesh => {
+          const uKey = (mesh.userData.unitKey !== undefined && mesh.userData.unitKey !== null)
+            ? mesh.userData.unitKey
+            : mesh.userData.boardIndex;
+          const isTarget = isSelectedKey(uKey);
+          const isLabel = !!(mesh.userData && mesh.userData.isLabel) ||
+                          (mesh.name && mesh.name.toLowerCase().includes('label')) ||
+                          (mesh.parent && mesh.parent.name && mesh.parent.name.toLowerCase().includes('label'));
+          const hiddenByLayer = isRenderableHiddenByLayer(mesh) || (isLabel && labels3dHidden);
+          const hiddenByManual = (uKey !== undefined && uKey !== null && hiddenBoardIndices.has(uKey));
+          const hiddenByIsolate = (isIsolatedMode && hasSelection && !isTarget);
+
+          if (hiddenByLayer || hiddenByManual || hiddenByIsolate) {
             mesh.visible = false;
             if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = false;
             return;
@@ -3326,18 +4936,11 @@
           mesh.visible = true;
           if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = true;
 
-          // Kiểm tra xem mesh có phải là tem nhãn ABF_Label không
-          const isLabel = (mesh.name && mesh.name.toLowerCase().includes('label')) ||
-                          (mesh.parent && mesh.parent.name && mesh.parent.name.toLowerCase().includes('label'));
-
-          const isTarget = (selectedBoardIndices.size > 0 && selectedBoardIndices.has(bIdx)) || (selectedBoardIndex !== null && bIdx === selectedBoardIndex);
-
           if (isLabel) {
-            // Giữ nguyên tem nhãn ABF_Label sắc nét, trung thực bản vẽ
             mesh.material = mesh.userData.origMaterial;
             if (mesh.userData.edgeLines) {
-              mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-              mesh.userData.edgeLines.material.opacity = isTarget ? 1.0 : (isGhostMode ? 0.3 : 0.85);
+              mesh.userData.edgeLines.material.color.setHex(0x0f172a);
+              mesh.userData.edgeLines.material.opacity = isTarget ? 1.0 : (isGhostMode && hasSelection ? 0.20 : 0.85);
               mesh.userData.edgeLines.material.depthTest = true;
               mesh.userData.edgeLines.renderOrder = 1;
             }
@@ -3345,7 +4948,6 @@
             // Phong cách SketchUp Chuẩn: MẶT TẤM VẪN GIỮ NGUYÊN VẬT LIỆU GỐC (vân gỗ thật, không phủ màu xanh)
             mesh.material = mesh.userData.origMaterial;
             if (mesh.userData.edgeLines) {
-              // CHỈ CÓ ĐƯỜNG VIỀN SÁNG NÉT MÀU BLUE SKETCHUP ĐẬM ĐÀ (Chuẩn màu nút quét / xanh chọn SketchUp #0055ff / #007aff)
               mesh.userData.edgeLines.material.color.setHex(0x0055ff);
               mesh.userData.edgeLines.material.opacity = 1.0;
               mesh.userData.edgeLines.material.depthTest = false;
@@ -3355,15 +4957,15 @@
             mesh.material = xrayMaterial;
             if (mesh.userData.edgeLines) {
               mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-              mesh.userData.edgeLines.material.opacity = 0.85;
+              mesh.userData.edgeLines.material.opacity = 0.78;
               mesh.userData.edgeLines.material.depthTest = true;
               mesh.userData.edgeLines.renderOrder = 1;
             }
-          } else if (isGhostMode && (selectedBoardIndex !== null || selectedBoardIndices.size > 0)) {
+          } else if (isGhostMode && hasSelection) {
             mesh.material = ghostMaterial;
             if (mesh.userData.edgeLines) {
               mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-              mesh.userData.edgeLines.material.opacity = 0.25;
+              mesh.userData.edgeLines.material.opacity = 0.22;
               mesh.userData.edgeLines.material.depthTest = true;
               mesh.userData.edgeLines.renderOrder = 1;
             }
@@ -3377,6 +4979,48 @@
             }
           }
         });
+
+        // 2. Toàn bộ đối tượng dạng nét từ GLB (_ABF_Label, đường khoan/rãnh phẳng, nét đứt, ConstructionLine)
+        //    -> Dính chùm 100% cùng tấm ván/group khi Ẩn, Chọn nhiều Ẩn, Cô lập, Tắt Layer, Ghost hoặc X-Ray!
+        allLines.forEach(lineObj => {
+          const uKey = (lineObj.userData.unitKey !== undefined && lineObj.userData.unitKey !== null)
+            ? lineObj.userData.unitKey
+            : lineObj.userData.boardIndex;
+          const isTarget = isSelectedKey(uKey);
+          const isLabel = !!(lineObj.userData && lineObj.userData.isLabel);
+          const hiddenByLayer = isRenderableHiddenByLayer(lineObj) || (isLabel && labels3dHidden);
+          const hiddenByManual = (uKey !== undefined && uKey !== null && hiddenBoardIndices.has(uKey));
+          const hiddenByIsolate = (isIsolatedMode && hasSelection && !isTarget);
+
+          if (hiddenByLayer || hiddenByManual || hiddenByIsolate) {
+            lineObj.visible = false;
+            return;
+          }
+          lineObj.visible = true;
+
+          if (lineObj.material) {
+            const isDashed = !!(lineObj.userData && lineObj.userData.isDashedLine);
+            if (isTarget) {
+              lineObj.material.color.setHex(isLabel ? 0x0f172a : 0x0055ff);
+              lineObj.material.opacity = 1.0;
+              lineObj.renderOrder = isLabel ? 1000 : 998;
+            } else if (isGhostMode && hasSelection) {
+              lineObj.material.color.setHex(defaultEdgeHex);
+              lineObj.material.opacity = isLabel ? 0.14 : 0.20;
+              lineObj.renderOrder = 1;
+            } else if (isGlobalXray) {
+              lineObj.material.color.setHex(defaultEdgeHex);
+              lineObj.material.opacity = 0.68;
+              lineObj.renderOrder = 1;
+            } else {
+              lineObj.material.color.setHex(isLabel ? 0x000000 : (isDashed ? 0x111827 : defaultEdgeHex));
+              lineObj.material.opacity = isLabel ? 1.0 : (isDashed ? 0.92 : 1.0);
+              lineObj.renderOrder = isLabel ? 2 : 1;
+            }
+          }
+        });
+
+        requestRender();
       }
 
       // Tạo nhãn chữ nổi 3D sắc nét cao (Hi-Res 3D Text Sprite)
@@ -3442,6 +5086,7 @@
           scene.remove(measureBoxHelper);
           measureBoxHelper = null;
         }
+        requestRender();
       }
 
       function clearPointMeasure() {
@@ -3464,6 +5109,7 @@
         if (hudText && isMeasureEnabled && isPointMeasureMode) {
           hudText.innerHTML = `Chạm hoặc rê kính lúp để chọn <strong>Điểm 1</strong>!`;
         }
+        requestRender();
       }
 
       // Thước đo 3 chiều (Dài × Rộng × Dày) quanh tấm ván đang chọn
@@ -3522,6 +5168,7 @@
           if (hudText) {
             hudText.innerHTML = `<strong>Tấm #${selectedBoardIndex} (${info.part_name || ''}):</strong> Dài ${lenMm} × Rộng ${widMm} × Dày ${thkMm} mm`;
           }
+          requestRender();
         }
       }
 
@@ -3541,34 +5188,9 @@
 
       function findSnapPoint(clientX, clientY) {
         if (!allMeshes || allMeshes.length === 0 || !camera) return null;
-        const mouse = new THREE.Vector2();
-        mouse.x = (clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(clientY / window.innerHeight) * 2 + 1;
+        const hit = raycastVisibleSurface(clientX, clientY);
+        if (!hit) return null;
 
-        const raycaster = new THREE.Raycaster();
-        raycaster.setFromCamera(mouse, camera);
-        const visibleCandidates = allMeshes.filter(m => {
-          if (!m.visible) return false;
-          let bIdx = m.userData.boardIndex;
-          if (bIdx === undefined || bIdx === null) {
-            bIdx = getMeshBoardIndex(m);
-            if (bIdx !== null) m.userData.boardIndex = bIdx;
-          }
-          if (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx)) return false;
-          const lyrName = m.userData.layerName;
-          if (lyrName && hiddenLayers.has(lyrName)) return false;
-          let p = m.parent;
-          while (p && p !== scene) {
-            if (!p.visible) return false;
-            p = p.parent;
-          }
-          return true;
-        });
-
-        const intersects = raycaster.intersectObjects(visibleCandidates);
-        if (intersects.length === 0) return null;
-
-        const hit = intersects[0];
         const hitMesh = hit.object;
         let bestPoint = hit.point.clone();
         let isSnapped = false;
@@ -3576,12 +5198,89 @@
         let snapScreenX = clientX;
         let snapScreenY = clientY;
 
-        // Bắt điểm thông minh (Snapping chuẩn SketchUp): Đỉnh nhọn (Endpoints) & Trung điểm cạnh (Midpoints)
-        if (hitMesh.geometry) {
+        // Bắt điểm thông minh chuẩn SketchUp Inferencing:
+        // Ưu tiên 1: Bắt ĐỈNH THẬT & TRUNG ĐIỂM CẠNH THẬT từ edgeLines (chính xác 100% cho tấm vát, tấm cong, tủ xoay chéo, mép lỗ!)
+        // Ưu tiên 2: Fallback sang BoundingBox nếu là mesh mượt không có edgeLines
+        const projV = new THREE.Vector3();
+        const tmpW1 = new THREE.Vector3();
+        const tmpW2 = new THREE.Vector3();
+        const tmpMid = new THREE.Vector3();
+        const winW = window.innerWidth;
+        const winH = window.innerHeight;
+        let minEndpointDist = 34;
+        let minMidDist = 28;
+        let usedRealEdges = false;
+
+        const edgeLines = hitMesh.userData && hitMesh.userData.edgeLines;
+        if (edgeLines && edgeLines.geometry && edgeLines.geometry.attributes && edgeLines.geometry.attributes.position) {
+          const ePos = edgeLines.geometry.attributes.position;
+          const segCount = Math.floor(ePos.count / 2);
+          if (segCount > 0 && segCount <= 3000) {
+            usedRealEdges = true;
+            const matW = hitMesh.matrixWorld;
+            const testedVerts = new Set();
+
+            const checkPoint = (wPt, type) => {
+              projV.copy(wPt).project(camera);
+              if (projV.z >= -1 && projV.z < 1) {
+                const sx = (projV.x * 0.5 + 0.5) * winW;
+                const sy = (-projV.y * 0.5 + 0.5) * winH;
+                const d = Math.hypot(sx - clientX, sy - clientY);
+                if (type === 'endpoint' && d < minEndpointDist) {
+                  minEndpointDist = d;
+                  bestPoint.copy(wPt);
+                  isSnapped = true;
+                  snapType = 'endpoint';
+                  snapScreenX = sx;
+                  snapScreenY = sy;
+                } else if (type === 'midpoint' && !isSnapped && d < minMidDist) {
+                  minMidDist = d;
+                  bestPoint.copy(wPt);
+                  isSnapped = true;
+                  snapType = 'midpoint';
+                  snapScreenX = sx;
+                  snapScreenY = sy;
+                }
+              }
+            };
+
+            // Quét toàn bộ đỉnh thật trước để ưu tiên Endpoint cao hơn Midpoint
+            for (let i = 0; i < segCount; i++) {
+              const i0 = i * 2;
+              const i1 = i0 + 1;
+              tmpW1.set(ePos.getX(i0), ePos.getY(i0), ePos.getZ(i0)).applyMatrix4(matW);
+              const k1 = `${Math.round(tmpW1.x * 2000)},${Math.round(tmpW1.y * 2000)},${Math.round(tmpW1.z * 2000)}`;
+              if (!testedVerts.has(k1)) {
+                testedVerts.add(k1);
+                checkPoint(tmpW1, 'endpoint');
+              }
+              tmpW2.set(ePos.getX(i1), ePos.getY(i1), ePos.getZ(i1)).applyMatrix4(matW);
+              const k2 = `${Math.round(tmpW2.x * 2000)},${Math.round(tmpW2.y * 2000)},${Math.round(tmpW2.z * 2000)}`;
+              if (!testedVerts.has(k2)) {
+                testedVerts.add(k2);
+                checkPoint(tmpW2, 'endpoint');
+              }
+            }
+
+            // Nếu chưa bắt được đỉnh thật -> quét trung điểm từng cạnh thật
+            if (!isSnapped) {
+              for (let i = 0; i < segCount; i++) {
+                const i0 = i * 2;
+                const i1 = i0 + 1;
+                tmpW1.set(ePos.getX(i0), ePos.getY(i0), ePos.getZ(i0)).applyMatrix4(matW);
+                tmpW2.set(ePos.getX(i1), ePos.getY(i1), ePos.getZ(i1)).applyMatrix4(matW);
+                if (tmpW1.distanceToSquared(tmpW2) < 1e-6) continue;
+                tmpMid.addVectors(tmpW1, tmpW2).multiplyScalar(0.5);
+                checkPoint(tmpMid, 'midpoint');
+              }
+            }
+          }
+        }
+
+        if (!usedRealEdges && hitMesh.geometry) {
           if (!hitMesh.geometry.boundingBox) hitMesh.geometry.computeBoundingBox();
           const bb = hitMesh.geometry.boundingBox;
           if (bb) {
-            // 8 Đỉnh nhọn góc của tấm ván
             const corners = [
               new THREE.Vector3(bb.min.x, bb.min.y, bb.min.z),
               new THREE.Vector3(bb.min.x, bb.min.y, bb.max.z),
@@ -3592,37 +5291,12 @@
               new THREE.Vector3(bb.max.x, bb.max.y, bb.min.z),
               new THREE.Vector3(bb.max.x, bb.max.y, bb.max.z),
             ];
-
-            // 12 Trung điểm các cạnh của tấm ván
-            const mx = (bb.min.x + bb.max.x) * 0.5;
-            const my = (bb.min.y + bb.max.y) * 0.5;
-            const mz = (bb.min.z + bb.max.z) * 0.5;
-            const midpoints = [
-              // 4 cạnh song song trục X
-              new THREE.Vector3(mx, bb.min.y, bb.min.z),
-              new THREE.Vector3(mx, bb.min.y, bb.max.z),
-              new THREE.Vector3(mx, bb.max.y, bb.min.z),
-              new THREE.Vector3(mx, bb.max.y, bb.max.z),
-              // 4 cạnh song song trục Y
-              new THREE.Vector3(bb.min.x, my, bb.min.z),
-              new THREE.Vector3(bb.min.x, my, bb.max.z),
-              new THREE.Vector3(bb.max.x, my, bb.min.z),
-              new THREE.Vector3(bb.max.x, my, bb.max.z),
-              // 4 cạnh song song trục Z
-              new THREE.Vector3(bb.min.x, bb.min.y, mz),
-              new THREE.Vector3(bb.min.x, bb.max.y, mz),
-              new THREE.Vector3(bb.max.x, bb.min.y, mz),
-              new THREE.Vector3(bb.max.x, bb.max.y, mz)
-            ];
-
-            const projV = new THREE.Vector3();
-            let minEndpointDist = 36; // Bán kính ưu tiên hút đỉnh 36px
             corners.forEach(c => {
               const wPos = c.clone().applyMatrix4(hitMesh.matrixWorld);
               projV.copy(wPos).project(camera);
-              if (projV.z < 1) { // Phía trước camera
-                const sx = (projV.x * 0.5 + 0.5) * window.innerWidth;
-                const sy = (-projV.y * 0.5 + 0.5) * window.innerHeight;
+              if (projV.z >= -1 && projV.z < 1) {
+                const sx = (projV.x * 0.5 + 0.5) * winW;
+                const sy = (-projV.y * 0.5 + 0.5) * winH;
                 const d = Math.hypot(sx - clientX, sy - clientY);
                 if (d < minEndpointDist) {
                   minEndpointDist = d;
@@ -3634,28 +5308,6 @@
                 }
               }
             });
-
-            // Nếu không gần đỉnh, kiểm tra trung điểm cạnh (bán kính 30px)
-            if (!isSnapped) {
-              let minMidDist = 30;
-              midpoints.forEach(m => {
-                const wPos = m.clone().applyMatrix4(hitMesh.matrixWorld);
-                projV.copy(wPos).project(camera);
-                if (projV.z < 1) {
-                  const sx = (projV.x * 0.5 + 0.5) * window.innerWidth;
-                  const sy = (-projV.y * 0.5 + 0.5) * window.innerHeight;
-                  const d = Math.hypot(sx - clientX, sy - clientY);
-                  if (d < minMidDist) {
-                    minMidDist = d;
-                    bestPoint.copy(wPos);
-                    isSnapped = true;
-                    snapType = 'midpoint';
-                    snapScreenX = sx;
-                    snapScreenY = sy;
-                  }
-                }
-              });
-            }
           }
         }
 
@@ -3755,7 +5407,9 @@
         const lRenderer = getLoupeRenderer();
         if (lRenderer && camera && scene) {
           try {
-            if (!loupeCamera) loupeCamera = camera.clone();
+            if (!loupeCamera || loupeCamera.isOrthographicCamera !== camera.isOrthographicCamera) {
+              loupeCamera = camera.clone();
+            }
             loupeCamera.copy(camera);
             // Kính lúp đường kính 130px phóng đại 3.5x: vùng nhìn thấy tương đương 130 / 3.5 = 37.1px trên màn hình
             const zoom = 3.5;
@@ -3834,6 +5488,7 @@
         if (hudText) {
           hudText.innerHTML = `Đã chọn Điểm 1. Đang kéo đến <strong>Điểm 2: ${distMm} mm</strong>${axisHint} | Thả tay để chốt!`;
         }
+        requestRender();
       }
 
       // Xử lý đo 2 điểm tự do trên bề mặt mô hình 3D (kèm Kính lúp soi bắt điểm góc chính xác)
@@ -3898,34 +5553,80 @@
 
           measurePointA = null; // Sẵn sàng cho lần đo tiếp
         }
+        requestRender();
       }
 
-      // Ẩn tấm chi tiết đang chọn (hỗ trợ cả chọn đơn lẫn chọn nhiều tấm)
+      // Ẩn tấm chi tiết đang chọn (lưu lịch sử để Hoàn tác 1 bước bằng Undo / Ctrl+Z)
       function hideSelectedBoard() {
         const targets = (selectedBoardIndices && selectedBoardIndices.size > 0)
           ? Array.from(selectedBoardIndices)
           : (selectedBoardIndex !== null ? [selectedBoardIndex] : []);
         if (targets.length === 0) return;
+        const newlyHidden = targets.filter(idx => !hiddenBoardIndices.has(idx));
         targets.forEach(idx => hiddenBoardIndices.add(idx));
+        if (newlyHidden.length > 0) {
+          hideHistoryStack.push(newlyHidden);
+        }
         clearSelection();
         updateUnhideButton();
+        showToast(newlyHidden.length > 1 ? `Đã ẩn ${newlyHidden.length} đối tượng` : 'Đã ẩn đối tượng đang chọn');
+      }
+
+      // Hoàn tác 1 bước ẩn gần nhất (không làm bật lại các tấm đã ẩn trước đó!)
+      function undoLastHide() {
+        if (!hideHistoryStack || hideHistoryStack.length === 0) return;
+        const batch = hideHistoryStack.pop();
+        let restored = 0;
+        if (Array.isArray(batch)) {
+          batch.forEach(idx => {
+            if (hiddenBoardIndices.delete(idx)) restored++;
+          });
+        }
+        updateModelMaterials();
+        updateUnhideButton();
+        triggerHaptic('light');
+        if (restored > 0) {
+          showToast(restored > 1 ? `Đã khôi phục ${restored} đối tượng vừa ẩn` : 'Đã hoàn tác ẩn 1 đối tượng');
+        }
       }
 
       // Hiện lại tất cả các tấm đã ẩn
       function unhideAllBoards() {
+        const prevCount = hiddenBoardIndices.size;
         hiddenBoardIndices.clear();
+        hideHistoryStack = [];
         updateModelMaterials();
         updateUnhideButton();
+        triggerHaptic('light');
+        if (prevCount > 0) {
+          showToast(`Đã hiện lại toàn bộ ${prevCount} đối tượng đã ẩn`);
+        }
+      }
+
+      function updateContextPillBar() {
+        const bar = document.getElementById('contextPillBar');
+        const btnUndo = document.getElementById('btnUndoHide');
+        const btnUnhide = document.getElementById('btnUnhideAll');
+        const badge = document.getElementById('unhideCount');
+        const btnDeselect = document.getElementById('btnFloatingDeselect');
+
+        const hiddenCount = hiddenBoardIndices.size;
+        const canUndo = hideHistoryStack.length > 0 && hiddenCount > 0;
+        const showDeselect = !!(selectedBoardIndices && selectedBoardIndices.size > 1);
+
+        if (btnUndo) btnUndo.style.display = canUndo ? 'inline-flex' : 'none';
+        if (btnUnhide && badge) {
+          badge.textContent = hiddenCount;
+          btnUnhide.style.display = hiddenCount > 0 ? 'inline-flex' : 'none';
+        }
+        if (btnDeselect) btnDeselect.style.display = showDeselect ? 'inline-flex' : 'none';
+        if (bar) {
+          bar.classList.toggle('has-items', canUndo || hiddenCount > 0 || showDeselect);
+        }
       }
 
       function updateUnhideButton() {
-        const btn = document.getElementById('btnUnhideAll');
-        const badge = document.getElementById('unhideCount');
-        if (btn && badge) {
-          const count = hiddenBoardIndices.size;
-          badge.textContent = count;
-          btn.style.display = count > 0 ? 'flex' : 'none';
-        }
+        updateContextPillBar();
       }
 
       // RUNG PHẢN HỒI XÚC GIÁC CHO MOBILE (HAPTIC FEEDBACK)
@@ -3996,6 +5697,12 @@
           updateUnhideButton();
         }
 
+        // Khi quét mã QR (hoặc mở link QR ?i= / #): tự động bật Ghost tạm thời để nhìn xuyên thấy tấm bị che khuất
+        if (isFromQr) {
+          isGhostAutoQr = true;
+          syncGhostState();
+        }
+
         if (!isMultiSelectMode) {
           selectedBoardIndices.clear();
           selectedBoardIndices.add(boardIndex);
@@ -4056,12 +5763,9 @@
         updateDeselectFloatingButton();
       }
 
-      // Cập nhật trạng thái hiển thị của nút tròn Bỏ chọn nhiều tấm
+      // Cập nhật trạng thái hiển thị của nút Bỏ chọn nhiều tấm trên thanh ngữ cảnh
       function updateDeselectFloatingButton() {
-        const btnDeselect = document.getElementById('btnFloatingDeselect');
-        if (btnDeselect) {
-          btnDeselect.style.display = (selectedBoardIndices && selectedBoardIndices.size > 1) ? 'flex' : 'none';
-        }
+        updateContextPillBar();
       }
 
       function clearSelection() {
@@ -4076,6 +5780,11 @@
         selectedBoardIndex = null;
         selectedBoardIndices.clear();
         isMultiSelectMode = false;
+        // Chạm ra ngoài / bỏ chọn -> tự tắt chế độ Ghost QR tạm thời (chỉ giữ lại nếu người dùng chủ động bật thủ công)
+        if (isGhostAutoQr) {
+          isGhostAutoQr = false;
+          syncGhostState();
+        }
         const btnMulti = document.getElementById('btnHudMultiSelect');
         if (btnMulti) btnMulti.classList.remove('active');
         const txtMulti = document.getElementById('btnHudMultiSelectText');
@@ -4143,14 +5852,34 @@
         }
 
         const badgeId = document.getElementById('hudBadgeId');
-        if (badgeId) badgeId.textContent = `${count} TẤM`;
+        if (badgeId) badgeId.textContent = `${count} ĐỐI TƯỢNG`;
 
         const partName = document.getElementById('hudPartName');
-        const sortedIds = Array.from(selectedBoardIndices).sort((a,b) => a - b);
-        if (partName) partName.textContent = `Đã chọn ${count} tấm ván`;
+        const sortedIds = Array.from(selectedBoardIndices).sort((a, b) => {
+          const na = typeof a === 'number';
+          const nb = typeof b === 'number';
+          if (na && nb) return a - b;
+          if (na) return -1;
+          if (nb) return 1;
+          return String(a).localeCompare(String(b));
+        });
+        const allBoards = sortedIds.every(k => typeof k === 'number' || (unitMeta[k] && unitMeta[k].kind === 'board'));
+        if (badgeId) badgeId.textContent = allBoards ? `${count} TẤM` : `${count} MỤC`;
+        if (partName) partName.textContent = allBoards ? `Đã chọn ${count} tấm ván` : `Đã chọn ${count} đối tượng`;
+        const elDimQuick = document.getElementById('hudDimQuick');
+        if (elDimQuick) {
+          elDimQuick.textContent = `${count} mục`;
+          elDimQuick.style.display = 'inline-flex';
+        }
 
         const elLayerText = document.getElementById('hudLayerText');
-        if (elLayerText) elLayerText.textContent = `Mã: ${sortedIds.map(i => '#' + i).join(', ')}`;
+        if (elLayerText) {
+          const labels = sortedIds.slice(0, 8).map(k => {
+            if (typeof k === 'number') return '#' + k;
+            return (unitMeta[k] && unitMeta[k].name) ? unitMeta[k].name : String(k);
+          });
+          elLayerText.textContent = `Mã: ${labels.join(', ')}${sortedIds.length > 8 ? '…' : ''}`;
+        }
 
         const elDim = document.getElementById('hudDimensions');
         if (elDim) elDim.textContent = `Tổng cộng: ${count} chi tiết`;
@@ -4216,10 +5945,21 @@
         box.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
 
-        // Khoảng cách zoom vừa vặn tấm ván
-        const fov = camera.fov * (Math.PI / 180);
+        // Khoảng cách zoom vừa vặn tấm ván (hỗ trợ cả Perspective 3D & Orthographic 2D)
+        const fov = (perspCamera ? perspCamera.fov : 45) * (Math.PI / 180);
         let targetDist = (maxDim / 2) / Math.tan(fov / 2);
         targetDist = Math.max(targetDist * 1.35, 0.25);
+
+        if (isOrthoMode && orthoCamera) {
+          const halfH = Math.max(maxDim * 0.72, 0.12);
+          const aspect = window.innerWidth / Math.max(window.innerHeight, 1);
+          orthoCamera.left = -halfH * aspect;
+          orthoCamera.right = halfH * aspect;
+          orthoCamera.top = halfH;
+          orthoCamera.bottom = -halfH;
+          orthoCamera.zoom = 1.0;
+          orthoCamera.updateProjectionMatrix();
+        }
 
         // Lấy chính xác hướng nhìn hiện tại từ tâm tấm ván về vị trí camera (bảo tồn 100% góc xoay người dùng đang nhìn)
         let viewDir = camera.position.clone().sub(center);
@@ -4236,12 +5976,13 @@
 
         // Tịnh tiến vị trí camera dọc theo góc nhìn hiện tại tới cự ly vừa vặn với tấm ván
         const targetPos = center.clone().add(viewDir.multiplyScalar(targetDist));
+        if (controls && controls.orbitPivot) controls.orbitPivot.copy(center);
 
         // Animation mượt mà bằng lerp hoặc cinematic fly-to
         animateCamera(targetPos, center, isCinematic ? 900 : 600, isCinematic);
       }
 
-      function zoomToFit(root) {
+      function zoomToFit(root, smooth = false) {
         const box = new THREE.Box3().setFromObject(root);
         if (box.isEmpty()) return;
         const center = new THREE.Vector3();
@@ -4252,29 +5993,53 @@
         if (maxDim <= 0) return;
 
         // Tự động tính khoảng cách để mô hình chiếm trọn 75-80% màn hình
-        const fov = camera.fov * (Math.PI / 180);
+        const fov = (perspCamera ? perspCamera.fov : 45) * (Math.PI / 180);
         let cameraDist = (maxDim / 2) / Math.tan(fov / 2);
         cameraDist *= 1.25;
 
-        // Thích ứng min/max khoảng cách zoom theo kích thước thực của mô hình
-        controls.minDistance = Math.max(maxDim * 0.01, 0.02);
-        controls.maxDistance = maxDim * 25;
-        camera.near = Math.max(maxDim * 0.002, 0.005);
-        camera.far = Math.max(maxDim * 50, 100);
-        camera.updateProjectionMatrix();
+        if (controls && typeof controls.setModelBounds === 'function') {
+          controls.setModelBounds(box);
+        }
+        if (controls && controls.orbitPivot) {
+          controls.orbitPivot.copy(center);
+        }
 
-        controls.target.copy(center);
-        camera.position.set(
+        if (isOrthoMode && orthoCamera) {
+          const halfH = Math.max(maxDim * 0.65, 0.25);
+          const aspect = window.innerWidth / Math.max(window.innerHeight, 1);
+          orthoCamera.left = -halfH * aspect;
+          orthoCamera.right = halfH * aspect;
+          orthoCamera.top = halfH;
+          orthoCamera.bottom = -halfH;
+          orthoCamera.zoom = 1.0;
+          orthoCamera.updateProjectionMatrix();
+        }
+
+        const targetPos = new THREE.Vector3(
           center.x + cameraDist * 0.7,
           center.y + cameraDist * 0.5,
           center.z + cameraDist * 0.8
         );
-        camera.lookAt(center);
-        controls.update();
+
+        if (smooth) {
+          animateCamera(targetPos, center, 420, false);
+        } else {
+          cancelCameraAnimation();
+          if (controls && typeof controls.cancelInertia === 'function') controls.cancelInertia();
+          controls.target.copy(center);
+          camera.position.copy(targetPos);
+          camera.lookAt(center);
+          controls.update();
+          requestRender();
+        }
       }
 
-      // CHUYỂN ĐỘNG CAMERA ĐIỆN ẢNH (CINEMATIC ARC FLY-TO CHUẨN QUỐC TẾ)
+      // CHUYỂN ĐỘNG CAMERA ĐIỆN ẢNH (CINEMATIC ARC FLY-TO CHUẨN QUỐC TẾ — CÓ HỦY TỨC THÌ KHI NGƯỜI DÙNG CHẠM TAY)
       function animateCamera(targetEye, targetLookAt, duration = 600, isCinematic = false) {
+        const myToken = ++activeCamAnimToken;
+        if (controls && typeof controls.cancelInertia === 'function') {
+          controls.cancelInertia();
+        }
         const startEye = camera.position.clone();
         const startTarget = controls.target.clone();
         const startTime = performance.now();
@@ -4282,6 +6047,7 @@
         const arcPeak = isCinematic ? Math.min(dist * 0.22, 1.8) : 0;
 
         function step(now) {
+          if (myToken !== activeCamAnimToken) return; // Dừng ngay lập tức nếu người dùng chạm vuốt/zoom
           const elapsed = now - startTime;
           const progress = Math.min(elapsed / duration, 1);
           // Easing mượt mà: easeOutQuart
@@ -4289,12 +6055,12 @@
 
           const currentEye = new THREE.Vector3().lerpVectors(startEye, targetEye, ease);
           if (arcPeak > 0) {
-            // Nâng nhẹ độ cao Y theo hình chuông parabol sin(pi * progress)
             currentEye.y += Math.sin(progress * Math.PI) * arcPeak;
           }
           camera.position.copy(currentEye);
           controls.target.lerpVectors(startTarget, targetLookAt, ease);
           controls.update();
+          requestRender();
 
           if (progress < 1) {
             requestAnimationFrame(step);
@@ -4322,42 +6088,52 @@
                 m.userData.edgeLines.material.color.setHex(0x0055ff);
               }
             });
+            requestRender();
             return;
           }
           pulseCount++;
-          // Chớp sáng viền sang màu Blue sáng rực rỡ
           meshList.forEach(m => {
             if (m.userData.edgeLines) {
               m.userData.edgeLines.material.color.setHex(0x38bdf8);
             }
           });
+          requestRender();
           setTimeout(() => {
-            // Trở về màu viền Blue SketchUp
             meshList.forEach(m => {
               if (m.userData.edgeLines) {
                 m.userData.edgeLines.material.color.setHex(0x0055ff);
               }
             });
+            requestRender();
             setTimeout(doPulse, 200);
           }, 200);
         }
         doPulse();
       }
 
-      // 7. HIỂN THỊ THÔNG TIN TẤM LÊN BẢNG HUD
+      // 7. HIỂN THỊ THÔNG TIN TẤM HOẶC NHÓM 3D LÊN BẢNG HUD
       function showHudInfo(idx) {
         const hud = document.getElementById('hudCard');
         const info = boardsData[idx] || {};
+        const meta = unitMeta[idx] || null;
+        const isDecor = !!(meta && meta.kind === 'decor');
+        const isNumberBoard = (typeof idx === 'number');
 
-        document.getElementById('hudBadgeId').textContent = `TẤM #${idx}`;
-        document.getElementById('hudPartName').textContent = info.part_name || `Linh kiện #${idx}`;
+        const badgeText = isDecor
+          ? 'NHÓM 3D'
+          : (isNumberBoard ? `TẤM #${idx}` : 'TẤM VÁN');
+        const displayTitle = info.part_name || (meta && meta.name) || (isNumberBoard ? `Linh kiện #${idx}` : String(idx));
 
-        // Trích xuất và hiển thị Layer / Tag
-        let layerName = info.layer;
+        document.getElementById('hudBadgeId').textContent = badgeText;
+        document.getElementById('hudPartName').textContent = displayTitle;
+
+        // Trích xuất và hiển thị Layer / Tag chính xác (sửa lỗi lấy nhầm Array.userData)
+        let layerName = info.layer || (meta && meta.layerName);
         if (!layerName) {
-          const mesh = boardMeshMap[idx];
-          if (mesh && mesh.userData && mesh.userData.layerName) {
-            layerName = mesh.userData.layerName;
+          const mList = boardMeshMap[idx];
+          const firstMesh = Array.isArray(mList) ? mList[0] : mList;
+          if (firstMesh && firstMesh.userData && firstMesh.userData.layerName) {
+            layerName = firstMesh.userData.layerName;
           }
         }
         if (!layerName) layerName = "Layer0";
@@ -4366,13 +6142,36 @@
         const elBadgeLayer = document.getElementById('hudBadgeLayer');
         if (elBadgeLayer) elBadgeLayer.title = `Layer: ${layerName}`;
 
-        const dimStr = (info.length && info.width) 
-          ? `${info.length} × ${info.width} × ${info.thickness || 17} mm`
-          : "Xem trực quan trên 3D";
+        let dimStr = "Xem trực quan trên 3D";
+        let quickDimStr = "";
+        if (info.length && info.width) {
+          dimStr = `${info.length} × ${info.width} × ${info.thickness || 17} mm`;
+          quickDimStr = `${info.length}×${info.width}×${info.thickness || 17}`;
+        } else if (meta && Array.isArray(meta.dimsMm) && meta.dimsMm.length === 3) {
+          dimStr = `${meta.dimsMm[0]} × ${meta.dimsMm[1]} × ${meta.dimsMm[2]} mm`;
+          quickDimStr = `${Math.round(meta.dimsMm[0])}×${Math.round(meta.dimsMm[1])}×${meta.dimsMm[2]}`;
+        } else if (meta && meta.thicknessMm) {
+          dimStr = `Dày ${meta.thicknessMm} mm`;
+          quickDimStr = `Dày ${meta.thicknessMm}mm`;
+        } else if (isDecor) {
+          dimStr = "Khối 3D tách bạch";
+          quickDimStr = "Nhóm 3D";
+        }
         const elDim = document.getElementById('hudDimensions');
         if (elDim) elDim.textContent = dimStr;
+        const elDimQuick = document.getElementById('hudDimQuick');
+        if (elDimQuick) {
+          if (quickDimStr) {
+            elDimQuick.textContent = quickDimStr;
+            elDimQuick.style.display = 'inline-flex';
+          } else {
+            elDimQuick.style.display = 'none';
+          }
+        }
 
-        const sheetStr = info.sheet_type ? `${info.sheet_type} (S${info.sheet_id || 1})` : "Ván CN";
+        const sheetStr = info.sheet_type
+          ? `${info.sheet_type} (S${info.sheet_id || 1})`
+          : (isDecor ? "Trang trí / Phụ kiện" : "Ván tiêu chuẩn");
         const elMat = document.getElementById('hudMaterial');
         if (elMat) elMat.textContent = sheetStr;
 
@@ -5083,95 +6882,213 @@
 
       // CƠ CHẾ TÂM XOAY THÍCH ỨNG THEO ĐỘ ZOOM (DYNAMIC RAYCAST PIVOT CHUẨN SKETCHUP)
       function updateAdaptiveOrbitPivot(screenX = null, screenY = null) {
-        if (!controls || !camera || !allMeshes || allMeshes.length === 0) return;
-
-        const ray = new THREE.Raycaster();
-        const pt = new THREE.Vector2();
-
-        if (screenX !== null && screenY !== null) {
-          pt.x = (screenX / window.innerWidth) * 2 - 1;
-          pt.y = -(screenY / window.innerHeight) * 2 + 1;
-        } else {
-          // Lấy chính xác tâm khung nhìn (Center of Viewport)
-          pt.set(0, 0);
-        }
-
-        ray.setFromCamera(pt, camera);
-        const visibleMeshes = allMeshes.filter(m => m.visible);
-        const hits = ray.intersectObjects(visibleMeshes, false);
-
-        if (hits && hits.length > 0) {
-          const hitPoint = hits[0].point;
-          // Cập nhật tâm xoay mới ngay tại bề mặt vật thể đang nhìn
-          controls.target.copy(hitPoint);
-        }
+        if (!controls || typeof controls.setDynamicOrbitPivot !== 'function') return;
+        controls.setDynamicOrbitPivot(screenX, screenY);
       }
 
-      // 9. RAYCASTING CHẠM MÀN HÌNH CHỌN TRỰC TIẾP TẤM (KÈM KÍNH LÚP & HÍT GÓC KHI ĐO 3D)
+      // 9. BỘ ĐIỀU KHIỂN CỬ CHỈ HỢP NHẤT CHUẨN SKETCHUP VIEWER (IOS / ANDROID / PC WEB)
+      //    - Tách sạch State Machine: IDLE -> TAP / ORBIT / PAN / PINCH_PAN / MEASURE_LOUPE
+      //    - Không xung đột với OrbitControls (đã thay thế hoàn toàn), không giật khi nhả 2->1 ngón, không kích Tap nhầm
+      //    - Bảo toàn 100% Thước đo 2 điểm & Kính lúp bắt điểm 220ms
       function setupRaycasting(container) {
-        const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-        let touchStartX = 0;
-        let touchStartY = 0;
         holdTimer = null;
         isHoldingForSnap = false;
         isCandidateForSnap = false;
-        const activePointers = new Map();
+
+        const activePointers = new Map(); // pointerId -> { x, y, startX, startY, type, button }
+        let mode = 'IDLE'; // 'IDLE' | 'PENDING_SINGLE' | 'ORBIT' | 'PAN' | 'PINCH_PAN' | 'MEASURE_LOUPE'
+        let primaryId = null;
+        let singleStartX = 0;
+        let singleStartY = 0;
+        let singleLastX = 0;
+        let singleLastY = 0;
+        let singleButton = 0;
+        let singleShift = false;
+        let panAnchorDepth = 2.0;
+
+        // Trạng thái 2 ngón (Anchor-Locked Simultaneous Pinch-Zoom & 1:1 Pan)
+        let pinchAnchor = null;
+        let prevPinchMidX = 0;
+        let prevPinchMidY = 0;
+        let prevPinchSpan = 0;
+        let hadMultiTouch = false;
+        let multiTouchCooldownUntil = 0;
+
+        // Trạng thái Chạm đúp (Double-Tap chuẩn SketchUp Viewer)
+        let lastTapTime = 0;
+        let lastTapX = 0;
+        let lastTapY = 0;
+        let lastTapUnitKey = null;
+
+        const clearHoldTimer = () => {
+          if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+        };
+
+        const getTwoPointers = () => {
+          const vals = Array.from(activePointers.values());
+          return vals.length >= 2 ? [vals[0], vals[1]] : null;
+        };
+
+        const beginPinchPan = () => {
+          clearHoldTimer();
+          if (isHoldingForSnap) {
+            isHoldingForSnap = false;
+            hideLoupe();
+          }
+          isCandidateForSnap = false;
+          hadMultiTouch = true;
+          mode = 'PINCH_PAN';
+          cancelCameraAnimation();
+          if (controls) {
+            controls.cancelInertia();
+            controls.isDragging = true;
+          }
+
+          const pair = getTwoPointers();
+          if (!pair) return;
+          const [p1, p2] = pair;
+          prevPinchMidX = (p1.x + p2.x) * 0.5;
+          prevPinchMidY = (p1.y + p2.y) * 0.5;
+          prevPinchSpan = Math.max(Math.hypot(p2.x - p1.x, p2.y - p1.y), 12);
+          pinchAnchor = controls ? controls.computeAnchorAt(prevPinchMidX, prevPinchMidY, true) : null;
+        };
+
+        const handleSingleTapAction = (clientX, clientY, isTouch) => {
+          const now = performance.now();
+          const hit = raycastVisibleSurface(clientX, clientY);
+          let hitUnitKey = null;
+          if (hit && hit.object) {
+            const hm = hit.object;
+            hitUnitKey = (hm.userData.unitKey !== undefined && hm.userData.unitKey !== null)
+              ? hm.userData.unitKey
+              : hm.userData.boardIndex;
+            if (hitUnitKey === undefined || hitUnitKey === null) {
+              const legacyIdx = getMeshBoardIndex(hm);
+              if (legacyIdx !== null) {
+                hm.userData.boardIndex = legacyIdx;
+                hm.userData.unitKey = legacyIdx;
+                hitUnitKey = legacyIdx;
+              }
+            }
+          }
+
+          // Kiểm tra Double-Tap (chỉ khi không ở chế độ chọn nhiều & không đo đạc)
+          const isDoubleTap = !isMultiSelectMode &&
+            (now - lastTapTime < 310) &&
+            (Math.hypot(clientX - lastTapX, clientY - lastTapY) <= (isTouch ? 30 : 18));
+
+          if (isDoubleTap) {
+            lastTapTime = 0;
+            if (hit && hit.point) {
+              // Double-tap lên mô hình -> giữ chọn đối tượng (nếu có) và trượt mượt lại gần điểm chạm (chuẩn SketchUp Viewer)
+              if (hitUnitKey !== null && selectedBoardIndex !== hitUnitKey) {
+                selectBoard(hitUnitKey, false);
+              }
+              const curDist = camera.position.distanceTo(hit.point);
+              const desiredDist = Math.max(controls ? controls.minDistance * 2.2 : 0.12, curDist * 0.52);
+              const viewDir = camera.position.clone().sub(hit.point);
+              if (viewDir.lengthSq() < 1e-6) viewDir.set(0.6, 0.5, 0.7);
+              viewDir.normalize();
+              const targetPos = hit.point.clone().addScaledVector(viewDir, desiredDist);
+              animateCamera(targetPos, hit.point.clone(), 380, false);
+              triggerHaptic('light');
+            } else if (modelRoot) {
+              // Double-tap ra nền trống -> Zoom Extents mượt toàn bộ công trình
+              zoomToFit(modelRoot, true);
+              triggerHaptic('light');
+            }
+            return;
+          }
+
+          lastTapTime = now;
+          lastTapX = clientX;
+          lastTapY = clientY;
+          lastTapUnitKey = hitUnitKey;
+
+          if (hitUnitKey !== undefined && hitUnitKey !== null) {
+            if (isMultiSelectMode) {
+              selectBoard(hitUnitKey, false);
+            } else {
+              if (selectedBoardIndex === hitUnitKey) {
+                clearSelection();
+              } else {
+                selectBoard(hitUnitKey, false);
+              }
+            }
+          } else {
+            if (!isMultiSelectMode) {
+              clearSelection();
+            }
+          }
+        };
+
+        // Lắng nghe con lăn chuột & pinch trackpad trực tiếp trên container
+        container.addEventListener('wheel', e => {
+          if (controls && typeof controls.handleWheelZoom === 'function') {
+            controls.handleWheelZoom(e);
+          }
+        }, { passive: false });
 
         container.addEventListener('pointerdown', e => {
           if (window.setToolbarCollapsed && !isToolbarCollapsed) {
             window.setToolbarCollapsed(true);
           }
 
-          touchStartX = e.clientX;
-          touchStartY = e.clientY;
           activePointerDown = true;
-          activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+          activePointers.set(e.pointerId, {
+            x: e.clientX,
+            y: e.clientY,
+            startX: e.clientX,
+            startY: e.clientY,
+            type: e.pointerType,
+            button: e.button
+          });
 
           try {
             container.setPointerCapture(e.pointerId);
           } catch (err) {}
 
-          // Nếu có từ 2 ngón tay trở lên: Ưu tiên tuyệt đối cử chỉ OrbitControls (Pinch Zoom & 2-finger Pan)
+          // Từ 2 ngón tay trở lên: chuyển ngay sang Anchor-Locked Pinch-Zoom + 2-Finger Pan chuẩn SketchUp Viewer
           if (activePointers.size >= 2) {
-            if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
-            if (isHoldingForSnap) {
-              isHoldingForSnap = false;
-              hideLoupe();
-            }
-            isCandidateForSnap = false;
-            if (controls) controls.enabled = true;
+            beginPinchPan();
             return;
           }
 
-          if (isMeasureEnabled && isPointMeasureMode) {
-            // Kiểm tra xem vị trí chạm ban đầu có nằm trên tấm ván / model không
-            const initialHit = findSnapPoint(e.clientX, e.clientY);
+          // Ngón tay / chuột đầu tiên đặt xuống
+          hadMultiTouch = false;
+          primaryId = e.pointerId;
+          singleStartX = e.clientX;
+          singleStartY = e.clientY;
+          singleLastX = e.clientX;
+          singleLastY = e.clientY;
+          singleButton = e.button;
+          singleShift = !!e.shiftKey;
+          mode = 'PENDING_SINGLE';
 
+          // Dừng quán tính xoay cũ khi tay chạm vào màn hình
+          if (controls) {
+            controls.cancelInertia();
+          }
+
+          // Chế độ Thước đo 2 điểm + Kính lúp bắt điểm 220ms (bảo toàn 100%)
+          if (isMeasureEnabled && isPointMeasureMode) {
+            const initialHit = findSnapPoint(e.clientX, e.clientY);
             if (!initialHit) {
-              // CHẠM VÀO KHOẢNG TRỐNG NGOÀI MÔ HÌNH:
-              // Cho phép xoay / pan mô hình 100% tự do, tuyệt đối không khóa controls!
               isCandidateForSnap = false;
               isHoldingForSnap = false;
-              if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
-              if (controls) controls.enabled = true;
+              clearHoldTimer();
               return;
             }
-
-            // CHẠM VÀO MÔ HÌNH:
-            // Vẫn giữ controls.enabled = true để nếu người dùng vuốt nhanh (swipe) thì xoay camera bình thường
             isCandidateForSnap = true;
             currentSnapResult = initialHit;
-            if (controls) controls.enabled = true;
 
-            // Đếm thời gian đè giữ (Press & Hold ~220ms) để mở kính lúp
-            if (holdTimer) clearTimeout(holdTimer);
+            clearHoldTimer();
             holdTimer = setTimeout(() => {
-              if (activePointers.size === 1 && isMeasureEnabled && isPointMeasureMode && isCandidateForSnap) {
+              if (activePointers.size === 1 && isMeasureEnabled && isPointMeasureMode && isCandidateForSnap && mode === 'PENDING_SINGLE') {
                 isHoldingForSnap = true;
-                if (controls) controls.enabled = false; // Tạm ngưng xoay camera để ngón tay rê kính lúp
+                mode = 'MEASURE_LOUPE';
                 if (navigator.vibrate) navigator.vibrate(25);
-                updateLoupe(touchStartX, touchStartY, initialHit);
+                updateLoupe(singleStartX, singleStartY, initialHit);
                 if (measurePointA && initialHit.point) updateLiveMeasureLine(initialHit.point);
               }
             }, 220);
@@ -5179,50 +7096,109 @@
         });
 
         container.addEventListener('pointermove', e => {
-          if (!activePointerDown) return;
-          if (activePointers.has(e.pointerId)) {
-            activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-          }
+          if (!activePointers.has(e.pointerId)) return;
+          const pRec = activePointers.get(e.pointerId);
+          pRec.x = e.clientX;
+          pRec.y = e.clientY;
 
-          // Khi có từ 2 ngón tay: Hủy kính lúp, nhường quyền hoàn toàn cho OrbitControls zoom/pan
+          // 2 ngón tay: Anchor-Locked Simultaneous Pinch-Zoom + 1:1 Screen Pan
           if (activePointers.size >= 2) {
-            if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
-            if (isHoldingForSnap) {
-              isHoldingForSnap = false;
-              hideLoupe();
+            if (mode !== 'PINCH_PAN') {
+              beginPinchPan();
+              return;
             }
-            isCandidateForSnap = false;
-            if (controls) controls.enabled = true;
+            const pair = getTwoPointers();
+            if (!pair || !controls || !controls.enabled) return;
+            const [p1, p2] = pair;
+            const midX = (p1.x + p2.x) * 0.5;
+            const midY = (p1.y + p2.y) * 0.5;
+            const span = Math.max(Math.hypot(p2.x - p1.x, p2.y - p1.y), 12);
+
+            const panDx = midX - prevPinchMidX;
+            const panDy = midY - prevPinchMidY;
+            const scale = (prevPinchSpan > 10) ? (prevPinchSpan / span) : 1.0;
+
+            if (!pinchAnchor) {
+              pinchAnchor = controls.computeAnchorAt(midX, midY, true);
+            }
+            controls.applyAnchorZoomAndPan(pinchAnchor, scale, panDx, panDy, midX, midY);
+
+            prevPinchMidX = midX;
+            prevPinchMidY = midY;
+            prevPinchSpan = span;
             return;
           }
 
-          if (isMeasureEnabled && isPointMeasureMode) {
-            if (!isHoldingForSnap) {
-              // Chưa đè đủ thời gian mở kính lúp:
-              // Nếu ngón tay di chuyển > 10px thì đây là thao tác VUỐT XOAY CAMERA!
-              const moveDist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
-              if (moveDist > 10) {
-                if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
-                isCandidateForSnap = false;
-                if (controls) controls.enabled = true;
-              }
-            } else {
-              // ĐÃ TRONG TRẠNG THÁI KÍNH LÚP:
-              // Kính lúp LUÔN LUÔN bám sát ngón tay dù rê đi bất cứ đâu, KHÔNG BAO GIỜ TỰ TẮT!
-              const snapRes = findSnapPoint(e.clientX, e.clientY);
-              currentSnapResult = snapRes;
-              updateLoupe(e.clientX, e.clientY, snapRes);
-              if (measurePointA && snapRes && snapRes.point) {
-                updateLiveMeasureLine(snapRes.point);
-              }
-            }
+          // Chỉ xử lý pointer chính khi có 1 ngón / chuột
+          if (e.pointerId !== primaryId) return;
+
+          // Chống giật camera trong cửa sổ ngắn ngay sau khi nhả từ 2 ngón -> 1 ngón
+          if (performance.now() < multiTouchCooldownUntil) {
+            singleLastX = e.clientX;
+            singleLastY = e.clientY;
+            return;
           }
+
+          // Đang kéo Kính lúp đo 3D
+          if (mode === 'MEASURE_LOUPE') {
+            const snapRes = findSnapPoint(e.clientX, e.clientY);
+            currentSnapResult = snapRes;
+            updateLoupe(e.clientX, e.clientY, snapRes);
+            if (measurePointA && snapRes && snapRes.point) {
+              updateLiveMeasureLine(snapRes.point);
+            }
+            return;
+          }
+
+          const dx = e.clientX - singleLastX;
+          const dy = e.clientY - singleLastY;
+
+          if (mode === 'PENDING_SINGLE') {
+            const moveDist = Math.hypot(e.clientX - singleStartX, e.clientY - singleStartY);
+            const dragThresh = (e.pointerType === 'touch') ? 6 : 4;
+            if (isMeasureEnabled && isPointMeasureMode && isCandidateForSnap && moveDist <= 10) {
+              return;
+            }
+            if (moveDist > dragThresh) {
+              clearHoldTimer();
+              isCandidateForSnap = false;
+              cancelCameraAnimation();
+
+              // Chuột phải hoặc Shift + Kéo -> Pan 1:1 chuẩn SketchUp Desktop; còn lại -> Orbit với tâm xoay động
+              const wantPan = (e.pointerType !== 'touch') && (singleButton === 2 || singleShift || (e.buttons & 2));
+              if (wantPan) {
+                mode = 'PAN';
+                const anchor = controls ? controls.computeAnchorAt(singleStartX, singleStartY, true) : null;
+                panAnchorDepth = anchor ? anchor.depth : 2.0;
+              } else {
+                mode = 'ORBIT';
+                if (controls) {
+                  controls.setDynamicOrbitPivot(singleStartX, singleStartY);
+                  controls.isDragging = true;
+                }
+              }
+              singleLastX = e.clientX;
+              singleLastY = e.clientY;
+              return;
+            }
+            return;
+          }
+
+          if (!controls || !controls.enabled) return;
+
+          if (mode === 'ORBIT') {
+            controls.applyOrbitDelta(dx, dy, true);
+          } else if (mode === 'PAN') {
+            controls.applyScreenPan(dx, dy, panAnchorDepth);
+          }
+
+          singleLastX = e.clientX;
+          singleLastY = e.clientY;
         });
 
-        container.addEventListener('pointerup', e => {
-          activePointerDown = false;
+        const finishPointer = (e, isCancel = false) => {
+          const wasMulti = (mode === 'PINCH_PAN') || (activePointers.size >= 2);
           activePointers.delete(e.pointerId);
-          if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
 
           try {
             if (container.hasPointerCapture(e.pointerId)) {
@@ -5230,124 +7206,97 @@
             }
           } catch (err) {}
 
+          // Chuyển mượt từ 2 ngón -> còn 1 ngón: đặt lại mốc tay còn lại + cooldown 180ms (không nhảy hình, không tap nhầm)
+          if (activePointers.size === 1) {
+            const remainEntry = activePointers.entries().next().value;
+            primaryId = remainEntry[0];
+            singleStartX = remainEntry[1].x;
+            singleStartY = remainEntry[1].y;
+            singleLastX = remainEntry[1].x;
+            singleLastY = remainEntry[1].y;
+            pinchAnchor = null;
+            mode = 'PENDING_SINGLE';
+            hadMultiTouch = true;
+            multiTouchCooldownUntil = performance.now() + 180;
+            if (controls) {
+              controls.isDragging = false;
+              controls.cancelInertia();
+            }
+            return;
+          }
+
+          // Tất cả ngón tay / chuột đã nhấc lên
+          activePointerDown = false;
+          clearHoldTimer();
+          pinchAnchor = null;
+          if (controls) controls.isDragging = false;
+
+          if (isCancel) {
+            isHoldingForSnap = false;
+            isCandidateForSnap = false;
+            currentSnapResult = null;
+            hideLoupe();
+            mode = 'IDLE';
+            hadMultiTouch = false;
+            return;
+          }
+
+          // Kết thúc Thước đo 2 điểm / Kính lúp
           if (isMeasureEnabled && isPointMeasureMode) {
-            if (isHoldingForSnap) {
-              // Người dùng đè giữ và buông tay:
+            if (isHoldingForSnap || mode === 'MEASURE_LOUPE') {
               isHoldingForSnap = false;
               isCandidateForSnap = false;
               hideLoupe();
-              if (controls) controls.enabled = true; // Mở lại xoay camera ngay lập tức!
-
               const finalSnap = currentSnapResult || findSnapPoint(e.clientX, e.clientY);
               if (finalSnap && finalSnap.point) {
                 handlePointMeasureClick(finalSnap.point);
               }
               currentSnapResult = null;
+              mode = 'IDLE';
+              hadMultiTouch = false;
               return;
-            } else if (isCandidateForSnap) {
-              // Thao tác click / chạm nhanh vào mô hình (Tap ngắn < 220ms, di chuyển < 10px):
+            }
+            if (isCandidateForSnap && !hadMultiTouch && !wasMulti) {
               isCandidateForSnap = false;
-              if (controls) controls.enabled = true;
-
               const snap = findSnapPoint(e.clientX, e.clientY) || currentSnapResult;
               if (snap && snap.point) {
                 handlePointMeasureClick(snap.point);
               }
               currentSnapResult = null;
+              mode = 'IDLE';
+              hadMultiTouch = false;
               return;
             }
-            if (controls) controls.enabled = true;
+            isCandidateForSnap = false;
+            mode = 'IDLE';
+            hadMultiTouch = false;
             return;
           }
 
           hideLoupe();
-          if (controls) controls.enabled = true;
+          const prevMode = mode;
+          mode = 'IDLE';
+
+          // Bỏ qua Tap nếu vừa kết thúc xoay, pan hoặc thao tác 2 ngón
+          if (hadMultiTouch || wasMulti || prevMode === 'ORBIT' || prevMode === 'PAN' || performance.now() < multiTouchCooldownUntil) {
+            hadMultiTouch = false;
+            return;
+          }
+          // Không chọn tấm bằng chuột phải
+          if (e.pointerType !== 'touch' && singleButton !== 0) {
+            return;
+          }
 
           const isTouch = (e.pointerType === 'touch');
           const maxTapDist = isTouch ? 14 : 6;
-          const dist = Math.hypot(e.clientX - touchStartX, e.clientY - touchStartY);
-
-          // Bỏ qua nếu là thao tác xoay (kéo rê chuột/ngón tay)
-          if (dist > maxTapDist) return;
-
-          mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-          mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-
-          raycaster.setFromCamera(mouse, camera);
-
-          // Chỉ kiểm tra va chạm với các mesh đang thực sự hiển thị (loại bỏ hoàn toàn tấm đã ẩn để click xuyên qua)
-          const visibleCandidates = allMeshes.filter(m => {
-            if (!m.visible) return false;
-            let bIdx = m.userData.boardIndex;
-            if (bIdx === undefined || bIdx === null) {
-              bIdx = getMeshBoardIndex(m);
-              if (bIdx !== null) m.userData.boardIndex = bIdx;
-            }
-            if (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx)) {
-              m.visible = false;
-              return false;
-            }
-            const lyrName = m.userData.layerName;
-            if (lyrName && hiddenLayers.has(lyrName)) {
-              m.visible = false;
-              return false;
-            }
-            let p = m.parent;
-            while (p && p !== scene) {
-              if (!p.visible) return false;
-              p = p.parent;
-            }
-            return true;
-          });
-
-          const intersects = raycaster.intersectObjects(visibleCandidates);
-
-          if (intersects.length > 0) {
-            const hitMesh = intersects[0].object;
-            let bIdx = hitMesh.userData.boardIndex;
-            if (bIdx === undefined || bIdx === null) {
-              bIdx = getMeshBoardIndex(hitMesh);
-              if (bIdx !== null) hitMesh.userData.boardIndex = bIdx;
-            }
-
-            if (bIdx !== undefined && bIdx !== null) {
-              if (isMultiSelectMode) {
-                selectBoard(bIdx, false);
-              } else {
-                if (selectedBoardIndex === bIdx) {
-                  clearSelection();
-                } else {
-                  selectBoard(bIdx, false);
-                }
-              }
-            } else {
-              if (!isMultiSelectMode) {
-                clearSelection();
-              }
-            }
-          } else {
-            // Chạm ra vùng trống -> Bỏ chọn (chỉ khi không ở chế độ chọn nhiều)
-            if (!isMultiSelectMode) {
-              clearSelection();
-            }
+          const dist = Math.hypot(e.clientX - singleStartX, e.clientY - singleStartY);
+          if (dist <= maxTapDist) {
+            handleSingleTapAction(e.clientX, e.clientY, isTouch);
           }
-        });
+        };
 
-        container.addEventListener('pointercancel', e => {
-          activePointerDown = false;
-          activePointers.delete(e.pointerId);
-          if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
-          try {
-            if (container.hasPointerCapture(e.pointerId)) {
-              container.releasePointerCapture(e.pointerId);
-            }
-          } catch (err) {}
-          isHoldingForSnap = false;
-          isCandidateForSnap = false;
-          currentSnapResult = null;
-          hideLoupe();
-          if (controls) controls.enabled = true;
-        });
+        container.addEventListener('pointerup', e => finishPointer(e, false));
+        container.addEventListener('pointercancel', e => finishPointer(e, true));
       }
 
       // ================= QUẢN LÝ LAYER (GIỐNG SKETCHUP MOBILE) =================
@@ -5361,26 +7310,60 @@
         buildLayersList();
       }
 
-      function buildLayersList() {
+      function getActiveNonEmptyLayerNames() {
+        const names = Object.keys(layerUnitsMap).filter(name => layerUnitsMap[name] && layerUnitsMap[name].size > 0);
+        if (names.length > 0) return names.sort((a, b) => a.localeCompare(b, 'vi'));
+        return Object.keys(layerMeshMap).filter(name => (layerMeshMap[name] || []).length > 0).sort((a, b) => a.localeCompare(b, 'vi'));
+      }
+
+      function updateLayerHiddenBadge() {
+        const badge = document.getElementById('layerHiddenBadge');
+        if (!badge) return;
+        const activeLayers = getActiveNonEmptyLayerNames();
+        let hiddenCount = 0;
+        activeLayers.forEach(n => { if (hiddenLayers.has(n)) hiddenCount++; });
+        if (labels3dHidden) hiddenCount++;
+        badge.textContent = hiddenCount;
+        badge.classList.toggle('show', hiddenCount > 0);
+      }
+
+      function buildLayersList(filterQuery = null) {
         const box = document.getElementById('layerList');
         if (!box) return;
 
-        const allLayerNames = new Set();
-        layersData.forEach(l => { if (l.name) allLayerNames.add(l.name); });
-        Object.keys(layerMeshMap).forEach(name => allLayerNames.add(name));
+        const searchEl = document.getElementById('layerSearchInput');
+        const query = (filterQuery !== null ? filterQuery : (searchEl ? searchEl.value : '')).trim().toLowerCase();
 
-        if (allLayerNames.size === 0) {
+        const sortedLayers = getActiveNonEmptyLayerNames();
+        if (searchEl) {
+          searchEl.style.display = sortedLayers.length >= 6 ? 'block' : 'none';
+        }
+        const btnLabels = document.getElementById('btnLayerToggleLabels');
+        if (btnLabels) {
+          btnLabels.style.display = hasAny3dLabels ? 'inline-flex' : 'none';
+          btnLabels.classList.toggle('is-active', !labels3dHidden);
+          btnLabels.textContent = labels3dHidden ? 'Nhãn 3D: Tắt' : 'Nhãn 3D: Bật';
+        }
+
+        updateLayerHiddenBadge();
+
+        if (sortedLayers.length === 0) {
           box.innerHTML = `<div style="padding:24px 16px; text-align:center; color:var(--text-sub); font-size:13px;">Chưa có dữ liệu Layer trong mô hình này.</div>`;
           return;
         }
 
-        const sortedLayers = Array.from(allLayerNames).sort();
+        const filtered = query ? sortedLayers.filter(n => n.toLowerCase().includes(query)) : sortedLayers;
         box.innerHTML = '';
 
-        sortedLayers.forEach((name, idx) => {
+        if (filtered.length === 0) {
+          box.innerHTML = `<div style="padding:20px 14px; text-align:center; color:var(--text-sub); font-size:12.5px;">Không tìm thấy Layer nào khớp "${query}".</div>`;
+          return;
+        }
+
+        filtered.forEach((name, idx) => {
           const isHidden = hiddenLayers.has(name);
-          const meshes = layerMeshMap[name] || [];
-          const count = meshes.length;
+          const isSolo = !!(soloLayerState && soloLayerState.layerName === name);
+          const count = (layerUnitsMap[name] && layerUnitsMap[name].size) || (layerMeshMap[name] ? layerMeshMap[name].length : 0);
 
           const layerDef = layersData.find(l => l.name === name);
           let dotColor = DEFAULT_LAYER_COLORS[idx % DEFAULT_LAYER_COLORS.length];
@@ -5389,7 +7372,7 @@
           }
 
           const item = document.createElement('div');
-          item.className = 'layer-item';
+          item.className = 'layer-item' + (isHidden ? ' is-hidden-row' : '');
           item.innerHTML = `
             <button class="layer-eye-btn ${isHidden ? 'hidden' : ''}" data-layer="${name}" title="${isHidden ? 'Hiện Layer này' : 'Ẩn Layer này'}">
               ${isHidden ? `
@@ -5406,13 +7389,22 @@
             </button>
             <span class="layer-color-dot" style="background:${dotColor};"></span>
             <span class="layer-name" title="${name}">${name}</span>
-            <span class="layer-count">${count}</span>
+            <span class="layer-count" title="${count} đối tượng">${count}</span>
+            <button type="button" class="layer-solo-btn ${isSolo ? 'active' : ''}" title="${isSolo ? 'Thoát xem riêng Layer này' : 'Chỉ xem riêng Layer này (Solo)'}">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+            </button>
           `;
 
           const eyeBtn = item.querySelector('.layer-eye-btn');
           eyeBtn.onclick = (e) => {
             e.stopPropagation();
             toggleLayerVisibility(name);
+          };
+
+          const soloBtn = item.querySelector('.layer-solo-btn');
+          soloBtn.onclick = (e) => {
+            e.stopPropagation();
+            soloLayer(name);
           };
 
           item.onclick = () => {
@@ -5423,7 +7415,56 @@
         });
       }
 
+      function soloLayer(layerName) {
+        const allLayers = getActiveNonEmptyLayerNames();
+        if (allLayers.length === 0) return;
+        if (soloLayerState && soloLayerState.layerName === layerName) {
+          hiddenLayers = new Set(soloLayerState.prevHidden);
+          soloLayerState = null;
+          showToast('Đã khôi phục toàn bộ Layer');
+        } else {
+          const prev = new Set(hiddenLayers);
+          hiddenLayers.clear();
+          allLayers.forEach(n => { if (n !== layerName) hiddenLayers.add(n); });
+          soloLayerState = { layerName, prevHidden: prev };
+          showToast(`Đang xem riêng Layer: ${layerName}`);
+        }
+        triggerHaptic('light');
+        updateModelMaterials();
+        buildLayersList();
+        requestRender();
+      }
+
+      function showAllLayers() {
+        hiddenLayers.clear();
+        soloLayerState = null;
+        updateModelMaterials();
+        buildLayersList();
+        requestRender();
+        showToast('Đã hiện tất cả Layer');
+      }
+
+      function hideAllLayers() {
+        const allLayers = getActiveNonEmptyLayerNames();
+        allLayers.forEach(n => hiddenLayers.add(n));
+        soloLayerState = null;
+        clearSelection();
+        updateModelMaterials();
+        buildLayersList();
+        requestRender();
+        showToast('Đã ẩn tất cả Layer');
+      }
+
+      function toggleLabels3d() {
+        labels3dHidden = !labels3dHidden;
+        updateModelMaterials();
+        buildLayersList();
+        requestRender();
+        showToast(labels3dHidden ? 'Đã ẩn toàn bộ Tem nhãn 3D' : 'Đã hiện Tem nhãn 3D');
+      }
+
       function toggleLayerVisibility(layerName) {
+        soloLayerState = null;
         if (hiddenLayers.has(layerName)) {
           hiddenLayers.delete(layerName);
         } else {
@@ -5431,35 +7472,64 @@
         }
 
         const isHidden = hiddenLayers.has(layerName);
-        const meshes = layerMeshMap[layerName] || [];
-        meshes.forEach(m => {
-          m.visible = !isHidden;
-          if (m.userData.edgeLines) m.userData.edgeLines.visible = !isHidden;
-        });
-
-        if (selectedBoardIndex !== null) {
-          const targetMeshes = boardMeshMap[selectedBoardIndex] || [];
-          if (targetMeshes.length > 0 && targetMeshes[0].userData.layerName === layerName && isHidden) {
-            clearSelection();
+        if (isHidden && selectedBoardIndices.size > 0) {
+          let changedSel = false;
+          Array.from(selectedBoardIndices).forEach(k => {
+            const mList = boardMeshMap[k] || [];
+            if (mList.length > 0 && mList.every(m => isRenderableHiddenByLayer(m))) {
+              selectedBoardIndices.delete(k);
+              changedSel = true;
+            }
+          });
+          if (changedSel) {
+            if (selectedBoardIndices.size === 0) {
+              clearSelection();
+            } else {
+              selectedBoardIndex = Array.from(selectedBoardIndices)[selectedBoardIndices.size - 1];
+              if (selectedBoardIndices.size > 1) updateMultiSelectHud();
+              else showHudInfo(selectedBoardIndex);
+            }
           }
         }
 
+        triggerHaptic('light');
+        updateModelMaterials();
         buildLayersList();
+        requestRender();
       }
 
-      // 10. TÌM KIẾM DANH SÁCH CHI TIẾT
+      // 10. TÌM KIẾM DANH SÁCH CHI TIẾT (chỉ liệt kê Tấm ván chuẩn, không lẫn đồ trang trí phụ)
       function buildSearchList() {
         const resBox = document.getElementById('searchResults');
+        if (!resBox) return;
         resBox.innerHTML = '';
 
-        const keys = Object.keys(boardMeshMap).map(k => parseInt(k, 10)).sort((a,b) => a - b);
-        keys.forEach(k => {
+        const boardKeys = Object.keys(unitMeta)
+          .map(k => unitMeta[k])
+          .filter(meta => meta && meta.kind === 'board' && meta.meshes && meta.meshes.length > 0)
+          .map(meta => meta.key)
+          .sort((a, b) => {
+            const na = typeof a === 'number';
+            const nb = typeof b === 'number';
+            if (na && nb) return a - b;
+            if (na) return -1;
+            if (nb) return 1;
+            return String(a).localeCompare(String(b));
+          });
+
+        boardKeys.forEach(k => {
           const info = boardsData[k] || {};
+          const meta = unitMeta[k] || {};
           const item = document.createElement('div');
           item.className = 'search-item';
+          const badge = (typeof k === 'number') ? `#${k}` : String(k);
+          const name = info.part_name || meta.name || 'Tấm ván';
+          const dimText = (info.length && info.width)
+            ? `${info.length}x${info.width}`
+            : (Array.isArray(meta.dimsMm) && meta.dimsMm.length >= 2 ? `${meta.dimsMm[0]}x${meta.dimsMm[1]}` : '');
           item.innerHTML = `
-            <span><strong>#${k}</strong> ${info.part_name || 'Linh kiện'}</span>
-            <span style="color:var(--text-sub); font-size:11px;">${info.length || ''}x${info.width || ''}</span>
+            <span><strong>${badge}</strong> ${name}</span>
+            <span style="color:var(--text-sub); font-size:11px;">${dimText}</span>
           `;
           item.onclick = () => {
             selectBoard(k, true);
@@ -5517,6 +7587,11 @@
         }
 
         const posVal = minVal + (maxVal - minVal) * (sectionPercent / 100);
+        const cutMm = Math.round((posVal - minVal) * 1000);
+        const secValueEl = document.getElementById('sectionValue');
+        if (secValueEl) {
+          secValueEl.textContent = `${cutMm.toLocaleString('vi-VN')} mm`;
+        }
         const pt = new THREE.Vector3();
         if (sectionAxis === 'x') pt.set(posVal, 0, 0);
         else if (sectionAxis === 'y') pt.set(0, posVal, 0);
@@ -5529,19 +7604,22 @@
           renderer.localClippingEnabled = true;
         }
 
-        // Tạo khung trực quan hóa mặt cắt 3D (SketchUp Section Plane Helper màu cam neon)
+        // Tạo khung trực quan hóa mặt cắt 3D (có thể bật/tắt nhanh để chụp ảnh sạch)
         if (sectionPlaneHelper) {
           scene.remove(sectionPlaneHelper);
           if (sectionPlaneHelper.geometry) sectionPlaneHelper.geometry.dispose();
           if (sectionPlaneHelper.material) sectionPlaneHelper.material.dispose();
           sectionPlaneHelper = null;
         }
-        const size = new THREE.Vector3();
-        box.getSize(size);
-        const helperSize = Math.max(size.x, size.y, size.z) * 1.5;
-        sectionPlaneHelper = new THREE.PlaneHelper(sectionPlane, helperSize, 0xff4500);
-        sectionPlaneHelper.renderOrder = 999;
-        scene.add(sectionPlaneHelper);
+        if (showSectionHelper) {
+          const size = new THREE.Vector3();
+          box.getSize(size);
+          const helperSize = Math.max(size.x, size.y, size.z) * 1.5;
+          sectionPlaneHelper = new THREE.PlaneHelper(sectionPlane, helperSize, 0xff4500);
+          sectionPlaneHelper.renderOrder = 999;
+          scene.add(sectionPlaneHelper);
+        }
+        requestRender();
       }
 
       function toggleSectionCut(state) {
@@ -5567,51 +7645,73 @@
             if (sectionPlaneHelper.material) sectionPlaneHelper.material.dispose();
             sectionPlaneHelper = null;
           }
+          requestRender();
         } else {
           updateSectionCut();
         }
       }
 
-      // 2. RÃ RỜI CỤM CHI TIẾT (EXPLODE VIEW)
+      // 2. RÃ RỜI CỤM CHI TIẾT (EXPLODE VIEW — DỊCH CHUYỂN NGUYÊN KHỐI TỪNG TẤM VÁN + ĐỐI TƯỢNG CON + NHÃN DÍNH CHÙM!)
+      let explodeModelMaxDist = 1.0;
+      let explodeUnitsList = [];
+
       function initMeshExplodeData() {
-        if (!modelRoot || allMeshes.length === 0) return;
+        if (!modelRoot || explodeUnitsList.length > 0) return;
+        modelRoot.updateMatrixWorld(true);
+
         const box = new THREE.Box3().setFromObject(modelRoot);
+        if (box.isEmpty()) return;
         const modelCenter = new THREE.Vector3();
         box.getCenter(modelCenter);
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        explodeModelMaxDist = Math.max(size.x, size.y, size.z) * 0.85;
 
-        allMeshes.forEach(mesh => {
-          if (!mesh.userData.origPosition) {
-            mesh.userData.origPosition = mesh.position.clone();
-          }
-          const mBox = new THREE.Box3().setFromObject(mesh);
-          const mCenter = new THREE.Vector3();
-          mBox.getCenter(mCenter);
+        const visitedRoots = new Set();
+        Object.keys(unitMeta).forEach(k => {
+          const meta = unitMeta[k];
+          if (!meta || !meta.rootNode || visitedRoots.has(meta.rootNode)) return;
+          visitedRoots.add(meta.rootNode);
 
-          const dir = mCenter.clone().sub(modelCenter);
-          if (dir.length() < 0.0001) {
-            dir.set(0, 1, 0);
-          } else {
-            dir.normalize();
+          const node = meta.rootNode;
+          const uBox = new THREE.Box3().setFromObject(node);
+          if (uBox.isEmpty()) return;
+          const uCenter = new THREE.Vector3();
+          uBox.getCenter(uCenter);
+
+          const worldDir = uCenter.clone().sub(modelCenter);
+          if (worldDir.length() < 1e-4) worldDir.set(0, 1, 0);
+          else worldDir.normalize();
+
+          // Đổi vector hướng world sang không gian local của node.parent để không bị méo do xoay/scale cha
+          const localDir = worldDir.clone();
+          if (node.parent) {
+            const invParent = new THREE.Matrix4().copy(node.parent.matrixWorld).invert();
+            localDir.transformDirection(invParent);
+            const pScale = new THREE.Vector3();
+            node.parent.matrixWorld.decompose(new THREE.Vector3(), new THREE.Quaternion(), pScale);
+            if (Math.abs(pScale.x) > 1e-6) localDir.x /= Math.abs(pScale.x);
+            if (Math.abs(pScale.y) > 1e-6) localDir.y /= Math.abs(pScale.y);
+            if (Math.abs(pScale.z) > 1e-6) localDir.z /= Math.abs(pScale.z);
           }
-          mesh.userData.explodeDir = dir;
+
+          explodeUnitsList.push({
+            node: node,
+            origPos: node.position.clone(),
+            localDir: localDir
+          });
         });
       }
 
       function updateExplode(factorPercent) {
         explodeFactor = factorPercent / 100;
-        if (!modelRoot || allMeshes.length === 0) return;
+        if (!modelRoot) return;
 
         initMeshExplodeData();
-        const box = new THREE.Box3().setFromObject(modelRoot);
-        const size = new THREE.Vector3();
-        box.getSize(size);
-        const maxDist = Math.max(size.x, size.y, size.z) * 0.85;
-
-        allMeshes.forEach(mesh => {
-          if (mesh.userData.origPosition && mesh.userData.explodeDir) {
-            mesh.position.copy(mesh.userData.origPosition).addScaledVector(mesh.userData.explodeDir, explodeFactor * maxDist);
-          }
+        explodeUnitsList.forEach(item => {
+          item.node.position.copy(item.origPos).addScaledVector(item.localDir, explodeFactor * explodeModelMaxDist);
         });
+        requestRender();
       }
 
       function resetExplode() {
@@ -5638,7 +7738,7 @@
         if (window.updateFabIndicator) window.updateFabIndicator();
       }
 
-      // 3. CÔ LẬP TẤM VÁN ĐANG CHỌN (HỖ TRỢ CẢ CHỌN ĐƠN LẪN NHIỀU TẤM)
+      // 3. CÔ LẬP TẤM VÁN / ĐỐI TƯỢNG ĐANG CHỌN (DÍNH CHÙM 100% ĐỐI TƯỢNG CON & NHÃN _ABF_Label)
       function toggleIsolateBoard() {
         const activeSet = (selectedBoardIndices && selectedBoardIndices.size > 0)
           ? selectedBoardIndices
@@ -5648,23 +7748,7 @@
         isIsolatedMode = !isIsolatedMode;
         const btn = document.getElementById('btnHudIsolate');
 
-        allMeshes.forEach(mesh => {
-          const bIdx = mesh.userData.boardIndex;
-          if (isIsolatedMode) {
-            if (activeSet.has(bIdx)) {
-              mesh.visible = true;
-              if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = true;
-            } else {
-              mesh.visible = false;
-              if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = false;
-            }
-          } else {
-            const lyrName = mesh.userData.layerName;
-            const isHidden = hiddenLayers.has(lyrName) || (bIdx !== undefined && bIdx !== null && hiddenBoardIndices.has(bIdx));
-            mesh.visible = !isHidden;
-            if (mesh.userData.edgeLines) mesh.userData.edgeLines.visible = !isHidden;
-          }
-        });
+        updateModelMaterials();
 
         if (btn) {
           btn.classList.toggle('active', isIsolatedMode);
@@ -5675,7 +7759,7 @@
         }
       }
 
-      // 4. CÁC GÓC NHÌN CHUẨN SKETCHUP (STANDARD VIEWS)
+      // 4. CÁC GÓC NHÌN CHUẨN SKETCHUP (STANDARD VIEWS — HỖ TRỢ CẢ PHỐI CẢNH 3D & SONG SONG 2D)
       function setStandardView(viewType) {
         if (!modelRoot) return;
         const box = new THREE.Box3().setFromObject(modelRoot);
@@ -5686,10 +7770,24 @@
         const size = new THREE.Vector3();
         box.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
-        const fov = camera.fov * (Math.PI / 180);
+        const fov = (perspCamera ? perspCamera.fov : 45) * (Math.PI / 180);
         let dist = (maxDim / 2) / Math.tan(fov / 2);
         dist *= 1.35;
 
+        if (controls && controls.orbitPivot) controls.orbitPivot.copy(center);
+
+        if (isOrthoMode && orthoCamera) {
+          const halfH = Math.max(maxDim * 0.65, 0.25);
+          const aspect = window.innerWidth / Math.max(window.innerHeight, 1);
+          orthoCamera.left = -halfH * aspect;
+          orthoCamera.right = halfH * aspect;
+          orthoCamera.top = halfH;
+          orthoCamera.bottom = -halfH;
+          orthoCamera.zoom = 1.0;
+          orthoCamera.updateProjectionMatrix();
+        }
+
+        const viewNames = { iso: 'Phối cảnh (Iso)', top: 'Mặt bằng (Top)', front: 'Mặt trước (Front)', back: 'Mặt sau (Back)', right: 'Mặt phải (Right)', left: 'Mặt trái (Left)' };
         const targetPos = new THREE.Vector3();
         if (viewType === 'iso') {
           targetPos.set(center.x + dist * 0.7, center.y + dist * 0.6, center.z + dist * 0.7);
@@ -5705,7 +7803,8 @@
           targetPos.set(center.x - dist * 1.25, center.y, center.z);
         }
 
-        animateCamera(targetPos, center);
+        animateCamera(targetPos, center, 440, false);
+        if (viewNames[viewType]) showToast(`Góc nhìn: ${viewNames[viewType]}`);
       }
 
       function toggleViewsPanel(state) {
@@ -5792,16 +7891,20 @@
         const btnFloatingGhost = document.getElementById('btnFloatingGhost');
         const btnToggleGhost = document.getElementById('btnToggleGhost');
 
-        // Mặc định BẬT Ghost Mode cho cả 2 nút
-        if (btnFloatingGhost) btnFloatingGhost.classList.toggle('active', isGhostMode);
-        if (btnToggleGhost) btnToggleGhost.classList.toggle('active', isGhostMode);
+        // Khởi tạo trạng thái nút Ghost Mode (mặc định TẮT)
+        syncGhostState();
 
         function toggleGhostMode() {
-          isGhostMode = !isGhostMode;
-          if (btnFloatingGhost) btnFloatingGhost.classList.toggle('active', isGhostMode);
-          if (btnToggleGhost) btnToggleGhost.classList.toggle('active', isGhostMode);
+          if (isGhostMode) {
+            isGhostManual = false;
+            isGhostAutoQr = false;
+          } else {
+            isGhostManual = true;
+            isGhostAutoQr = false;
+          }
+          syncGhostState();
           updateModelMaterials();
-          if (window.updateFabIndicator) window.updateFabIndicator();
+          showToast(isGhostMode ? 'Chế độ Bóng ma: Bật' : 'Chế độ Bóng ma: Tắt');
         }
 
         if (btnFloatingGhost) {
@@ -5828,6 +7931,7 @@
           if (btnFloatingXray) btnFloatingXray.classList.toggle('active', isGlobalXray);
           updateModelMaterials();
           if (window.updateFabIndicator) window.updateFabIndicator();
+          showToast(isGlobalXray ? 'Chế độ X-Ray: Bật' : 'Chế độ X-Ray: Tắt');
         }
 
         if (btnFloatingXray) {
@@ -5900,6 +8004,22 @@
           };
         }
 
+        // Nút ✕ bỏ chọn tức thì trên thẻ HUD (hữu ích khi zoom kín màn hình không có vùng trống để chạm)
+        const btnHudClearX = document.getElementById('btnHudClearX');
+        if (btnHudClearX) {
+          btnHudClearX.onclick = function(e) {
+            e.stopPropagation();
+            triggerHaptic('light');
+            clearSelection();
+          };
+        }
+
+        // Nút Hoàn tác ẩn 1 bước (Undo Hide)
+        const btnUndoHide = document.getElementById('btnUndoHide');
+        if (btnUndoHide) {
+          btnUndoHide.onclick = undoLastHide;
+        }
+
         // Nút Hiện lại tất cả tấm đã ẩn
         const btnUnhideAll = document.getElementById('btnUnhideAll');
         if (btnUnhideAll) {
@@ -5916,7 +8036,10 @@
         }
 
         document.getElementById('btnResetView').onclick = function() {
-          if (modelRoot) zoomToFit(modelRoot);
+          if (modelRoot) {
+            zoomToFit(modelRoot, true);
+            showToast('Đã căn giữa toàn bộ mô hình');
+          }
           if (window.setToolbarCollapsed) window.setToolbarCollapsed(true);
         };
 
@@ -6189,6 +8312,45 @@
         if (btnCloseLayerPanel) btnCloseLayerPanel.onclick = closeLayerPanel;
         if (layerPanelBackdrop) layerPanelBackdrop.onclick = closeLayerPanel;
 
+        const btnExpandLayerPanel = document.getElementById('btnExpandLayerPanel');
+        if (btnExpandLayerPanel && layerPanel) {
+          btnExpandLayerPanel.onclick = function() {
+            triggerHaptic('light');
+            layerPanel.classList.toggle('is-tall');
+          };
+        }
+
+        // Thanh công cụ Layer nâng cao: Tìm nhanh, Hiện hết, Ẩn hết, Công tắc Tem nhãn 3D
+        const layerSearchInput = document.getElementById('layerSearchInput');
+        if (layerSearchInput) {
+          layerSearchInput.addEventListener('input', function() {
+            buildLayersList(this.value);
+          });
+        }
+        const btnLayerShowAll = document.getElementById('btnLayerShowAll');
+        if (btnLayerShowAll) btnLayerShowAll.onclick = showAllLayers;
+        const btnLayerHideAll = document.getElementById('btnLayerHideAll');
+        if (btnLayerHideAll) btnLayerHideAll.onclick = hideAllLayers;
+        const btnLayerToggleLabels = document.getElementById('btnLayerToggleLabels');
+        if (btnLayerToggleLabels) btnLayerToggleLabels.onclick = toggleLabels3d;
+
+        // Chuyển đổi Phối cảnh 3D <-> Chiếu Song Song 2D trong Views Panel
+        const btnProjPersp = document.getElementById('btnProjPersp');
+        const btnProjOrtho = document.getElementById('btnProjOrtho');
+        if (btnProjPersp) btnProjPersp.onclick = () => { triggerHaptic('light'); setProjectionMode('perspective'); };
+        if (btnProjOrtho) btnProjOrtho.onclick = () => { triggerHaptic('light'); setProjectionMode('ortho'); };
+
+        // Bật/Tắt khung cam mặt cắt Section Cut (để soi/chụp ảnh sạch)
+        const btnToggleSecHelper = document.getElementById('btnToggleSectionHelper');
+        if (btnToggleSecHelper) {
+          btnToggleSecHelper.onclick = function() {
+            showSectionHelper = !showSectionHelper;
+            btnToggleSecHelper.classList.toggle('active', showSectionHelper);
+            updateSectionCut();
+            showToast(showSectionHelper ? 'Hiện khung mặt cắt' : 'Đã ẩn khung mặt cắt');
+          };
+        }
+
         // Nút chuyển chế độ Nền Sáng Studio / Tối (SVG Icon chuẩn)
         const btnToggleTheme = document.getElementById('btnToggleTheme');
         const SVG_SUN = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
@@ -6198,19 +8360,92 @@
             isDarkMode = !isDarkMode;
             document.body.classList.toggle('dark-mode', isDarkMode);
             btnToggleTheme.innerHTML = isDarkMode ? SVG_MOON : SVG_SUN;
-            const newBg = isDarkMode ? 0x0f172a : 0xf8fafc;
+            const newBg = isDarkMode ? 0x0b1120 : 0xf8fafc;
             if (scene) scene.background.setHex(newBg);
-
-            const defaultEdgeHex = 0x000000; // Cố định viền model luôn là MÀU ĐEN chuẩn kỹ thuật kể cả nền tối
-            allMeshes.forEach(mesh => {
-              if (mesh.userData.edgeLines && mesh.userData.boardIndex !== selectedBoardIndex) {
-                if (!isGhostMode || selectedBoardIndex === null) {
-                  mesh.userData.edgeLines.material.color.setHex(defaultEdgeHex);
-                }
-              }
-            });
+            if (hemiLight) hemiLight.intensity = isDarkMode ? 0.92 : 0.88;
+            updateModelMaterials();
+            requestRender();
+            showToast(isDarkMode ? 'Giao diện Nền tối OLED' : 'Giao diện Nền sáng Studio');
           };
         }
+
+        // Bộ Phím tắt chuẩn SketchUp cho Trình duyệt PC (tự bỏ qua khi đang gõ chữ trong ô tìm kiếm)
+        document.addEventListener('keydown', function(e) {
+          const tag = (e.target && e.target.tagName) ? e.target.tagName.toUpperCase() : '';
+          if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) {
+            if (e.key === 'Escape') {
+              e.target.blur();
+              const sw = document.getElementById('searchWrapper');
+              if (sw) sw.classList.remove('active');
+            }
+            return;
+          }
+
+          const key = (e.key || '').toLowerCase();
+          if ((e.ctrlKey || e.metaKey) && key === 'z') {
+            if (hideHistoryStack.length > 0) {
+              e.preventDefault();
+              undoLastHide();
+            }
+            return;
+          }
+          if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+          if (key === 'escape') {
+            const qrModal = document.getElementById('qrModal');
+            if (qrModal && qrModal.classList.contains('active')) { closeQrScanner(); return; }
+            const sw = document.getElementById('searchWrapper');
+            if (sw && sw.classList.contains('active')) { sw.classList.remove('active'); return; }
+            if (layerPanel && layerPanel.classList.contains('open')) { closeLayerPanel(); return; }
+            const popups = document.querySelectorAll('.tool-popup-panel.active');
+            if (popups.length > 0) { closeAllToolPopups(); return; }
+            if (isMeasureEnabled) { toggleMeasureTool(false); return; }
+            if (selectedBoardIndex !== null || selectedBoardIndices.size > 0) clearSelection();
+          } else if (key === 'h' && e.shiftKey) {
+            e.preventDefault();
+            unhideAllBoards();
+          } else if (key === 'h') {
+            if (selectedBoardIndex !== null || selectedBoardIndices.size > 0) {
+              e.preventDefault();
+              hideSelectedBoard();
+            }
+          } else if (key === 'u') {
+            e.preventDefault();
+            unhideAllBoards();
+          } else if ((key === 'z' && e.shiftKey) || key === 'r') {
+            if (modelRoot) {
+              e.preventDefault();
+              zoomToFit(modelRoot, true);
+              showToast('Đã căn giữa toàn bộ mô hình');
+            }
+          } else if (key === 'g') {
+            e.preventDefault();
+            toggleGhostMode();
+          } else if (key === 'x') {
+            e.preventDefault();
+            toggleGlobalXray();
+          } else if (key === 'm') {
+            e.preventDefault();
+            toggleMeasureTool();
+          } else if (key === 'l') {
+            e.preventDefault();
+            if (layerPanel && layerPanel.classList.contains('open')) closeLayerPanel();
+            else openLayerPanel();
+          } else if (key === 'p') {
+            e.preventDefault();
+            setProjectionMode(isOrthoMode ? 'perspective' : 'ortho');
+          } else if (key === '1') {
+            setStandardView('iso');
+          } else if (key === '2') {
+            setStandardView('front');
+          } else if (key === '3') {
+            setStandardView('top');
+          } else if (key === '4') {
+            setStandardView('right');
+          } else if (key === '5') {
+            setStandardView('left');
+          }
+        });
 
         // Bật/Tắt chế độ Toàn Màn Hình (Fullscreen Mode)
         const btnFullscreen = document.getElementById('btnToggleFullscreen');
